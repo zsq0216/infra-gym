@@ -1,0 +1,18 @@
+
+--- STDERR ---
+ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-4904-6223/repo/tests/conftest.py'.
+tests/conftest.py:20: in <module>
+    from vllm import LLM, SamplingParams
+vllm/__init__.py:3: in <module>
+    from vllm.engine.arg_utils import AsyncEngineArgs, EngineArgs
+vllm/engine/arg_utils.py:7: in <module>
+    from vllm.config import (CacheConfig, DecodingConfig, DeviceConfig,
+vllm/config.py:11: in <module>
+    from vllm.model_executor.layers.quantization import QUANTIZATION_METHODS
+vllm/model_executor/__init__.py:1: in <module>
+    from vllm.model_executor.sampling_metadata import SamplingMetadata
+vllm/model_executor/sampling_metadata.py:7: in <module>
+    from vllm.model_executor.layers.ops.sample import get_num_triton_sampler_splits
+vllm/model_executor/layers/ops/sample.py:5: in <module>
+    import triton
+E   ModuleNotFoundError: No module named 'triton'

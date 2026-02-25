@@ -1,0 +1,14 @@
+
+--- STDERR ---
+ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-10324-10164/repo/tests/conftest.py'.
+tests/conftest.py:21: in <module>
+    from tests.models.utils import (TokensTextLogprobs,
+tests/models/utils.py:6: in <module>
+    from vllm.config import ModelConfig, TaskOption
+vllm/__init__.py:3: in <module>
+    from vllm.engine.arg_utils import AsyncEngineArgs, EngineArgs
+vllm/engine/arg_utils.py:11: in <module>
+    from vllm.config import (CacheConfig, CompilationConfig, ConfigFormat,
+vllm/config.py:12: in <module>
+    from pydantic import BaseModel, Field, PrivateAttr
+E   ModuleNotFoundError: No module named 'pydantic'

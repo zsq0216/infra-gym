@@ -1,0 +1,26 @@
+
+--- STDERR ---
+ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-8947-8960/repo/tests/conftest.py'.
+tests/conftest.py:23: in <module>
+    from tests.models.utils import (TokensTextLogprobs,
+tests/models/utils.py:6: in <module>
+    from vllm.config import ModelConfig
+vllm/__init__.py:3: in <module>
+    from vllm.engine.arg_utils import AsyncEngineArgs, EngineArgs
+vllm/engine/arg_utils.py:11: in <module>
+    from vllm.config import (CacheConfig, ConfigFormat, DecodingConfig,
+vllm/config.py:12: in <module>
+    from vllm.model_executor.layers.quantization import QUANTIZATION_METHODS
+vllm/model_executor/__init__.py:1: in <module>
+    from vllm.model_executor.parameter import (BasevLLMParameter,
+vllm/model_executor/parameter.py:7: in <module>
+    from vllm.distributed import get_tensor_model_parallel_rank
+vllm/distributed/__init__.py:1: in <module>
+    from .communication_op import *
+vllm/distributed/communication_op.py:6: in <module>
+    from .parallel_state import get_tp_group
+vllm/distributed/parallel_state.py:39: in <module>
+    from vllm.utils import supports_custom_op
+vllm/utils.py:34: in <module>
+    from typing_extensions import ParamSpec, TypeIs, assert_never
+E   ImportError: cannot import name 'TypeIs' from 'typing_extensions' (/home/linux/anaconda3/lib/python3.11/site-packages/typing_extensions.py)

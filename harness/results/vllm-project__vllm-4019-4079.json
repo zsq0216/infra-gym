@@ -1,0 +1,31 @@
+{
+  "instance_id": "vllm-project__vllm-4019-4079",
+  "version": "0.4.0.post1",
+  "base_commit": "705578ae14b648782a8a321dd0903c163bd77375",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772036724.0291445,
+    "phase1_start": 1772036725.5284994,
+    "phase1_end": 1772036727.7621465,
+    "phase2_start": 1772036727.765417,
+    "phase2_end": 1772036729.9563692,
+    "end": 1772036729.956422
+  },
+  "regressions": [],
+  "both_failed": []
+}

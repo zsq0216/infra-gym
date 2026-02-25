@@ -1,0 +1,6 @@
+
+--- STDERR ---
+ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-4019-4079/repo/tests/conftest.py'.
+tests/conftest.py:9: in <module>
+    from transformers import (AutoModelForCausalLM, AutoProcessor,
+E   ImportError: cannot import name 'LlavaForConditionalGeneration' from 'transformers' (/home/linux/anaconda3/lib/python3.11/site-packages/transformers/__init__.py)
