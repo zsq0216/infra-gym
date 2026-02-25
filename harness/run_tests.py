@@ -422,7 +422,7 @@ def apply_patch(repo_path, patch_text, label="patch"):
             fh.write(patch_text)
 
         result = run_cmd(
-            ["git", "apply", "--allow-empty", "--verbose", patch_file],
+            ["git", "apply", "--verbose", patch_file],
             cwd=repo_path,
             timeout=60,
         )
@@ -433,7 +433,7 @@ def apply_patch(repo_path, patch_text, label="patch"):
             # Try with --3way as a fallback
             logger.info("Retrying %s with --3way ...", label)
             result2 = run_cmd(
-                ["git", "apply", "--3way", "--allow-empty", patch_file],
+                ["git", "apply", "--3way", patch_file],
                 cwd=repo_path,
                 timeout=60,
             )

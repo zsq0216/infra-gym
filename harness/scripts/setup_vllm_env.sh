@@ -83,9 +83,9 @@ git submodule update --init --recursive --quiet 2>/dev/null || true
 # ---------------------------------------------------------------------------
 if [ -n "$TEST_PATCH" ] && [ -f "$TEST_PATCH" ]; then
     echo "==> Applying test patch: $TEST_PATCH"
-    git apply --allow-empty "$TEST_PATCH" || {
+    git apply "$TEST_PATCH" || {
         echo "WARNING: git apply failed, trying with --3way"
-        git apply --allow-empty --3way "$TEST_PATCH" || {
+        git apply --3way "$TEST_PATCH" || {
             echo "ERROR: Could not apply test patch"
             exit 1
         }
@@ -97,9 +97,9 @@ fi
 # ---------------------------------------------------------------------------
 if [ -n "$SOURCE_PATCH" ] && [ -f "$SOURCE_PATCH" ]; then
     echo "==> Applying source patch: $SOURCE_PATCH"
-    git apply --allow-empty "$SOURCE_PATCH" || {
+    git apply "$SOURCE_PATCH" || {
         echo "WARNING: git apply failed, trying with --3way"
-        git apply --allow-empty --3way "$SOURCE_PATCH" || {
+        git apply --3way "$SOURCE_PATCH" || {
             echo "ERROR: Could not apply source patch"
             exit 1
         }
