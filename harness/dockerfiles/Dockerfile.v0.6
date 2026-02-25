@@ -1,0 +1,129 @@
+# =============================================================================
+# Dockerfile.v0.6 — vLLM v0.6.0 through v0.6.4.post1
+# =============================================================================
+#
+# Version group rationale:
+#   v0.6.x is the most recent version group and includes:
+#   - PyTorch 2.4-2.5 support
+#   - CUDA 12.4 as the primary target
+#   - Significant refactoring of the engine internals
+#   - Improved multi-modal support (video, audio)
+#   - V1 engine architecture preview
+#   - torch.compile integration improvements
+#
+# Covers 18 instances:
+#   0.6.0:        4 instances
+#   0.6.1:        2 instances
+#   0.6.1.post2:  1 instance
+#   0.6.2:        7 instances
+#   0.6.3.post1:  3 instances
+#   0.6.4.post1:  1 instance
+# =============================================================================
+
+ARG CUDA_VERSION=12.4.0
+ARG PYTHON_VERSION=3.12
+FROM infra-gym-base:cuda${CUDA_VERSION}-py${PYTHON_VERSION}
+
+# Re-declare build args after FROM
+ARG CUDA_VERSION=12.4.0
+ARG PYTHON_VERSION=3.12
+
+LABEL maintainer="infra-gym"
+LABEL vllm.version.group="v0.6"
+LABEL vllm.versions="0.6.0,0.6.1,0.6.1.post2,0.6.2,0.6.3.post1,0.6.4.post1"
+
+# ---- PyTorch 2.5.x with CUDA 12.4 ------------------------------------------
+# v0.6.x supports PyTorch 2.4-2.5. We install 2.5 as the latest version,
+# which includes torch.compile improvements that v0.6 leverages.
+RUN python -m pip install --no-cache-dir \
+        torch==2.5.0 \
+        torchvision==0.20.0 \
+        torchaudio==2.5.0 \
+        --index-url https://download.pytorch.org/whl/cu124
+
+# ---- FlashAttention v2 ------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        flash-attn>=2.6.3 \
+    || echo "WARNING: flash-attn installation failed (requires GPU build or prebuilt wheel)"
+
+# ---- FlashInfer --------------------------------------------------------------
+# v0.6.x uses a newer FlashInfer version.
+RUN python -m pip install --no-cache-dir \
+        flashinfer==0.1.6+cu124torch2.5 \
+        --index-url https://flashinfer.ai/whl/cu124/torch2.5 \
+    || echo "WARNING: flashinfer installation failed"
+
+# ---- xFormers ----------------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        xformers>=0.0.28 \
+    || echo "WARNING: xformers installation failed"
+
+# ---- vLLM core dependencies for v0.6 ----------------------------------------
+# Tokenizer/model loading, model weights, HF Hub, Triton, data handling,
+# async/API deps, Ray, monitoring, structured output/guided decoding (incl. xgrammar),
+# compressed model support, LoRA, quantization, image/multimodal support,
+# FP8 support (nvidia-ml-py), miscellaneous utilities,
+# new in v0.6: partial-json-parser, mistral-common, importlib-metadata
+RUN python -m pip install --no-cache-dir \
+        transformers>=4.45.0 \
+        sentencepiece \
+        tokenizers>=0.20.0 \
+        safetensors \
+        huggingface-hub>=0.25.0 \
+        triton>=3.0.0 \
+        numpy \
+        pandas \
+        uvicorn[standard] \
+        fastapi>=0.114.0 \
+        pydantic>=2.9 \
+        ray>=2.9.0 \
+        prometheus-client \
+        prometheus-fastapi-instrumentator>=7.0.0 \
+        msgspec \
+        lm-format-enforcer>=0.4.3 \
+        outlines>=0.0.43 \
+        xgrammar \
+        compressed-tensors>=0.6.0 \
+        peft>=0.6.0 \
+        gguf \
+        bitsandbytes>=0.44.0 \
+        pillow \
+        nvidia-ml-py \
+        py-cpuinfo \
+        blake3 \
+        psutil \
+        zmq \
+        cloudpickle \
+        depyf \
+        partial-json-parser \
+        mistral-common>=1.4.0 \
+        importlib-metadata \
+    || echo "WARNING: Some v0.6 dependencies failed to install"
+
+# ---- Additional test-specific dependencies ----------------------------------
+# decord: video processing for multimodal tests (v0.6),
+# auto-gptq: additional model-specific test deps, jinja2: chat template testing
+RUN python -m pip install --no-cache-dir \
+        scipy \
+        openai>=1.0 \
+        einops \
+        sentence-transformers \
+        librosa \
+        soundfile \
+        torchmetrics \
+        opencv-python-headless \
+        anyio \
+        respx \
+        decord \
+        auto-gptq \
+        jinja2 \
+    || true
+
+# ---- Environment markers ----------------------------------------------------
+ENV VLLM_VERSION_GROUP="v0.6"
+ENV INFRA_GYM_CUDA_VERSION="${CUDA_VERSION}"
+ENV INFRA_GYM_PYTHON_VERSION="${PYTHON_VERSION}"
+ENV INFRA_GYM_PYTORCH_VERSION="2.5.0"
+
+# ---- Entrypoint --------------------------------------------------------------
+CMD ["/bin/bash"]

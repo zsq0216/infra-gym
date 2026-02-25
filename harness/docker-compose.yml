@@ -1,0 +1,171 @@
+# =============================================================================
+# docker-compose.yml — Orchestration for vLLM infra-gym test environments
+# =============================================================================
+#
+# Defines a service for each version group with GPU support.
+# Each service mounts the vLLM source tree at /workspace/vllm.
+#
+# Usage:
+#   docker compose up vllm-v0.5              # Start v0.5 environment
+#   docker compose run vllm-v0.5 pytest ...  # Run specific tests
+#   docker compose build                     # Build all images
+#
+# Environment variables (set in .env or export):
+#   VLLM_REPO_PATH  — Path to local vLLM git checkout (required)
+#   RESULTS_DIR     — Path to store test results (default: ./results)
+#   HF_HOME         — Hugging Face cache directory (optional, speeds up tests)
+# =============================================================================
+
+x-gpu-common: &gpu-common
+  # Common GPU configuration shared by all services.
+  deploy:
+    resources:
+      reservations:
+        devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+  # Shared memory size — vLLM uses shared memory for tensor transfer between
+  # processes. 16GB is sufficient for most test scenarios.
+  shm_size: "16gb"
+  # Ulimits needed for multi-process GPU workloads
+  ulimits:
+    memlock:
+      soft: -1
+      hard: -1
+    stack:
+      soft: 67108864
+      hard: 67108864
+
+x-common-volumes: &common-volumes
+  # Mount the vLLM repo (read-write so patches can be applied)
+  - ${VLLM_REPO_PATH:?Set VLLM_REPO_PATH to your local vLLM checkout}:/workspace/vllm
+  # Mount results directory for test output
+  - ${RESULTS_DIR:-./results}:/workspace/results
+  # Mount Hugging Face cache to avoid re-downloading models
+  - ${HF_HOME:-~/.cache/huggingface}:/home/vllm/.cache/huggingface
+  # Mount patches directory (harness writes patches here)
+  - ./patches:/workspace/patches:ro
+
+x-common-env: &common-env
+  # Hugging Face token for gated models (optional)
+  HF_TOKEN: ${HF_TOKEN:-}
+  HUGGING_FACE_HUB_TOKEN: ${HF_TOKEN:-}
+  # Test output configuration
+  PYTEST_RESULT_DIR: /workspace/results
+  # CUDA configuration
+  NVIDIA_VISIBLE_DEVICES: ${NVIDIA_VISIBLE_DEVICES:-all}
+  NVIDIA_DRIVER_CAPABILITIES: compute,utility
+
+services:
+  # ---- v0.1-v0.2: CUDA 11.8, PyTorch 2.0, Python 3.10 ---------------------
+  vllm-v0.1-v0.2:
+    <<: *gpu-common
+    image: infra-gym:v0.1-v0.2
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.v0.1-v0.2
+      args:
+        CUDA_VERSION: "11.8.0"
+        PYTHON_VERSION: "3.10"
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "v0.1-v0.2"
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  # ---- v0.3: CUDA 12.1, PyTorch 2.1, Python 3.10 --------------------------
+  vllm-v0.3:
+    <<: *gpu-common
+    image: infra-gym:v0.3
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.v0.3
+      args:
+        CUDA_VERSION: "12.1.0"
+        PYTHON_VERSION: "3.10"
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "v0.3"
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  # ---- v0.4: CUDA 12.1, PyTorch 2.3, Python 3.10 --------------------------
+  vllm-v0.4:
+    <<: *gpu-common
+    image: infra-gym:v0.4
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.v0.4
+      args:
+        CUDA_VERSION: "12.1.0"
+        PYTHON_VERSION: "3.10"
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "v0.4"
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  # ---- v0.5: CUDA 12.4, PyTorch 2.4, Python 3.10 --------------------------
+  # This is the largest group with 44 instances (nearly half the benchmark).
+  vllm-v0.5:
+    <<: *gpu-common
+    image: infra-gym:v0.5
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.v0.5
+      args:
+        CUDA_VERSION: "12.4.0"
+        PYTHON_VERSION: "3.10"
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "v0.5"
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  # ---- v0.6: CUDA 12.4, PyTorch 2.5, Python 3.12 --------------------------
+  vllm-v0.6:
+    <<: *gpu-common
+    image: infra-gym:v0.6
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.v0.6
+      args:
+        CUDA_VERSION: "12.4.0"
+        PYTHON_VERSION: "3.12"
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "v0.6"
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  # ---- CPU-only service for tests that do not require GPU -------------------
+  # Uses the v0.5 image (largest group) but without GPU reservation.
+  # Useful for running unit tests that only test Python logic.
+  vllm-cpu:
+    image: infra-gym:v0.5
+    volumes: *common-volumes
+    environment:
+      <<: *common-env
+      VLLM_VERSION_GROUP: "cpu"
+      CUDA_VISIBLE_DEVICES: ""
+    working_dir: /workspace/vllm
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+    shm_size: "4gb"

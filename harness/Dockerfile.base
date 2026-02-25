@@ -1,0 +1,117 @@
+# =============================================================================
+# Dockerfile.base — Parameterized base image for vLLM infra-gym test environments
+# =============================================================================
+#
+# This base image provides the common foundation shared by all version-group
+# Dockerfiles. It installs system packages, Python, and test tooling.
+# The version-group Dockerfiles (in dockerfiles/) extend this image with
+# version-specific PyTorch and vLLM dependency installations.
+#
+# Build args:
+#   CUDA_VERSION  — CUDA toolkit version (e.g. 12.1.0, 11.8.0)
+#   PYTHON_VERSION — Python minor version (e.g. 3.10, 3.8)
+#
+# Usage:
+#   docker build --build-arg CUDA_VERSION=12.1.0 --build-arg PYTHON_VERSION=3.10 \
+#       -t infra-gym-base:cuda12.1-py3.10 -f Dockerfile.base .
+# =============================================================================
+
+ARG CUDA_VERSION=12.1.0
+FROM nvidia/cuda:${CUDA_VERSION}-devel-ubuntu22.04
+
+# Re-declare after FROM so it is available in the build stage
+ARG CUDA_VERSION=12.1.0
+ARG PYTHON_VERSION=3.10
+
+# Prevent interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
+# ---- System packages --------------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        # Build essentials
+        build-essential \
+        cmake \
+        ninja-build \
+        # Version control (needed to clone/checkout vLLM at specific commits)
+        git \
+        # Networking tools (some tests hit local HTTP endpoints)
+        curl \
+        wget \
+        # Python build dependencies
+        software-properties-common \
+        # Misc utilities
+        ca-certificates \
+        lsb-release \
+        gnupg2 \
+        unzip \
+        pkg-config \
+        # Required by some vLLM C extensions
+        libnuma-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---- Python installation ----------------------------------------------------
+# Use deadsnakes PPA for flexible Python version selection
+RUN add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python${PYTHON_VERSION} \
+        python${PYTHON_VERSION}-dev \
+        python${PYTHON_VERSION}-venv \
+        python${PYTHON_VERSION}-distutils \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the requested Python as the default
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 1 && \
+    update-alternatives --install /usr/bin/python  python  /usr/bin/python${PYTHON_VERSION} 1
+
+# Install pip
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
+
+# Upgrade core packaging tools
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# ---- Common test dependencies -----------------------------------------------
+# These are needed across all vLLM versions for running the test suite.
+RUN python -m pip install --no-cache-dir \
+        pytest \
+        pytest-asyncio \
+        pytest-timeout \
+        pytest-forked \
+        pytest-rerunfailures \
+        pytest-xdist \
+        requests \
+        aiohttp \
+        httpx \
+        numpy \
+        pyyaml \
+        filelock \
+        tqdm
+
+# ---- Non-root user ----------------------------------------------------------
+# Run tests as a non-root user to catch permission issues early.
+RUN groupadd -r vllm && useradd -r -g vllm -m -s /bin/bash vllm
+
+# ---- Working directory -------------------------------------------------------
+# The vLLM source tree will be mounted here at runtime.
+RUN mkdir -p /workspace/vllm && chown -R vllm:vllm /workspace
+WORKDIR /workspace/vllm
+
+# ---- Environment setup script -----------------------------------------------
+# This script is used by the harness to prepare vLLM from a specific commit.
+# It is placed at a well-known path so the harness can invoke it.
+COPY scripts/setup_vllm_env.sh /usr/local/bin/setup_vllm_env.sh
+RUN chmod +x /usr/local/bin/setup_vllm_env.sh
+
+# ---- Environment variables ---------------------------------------------------
+ENV CUDA_VERSION_FULL=${CUDA_VERSION}
+ENV PYTHON_VERSION=${PYTHON_VERSION}
+# Ensure Python output is not buffered (useful for test log streaming)
+ENV PYTHONUNBUFFERED=1
+# Default to using all available GPUs
+ENV NVIDIA_VISIBLE_DEVICES=all
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+
+# ---- Default entrypoint ------------------------------------------------------
+# By default, drop into bash. The harness overrides this with pytest invocations.
+CMD ["/bin/bash"]

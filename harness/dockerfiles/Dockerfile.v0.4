@@ -1,0 +1,102 @@
+# =============================================================================
+# Dockerfile.v0.4 — vLLM v0.4.0.post1, v0.4.1, v0.4.2, v0.4.3
+# =============================================================================
+#
+# Version group rationale:
+#   v0.4.x was a major release cycle that introduced:
+#   - Speculative decoding
+#   - Chunked prefill
+#   - Prefix caching
+#   - LoRA adapter support improvements
+#   - Migration from setup.py to pyproject.toml (v0.4.2+)
+#   All sub-versions share PyTorch 2.1-2.3 on CUDA 12.1.
+#
+# Covers 22 instances:
+#   0.4.0.post1:  4 instances
+#   0.4.1:        5 instances
+#   0.4.2:        5 instances
+#   0.4.3:        8 instances
+# =============================================================================
+
+ARG CUDA_VERSION=12.1.0
+ARG PYTHON_VERSION=3.10
+FROM infra-gym-base:cuda${CUDA_VERSION}-py${PYTHON_VERSION}
+
+# Re-declare build args after FROM
+ARG CUDA_VERSION=12.1.0
+ARG PYTHON_VERSION=3.10
+
+LABEL maintainer="infra-gym"
+LABEL vllm.version.group="v0.4"
+LABEL vllm.versions="0.4.0.post1,0.4.1,0.4.2,0.4.3"
+
+# ---- PyTorch 2.3.x with CUDA 12.1 ------------------------------------------
+# v0.4.x spans PyTorch 2.1-2.3. We install 2.3 as the latest compatible version,
+# which is backward-compatible with code targeting 2.1+.
+# If a specific instance needs an older PyTorch, it can be overridden at runtime.
+RUN python -m pip install --no-cache-dir \
+        torch==2.3.0 \
+        torchvision==0.18.0 \
+        --index-url https://download.pytorch.org/whl/cu121
+
+# ---- FlashAttention v2 ------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        flash-attn==2.5.8 \
+    || echo "WARNING: flash-attn installation failed (requires GPU build or prebuilt wheel)"
+
+# ---- xFormers ----------------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        xformers==0.0.26.post1 \
+    || echo "WARNING: xformers installation failed"
+
+# ---- vLLM core dependencies for v0.4 ----------------------------------------
+# Tokenizer/model loading, model weights, HF Hub, Triton, data handling,
+# async/API deps, Ray, monitoring, structured output/guided decoding,
+# compressed model support, LoRA, quantization, image support
+RUN python -m pip install --no-cache-dir \
+        transformers>=4.39.0,<4.42.0 \
+        sentencepiece \
+        tokenizers>=0.15.0 \
+        safetensors \
+        huggingface-hub \
+        triton>=2.2.0 \
+        numpy \
+        pandas \
+        uvicorn[standard] \
+        fastapi \
+        pydantic>=2.0 \
+        ray>=2.9.0 \
+        prometheus-client \
+        prometheus-fastapi-instrumentator>=7.0.0 \
+        msgspec \
+        lm-format-enforcer>=0.4.3 \
+        outlines>=0.0.43 \
+        compressed-tensors>=0.3.0 \
+        peft \
+        gguf \
+        bitsandbytes>=0.42.0 \
+        pillow \
+    || echo "WARNING: Some v0.4 dependencies failed to install"
+
+# ---- Additional test-specific dependencies ----------------------------------
+# multinomial: sampling/logprob tests, sentence-transformers: embedding model tests,
+# librosa/soundfile: audio tests (introduced in v0.4.3), mypy: linting/typing in test fixtures
+RUN python -m pip install --no-cache-dir \
+        scipy \
+        openai>=1.0 \
+        einops \
+        multinomial \
+        sentence-transformers \
+        librosa \
+        soundfile \
+        mypy \
+    || true
+
+# ---- Environment markers ----------------------------------------------------
+ENV VLLM_VERSION_GROUP="v0.4"
+ENV INFRA_GYM_CUDA_VERSION="${CUDA_VERSION}"
+ENV INFRA_GYM_PYTHON_VERSION="${PYTHON_VERSION}"
+ENV INFRA_GYM_PYTORCH_VERSION="2.3.0"
+
+# ---- Entrypoint --------------------------------------------------------------
+CMD ["/bin/bash"]

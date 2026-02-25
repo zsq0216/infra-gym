@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Env
+.env
+
+# Cache files
+scripts/releases_page1.json
+
+# Claude Code
+.claude/

@@ -1,0 +1,123 @@
+# =============================================================================
+# Dockerfile.v0.5 — vLLM v0.5.0 through v0.5.5
+# =============================================================================
+#
+# Version group rationale:
+#   v0.5.x is the largest version group with 44 instances (nearly half the
+#   benchmark). This release cycle introduced:
+#   - Multi-modal support (images, audio)
+#   - FP8 quantization
+#   - FlashInfer backend
+#   - Improved tensor parallelism
+#   - New model architectures (Phi-3, Qwen2, DeepSeek-V2)
+#   All sub-versions use PyTorch 2.4 on CUDA 12.1-12.4.
+#
+# Covers 44 instances:
+#   0.5.0:        1 instance
+#   0.5.0.post1: 11 instances
+#   0.5.1:        6 instances
+#   0.5.2:        1 instance
+#   0.5.3.post1: 11 instances
+#   0.5.4:       10 instances
+#   0.5.5:        4 instances
+# =============================================================================
+
+ARG CUDA_VERSION=12.4.0
+ARG PYTHON_VERSION=3.10
+FROM infra-gym-base:cuda${CUDA_VERSION}-py${PYTHON_VERSION}
+
+# Re-declare build args after FROM
+ARG CUDA_VERSION=12.4.0
+ARG PYTHON_VERSION=3.10
+
+LABEL maintainer="infra-gym"
+LABEL vllm.version.group="v0.5"
+LABEL vllm.versions="0.5.0,0.5.0.post1,0.5.1,0.5.2,0.5.3.post1,0.5.4,0.5.5"
+
+# ---- PyTorch 2.4.x with CUDA 12.4 ------------------------------------------
+# v0.5.x standardized on PyTorch 2.4. We use CUDA 12.4 which is the latest
+# supported version in this range and is backward-compatible with 12.1 code.
+RUN python -m pip install --no-cache-dir \
+        torch==2.4.0 \
+        torchvision==0.19.0 \
+        torchaudio==2.4.0 \
+        --index-url https://download.pytorch.org/whl/cu124
+
+# ---- FlashAttention v2 ------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        flash-attn>=2.5.8,<2.7.0 \
+    || echo "WARNING: flash-attn installation failed (requires GPU build or prebuilt wheel)"
+
+# ---- FlashInfer (new in v0.5) -----------------------------------------------
+# FlashInfer was introduced as an alternative attention backend in v0.5.
+RUN python -m pip install --no-cache-dir \
+        flashinfer==0.1.6+cu124torch2.4 \
+        --index-url https://flashinfer.ai/whl/cu124/torch2.4 \
+    || echo "WARNING: flashinfer installation failed"
+
+# ---- xFormers ----------------------------------------------------------------
+RUN python -m pip install --no-cache-dir \
+        xformers==0.0.27.post2 \
+    || echo "WARNING: xformers installation failed"
+
+# ---- vLLM core dependencies for v0.5 ----------------------------------------
+# Tokenizer/model loading, model weights, HF Hub, Triton, data handling,
+# async/API deps, Ray, monitoring, structured output/guided decoding,
+# compressed model support, LoRA, quantization, image/multimodal support,
+# FP8 support (nvidia-ml-py), and miscellaneous utilities
+RUN python -m pip install --no-cache-dir \
+        transformers>=4.42.0,<4.46.0 \
+        sentencepiece \
+        tokenizers>=0.19.0 \
+        safetensors \
+        huggingface-hub>=0.24.0 \
+        triton>=2.3.0 \
+        numpy \
+        pandas \
+        uvicorn[standard] \
+        fastapi>=0.111.0 \
+        pydantic>=2.0 \
+        ray>=2.9.0 \
+        prometheus-client \
+        prometheus-fastapi-instrumentator>=7.0.0 \
+        msgspec \
+        lm-format-enforcer>=0.4.3 \
+        outlines>=0.0.43 \
+        compressed-tensors>=0.4.0 \
+        peft>=0.6.0 \
+        gguf \
+        bitsandbytes>=0.42.0 \
+        pillow \
+        nvidia-ml-py \
+        py-cpuinfo \
+        blake3 \
+        psutil \
+        zmq \
+        cloudpickle \
+        depyf \
+    || echo "WARNING: Some v0.5 dependencies failed to install"
+
+# ---- Additional test-specific dependencies ----------------------------------
+# torchmetrics: tensor comparison, opencv-python-headless: image/video processing
+# for multimodal tests, anyio: async test helpers, respx: mock server for tests
+RUN python -m pip install --no-cache-dir \
+        scipy \
+        openai>=1.0 \
+        einops \
+        sentence-transformers \
+        librosa \
+        soundfile \
+        torchmetrics \
+        opencv-python-headless \
+        anyio \
+        respx \
+    || true
+
+# ---- Environment markers ----------------------------------------------------
+ENV VLLM_VERSION_GROUP="v0.5"
+ENV INFRA_GYM_CUDA_VERSION="${CUDA_VERSION}"
+ENV INFRA_GYM_PYTHON_VERSION="${PYTHON_VERSION}"
+ENV INFRA_GYM_PYTORCH_VERSION="2.4.0"
+
+# ---- Entrypoint --------------------------------------------------------------
+CMD ["/bin/bash"]

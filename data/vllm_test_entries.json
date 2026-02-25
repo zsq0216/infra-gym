@@ -1,0 +1,437 @@
+[
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7272",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7164",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/0fd0c6a9a208a84268562e80e2a4519cbc36608d/tests%2Fmodels%2Ftest_internvl.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6059",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6080",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/03a4d77fe2cd51b0922c73dbc5f842a626911d8f/tests%2Fkernels%2Ftest_cutlass.py | https://github.com/vllm-project/vllm/blob/03a4d77fe2cd51b0922c73dbc5f842a626911d8f/tests%2Fquantization%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4339",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4355",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/7b5ed1bcf98dd5e383ea9b30aa49695aefbc4b49/tests%2Fentrypoints%2Ftest_openai_server.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6366",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6367",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/c73887ef26bff04e8cea9863025dc775c1372da0/tests%2Fmodels%2Ftest_paligemma.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7388",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7410",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fdistributed%2Ftest_multimodal_broadcast.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fentrypoints%2Fopenai%2Ftest_oot_registration.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fmodels%2Ftest_chameleon.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fmodels%2Ftest_minicpmv.py | https://github.com/vllm-project/vllm/blob/0878b0c31538f6a3e173b7fd32878b01a6a401c6/tests%2Fmodels%2Ftest_oot_registration.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8578",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8583",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/76835d8961a9bef2ce6f598991dd91188459942a/tests%2Fmq_llm_engine%2Ftest_error_handling.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/9019",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/9020",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/92ef38732fafda60ebd90b68cc24eed39c617394/tests%2Ftool_use%2Ftest_parallel_tool_calls.py | https://github.com/vllm-project/vllm/blob/92ef38732fafda60ebd90b68cc24eed39c617394/tests%2Ftool_use%2Ftest_tool_calls.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8194",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7928",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/e1ec34c348a7ef06ccb2978cbe625088cb30d1ee/tests%2Fmulti_step%2Ftest_correctness_async_llm.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4365",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4389",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/71b9342c4c07005e7fd119e8c055cc3488c26489/tests%2Fsamplers%2Ftest_sampler.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7151",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7411",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/655c7e4bb278d2b484b230eb56ac04bc0bf6409f/tests%2Fentrypoints%2Fopenai%2Ftest_oot_registration.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8988",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/9034",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/8f15b82381530c9938c5a75825b5a0129afa8cc0/tests%2Fentrypoints%2Fopenai%2Ftest_chunked_prompt.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4019",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4079",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/e9600f09a0556e042a233bd52be79d145d2d0234/tests%2Ftest_logger.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5067",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5355",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/b888ed5535b926aaea6ef1dd602292a6f7185ba0/tests%2Fsamplers%2Ftest_logprobs.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6449",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6698",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Fsamplers%2Ftest_rejection_sampler.py | https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Fsamplers%2Ftest_sampler.py | https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Fspec_decode%2Fe2e%2Ftest_mlp_correctness.py | https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Fspec_decode%2Fe2e%2Ftest_seed.py | https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Fspec_decode%2Ftest_batch_expansion.py | https://github.com/vllm-project/vllm/blob/73e9e391053467d41cfadc20792def2b2efacccd/tests%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5736",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5772",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/a7cf5d0fc98170191fe40de764ffd878e5352890/tests%2Fmodels%2Ftest_phi3v.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/10693",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/10705",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/793021a229f14a18bff83a6b4221f95314e99249/tests%2Fmodels%2Fdecoder_only%2Flanguage%2Ftest_jamba.py | https://github.com/vllm-project/vllm/blob/793021a229f14a18bff83a6b4221f95314e99249/tests%2Fmodels%2Fdecoder_only%2Flanguage%2Ftest_mamba.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6015",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/10184",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fdecoder_only%2Flanguage%2Ftest_jamba.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fdecoder_only%2Flanguage%2Ftest_mamba.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fdecoder_only%2Flanguage%2Ftest_models.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fembedding%2Flanguage%2Ftest_cls_models.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fembedding%2Flanguage%2Ftest_embedding.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fembedding%2Fvision_language%2Ftest_llava_next.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fembedding%2Fvision_language%2Ftest_phi3v.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fencoder_decoder%2Flanguage%2Ftest_bart.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fencoder_decoder%2Fvision_language%2Ftest_mllama.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Fregistry.py | https://github.com/vllm-project/vllm/blob/319867b888dfd644c8493ca9f352bf5d11bd0deb/tests%2Fmodels%2Ftest_registry.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7742",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8047",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Fconftest.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Ftest_eagle_correctness.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Ftest_logprobs.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Ftest_medusa_correctness.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Ftest_mlp_correctness.py | https://github.com/vllm-project/vllm/blob/6e8e54d334a36c83c80c8fc54462ac1e99d72597/tests%2Fspec_decode%2Fe2e%2Ftest_ngram_correctness.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8369",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8375",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/41280382bb1d7e17315be60cd533b4104fc836b9/tests%2Fmodels%2Ftest_internvl.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6176",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7998",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/ad125f6ea92d0a3835102dbfcfd0d226a930c9eb/tests%2Fmodels%2Ftest_llava.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6004",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6007",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4545f869f3e59d037c1ff2e1327ab966cd190657/tests%2Fkernels%2Ftest_cutlass.py | https://github.com/vllm-project/vllm/blob/4545f869f3e59d037c1ff2e1327ab966cd190657/tests%2Fquantization%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6152",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7411",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/655c7e4bb278d2b484b230eb56ac04bc0bf6409f/tests%2Fentrypoints%2Fopenai%2Ftest_oot_registration.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5334",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6223",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/7b44f2d7fa9697b586c14e58d98d323893c631f5/tests%2Ftokenization%2Ftest_detokenize.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8923",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7168 | https://github.com/vllm-project/vllm/pull/8924",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/7c7251ed4c564c0e92b6b0fc9f5bfc9cde0db359/tests%2Fdistributed%2Ftest_pipeline_parallel.py | https://github.com/vllm-project/vllm/blob/7c7251ed4c564c0e92b6b0fc9f5bfc9cde0db359/tests%2Fmodels%2Ftest_registry.py | https://github.com/vllm-project/vllm/blob/7c7251ed4c564c0e92b6b0fc9f5bfc9cde0db359/tests%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4904",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6223",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/7b44f2d7fa9697b586c14e58d98d323893c631f5/tests%2Ftokenization%2Ftest_detokenize.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4362",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5233",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4d3c1097c0dcdfded5e2f37c677a57703307d0f4/tests%2Ftest_regression.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7149",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7153",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/5a9c179736e5065980f0f3d789e8944fe71da3bc/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/5a9c179736e5065980f0f3d789e8944fe71da3bc/tests%2Fmodels%2Ftest_llava_next.py | https://github.com/vllm-project/vllm/blob/5a9c179736e5065980f0f3d789e8944fe71da3bc/tests%2Fmodels%2Ftest_paligemma.py | https://github.com/vllm-project/vllm/blob/5a9c179736e5065980f0f3d789e8944fe71da3bc/tests%2Fmodels%2Ftest_registry.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4883",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5194",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/216ad0688085a7c2e6574548827f3d0811a24ca5/tests%2Flora%2Ftest_utils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8461",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/9248",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/2261d8fdabe4b3b0703e2bedc80e9a3c95e09a76/tests%2Fdistributed%2Ftest_pipeline_parallel.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6952",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6960",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/6bfe41a039ef5c9979b91bb30e7873b08692c09d/tests%2Fbasic_correctness%2Ftest_cpu_offload.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/10324",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/10164",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/7c6c0ba4cfc7c31f1ab54f46173e491967759cea/tests%2Fentrypoints%2Ftest_chat_utils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8275",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8299",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/9cb6bf26f879594918949460bf99864fe6f23faf/tests%2Fdistributed%2Ftest_pipeline_parallel.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6765",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6960",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/6bfe41a039ef5c9979b91bb30e7873b08692c09d/tests%2Fbasic_correctness%2Ftest_cpu_offload.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7188",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7279",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/ad26ad7452607d9135da9a0aa4f0d127b04a9dcf/tests%2Fentrypoints%2Fopenai%2Ftest_basic.py | https://github.com/vllm-project/vllm/blob/ad26ad7452607d9135da9a0aa4f0d127b04a9dcf/tests%2Fentrypoints%2Fopenai%2Ftest_metrics.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6137",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6138",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/a98e4a14b1987e177d88b83bf71c763c6748a7aa/tests%2Fengine%2Foutput_processor%2Ftest_multi_step.py | https://github.com/vllm-project/vllm/blob/a98e4a14b1987e177d88b83bf71c763c6748a7aa/tests%2Fspec_decode%2Fe2e%2Ftest_best_of.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/9076",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/9083",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/1af2d734872a3359dd94767727d107afacbd8ffd/tests%2Fmodels%2Fdecoder_only%2Fvision_language%2Ftest_internvl.py | https://github.com/vllm-project/vllm/blob/1af2d734872a3359dd94767727d107afacbd8ffd/tests%2Fmodels%2Fencoder_decoder%2Fvision_language%2Ftest_mllama.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/905",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/1154",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4a0c3550ee29eb634829df19376a6e764838c75d/tests%2Fkernels%2Ftest_attention.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4127",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4128",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/f4fabfb04a7e4ffd21105e38cf0bdeed19f3c72c/tests%2Fkernels%2Ftest_prefix_prefill.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/9834",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/10198",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/8c232ba6bacf1437ec25c1287015916286503a31/tests%2Fspec_decode%2Fe2e%2Ftest_mlp_correctness.py | https://github.com/vllm-project/vllm/blob/8c232ba6bacf1437ec25c1287015916286503a31/tests%2Fspec_decode%2Ftest_batch_expansion.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8983",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8986",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/b6bb7c5ce3c8ef8f7d0575b8b7f3a2f57f8213a8/tests%2Fdistributed%2Ftest_pipeline_parallel.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8947",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8960",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/937aaea7101976218ca02b089bc6ef9cb948b6f1/tests%2Fdata%2Ftest_config.yaml | https://github.com/vllm-project/vllm/blob/937aaea7101976218ca02b089bc6ef9cb948b6f1/tests%2Ftest_utils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8411",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8415",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ffixtures%2Fpixtral_chat.pickle | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ffixtures%2Fpixtral_chat_engine.pickle | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ftest_pixtral.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8382",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8415",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ffixtures%2Fpixtral_chat.pickle | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ffixtures%2Fpixtral_chat_engine.pickle | https://github.com/vllm-project/vllm/blob/4bd4cfad8770cb798ddafd55e7fd3e4f162ea116/tests%2Fmodels%2Ftest_pixtral.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8361",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8375",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/41280382bb1d7e17315be60cd533b4104fc836b9/tests%2Fmodels%2Ftest_internvl.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/8321",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8357",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/d50294ce35652492b24ab1ba611d29478a38b97a/tests%2Fkernels%2Ftest_gguf.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7920",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8157",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/acd5511b6d0e196b273b6250201115b5c5cfd1ca/tests%2Fasync_engine%2Ftest_openapi_server.py | https://github.com/vllm-project/vllm/blob/acd5511b6d0e196b273b6250201115b5c5cfd1ca/tests%2Fentrypoints%2Fopenai%2Frpc%2Ftest_zmq_client.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fentrypoints%2Fopenai%2Ftest_accuracy.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fentrypoints%2Fopenai%2Ftest_chat_template.py | https://github.com/vllm-project/vllm/blob/acd5511b6d0e196b273b6250201115b5c5cfd1ca/tests%2Fentrypoints%2Fopenai%2Ftest_mp_api_server.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fentrypoints%2Fopenai%2Ftest_serving_chat.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fentrypoints%2Fopenai%2Ftest_serving_engine.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fentrypoints%2Fopenai%2Ftest_shutdown.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fmq_llm_engine%2F__init__.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fmq_llm_engine%2Ftest_abort.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fmq_llm_engine%2Ftest_error_handling.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fmq_llm_engine%2Ftest_load.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Fmq_llm_engine%2Futils.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Ftpu%2Ftest_custom_dispatcher.py | https://github.com/vllm-project/vllm/blob/836a9d2d54b90a170ff7ad8b4d005f87ffc334b8/tests%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7718",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7710",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/17ccce8c568c2b1d7349fbaec727ceff89df4d84/tests%2Fmodels%2Ftest_phi3v.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7516",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7521",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/94d7f30ff52b293316a9097e7e59ebf24e598be3/tests%2Fquantization%2Ftest_compressed_tensors.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7505",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7508",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/5815ccce8f79585af62ddd5eb4a999555e717968/tests%2Fspec_decode%2Fe2e%2Fconftest.py | https://github.com/vllm-project/vllm/blob/5815ccce8f79585af62ddd5eb4a999555e717968/tests%2Fspec_decode%2Fe2e%2Ftest_mlp_correctness.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7373",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7392",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/85f1004bf833ddf63045ea4bc8a307693b3694a6/tests%2Fmodels%2Ftest_phi3v.py | https://github.com/vllm-project/vllm/blob/85f1004bf833ddf63045ea4bc8a307693b3694a6/tests%2Ftracing%2Ftest_tracing.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7204",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7225",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/486c80daec9e9e81c613f42aa69b038bbd9ae024/tests%2Fbasic_correctness%2Ftest_cpu_offload.py | https://github.com/vllm-project/vllm/blob/486c80daec9e9e81c613f42aa69b038bbd9ae024/tests%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/7160",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7164",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/0fd0c6a9a208a84268562e80e2a4519cbc36608d/tests%2Fmodels%2Ftest_internvl.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6756",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7445",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/368ce90363ea9c64bcb5d5e9fa8d9f70443eefb1/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/368ce90363ea9c64bcb5d5e9fa8d9f70443eefb1/tests%2Fquantization%2Ftest_bitsandbytes.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6703",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6757",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/d2c61663abf0cecf923b18bff2fa4f2e6281378a/tests%2Fworker%2Ftest_model_runner.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6607",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6751",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/ab7b095264ace906e3df3ebc0fba7da073038d52/tests%2Fdistributed%2Ftest_pipeline_parallel.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/590",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/941",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/12353cf55636ad0db3354cbc3125e7a137a9d3a7/tests%2Fkernels%2Ftest_pos_encoding.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/2059",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/2088",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fmodels%2Ftest_mistral.py | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fprompts%2Fexample.txt | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fprompts%2Fsummary.txt"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/2064",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/2088",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fmodels%2Ftest_mistral.py | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fprompts%2Fexample.txt | https://github.com/vllm-project/vllm/blob/61530386b5752df9a0356c575f5cfd1382832e4a/tests%2Fprompts%2Fsummary.txt"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/3572",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/3672",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fengine%2Ftest_stop_reason.py | https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fengine%2Ftest_stop_strings.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/3574",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/3672",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fengine%2Ftest_stop_reason.py | https://github.com/vllm-project/vllm/blob/2ac9469b06a4a71874380561d7097fe87d395a34/tests%2Fengine%2Ftest_stop_strings.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/3593",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6751",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/ab7b095264ace906e3df3ebc0fba7da073038d52/tests%2Fdistributed%2Ftest_pipeline_parallel.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/3707",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/3731",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/f9def035c0a6bf36862387eba899fd6b0d7baf76/tests%2Fentrypoints%2Ftest_openai_server.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/3793",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4970 | https://github.com/vllm-project/vllm/pull/5356 | https://github.com/vllm-project/vllm/pull/5036 | https://github.com/vllm-project/vllm/pull/5498 | https://github.com/vllm-project/vllm/pull/4007",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/92f89853c98ab5191c3989a474a38d88a9fb19a0/tests%2Flora%2Ftest_layers.py | https://github.com/vllm-project/vllm/blob/92f89853c98ab5191c3989a474a38d88a9fb19a0/tests%2Flora%2Ftest_lora.py | https://github.com/vllm-project/vllm/blob/16620f439db1f2cc91b5582b59fc8845cbb02881/tests%2Flora%2Ftest_punica.py | https://github.com/vllm-project/vllm/blob/92f89853c98ab5191c3989a474a38d88a9fb19a0/tests%2Flora%2Ftest_sgmv_triton.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Fkernels%2Ftest_sampler.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Ftest_gemma.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Ftest_layers.py | https://github.com/vllm-project/vllm/blob/f05840368335aa9c8184239d3c8bd986e44692f7/tests%2Flora%2Ftest_lora.py | https://github.com/vllm-project/vllm/blob/f05840368335aa9c8184239d3c8bd986e44692f7/tests%2Flora%2Ftest_punica.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Ftest_punica_sizes.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Ftest_punica_variation.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Ftest_quant_model.py | https://github.com/vllm-project/vllm/blob/37c3cbd1678a88b33a8b7701f6f1d63b4e5bb4be/tests%2Flora%2Futils.py | https://github.com/vllm-project/vllm/blob/09486dbdd2b2c3beb0bc1d30060aa61d3537fccd/tests%2Flora%2Ftest_punica.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4054",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4197",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Fmultimodal%2F__init__.py | https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Fmultimodal%2Ftest_processor.py | https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Fspec_decode%2Fe2e%2Fconftest.py | https://github.com/vllm-project/vllm/blob/680cee9b0daa85a547e3db95739b01907425ffd4/tests%2Ftokenization%2Ftest_image_processor.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4100",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4105",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/a8ee188c3c689a1f8d0eab066d55112420aa2222/tests%2Fasync_engine%2Ftest_api_server.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4171",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4573",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/9691423ae2cda0fbf79661141ae0e6c77cb3ea13/tests%2Fkernels%2Ftest_prefix_prefill.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4293",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4412",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fasync_engine%2Ftest_async_llm_engine.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fasync_engine%2Ftest_openapi_server_ray.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fbasic_correctness%2Ftest_preemption.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fdistributed%2Ftest_comm_ops.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fdistributed%2Ftest_pipeline_parallel.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fengine%2Foutput_processor%2Ftest_multi_step.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fentrypoints%2Fopenai%2Ftest_chat.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fentrypoints%2Fopenai%2Ftest_completion.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fentrypoints%2Fopenai%2Ftest_embedding.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fentrypoints%2Fopenai%2Ftest_models.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fentrypoints%2Fopenai%2Ftest_vision.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fspec_decode%2Futils.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Ftensorizer_loader%2Ftest_tensorizer.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Futils.py | https://github.com/vllm-project/vllm/blob/f9351fb66062dd06ecde15019bf43a3bd126faa2/tests%2Fworker%2Ftest_swap.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4422",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/4451",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/243a75edd0682a97cdba1408dc63b1242c5534b4/tests%2Fbasic_correctness%2Ftest_chunked_prefill.py | https://github.com/vllm-project/vllm/blob/243a75edd0682a97cdba1408dc63b1242c5534b4/tests%2Fbasic_correctness%2Ftest_preemption.py | https://github.com/vllm-project/vllm/blob/243a75edd0682a97cdba1408dc63b1242c5534b4/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/243a75edd0682a97cdba1408dc63b1242c5534b4/tests%2Fspec_decode%2Ftest_spec_decode_worker.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4742",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5178",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/f27e4e44668049b6b272301d5b95626214fda1d9/tests%2Flora%2Ftest_punica.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4756",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5169",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/afb8252c328910ace89d5e0cf3281f233021ddc3/tests%2Flora%2Ftest_llama.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/4789",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5654",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/cd44c86afdbe4b70139c5654c941c8f9e75b3fbb/tests%2Fasync_engine%2Ftest_async_llm_engine.py | https://github.com/vllm-project/vllm/blob/cd44c86afdbe4b70139c5654c941c8f9e75b3fbb/tests%2Fspec_decode%2Fe2e%2Fconftest.py | https://github.com/vllm-project/vllm/blob/cd44c86afdbe4b70139c5654c941c8f9e75b3fbb/tests%2Futils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5088",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5145 | https://github.com/vllm-project/vllm/pull/5121 | https://github.com/vllm-project/vllm/pull/5122 | https://github.com/vllm-project/vllm/pull/5108",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/bea59ebde266ca98da685b19ccff08d2827bef3d/tests%2Fmodels%2Ftest_gptq_marlin.py | https://github.com/vllm-project/vllm/blob/27e5de225d7e0a735ba745e1c57caa4080e1344c/tests%2Fmodels%2Ftest_gptq_marlin.py | https://github.com/vllm-project/vllm/blob/93e16b5e670b5861287c31349766f870629edfec/tests%2Fmodels%2Ftest_gptq_marlin.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5152",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/8975",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/9b1ef6ba835d7b400a889920518695e905b11559/tests%2Fspec_decode%2Ftest_multi_step_worker.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5274",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5355",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/b888ed5535b926aaea6ef1dd602292a6f7185ba0/tests%2Fsamplers%2Ftest_logprobs.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5337",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5347",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fbasic_correctness%2Ftest_basic_correctness.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fbasic_correctness%2Ftest_chunked_prefill.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fbasic_correctness%2Ftest_preemption.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fconftest.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fdistributed%2Ftest_basic_distributed_correctness.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fdistributed%2Ftest_chunked_prefill_distributed.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fmodels%2Ftest_big_models.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fmodels%2Ftest_embedding.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fmodels%2Ftest_mistral.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fmodels%2Ftest_models.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fsamplers%2Ftest_beam_search.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Fsamplers%2Ftest_logprobs.py | https://github.com/vllm-project/vllm/blob/a905ff6894be5e48a04886a4f2474282252bf079/tests%2Ftensorizer_loader%2Ftest_tensorizer.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5544",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5546",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/d9bff1fa32956cd5d4fa9ad1bd0bf9a630fb53ef/tests%2Fdistributed%2Ftest_utils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5550",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5355",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/b888ed5535b926aaea6ef1dd602292a6f7185ba0/tests%2Fsamplers%2Ftest_logprobs.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5657",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5810",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4dc121c4a77ee97f3e46cc87f80081263c00b03d/tests%2Fdistributed%2Fdummy_model.py | https://github.com/vllm-project/vllm/blob/4dc121c4a77ee97f3e46cc87f80081263c00b03d/tests%2Fdistributed%2Ftest_oot_registration.py | https://github.com/vllm-project/vllm/blob/ba991d5c84adbc0685075af88333c688ddb06011/tests%2Fmodels%2Ftest_oot_registration.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5767",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/5772",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/a7cf5d0fc98170191fe40de764ffd878e5352890/tests%2Fmodels%2Ftest_phi3v.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5793",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6795",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/c1fa1ec50d06547fe0f9cc3e2df63b8417ef2aee/tests%2Fkernels%2Ftest_marlin_gemm.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5938",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/7142 | https://github.com/vllm-project/vllm/pull/6978 | https://github.com/vllm-project/vllm/pull/5939 | https://github.com/vllm-project/vllm/pull/6029",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/fe51961d2bf31312e327993c634230513ddeefa6/tests%2Fkernels%2Ftest_moe.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5982",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6089",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fdistributed%2Ftest_multimodal_broadcast.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fentrypoints%2Fopenai%2Ftest_vision.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_llava_next.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_phi3v.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/5983",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6089",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fdistributed%2Ftest_multimodal_broadcast.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fentrypoints%2Fopenai%2Ftest_vision.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_llava.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_llava_next.py | https://github.com/vllm-project/vllm/blob/4120ce79b9297d7f0619e08ed8a2f18be1348517/tests%2Fmodels%2Ftest_phi3v.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6231",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6234",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/ba2a04de6cb894d96c5141bbca438b3b7b44a080/tests%2Fcore%2Ftest_scheduler.py | https://github.com/vllm-project/vllm/blob/ba2a04de6cb894d96c5141bbca438b3b7b44a080/tests%2Flora%2Fconftest.py | https://github.com/vllm-project/vllm/blob/ba2a04de6cb894d96c5141bbca438b3b7b44a080/tests%2Flora%2Ftest_long_context.py | https://github.com/vllm-project/vllm/blob/ba2a04de6cb894d96c5141bbca438b3b7b44a080/tests%2Flora%2Ftest_lora_huggingface.py | https://github.com/vllm-project/vllm/blob/ba2a04de6cb894d96c5141bbca438b3b7b44a080/tests%2Flora%2Ftest_utils.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6322",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6339",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/e5e2ac947ff967489bee7305f5a3db052f1f4b32/tests%2Fmodels%2Ftest_llava_next.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6342",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6345",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/cd3ecac25e9954064f6edf766374b07bc2485a77/tests%2Fentrypoints%2Fopenai%2Ftest_run_batch.py"
+  },
+  {
+    "issue_url": "https://github.com/vllm-project/vllm/issues/6461",
+    "pr_urls": "https://github.com/vllm-project/vllm/pull/6463",
+    "test_urls": "https://github.com/vllm-project/vllm/blob/bef87a2c6e86aab5ce8db0cb13b48260c88ff040/tests%2Fentrypoints%2Fopenai%2Ftest_basic.py"
+  }
+]

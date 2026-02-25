@@ -1,0 +1,84 @@
+# =============================================================================
+# Dockerfile.v0.3 — vLLM v0.3.3
+# =============================================================================
+#
+# Version group rationale:
+#   v0.3.x was a transitional release that moved from CUDA 11.8 to CUDA 12.1
+#   and from PyTorch 2.0 to PyTorch 2.1. It also introduced:
+#   - FlashAttention v2 support
+#   - Paged attention kernel improvements
+#   - Expanded model support (Mixtral, etc.)
+#
+# Covers 3 instances:
+#   0.3.3: 3 instances
+# =============================================================================
+
+ARG CUDA_VERSION=12.1.0
+ARG PYTHON_VERSION=3.10
+FROM infra-gym-base:cuda${CUDA_VERSION}-py${PYTHON_VERSION}
+
+# Re-declare build args after FROM
+ARG CUDA_VERSION=12.1.0
+ARG PYTHON_VERSION=3.10
+
+LABEL maintainer="infra-gym"
+LABEL vllm.version.group="v0.3"
+LABEL vllm.versions="0.3.3"
+
+# ---- PyTorch 2.1.x with CUDA 12.1 ------------------------------------------
+# v0.3.x moved to PyTorch 2.1, which brought better CUDA 12.1 support.
+RUN python -m pip install --no-cache-dir \
+        torch==2.1.2 \
+        torchvision==0.16.2 \
+        --index-url https://download.pytorch.org/whl/cu121
+
+# ---- FlashAttention v2 ------------------------------------------------------
+# v0.3 was the first version to use FlashAttention v2 extensively.
+RUN python -m pip install --no-cache-dir \
+        flash-attn==2.5.2 \
+    || echo "WARNING: flash-attn installation failed (requires GPU build or prebuilt wheel)"
+
+# ---- xFormers for CUDA 12.1 / PyTorch 2.1 -----------------------------------
+RUN python -m pip install --no-cache-dir \
+        xformers==0.0.23.post1 \
+    || echo "WARNING: xformers installation failed"
+
+# ---- vLLM core dependencies for v0.3 ----------------------------------------
+# Tokenizer/model loading, model weights, HF Hub, Triton (upgraded for CUDA 12.1),
+# data handling, async/API deps, Ray, monitoring, structured output/guided decoding
+RUN python -m pip install --no-cache-dir \
+        transformers>=4.36.0,<4.39.0 \
+        sentencepiece \
+        tokenizers>=0.15.0 \
+        safetensors \
+        huggingface-hub \
+        triton==2.1.0 \
+        numpy \
+        pandas \
+        uvicorn[standard] \
+        fastapi \
+        pydantic>=2.0 \
+        ray>=2.9.0 \
+        prometheus-client \
+        msgspec \
+        lm-format-enforcer \
+        outlines>=0.0.27 \
+    || echo "WARNING: Some v0.3 dependencies failed to install"
+
+# ---- Additional test-specific dependencies ----------------------------------
+# einops: tensor comparison utilities
+RUN python -m pip install --no-cache-dir \
+        scipy \
+        openai>=1.0 \
+        pillow \
+        einops \
+    || true
+
+# ---- Environment markers ----------------------------------------------------
+ENV VLLM_VERSION_GROUP="v0.3"
+ENV INFRA_GYM_CUDA_VERSION="${CUDA_VERSION}"
+ENV INFRA_GYM_PYTHON_VERSION="${PYTHON_VERSION}"
+ENV INFRA_GYM_PYTORCH_VERSION="2.1.2"
+
+# ---- Entrypoint --------------------------------------------------------------
+CMD ["/bin/bash"]

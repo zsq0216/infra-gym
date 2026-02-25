@@ -1,0 +1,75 @@
+# =============================================================================
+# Dockerfile.v0.1-v0.2 — vLLM v0.1.4, v0.1.7, v0.2.4
+# =============================================================================
+#
+# Version group rationale:
+#   These early vLLM versions share nearly identical dependency stacks:
+#   - Python 3.8-3.10, PyTorch 2.0.x, CUDA 11.8
+#   - Minimal external dependencies (no FlashAttention v2, no FlashInfer)
+#   - Simple setup.py-based build system
+#
+# Covers 4 instances:
+#   0.1.4: 1 instance
+#   0.1.7: 1 instance
+#   0.2.4: 2 instances
+# =============================================================================
+
+ARG CUDA_VERSION=11.8.0
+ARG PYTHON_VERSION=3.10
+FROM infra-gym-base:cuda${CUDA_VERSION}-py${PYTHON_VERSION}
+
+# Re-declare build args after FROM
+ARG CUDA_VERSION=11.8.0
+ARG PYTHON_VERSION=3.10
+
+LABEL maintainer="infra-gym"
+LABEL vllm.version.group="v0.1-v0.2"
+LABEL vllm.versions="0.1.4,0.1.7,0.2.4"
+
+# ---- PyTorch 2.0.x with CUDA 11.8 ------------------------------------------
+# v0.1.x and v0.2.x were built against PyTorch 2.0.
+RUN python -m pip install --no-cache-dir \
+        torch==2.0.1 \
+        torchvision==0.15.2 \
+        --index-url https://download.pytorch.org/whl/cu118
+
+# ---- vLLM core dependencies for v0.1-v0.2 ----------------------------------
+# These versions had a relatively simple dependency set.
+# Packages: tokenizer/model loading, fast tokenizers, model weights,
+# inference engine (xformers), HF Hub, Triton kernels, data handling,
+# async/API deps, Ray for distributed, monitoring
+RUN python -m pip install --no-cache-dir \
+        transformers>=4.31.0,<4.36.0 \
+        sentencepiece \
+        tokenizers>=0.13.3 \
+        safetensors \
+        xformers==0.0.21 \
+        huggingface-hub \
+        triton==2.0.0 \
+        numpy \
+        pandas \
+        uvicorn \
+        fastapi \
+        pydantic \
+        ray>=2.5.0 \
+        prometheus-client \
+    || echo "WARNING: Some v0.1-v0.2 dependencies failed to install"
+
+# ---- Additional test-specific dependencies ----------------------------------
+# scipy: model output comparison tests
+# openai: API compatibility tests
+# pillow: image tests (v0.2.4 added multimodal support tests)
+RUN python -m pip install --no-cache-dir \
+        scipy \
+        openai \
+        pillow \
+    || true
+
+# ---- Environment markers ----------------------------------------------------
+ENV VLLM_VERSION_GROUP="v0.1-v0.2"
+ENV INFRA_GYM_CUDA_VERSION="${CUDA_VERSION}"
+ENV INFRA_GYM_PYTHON_VERSION="${PYTHON_VERSION}"
+ENV INFRA_GYM_PYTORCH_VERSION="2.0.1"
+
+# ---- Entrypoint --------------------------------------------------------------
+CMD ["/bin/bash"]
