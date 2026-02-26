@@ -72,6 +72,10 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTH
 # Install pip
 RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
 
+# ---- Configure pip to use Chinese mirror for faster downloads in CN --------
+RUN python -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    python -m pip config set global.trusted-host mirrors.aliyun.com
+
 # Upgrade core packaging tools (retries to handle flaky network in CI)
 RUN python -m pip install --no-cache-dir --retries 5 --timeout 60 --upgrade pip setuptools wheel
 
