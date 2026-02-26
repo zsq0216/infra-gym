@@ -1,6 +1,26 @@
 
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+WARNING 02-26 09:51:03 _custom_ops.py:18] Failed to import from vllm._C with ModuleNotFoundError("No module named 'vllm._C'")
+
 --- STDERR ---
-ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-8947-8960/repo/tests/conftest.py'.
+ImportError while loading conftest '/workspace/tests/conftest.py'.
 tests/conftest.py:23: in <module>
     from tests.models.utils import (TokensTextLogprobs,
 tests/models/utils.py:6: in <module>
@@ -11,16 +31,15 @@ vllm/engine/arg_utils.py:11: in <module>
     from vllm.config import (CacheConfig, ConfigFormat, DecodingConfig,
 vllm/config.py:12: in <module>
     from vllm.model_executor.layers.quantization import QUANTIZATION_METHODS
-vllm/model_executor/__init__.py:1: in <module>
-    from vllm.model_executor.parameter import (BasevLLMParameter,
-vllm/model_executor/parameter.py:7: in <module>
-    from vllm.distributed import get_tensor_model_parallel_rank
-vllm/distributed/__init__.py:1: in <module>
-    from .communication_op import *
-vllm/distributed/communication_op.py:6: in <module>
-    from .parallel_state import get_tp_group
-vllm/distributed/parallel_state.py:39: in <module>
-    from vllm.utils import supports_custom_op
-vllm/utils.py:34: in <module>
-    from typing_extensions import ParamSpec, TypeIs, assert_never
-E   ImportError: cannot import name 'TypeIs' from 'typing_extensions' (/home/linux/anaconda3/lib/python3.11/site-packages/typing_extensions.py)
+vllm/model_executor/layers/quantization/__init__.py:10: in <module>
+    from vllm.model_executor.layers.quantization.compressed_tensors.compressed_tensors import (  # noqa: E501
+vllm/model_executor/layers/quantization/compressed_tensors/compressed_tensors.py:6: in <module>
+    from vllm.model_executor.layers.fused_moe import FusedMoE
+vllm/model_executor/layers/fused_moe/__init__.py:3: in <module>
+    from vllm.triton_utils import HAS_TRITON
+vllm/triton_utils/__init__.py:7: in <module>
+    from vllm.triton_utils.custom_cache_manager import (
+vllm/triton_utils/custom_cache_manager.py:3: in <module>
+    from triton.runtime.cache import (FileCacheManager, default_cache_dir,
+E   ImportError: cannot import name 'default_cache_dir' from 'triton.runtime.cache' (/usr/local/lib/python3.12/dist-packages/triton/runtime/cache.py)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

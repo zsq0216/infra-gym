@@ -1,6 +1,31 @@
 
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+*************************
+** DEPRECATION NOTICE! **
+*************************
+THIS IMAGE IS DEPRECATED and is scheduled for DELETION.
+    https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/support-policy.md
+
+
 --- STDERR ---
-ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-4019-4079/repo/tests/conftest.py'.
+ImportError while loading conftest '/workspace/tests/conftest.py'.
 tests/conftest.py:9: in <module>
     from transformers import (AutoModelForCausalLM, AutoProcessor,
-E   ImportError: cannot import name 'LlavaForConditionalGeneration' from 'transformers' (/home/linux/anaconda3/lib/python3.11/site-packages/transformers/__init__.py)
+E   ModuleNotFoundError: No module named 'transformers'

@@ -1,18 +1,25 @@
 
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+
 --- STDERR ---
-ImportError while loading conftest '/tmp/infra-gym-workdir/vllm-project__vllm-5334-6223/repo/tests/conftest.py'.
-tests/conftest.py:20: in <module>
-    from vllm import LLM, SamplingParams
-vllm/__init__.py:3: in <module>
-    from vllm.engine.arg_utils import AsyncEngineArgs, EngineArgs
-vllm/engine/arg_utils.py:7: in <module>
-    from vllm.config import (CacheConfig, DecodingConfig, DeviceConfig,
-vllm/config.py:11: in <module>
-    from vllm.model_executor.layers.quantization import QUANTIZATION_METHODS
-vllm/model_executor/__init__.py:1: in <module>
-    from vllm.model_executor.sampling_metadata import SamplingMetadata
-vllm/model_executor/sampling_metadata.py:7: in <module>
-    from vllm.model_executor.layers.ops.sample import get_num_triton_sampler_splits
-vllm/model_executor/layers/ops/sample.py:5: in <module>
-    import triton
-E   ModuleNotFoundError: No module named 'triton'
+ImportError while loading conftest '/workspace/tests/conftest.py'.
+tests/conftest.py:17: in <module>
+    from transformers import (AutoModelForCausalLM, AutoModelForVision2Seq,
+E   ImportError: cannot import name 'AutoModelForVision2Seq' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
