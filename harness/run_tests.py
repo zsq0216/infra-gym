@@ -552,6 +552,44 @@ def run_pytest_local(
     return results
 
 
+def _build_docker_setup_commands(category):
+    # type: (str) -> List[str]
+    """Return shell commands to install vLLM and its dependencies inside Docker.
+
+    These run before pytest so that ``import vllm`` (and transitive deps like
+    ``psutil``, ``huggingface_hub``, etc.) succeed even though the container
+    image only has Python + pytest.
+    """
+    # Install project requirements (psutil, transformers, etc.)
+    req_install = (
+        'for f in requirements-common.txt requirements.txt requirements-cpu.txt; '
+        'do [ -f "$f" ] && pip install -r "$f"; done || true'
+    )
+    # Install test-specific requirements
+    test_req_install = (
+        'for f in requirements-test.txt requirements-dev.txt; '
+        'do [ -f "$f" ] && pip install -r "$f"; done || true'
+    )
+    # Install vLLM itself in editable mode.
+    # For unit_cpu we set VLLM_TARGET_DEVICE=empty to skip CUDA extension builds.
+    # If the full install fails (old setup.py with hard CUDA deps), fall back to
+    # --no-deps so at least the package is importable.
+    if "cpu" in category:
+        vllm_install = (
+            'VLLM_TARGET_DEVICE=empty pip install --no-build-isolation -e "." '
+            '|| pip install --no-build-isolation --no-deps -e "." || true'
+        )
+    else:
+        vllm_install = (
+            'pip install --no-build-isolation -e "." '
+            '|| pip install --no-build-isolation --no-deps -e "." || true'
+        )
+    # PYTHONPATH fallback for old versions where editable install fails entirely
+    pythonpath = 'export PYTHONPATH=/workspace:${PYTHONPATH:-}'
+
+    return [req_install, test_req_install, vllm_install, pythonpath]
+
+
 def run_pytest_docker(
     repo_path,          # type: str
     test_targets,       # type: List[str]
@@ -559,12 +597,18 @@ def run_pytest_docker(
     log_path,           # type: str
     image_name,         # type: str
     timeout=300,        # type: int
+    setup_commands=None, # type: Optional[List[str]]
 ):
     # type: (...) -> Dict[str, List[str]]
     """Run pytest inside a Docker container and return parsed results.
 
     The repo directory is mounted into the container at /workspace.
     The container image is expected to have pytest installed.
+
+    If *setup_commands* is provided, the commands are prepended before pytest
+    (joined with ``; ``) and executed via ``bash -c``.  Network access is
+    enabled so that ``pip install`` can fetch packages, and the timeout
+    budget is increased to account for installation time.
     """
     if not test_targets:
         logger.warning("No test targets to run.")
@@ -583,22 +627,36 @@ def run_pytest_docker(
         "--timeout={}".format(timeout),
     ] + test_targets
 
+    has_setup = setup_commands and len(setup_commands) > 0
+    timeout_buffer = 600 if has_setup else 120
+
     docker_cmd = [
         "docker", "run",
         "--rm",
         "-v", "{}:{}".format(os.path.abspath(repo_path), container_workspace),
         "-w", container_workspace,
-        "--network=none",        # no network access during tests
         "--memory=16g",          # memory limit
-        image_name,
-    ] + pytest_args
+    ]
+
+    if not has_setup:
+        docker_cmd.append("--network=none")
+
+    docker_cmd.append(image_name)
+
+    if has_setup:
+        # Build a single shell command: setup1; setup2; ...; pytest ...
+        pytest_str = " ".join(shlex.quote(a) for a in pytest_args)
+        full_script = "; ".join(setup_commands) + "; " + pytest_str
+        docker_cmd += ["bash", "-c", full_script]
+    else:
+        docker_cmd += pytest_args
 
     logger.info("Running pytest in Docker (%s) with %d target(s) ...",
                 image_name, len(test_targets))
     try:
         result = run_cmd(
             docker_cmd,
-            timeout=timeout + 120,  # extra buffer for container start
+            timeout=timeout + timeout_buffer,
             capture=True,
         )
         stdout_text = result.stdout.decode("utf-8", errors="replace") if result.stdout else ""
@@ -608,10 +666,19 @@ def run_pytest_docker(
             fh.write("\n--- STDERR ---\n")
             fh.write(stderr_text)
     except subprocess.TimeoutExpired:
-        logger.warning("Docker pytest timed out after %ds", timeout + 120)
+        logger.warning("Docker pytest timed out after %ds", timeout + timeout_buffer)
         with open(log_path, "w") as fh:
-            fh.write("TIMEOUT after {}s\n".format(timeout + 120))
+            fh.write("TIMEOUT after {}s\n".format(timeout + timeout_buffer))
         return {"passed": [], "failed": [], "errors": ["TIMEOUT"], "skipped": []}
+
+    # pytest writes JUnit XML inside the mounted volume at
+    # /workspace/<basename>.xml which maps to {repo_path}/<basename>.xml on
+    # the host.  However the caller expects it at junit_xml_path (usually
+    # inside the output dir).  Copy it there if needed.
+    worktree_junit = os.path.join(repo_path, os.path.basename(junit_xml_path))
+    if os.path.isfile(worktree_junit) and os.path.abspath(worktree_junit) != os.path.abspath(junit_xml_path):
+        os.makedirs(os.path.dirname(junit_xml_path), exist_ok=True)
+        shutil.move(worktree_junit, junit_xml_path)
 
     # The JUnit XML should have been written inside the mounted volume
     results = parse_junit_xml(junit_xml_path)
@@ -736,10 +803,15 @@ def process_instance(
 
     image_name = get_docker_image_name(image_prefix, version) if use_docker else ""
 
+    setup_commands = None  # type: Optional[List[str]]
+    if use_docker:
+        category = instance.get("environment", {}).get("category", "")
+        setup_commands = _build_docker_setup_commands(category)
+
     if use_docker:
         phase1_results = run_pytest_docker(
             worktree_path, test_targets, phase1_junit, phase1_log,
-            image_name, timeout=timeout,
+            image_name, timeout=timeout, setup_commands=setup_commands,
         )
     else:
         phase1_results = run_pytest_local(
@@ -781,7 +853,7 @@ def process_instance(
     if use_docker:
         phase2_results = run_pytest_docker(
             worktree_path, test_targets, phase2_junit, phase2_log,
-            image_name, timeout=timeout,
+            image_name, timeout=timeout, setup_commands=setup_commands,
         )
     else:
         phase2_results = run_pytest_local(
