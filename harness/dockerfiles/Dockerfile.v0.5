@@ -41,7 +41,7 @@ RUN python -m pip install --no-cache-dir \
         torch==2.4.0 \
         torchvision==0.19.0 \
         torchaudio==2.4.0 \
-        --index-url https://download.pytorch.org/whl/cu124
+        --extra-index-url https://download.pytorch.org/whl/cu124
 
 # ---- FlashAttention v2 ------------------------------------------------------
 RUN python -m pip install --no-cache-dir \
