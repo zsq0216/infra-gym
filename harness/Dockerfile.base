@@ -52,13 +52,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # ---- Python installation ----------------------------------------------------
 # Use deadsnakes PPA for flexible Python version selection
+# Note: python3.12+ removed distutils from stdlib; the package does not exist
+# in deadsnakes for those versions, so we conditionally install it.
 RUN add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
         python${PYTHON_VERSION} \
         python${PYTHON_VERSION}-dev \
         python${PYTHON_VERSION}-venv \
-        python${PYTHON_VERSION}-distutils \
+    && if dpkg --compare-versions "${PYTHON_VERSION}" lt "3.12"; then \
+        apt-get install -y --no-install-recommends python${PYTHON_VERSION}-distutils; \
+    fi \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the requested Python as the default
