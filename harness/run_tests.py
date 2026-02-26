@@ -1031,9 +1031,9 @@ Examples:
     )
     parser.add_argument(
         "--image-prefix",
-        default="infra-gym-vllm",
+        default="infra-gym",
         help='Docker image prefix. Image name = {prefix}:{version}. '
-             '(default: "infra-gym-vllm")',
+             '(default: "infra-gym")',
     )
     parser.add_argument(
         "--keep-worktrees",
