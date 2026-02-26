@@ -69,8 +69,9 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 1 && \
     update-alternatives --install /usr/bin/python  python  /usr/bin/python${PYTHON_VERSION} 1
 
-# Install pip
-RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION}
+# Install pip (use Chinese mirror for faster download in CN)
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION} - \
+        -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 
 # ---- Configure pip to use Chinese mirror for faster downloads in CN --------
 RUN python -m pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
