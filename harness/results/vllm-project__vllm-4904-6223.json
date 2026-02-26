@@ -16,16 +16,14 @@
   },
   "FAIL_TO_PASS": [],
   "PASS_TO_PASS": [],
-  "status": "success",
-  "error_message": "",
+  "status": "error",
+  "error_message": "Failed to setup worktree: Command '['git', 'worktree', 'add', '--detach', '/tmp/infra-gym-workdir/vllm-project__vllm-4904-6223/repo', '4f0e0ea131ef40654faa26fa21196031754df53a']' returned non-zero exit status 128.",
   "timestamps": {
-    "start": 1772099429.1120281,
-    "phase1_start": 1772099431.0925736,
-    "phase1_end": 1772099438.4206188,
-    "phase2_start": 1772099438.4234984,
-    "phase2_end": 1772099443.286827,
-    "end": 1772099443.286893
-  },
-  "regressions": [],
-  "both_failed": []
+    "start": 1772109509.7653735,
+    "phase1_start": 0.0,
+    "phase1_end": 0.0,
+    "phase2_start": 0.0,
+    "phase2_end": 0.0,
+    "end": 1772109511.6153696
+  }
 }
