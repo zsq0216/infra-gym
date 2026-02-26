@@ -1,0 +1,1797 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Ignoring fastapi: markers 'python_version < "3.9"' don't match your environment
+Collecting psutil (from -r requirements-common.txt (line 1))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Collecting sentencepiece (from -r requirements-common.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/04/88/14f2f4a2b922d8b39be45bf63d79e6cd3a9b2f248b2fcb98a69b12af12f5/sentencepiece-0.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 15.1 MB/s  0:00:00
+Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 3)) (1.26.4)
+Requirement already satisfied: requests>=2.26.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 4)) (2.32.5)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 5)) (4.67.3)
+Collecting py-cpuinfo (from -r requirements-common.txt (line 6))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Collecting transformers>=4.45.2 (from -r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/93/79754b0ca486e556c2b95d4f5afc66aaf4b260694f3d6e1b51da2d036691/transformers-5.2.0-py3-none-any.whl (10.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 18.5 MB/s  0:00:00
+Collecting tokenizers>=0.19.1 (from -r requirements-common.txt (line 8))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2e/76/932be4b50ef6ccedf9d3c6639b056a967a86258c6d9200643f01269211ca/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 17.0 MB/s  0:00:00
+Collecting protobuf (from -r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9b/53/a9443aa3ca9ba8724fdfa02dd1887c1bcd8e89556b715cfbacca6b63dbec/protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Collecting fastapi!=0.113.*,!=0.114.0,>=0.107.0 (from -r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d2/c9/a175a7779f3599dfa4adfc97a6ce0e157237b3d7941538604aadaf97bfb6/fastapi-0.133.1-py3-none-any.whl (109 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 12)) (3.13.3)
+Collecting openai>=1.45.0 (from -r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 14.8 MB/s  0:00:00
+Collecting pydantic>=2.9 (from -r requirements-common.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl (463 kB)
+Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 16)) (12.1.1)
+Collecting prometheus_client>=0.18.0 (from -r requirements-common.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/74/c3/24a2f845e3917201628ecaba4f18bab4d18a337834c1df2a159ee9d22a42/prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+Collecting prometheus-fastapi-instrumentator>=7.0.0 (from -r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/72/0824c18f3bc75810f55dacc2dd933f6ec829771180245ae3cc976195dec0/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (19 kB)
+Collecting tiktoken>=0.6.0 (from -r requirements-common.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f4/90/3dae6cc5436137ebd38944d396b5849e167896fc2073da643a49f372dc4f/tiktoken-0.12.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 14.8 MB/s  0:00:00
+Collecting lm-format-enforcer<0.11,>=0.10.9 (from -r requirements-common.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/57/1c/7bb80fe2dff9a9c38b180571ca867f518eb9110f79d4b670ea124e153680/lm_format_enforcer-0.10.12-py3-none-any.whl (44 kB)
+Collecting outlines<0.1,>=0.0.43 (from -r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fd/2c/1ce85b81b2f6835720db1fda9f2d4439a69458b119d2ad5fcf7cae573923/outlines-0.0.46-py3-none-any.whl (101 kB)
+Requirement already satisfied: typing_extensions>=4.10 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 22)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 23)) (3.24.3)
+Collecting partial-json-parser (from -r requirements-common.txt (line 24))
+  Downloading https://mirrors.aliyun.com/pypi/packages/42/32/658973117bf0fd82a24abbfb94fe73a5e86216e49342985e10acce54775a/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
+Collecting pyzmq (from -r requirements-common.txt (line 25))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f8/9b/c108cdb55560eaf253f0cbdb61b29971e9fb34d9c3499b0e96e4e60ed8a5/pyzmq-27.1.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (840 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 841.0/841.0 kB 13.2 MB/s  0:00:00
+Collecting msgspec (from -r requirements-common.txt (line 26))
+  Downloading https://mirrors.aliyun.com/pypi/packages/5c/a2/488517a43ccf5a4b6b6eca6dd4ede0bd82b043d1539dd6bb908a19f8efd3/msgspec-0.20.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
+Collecting gguf==0.10.0 (from -r requirements-common.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1b/e4/c5f9bd71840ae9afb7e2b7c285ba209f2ef5e9cd83885f8c596c551d3026/gguf-0.10.0-py3-none-any.whl (71 kB)
+Requirement already satisfied: importlib_metadata in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 28)) (4.6.4)
+Collecting mistral_common>=1.5.0 (from mistral_common[opencv]>=1.5.0->-r requirements-common.txt (line 29))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ac/72/a38bb1fd9fd4d4ef990341c9dd1a7c8061f1951e10efa6d50c0a3f04eced/mistral_common-1.9.1-py3-none-any.whl (6.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 18.1 MB/s  0:00:00
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 30)) (6.0.3)
+Requirement already satisfied: six>=1.16.0 in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 31)) (1.16.0)
+Requirement already satisfied: setuptools>=74.1.1 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 32)) (82.0.0)
+Collecting einops (from -r requirements-common.txt (line 33))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+Collecting compressed-tensors==0.8.0 (from -r requirements-common.txt (line 34))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0a/96/4d04fd0cbd23710551c50ce996d9f087b5d68dad85b3a1a80ac5cdc32770/compressed_tensors-0.8.0-py3-none-any.whl (86 kB)
+Collecting uvicorn[standard] (from -r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/83/e4/d04a086285c20886c0daad0e026f250869201013d18f81d9ff5eada73a88/uvicorn-0.41.0-py3-none-any.whl (68 kB)
+Requirement already satisfied: torch>=1.7.0 in /usr/local/lib/python3.12/dist-packages (from compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (2.10.0)
+Collecting interegular>=0.3.2 (from lm-format-enforcer<0.11,>=0.10.9->-r requirements-common.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c4/01/72d6472f80651673716d1deda2a5bbb633e563ecf94f4479da5519d69d25/interegular-0.3.3-py37-none-any.whl (23 kB)
+Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from lm-format-enforcer<0.11,>=0.10.9->-r requirements-common.txt (line 20)) (26.0)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21)) (3.1.6)
+Collecting lark (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/82/3d/14ce75ef66813643812f3093ab17e46d3a206942ce7376d31ec2d36229e7/lark-1.3.1-py3-none-any.whl (113 kB)
+Collecting nest-asyncio (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Collecting cloudpickle (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting diskcache (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
+Collecting numba (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9b/89/1a74ea99b180b7a5587b0301ed1b183a2937c4b4b67f7994689b5d36fc34/numba-0.64.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 17.3 MB/s  0:00:00
+Collecting referencing (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting jsonschema (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Collecting datasets (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/6f/0e/9caa51e659d7417374788800bdedc9dcb8db918dc3ad4759a0294bbc55ac/datasets-4.6.0-py3-none-any.whl (520 kB)
+Collecting pycountry (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9c/42/7703bd45b62fecd44cd7d3495423097e2f7d28bc2e99e7c1af68892ab157/pycountry-26.2.16-py3-none-any.whl (8.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 18.0 MB/s  0:00:00
+Collecting pyairports (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2f/5e/2b9f07c89538e74e4c27bb303c6bdb6c0da73d0edf6f724ca51453d330b3/pyairports-0.0.1.tar.gz (3.1 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (2026.2.25)
+Collecting huggingface-hub<2.0,>=1.3.0 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d5/ae/2f6d96b4e6c5478d87d606a1934b5d436c4a2bce6bb7c6fdece891c128e3/huggingface_hub-1.4.1-py3-none-any.whl (553 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 553.3/553.3 kB 11.0 MB/s  0:00:00
+Collecting regex!=2019.12.17 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/59/3c/ea5a4687adaba5e125b9bd6190153d0037325a0ba3757cc1537cc2c8dd90/regex-2026.2.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (803 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.7/803.7 kB 13.8 MB/s  0:00:00
+Collecting typer-slim (from transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
+Collecting safetensors>=0.4.3 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a0/60/429e9b1cb3fc651937727befe258ea24122d9663e4d5709a48c9cbfceecb/safetensors-0.7.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (507 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (2026.2.0)
+Collecting hf-xet<2.0.0,>=1.2.0 (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/61/cd/acbbf9e51f17d8cef2630e61741228e12d4050716619353efc1ac119f902/hf_xet-1.3.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 17.2 MB/s  0:00:00
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (0.28.1)
+Collecting shellingham (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Requirement already satisfied: anyio in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (4.12.1)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (0.16.0)
+Collecting starlette>=0.40.0 (from fastapi!=0.113.*,!=0.114.0,>=0.107.0->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl (74 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi!=0.113.*,!=0.114.0,>=0.107.0->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi!=0.113.*,!=0.114.0,>=0.107.0->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.22.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/lib/python3/dist-packages (from openai>=1.45.0->-r requirements-common.txt (line 13)) (1.7.0)
+Collecting jiter<1,>=0.10.0 (from openai>=1.45.0->-r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f8/4c/09b93e30e984a187bc8aaa3510e1ec8dcbdcd71ca05d2f56aac0492453aa/jiter-0.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (360 kB)
+Collecting sniffio (from openai>=1.45.0->-r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.9->-r requirements-common.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.41.5 (from pydantic>=2.9->-r requirements-common.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0d/76/941cc9f73529988688a665a5c0ecff1112b3d95ab48f81db5f7606f522d3/pydantic_core-2.41.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 15.3 MB/s  0:00:00
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl (108 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/84/a6/b3965e1e146ef5762870bbe76117876ceba51a201e18cc31f5703e454596/httptools-0.7.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (517 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/5f/6f/e62b4dfc7ad6518e7eff2516f680d02a0f6eb62c0c212e152ca708a0085e/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 17.6 MB/s  0:00:00
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/cf/68/5707da262a119fb06fbe214d82dd1fe4a6f4af32d2d14de368d0349eb52a/watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/18/29/71729b4671f21e1eaa5d6573031ab810ad2936c8175f03f97f3ff164c802/websockets-16.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (184 kB)
+Collecting pydantic-extra-types>=2.10.5 (from pydantic-extra-types[pycountry]>=2.10.5->mistral_common>=1.5.0->mistral_common[opencv]>=1.5.0->-r requirements-common.txt (line 29))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fe/17/fabd56da47096d240dd45ba627bead0333b0cf0ee8ada9bec579287dadf3/pydantic_extra_types-2.11.0-py3-none-any.whl (74 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/60/1b/6f8f29f3f995c7ffdde46a626ddccd7c63aefc0efae881dc13b6e5d5bb16/rpds_py-0.30.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (394 kB)
+Collecting opencv-python-headless>=4.0.0 (from mistral_common[opencv]>=1.5.0->-r requirements-common.txt (line 29))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4b/33/b5db29a6c00eb8f50708110d8d453747ca125c8b805bc437b289dbdcc057/opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (60.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 18.8 MB/s  0:00:03
+INFO: pip is looking at multiple versions of opencv-python-headless to determine which version is compatible with other requirements. This could take a while.
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/a1/facfe2801a861b424c4221d66e1281cf19735c00e07f063a337a208c11b5/opencv_python_headless-4.13.0.90-cp37-abi3-manylinux_2_28_x86_64.whl (62.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 MB 19.1 MB/s  0:00:03
+  Downloading https://mirrors.aliyun.com/pypi/packages/89/53/e19c21e0c4eb1275c3e2c97b081103b6dfb3938172264d283a519bf728b9/opencv_python_headless-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (54.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 19.1 MB/s  0:00:02
+  Downloading https://mirrors.aliyun.com/pypi/packages/dd/5c/c139a7876099916879609372bfa513b7f1257f7f1a908b0bdc1c2328241b/opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 17.9 MB/s  0:00:02
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (3.6.1)
+Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.9.4)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (2.27.5)
+Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (3.4.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.13.1.3)
+Requirement already satisfied: triton==3.6.0 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (3.6.0)
+Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12/dist-packages (from cuda-bindings==12.9.4->torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.4.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.3.0)
+Collecting pyarrow>=21.0.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/a5/da83046273d990f256cb79796a190bbf7ec999269705ddc609403f8c6b06/pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (47.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 19.1 MB/s  0:00:02
+Collecting dill<0.4.1,>=0.3.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl (119 kB)
+Collecting pandas (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3d/fe/89d77e424365280b79d99b3e1e7d606f5165af2f2ecfaf0c6d24c799d607/pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 18.0 MB/s  0:00:00
+Collecting xxhash (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/11/4f/426f91b96701ec2f37bb2b8cec664eff4f658a11f3fa9d94f0a887ea6d2b/xxhash-3.6.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (193 kB)
+Collecting multiprocess<0.70.19 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/bf/b6/5f922792be93b82ec6b5f270bbb1ef031fd0622847070bbcf9da816502cc/multiprocess-0.70.18-py312-none-any.whl (150 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21)) (3.0.3)
+Collecting llvmlite<0.47,>=0.46.0dev0 (from numba->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/aa/85/4890a7c14b4fa54400945cb52ac3cd88545bbdb973c440f98ca41591cdc5/llvmlite-0.46.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 19.1 MB/s  0:00:02
+Collecting python-dateutil>=2.8.2 (from pandas->datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting typer>=0.24.0 (from typer-slim->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl (56 kB)
+Collecting rich>=12.3.0 (from typer>=0.24.0->typer-slim->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/25/b208c5683343959b670dc001595f2f3737e051da617f66c31f7c4fa93abc/rich-14.3.3-py3-none-any.whl (310 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=12.3.0->typer>=0.24.0->typer-slim->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich>=12.3.0->typer>=0.24.0->typer-slim->transformers>=4.45.2->-r requirements-common.txt (line 7)) (2.19.2)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.3.0->typer>=0.24.0->typer-slim->transformers>=4.45.2->-r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Building wheels for collected packages: pyairports
+  Building wheel for pyairports (pyproject.toml): started
+  Building wheel for pyairports (pyproject.toml): finished with status 'done'
+  Created wheel for pyairports: filename=pyairports-0.0.1-py3-none-any.whl size=3523 sha256=090396d373dbe1af49de54141b034953f4f1d430e0a979421092f0ef16aee767
+  Stored in directory: /root/.cache/pip/wheels/b0/e2/6c/f71786346898ccc5493bd355e84f32780626dda18eb189d892
+Successfully built pyairports
+Installing collected packages: pyairports, py-cpuinfo, xxhash, websockets, uvloop, typing-inspection, sniffio, shellingham, sentencepiece, safetensors, rpds-py, regex, pyzmq, python-dotenv, python-dateutil, pydantic-core, pycountry, pyarrow, psutil, protobuf, prometheus_client, partial-json-parser, opencv-python-headless, nest-asyncio, msgspec, mdurl, llvmlite, lark, jiter, interegular, httptools, hf-xet, gguf, einops, diskcache, dill, cloudpickle, click, annotated-types, annotated-doc, watchfiles, uvicorn, tiktoken, starlette, referencing, pydantic, pandas, numba, multiprocess, markdown-it-py, rich, pydantic-extra-types, prometheus-fastapi-instrumentator, openai, lm-format-enforcer, jsonschema-specifications, fastapi, typer, jsonschema, typer-slim, mistral_common, huggingface-hub, tokenizers, datasets, transformers, outlines, compressed-tensors
+
+Successfully installed annotated-doc-0.0.4 annotated-types-0.7.0 click-8.3.1 cloudpickle-3.1.2 compressed-tensors-0.8.0 datasets-4.6.0 dill-0.4.0 diskcache-5.6.3 einops-0.8.2 fastapi-0.133.1 gguf-0.10.0 hf-xet-1.3.1 httptools-0.7.1 huggingface-hub-1.4.1 interegular-0.3.3 jiter-0.13.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lark-1.3.1 llvmlite-0.46.0 lm-format-enforcer-0.10.12 markdown-it-py-4.0.0 mdurl-0.1.2 mistral_common-1.9.1 msgspec-0.20.0 multiprocess-0.70.18 nest-asyncio-1.6.0 numba-0.64.0 openai-2.24.0 opencv-python-headless-4.11.0.86 outlines-0.0.46 pandas-3.0.1 partial-json-parser-0.2.1.1.post7 prometheus-fastapi-instrumentator-7.1.0 prometheus_client-0.24.1 protobuf-6.33.5 psutil-7.2.2 py-cpuinfo-9.0.0 pyairports-0.0.1 pyarrow-23.0.1 pycountry-26.2.16 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-extra-types-2.11.0 python-dateutil-2.9.0.post0 python-dotenv-1.2.1 pyzmq-27.1.0 referencing-0.37.0 regex-2026.2.19 rich-14.3.3 rpds-py-0.30.0 safetensors-0.7.0 sentencepiece-0.2.1 shellingham-1.5.4 sniffio-1.3.1 starlette-0.52.1 tiktoken-0.12.0 tokenizers-0.22.2 transformers-5.2.0 typer-0.24.1 typer-slim-0.24.0 typing-inspection-0.4.2 uvicorn-0.41.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0 xxhash-3.6.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Ignoring fastapi: markers 'python_version < "3.9"' don't match your environment
+Requirement already satisfied: psutil in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 1)) (7.2.2)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 2)) (0.2.1)
+Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 3)) (1.26.4)
+Requirement already satisfied: requests>=2.26.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 4)) (2.32.5)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 5)) (4.67.3)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 6)) (9.0.0)
+Requirement already satisfied: transformers>=4.45.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 7)) (5.2.0)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 8)) (0.22.2)
+Requirement already satisfied: protobuf in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 9)) (6.33.5)
+Requirement already satisfied: fastapi!=0.113.*,!=0.114.0,>=0.107.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 11)) (0.133.1)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 12)) (3.13.3)
+Requirement already satisfied: openai>=1.45.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 13)) (2.24.0)
+Requirement already satisfied: pydantic>=2.9 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 15)) (2.12.5)
+Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 16)) (12.1.1)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 17)) (0.24.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 18)) (7.1.0)
+Requirement already satisfied: tiktoken>=0.6.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 19)) (0.12.0)
+Requirement already satisfied: lm-format-enforcer<0.11,>=0.10.9 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 20)) (0.10.12)
+Requirement already satisfied: outlines<0.1,>=0.0.43 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 21)) (0.0.46)
+Requirement already satisfied: typing_extensions>=4.10 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 22)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 23)) (3.24.3)
+Requirement already satisfied: partial-json-parser in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 24)) (0.2.1.1.post7)
+Requirement already satisfied: pyzmq in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 25)) (27.1.0)
+Requirement already satisfied: msgspec in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 26)) (0.20.0)
+Requirement already satisfied: gguf==0.10.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 27)) (0.10.0)
+Requirement already satisfied: importlib_metadata in /usr/lib/python3/dist-packages (from -r /workspace/requirements-common.txt (line 28)) (4.6.4)
+Requirement already satisfied: mistral_common>=1.5.0 in /usr/local/lib/python3.12/dist-packages (from mistral_common[opencv]>=1.5.0->-r /workspace/requirements-common.txt (line 29)) (1.9.1)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 30)) (6.0.3)
+Requirement already satisfied: six>=1.16.0 in /usr/lib/python3/dist-packages (from -r /workspace/requirements-common.txt (line 31)) (1.16.0)
+Requirement already satisfied: setuptools>=74.1.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 32)) (82.0.0)
+Requirement already satisfied: einops in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 33)) (0.8.2)
+Requirement already satisfied: compressed-tensors==0.8.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-common.txt (line 34)) (0.8.0)
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting absl-py==2.1.0 (from -r requirements-test.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a2/ad/e0d3c824784ff121c03cc031f944bc7e139a8f1870ffd2845cc2dd76f6c4/absl_py-2.1.0-py3-none-any.whl (133 kB)
+Collecting accelerate==1.0.1 (from -r requirements-test.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/92/48aec3736ca778ffe5fa68e19e3c18917cba4de43fa46fe6176cccafe267/accelerate-1.0.1-py3-none-any.whl (330 kB)
+Collecting aiohappyeyeballs==2.4.3 (from -r requirements-test.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f7/d8/120cd0fe3e8530df0539e71ba9683eade12cae103dd7543e50d15f737917/aiohappyeyeballs-2.4.3-py3-none-any.whl (14 kB)
+Collecting aiohttp==3.10.10 (from -r requirements-test.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/bf/fe/1332409d845ca601893bbf2d76935e0b93d41686e5f333841c7d7a4a770d/aiohttp-3.10.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 14.9 MB/s  0:00:00
+Collecting aiosignal==1.3.1 (from -r requirements-test.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/76/ac/a7305707cb852b7e16ff80eaf5692309bde30e2b1100a1fcacdc8f731d97/aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+Requirement already satisfied: annotated-types==0.7.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 24)) (0.7.0)
+Collecting anyio==4.6.2.post1 (from -r requirements-test.txt (line 26))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e4/f5/f2b75d2fc6f1a260f340f0e7c6a060f4dd2961cc16884ed851b0d18da06a/anyio-4.6.2.post1-py3-none-any.whl (90 kB)
+Collecting argcomplete==3.5.1 (from -r requirements-test.txt (line 28))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f7/be/a606a6701d491cfae75583c80a6583f8abe9c36c0b9666e867e7cdd62fe8/argcomplete-3.5.1-py3-none-any.whl (43 kB)
+Collecting async-timeout==4.0.3 (from -r requirements-test.txt (line 30))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a7/fa/e01228c2938de91d47b307831c62ab9e4001e747789d0b05baf779a6488c/async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Collecting attrs==24.2.0 (from -r requirements-test.txt (line 34))
+  Downloading https://mirrors.aliyun.com/pypi/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl (63 kB)
+Collecting audioread==3.0.1 (from -r requirements-test.txt (line 40))
+  Downloading https://mirrors.aliyun.com/pypi/packages/57/8d/30aa32745af16af0a9a650115fbe81bde7c610ed5c21b381fca0196f3a7f/audioread-3.0.1-py3-none-any.whl (23 kB)
+Collecting awscli==1.35.23 (from -r requirements-test.txt (line 42))
+  Downloading https://mirrors.aliyun.com/pypi/packages/60/8a/9d207f29de89a6869810f4a374d14bead5c9a83e52be050db3c410f4e65d/awscli-1.35.23-py3-none-any.whl (4.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 17.0 MB/s  0:00:00
+Collecting bitsandbytes==0.44.1 (from -r requirements-test.txt (line 44))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e4/e6/ccb84da7ffaf208a71c2c3c8e1120b34759df640db959660be9a98505eb4/bitsandbytes-0.44.1-py3-none-manylinux_2_24_x86_64.whl (122.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.4/122.4 MB 18.3 MB/s  0:00:06
+Collecting black==24.10.0 (from -r requirements-test.txt (line 46))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/3e/443ef8bc1fbda78e61f79157f303893f3fddf19ca3c8989b163eb3469a12/black-24.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.4 MB/s  0:00:00
+Collecting boto3==1.35.57 (from -r requirements-test.txt (line 48))
+  Downloading https://mirrors.aliyun.com/pypi/packages/5a/b4/2aa8168bb1d80c238538ff523d8902a48b0946aafd3cbd6c72754209ae8a/boto3-1.35.57-py3-none-any.whl (139 kB)
+Collecting botocore==1.35.57 (from -r requirements-test.txt (line 50))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f6/29/6c3a0f688e7c19e2a3734ab0f50cbf85138c1d7a432db8ef4f51f7bae892/botocore-1.35.57-py3-none-any.whl (12.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 18.5 MB/s  0:00:00
+Collecting buildkite-test-collector==0.1.9 (from -r requirements-test.txt (line 55))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/96/ae66ed2ead9ae920292ee755366ff610985b4223af0a99a18418fb04224d/buildkite_test_collector-0.1.9-py3-none-any.whl (12 kB)
+Collecting certifi==2024.8.30 (from -r requirements-test.txt (line 57))
+  Downloading https://mirrors.aliyun.com/pypi/packages/12/90/3c9ff0512038035f59d279fddeb79f5f1eccd8859f06d6163c58798b9487/certifi-2024.8.30-py3-none-any.whl (167 kB)
+Collecting cffi==1.17.1 (from -r requirements-test.txt (line 62))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b2/d5/da47df7004cb17e4955df6a43d14b3b4ae77737dff8bf7f8f333196717bf/cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+Collecting chardet==5.2.0 (from -r requirements-test.txt (line 64))
+  Downloading https://mirrors.aliyun.com/pypi/packages/38/6f/f5fbc992a329ee4e0f288c1fe0e2ad9485ed064cac731ed2fe47dcc38cbf/chardet-5.2.0-py3-none-any.whl (199 kB)
+Collecting charset-normalizer==3.4.0 (from -r requirements-test.txt (line 66))
+  Downloading https://mirrors.aliyun.com/pypi/packages/16/92/92a76dc2ff3a12e69ba94e7e05168d37d0345fa08c87e1fe24d0c2a42223/charset_normalizer-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (143 kB)
+Collecting click==8.1.7 (from -r requirements-test.txt (line 68))
+  Downloading https://mirrors.aliyun.com/pypi/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl (97 kB)
+Collecting colorama==0.4.6 (from -r requirements-test.txt (line 73))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting contourpy==1.3.0 (from -r requirements-test.txt (line 78))
+  Downloading https://mirrors.aliyun.com/pypi/packages/6e/be/524e377567defac0e21a46e2a529652d165fed130a0d8a863219303cee18/contourpy-1.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (320 kB)
+Collecting cupy-cuda12x==13.3.0 (from -r requirements-test.txt (line 80))
+  Downloading https://mirrors.aliyun.com/pypi/packages/90/dc/da09e5184d94146b8cbf240c2bef1c4851cbafd7e2d60cc71b1530c766ec/cupy_cuda12x-13.3.0-cp312-cp312-manylinux2014_x86_64.whl (91.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.0/91.0 MB 16.6 MB/s  0:00:05
+Collecting cycler==0.12.1 (from -r requirements-test.txt (line 82))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting datamodel-code-generator==0.26.3 (from -r requirements-test.txt (line 84))
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/86/22a5ca396e8a79c5001f91073a028a2e00cc803de023a664c4a0dd9b9e1f/datamodel_code_generator-0.26.3-py3-none-any.whl (113 kB)
+Collecting dataproperty==1.0.1 (from -r requirements-test.txt (line 86))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b1/3b/90ebd66ad57c588d6087e86e327436343e9cc60776a9445b79c6e80a022d/DataProperty-1.0.1-py3-none-any.whl (27 kB)
+Collecting datasets==3.0.2 (from -r requirements-test.txt (line 90))
+  Downloading https://mirrors.aliyun.com/pypi/packages/20/bd/db3d92897ba528d62facd936a5dc1cf867e174323036a632724ab0bc1946/datasets-3.0.2-py3-none-any.whl (472 kB)
+Collecting decorator==5.1.1 (from -r requirements-test.txt (line 94))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d5/50/83c593b07763e1161326b3b8c6686f0f4b0f24d5526546bee538c89837d6/decorator-5.1.1-py3-none-any.whl (9.1 kB)
+Collecting decord==0.6.0 (from -r requirements-test.txt (line 96))
+  Downloading https://mirrors.aliyun.com/pypi/packages/11/79/936af42edf90a7bd4e41a6cac89c913d4b47fa48a26b042d5129a9242ee3/decord-0.6.0-py3-none-manylinux2010_x86_64.whl (13.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 18.8 MB/s  0:00:00
+Collecting dill==0.3.8 (from -r requirements-test.txt (line 98))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c9/7a/cef76fd8438a42f96db64ddaa85280485a9c395e7df3db8158cfec1eee34/dill-0.3.8-py3-none-any.whl (116 kB)
+Collecting dnspython==2.7.0 (from -r requirements-test.txt (line 104))
+  Downloading https://mirrors.aliyun.com/pypi/packages/68/1b/e0a87d256e40e8c888847551b20a017a6b98139178505dc7ffb96f04e954/dnspython-2.7.0-py3-none-any.whl (313 kB)
+Collecting docutils==0.16 (from -r requirements-test.txt (line 106))
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/44/8a15e45ffa96e6cf82956dd8d7af9e666357e16b0d93b253903475ee947f/docutils-0.16-py2.py3-none-any.whl (548 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 548.2/548.2 kB 11.7 MB/s  0:00:00
+Collecting einops==0.8.0 (from -r requirements-test.txt (line 108))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/5a/f0b9ad6c0a9017e62d4735daaeb11ba3b6c009d69a26141b258cd37b5588/einops-0.8.0-py3-none-any.whl (43 kB)
+Collecting email-validator==2.2.0 (from -r requirements-test.txt (line 110))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d7/ee/bf0adb559ad3c786f12bcbc9296b3f5675f529199bef03e2df281fa1fadb/email_validator-2.2.0-py3-none-any.whl (33 kB)
+Collecting evaluate==0.4.3 (from -r requirements-test.txt (line 112))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a2/e7/cbca9e2d2590eb9b5aa8f7ebabe1beb1498f9462d2ecede5c9fd9735faaf/evaluate-0.4.3-py3-none-any.whl (84 kB)
+Collecting exceptiongroup==1.2.2 (from -r requirements-test.txt (line 114))
+  Downloading https://mirrors.aliyun.com/pypi/packages/02/cc/b7e31358aac6ed1ef2bb790a9746ac2c69bcb3c8588b41616914eb106eaf/exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+Collecting fastrlock==0.8.2 (from -r requirements-test.txt (line 118))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3e/ca/16355012a2a5a029a524fd1eb8496eb43190f0e35f623a793ef73e16eb40/fastrlock-0.8.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_28_x86_64.whl (52 kB)
+Collecting filelock==3.16.1 (from -r requirements-test.txt (line 120))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b9/f8/feced7779d755758a52d1f6635d990b8d98dc0a29fa568bbe0625f18fdf3/filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting fonttools==4.54.1 (from -r requirements-test.txt (line 128))
+  Downloading https://mirrors.aliyun.com/pypi/packages/08/07/aa85cc62abcc940b25d14b542cf585eebf4830032a7f6a1395d696bb3231/fonttools-4.54.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 17.6 MB/s  0:00:00
+Collecting frozenlist==1.5.0 (from -r requirements-test.txt (line 130))
+  Downloading https://mirrors.aliyun.com/pypi/packages/af/f2/64b73a9bb86f5a89fb55450e97cd5c1f84a862d4ff90d9fd1a73ab0f64a5/frozenlist-1.5.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (283 kB)
+Collecting fsspec==2024.9.0 (from fsspec[http]==2024.9.0->-r requirements-test.txt (line 135))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1d/a0/6aaea0c2fbea2f89bfd5db25fb1e3481896a423002ebe4e55288907a97a3/fsspec-2024.9.0-py3-none-any.whl (179 kB)
+Collecting genson==1.3.0 (from -r requirements-test.txt (line 141))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f8/5c/e226de133afd8bb267ec27eead9ae3d784b95b39a287ed404caab39a5f50/genson-1.3.0-py3-none-any.whl (21 kB)
+Collecting h11==0.14.0 (from -r requirements-test.txt (line 143))
+  Downloading https://mirrors.aliyun.com/pypi/packages/95/04/ff642e65ad6b90db43e668d70ffb6736436c7ce41fcc549f4e9472234127/h11-0.14.0-py3-none-any.whl (58 kB)
+Collecting hiredis==3.0.0 (from -r requirements-test.txt (line 145))
+  Downloading https://mirrors.aliyun.com/pypi/packages/60/86/aa24c20f6d3038bf244bc60a2fe8cde61fb3c0d6a82e2bed30b08d55f96c/hiredis-3.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (169 kB)
+Collecting httpcore==1.0.6 (from -r requirements-test.txt (line 147))
+  Downloading https://mirrors.aliyun.com/pypi/packages/06/89/b161908e2f51be56568184aeb4a880fd287178d176fd1c860d2217f41106/httpcore-1.0.6-py3-none-any.whl (78 kB)
+Collecting httpx==0.27.2 (from -r requirements-test.txt (line 149))
+  Downloading https://mirrors.aliyun.com/pypi/packages/56/95/9377bcb415797e44274b51d46e3249eba641711cf3348050f76ee7b15ffc/httpx-0.27.2-py3-none-any.whl (76 kB)
+Collecting huggingface-hub==0.26.2 (from -r requirements-test.txt (line 151))
+  Downloading https://mirrors.aliyun.com/pypi/packages/60/bf/cea0b9720c32fa01b0c4ec4b16b9f4ae34ca106b202ebbae9f03ab98cd8f/huggingface_hub-0.26.2-py3-none-any.whl (447 kB)
+Collecting idna==3.10 (from -r requirements-test.txt (line 161))
+  Downloading https://mirrors.aliyun.com/pypi/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl (70 kB)
+Collecting importlib-resources==6.4.5 (from -r requirements-test.txt (line 168))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e1/6a/4604f9ae2fa62ef47b9de2fa5ad599589d28c9fd1d335f32759813dfa91e/importlib_resources-6.4.5-py3-none-any.whl (36 kB)
+Collecting inflect==5.6.2 (from -r requirements-test.txt (line 170))
+  Downloading https://mirrors.aliyun.com/pypi/packages/df/d8/3e1a32d305215166f5c32652c473aa766bd7809cd10b34c544dbc31facb5/inflect-5.6.2-py3-none-any.whl (33 kB)
+Collecting iniconfig==2.0.0 (from -r requirements-test.txt (line 172))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ef/a6/62565a6e1cf69e10f5727360368e451d4b7f58beeac6173dc9db836a5b46/iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Collecting isort==5.13.2 (from -r requirements-test.txt (line 174))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl (92 kB)
+Collecting jinja2==3.1.4 (from -r requirements-test.txt (line 176))
+  Downloading https://mirrors.aliyun.com/pypi/packages/31/80/3a54838c3fb461f6fec263ebf3a3a41771bd05190238de3486aae8540c36/jinja2-3.1.4-py3-none-any.whl (133 kB)
+Collecting jmespath==1.0.1 (from -r requirements-test.txt (line 180))
+  Downloading https://mirrors.aliyun.com/pypi/packages/31/b4/b9b800c45527aadd64d5b442f9b932b00648617eb5d63d2c7a6587b7cafc/jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting joblib==1.4.2 (from -r requirements-test.txt (line 184))
+  Downloading https://mirrors.aliyun.com/pypi/packages/91/29/df4b9b42f2be0b623cbd5e2140cafcaa2bef0759a00b7b70104dcfe2fb51/joblib-1.4.2-py3-none-any.whl (301 kB)
+Collecting jsonlines==4.0.0 (from -r requirements-test.txt (line 189))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f8/62/d9ba6323b9202dd2fe166beab8a86d29465c41a0288cbe229fac60c1ab8d/jsonlines-4.0.0-py3-none-any.whl (8.7 kB)
+Collecting jsonschema==4.23.0 (from -r requirements-test.txt (line 191))
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/4a/4f9dbeb84e8850557c02365a0eee0649abe5eb1d84af92a25731c6c0f922/jsonschema-4.23.0-py3-none-any.whl (88 kB)
+Collecting jsonschema-specifications==2024.10.1 (from -r requirements-test.txt (line 195))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/0f/8910b19ac0670a0f80ce1008e5e751c4a57e14d2c4c13a482aa6079fa9d6/jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
+Collecting kiwisolver==1.4.7 (from -r requirements-test.txt (line 197))
+  Downloading https://mirrors.aliyun.com/pypi/packages/21/e4/c0b6746fd2eb62fe702118b3ca0cb384ce95e1261cfada58ff693aeec08a/kiwisolver-1.4.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 15.7 MB/s  0:00:00
+Collecting lazy-loader==0.4 (from -r requirements-test.txt (line 199))
+  Downloading https://mirrors.aliyun.com/pypi/packages/83/60/d497a310bde3f01cb805196ac61b7ad6dc5dcf8dce66634dc34364b20b4f/lazy_loader-0.4-py3-none-any.whl (12 kB)
+Collecting libnacl==2.1.0 (from -r requirements-test.txt (line 201))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ad/ce/85fa0276de7303b44fef63e07c14d618b8630bbe41c7dd7e34db246eab8d/libnacl-2.1.0-py3-none-any.whl (21 kB)
+Collecting librosa==0.10.2.post1 (from -r requirements-test.txt (line 203))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8c/8a/2d231b35456506b7c98b3ab9bbf07917b205fed8615d2e59e976ab497fff/librosa-0.10.2.post1-py3-none-any.whl (260 kB)
+Collecting llvmlite==0.43.0 (from -r requirements-test.txt (line 205))
+  Downloading https://mirrors.aliyun.com/pypi/packages/00/5f/323c4d56e8401c50185fd0e875fcf06b71bf825a863699be1eb10aa2a9cb/llvmlite-0.43.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 19.1 MB/s  0:00:02
+Collecting lm-eval==0.4.4 (from lm-eval[api]==0.4.4->-r requirements-test.txt (line 207))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ad/e1/ac8d7d26b4d6a9eea8859d438691b5d8209a37be2117b3e61f247de2d9e7/lm_eval-0.4.4-py3-none-any.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 6.0 MB/s  0:00:00
+Collecting lxml==5.3.0 (from -r requirements-test.txt (line 209))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0a/6e/94537acfb5b8f18235d13186d247bca478fea5e87d224644e0fe907df976/lxml-5.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 17.9 MB/s  0:00:00
+Collecting markupsafe==3.0.2 (from -r requirements-test.txt (line 211))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f3/f0/89e7aadfb3749d0f52234a0c8c7867877876e0a20b60e2188e9850794c17/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Collecting matplotlib==3.9.2 (from -r requirements-test.txt (line 213))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/75/de5b9cd67648051cae40039da0c8cbc497a0d99acb1a1f3d087cd66d27b7/matplotlib-3.9.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 18.2 MB/s  0:00:00
+Collecting mbstrdecoder==1.1.3 (from -r requirements-test.txt (line 215))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c2/0f/726229136022b154895138bb10ba35e8435c4143f614cb5ad4d4e3fc21ec/mbstrdecoder-1.1.3-py3-none-any.whl (7.8 kB)
+Collecting mistral-common==1.4.4 (from mistral-common[opencv]==1.4.4->-r requirements-test.txt (line 220))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d3/3e/510708bfc40ec43f7f94ebf24ceb2a9831a7b3fd740867c8eb4148aab51d/mistral_common-1.4.4-py3-none-any.whl (6.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 17.8 MB/s  0:00:00
+Collecting more-itertools==10.5.0 (from -r requirements-test.txt (line 224))
+  Downloading https://mirrors.aliyun.com/pypi/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl (60 kB)
+Requirement already satisfied: mpmath==1.3.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 226)) (1.3.0)
+Collecting msgpack==1.1.0 (from -r requirements-test.txt (line 228))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f1/54/65af8de681fa8255402c80eda2a501ba467921d5a7a028c9c22a2c2eedb5/msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (401 kB)
+Collecting multidict==6.1.0 (from -r requirements-test.txt (line 232))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d3/c8/529101d7176fe7dfe1d99604e48d69c5dfdcadb4f06561f465c8ef12b4df/multidict-6.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+Collecting multiprocess==0.70.16 (from -r requirements-test.txt (line 236))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0a/7d/a988f258104dcd2ccf1ed40fdc97e26c4ac351eeaf81d76e266c52d84e2f/multiprocess-0.70.16-py312-none-any.whl (146 kB)
+Collecting mypy-extensions==1.0.0 (from -r requirements-test.txt (line 240))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2a/e2/5d3f6ada4297caebe1a2add3b126fe800c96f56dbe5d1988a2cbe0b267aa/mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+Collecting networkx==3.2.1 (from -r requirements-test.txt (line 242))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d5/f0/8fbc882ca80cf077f1b246c0e3c3465f7f415439bdea6b899f6b19f61f70/networkx-3.2.1-py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 15.0 MB/s  0:00:00
+Collecting nltk==3.9.1 (from -r requirements-test.txt (line 244))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4d/66/7d9e26593edda06e8cb531874633f7c2372279c3b0f46235539fe546df8b/nltk-3.9.1-py3-none-any.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 13.0 MB/s  0:00:00
+Collecting numba==0.60.0 (from -r requirements-test.txt (line 246))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8b/41/ac11cf33524def12aa5bd698226ae196a1185831c05ed29dc0c56eaa308b/numba-0.60.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 17.4 MB/s  0:00:00
+Collecting numexpr==2.10.1 (from -r requirements-test.txt (line 248))
+  Downloading https://mirrors.aliyun.com/pypi/packages/04/ad/5c9c9943323692e1027484b95f2fe5166c36eb71039d4133ebd29f2569d2/numexpr-2.10.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (408 kB)
+Requirement already satisfied: numpy==1.26.4 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 250)) (1.26.4)
+Collecting nvidia-cublas-cu12==12.4.5.8 (from -r requirements-test.txt (line 276))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ae/71/1c91302526c45ab494c23f61c7a84aa568b8c1f9d196efa5993957faf906/nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl (363.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 18.8 MB/s  0:00:18
+Collecting nvidia-cuda-cupti-cu12==12.4.127 (from -r requirements-test.txt (line 281))
+  Downloading https://mirrors.aliyun.com/pypi/packages/67/42/f4f60238e8194a3106d06a058d494b18e006c10bb2b915655bd9f6ea4cb1/nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (13.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 18.7 MB/s  0:00:00
+Collecting nvidia-cuda-nvrtc-cu12==12.4.127 (from -r requirements-test.txt (line 283))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/14/91ae57cd4db3f9ef7aa99f4019cfa8d54cb4caa7e00975df6467e9725a9f/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (24.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 18.5 MB/s  0:00:01
+Collecting nvidia-cuda-runtime-cu12==12.4.127 (from -r requirements-test.txt (line 285))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ea/27/1795d86fe88ef397885f2e580ac37628ed058a92ed2c39dc8eac3adf0619/nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (883 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 13.0 MB/s  0:00:00
+Collecting nvidia-cudnn-cu12==9.1.0.70 (from -r requirements-test.txt (line 287))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9f/fd/713452cd72343f682b1c7b9321e23829f00b842ceaedcda96e742ea0b0b3/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 16.6 MB/s  0:00:35
+Collecting nvidia-cufft-cu12==11.2.1.3 (from -r requirements-test.txt (line 289))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/94/3266821f65b92b3138631e9c8e7fe1fb513804ac934485a8d05776e1dd43/nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl (211.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 19.2 MB/s  0:00:11
+Collecting nvidia-curand-cu12==10.3.5.147 (from -r requirements-test.txt (line 291))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8a/6d/44ad094874c6f1b9c654f8ed939590bdc408349f137f9b98a3a23ccec411/nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl (56.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 19.1 MB/s  0:00:02
+Collecting nvidia-cusolver-cu12==11.6.1.9 (from -r requirements-test.txt (line 293))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3a/e1/5b9089a4b2a4790dfdea8b3a006052cfecff58139d5a4e34cb1a51df8d6f/nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl (127.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 18.8 MB/s  0:00:06
+Collecting nvidia-cusparse-cu12==12.3.1.170 (from -r requirements-test.txt (line 295))
+  Downloading https://mirrors.aliyun.com/pypi/packages/db/f7/97a9ea26ed4bbbfc2d470994b8b4f338ef663be97b8f677519ac195e113d/nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl (207.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 19.3 MB/s  0:00:10
+Collecting nvidia-nccl-cu12==2.21.5 (from -r requirements-test.txt (line 299))
+  Downloading https://mirrors.aliyun.com/pypi/packages/df/99/12cd266d6233f47d00daf3a72739872bdc10267d0383508b0b9c84a18bb6/nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl (188.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 18.9 MB/s  0:00:09
+Collecting nvidia-nvjitlink-cu12==12.4.127 (from -r requirements-test.txt (line 301))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ff/ff/847841bacfbefc97a00036e0fce5a0f086b640756dc38caea5e1bb002655/nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (21.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 18.5 MB/s  0:00:01
+Collecting nvidia-nvtx-cu12==12.4.127 (from -r requirements-test.txt (line 306))
+  Downloading https://mirrors.aliyun.com/pypi/packages/87/20/199b8713428322a2f22b722c62b8cc278cc53dffa9705d744484b5035ee9/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (99 kB)
+Collecting opencv-python-headless==4.10.0.84 (from -r requirements-test.txt (line 308))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/09/248f86a404567303cdf120e4a301f389b68e3b18e5c0cc428de327da609c/opencv_python_headless-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 MB 17.7 MB/s  0:00:02
+Collecting packaging==24.1 (from -r requirements-test.txt (line 310))
+  Downloading https://mirrors.aliyun.com/pypi/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl (53 kB)
+Collecting pandas==2.2.3 (from -r requirements-test.txt (line 327))
+  Downloading https://mirrors.aliyun.com/pypi/packages/38/f8/d8fddee9ed0d0c0f4a2132c1dfcf0e3e53265055da8df952a53e7eaf178c/pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 18.5 MB/s  0:00:00
+Collecting pathspec==0.12.1 (from -r requirements-test.txt (line 331))
+  Downloading https://mirrors.aliyun.com/pypi/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl (31 kB)
+Collecting pathvalidate==3.2.1 (from -r requirements-test.txt (line 333))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d3/5e/76a9d08b4b4e4583f269cb9f64de267f9aeae0dacef23307f53a14211716/pathvalidate-3.2.1-py3-none-any.whl (23 kB)
+Collecting peft==0.13.2 (from -r requirements-test.txt (line 335))
+  Downloading https://mirrors.aliyun.com/pypi/packages/78/9d/5f95bfb298c8d3b4e3a107701f9a4e7774a0d4d1f8eb0c9d5420b80f7c9d/peft-0.13.2-py3-none-any.whl (320 kB)
+Collecting pillow==10.4.0 (from -r requirements-test.txt (line 339))
+  Downloading https://mirrors.aliyun.com/pypi/packages/55/77/40daddf677897a923d5d33329acd52a2144d54a9644f2a5422c028c6bf2d/pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 17.5 MB/s  0:00:00
+Collecting platformdirs==4.3.6 (from -r requirements-test.txt (line 345))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3c/a6/bc1012356d8ece4d66dd75c4b9fc6c1f6650ddd5991e421177d9f8f671be/platformdirs-4.3.6-py3-none-any.whl (18 kB)
+Collecting pluggy==1.5.0 (from -r requirements-test.txt (line 349))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/5f/e351af9a41f866ac3f1fac4ca0613908d9a41741cfcf2228f4ad853b697d/pluggy-1.5.0-py3-none-any.whl (20 kB)
+Collecting pooch==1.8.2 (from -r requirements-test.txt (line 351))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a8/87/77cc11c7a9ea9fd05503def69e3d18605852cd0d4b0d3b8f15bbeb3ef1d1/pooch-1.8.2-py3-none-any.whl (64 kB)
+Collecting portalocker==2.10.1 (from -r requirements-test.txt (line 353))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9b/fb/a70a4214956182e0d7a9099ab17d50bfcba1056188e9b14f35b9e2b62a0d/portalocker-2.10.1-py3-none-any.whl (18 kB)
+Collecting propcache==0.2.0 (from -r requirements-test.txt (line 355))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3c/e9/1b54b7e26f50b3e0497cd13d3483d781d284452c2c50dd2a615a92a087a3/propcache-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (248 kB)
+Collecting protobuf==5.28.3 (from -r requirements-test.txt (line 357))
+  Downloading https://mirrors.aliyun.com/pypi/packages/5d/ae/3257b09328c0b4e59535e497b0c7537d4954038bdd53a2f0d2f49d15a7c4/protobuf-5.28.3-cp38-abi3-manylinux2014_x86_64.whl (316 kB)
+Collecting psutil==6.1.0 (from -r requirements-test.txt (line 361))
+  Downloading https://mirrors.aliyun.com/pypi/packages/58/4d/8245e6f76a93c98aab285a43ea71ff1b171bcd90c9d238bf81f7021fb233/psutil-6.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+Requirement already satisfied: py==1.11.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 366)) (1.11.0)
+Collecting pyarrow==18.0.0 (from -r requirements-test.txt (line 368))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8d/1f/9bb3b3a644892d631dbbe99053cdb5295092d2696b4bcd3d21f29624c689/pyarrow-18.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (40.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.0/40.0 MB 19.1 MB/s  0:00:02
+Collecting pyasn1==0.6.1 (from -r requirements-test.txt (line 370))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl (83 kB)
+Collecting pybind11==2.13.6 (from -r requirements-test.txt (line 372))
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/2f/0f24b288e2ce56f51c920137620b4434a38fd80583dbbe24fc2a1656c388/pybind11-2.13.6-py3-none-any.whl (243 kB)
+Collecting pycparser==2.22 (from -r requirements-test.txt (line 374))
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl (117 kB)
+Collecting pydantic==2.9.2 (from pydantic[email]==2.9.2->-r requirements-test.txt (line 376))
+  Downloading https://mirrors.aliyun.com/pypi/packages/df/e4/ba44652d562cbf0bf320e0f3810206149c8a4e99cdbf66da82e97ab53a15/pydantic-2.9.2-py3-none-any.whl (434 kB)
+Collecting pydantic-core==2.23.4 (from -r requirements-test.txt (line 380))
+  Downloading https://mirrors.aliyun.com/pypi/packages/06/c8/7d4b708f8d05a5cbfda3243aad468052c6e99de7d0937c9146c24d9f12e9/pydantic_core-2.23.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 16.5 MB/s  0:00:00
+Collecting pyparsing==3.2.0 (from -r requirements-test.txt (line 382))
+  Downloading https://mirrors.aliyun.com/pypi/packages/be/ec/2eb3cd785efd67806c46c13a17339708ddc346cbb684eade7a6e6f79536a/pyparsing-3.2.0-py3-none-any.whl (106 kB)
+Collecting pytablewriter==1.2.0 (from -r requirements-test.txt (line 384))
+  Downloading https://mirrors.aliyun.com/pypi/packages/06/74/b39b823ee7dba155b117634e62733a0dfdfe5aa100a553b435062cee2062/pytablewriter-1.2.0-py3-none-any.whl (111 kB)
+Collecting pytest==8.3.3 (from -r requirements-test.txt (line 386))
+  Downloading https://mirrors.aliyun.com/pypi/packages/6b/77/7440a06a8ead44c7757a64362dd22df5760f9b12dc5f11b6188cd2fc27a0/pytest-8.3.3-py3-none-any.whl (342 kB)
+Collecting pytest-asyncio==0.24.0 (from -r requirements-test.txt (line 394))
+  Downloading https://mirrors.aliyun.com/pypi/packages/96/31/6607dab48616902f76885dfcf62c08d929796fc3b2d2318faf9fd54dbed9/pytest_asyncio-0.24.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: pytest-forked==1.6.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 396)) (1.6.0)
+Collecting pytest-rerunfailures==14.0 (from -r requirements-test.txt (line 398))
+  Downloading https://mirrors.aliyun.com/pypi/packages/dc/e7/e75bd157331aecc190f5f8950d7ea3d2cf56c3c57fb44da70e60b221133f/pytest_rerunfailures-14.0-py3-none-any.whl (12 kB)
+Collecting pytest-shard==0.1.2 (from -r requirements-test.txt (line 400))
+  Downloading https://mirrors.aliyun.com/pypi/packages/65/7a/dbeb4c54e9fc3b59622f410091365f354a69cda1af10c3b83ac0ca6e6f4f/pytest_shard-0.1.2-py3-none-any.whl (4.6 kB)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 402)) (2.9.0.post0)
+Collecting pytz==2024.2 (from -r requirements-test.txt (line 408))
+  Downloading https://mirrors.aliyun.com/pypi/packages/11/c3/005fcca25ce078d2cc29fd559379817424e94885510568bc1bc53d7d5846/pytz-2024.2-py2.py3-none-any.whl (508 kB)
+Collecting pyyaml==6.0.2 (from -r requirements-test.txt (line 412))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b9/2b/614b4752f2e127db5cc206abc23a8c19678e92b23c3db30fc86ab731d3bd/PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 13.6 MB/s  0:00:00
+Collecting ray==2.35.0 (from ray[adag]==2.35.0->-r requirements-test.txt (line 423))
+  Downloading https://mirrors.aliyun.com/pypi/packages/35/e7/d9b4706308d584027df8e64b0517ca0cecf268b9f2f2051fb487fc555e55/ray-2.35.0-cp312-cp312-manylinux2014_x86_64.whl (65.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.2/65.2 MB 19.1 MB/s  0:00:03
+Collecting redis==5.2.0 (from -r requirements-test.txt (line 425))
+  Downloading https://mirrors.aliyun.com/pypi/packages/12/f5/ffa560ecc4bafbf25f7961c3d6f50d627a90186352e27e7d0ba5b1f6d87d/redis-5.2.0-py3-none-any.whl (261 kB)
+Collecting referencing==0.35.1 (from -r requirements-test.txt (line 427))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b7/59/2056f61236782a2c86b33906c025d4f4a0b17be0161b63b70fd9e8775d36/referencing-0.35.1-py3-none-any.whl (26 kB)
+Collecting regex==2024.9.11 (from -r requirements-test.txt (line 431))
+  Downloading https://mirrors.aliyun.com/pypi/packages/29/52/84662b6636061277cb857f658518aa7db6672bc6d1a3f503ccd5aefc581e/regex-2024.9.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (797 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 797.0/797.0 kB 11.5 MB/s  0:00:00
+Collecting requests==2.32.3 (from -r requirements-test.txt (line 437))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl (64 kB)
+Collecting rouge-score==0.1.2 (from -r requirements-test.txt (line 449))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e2/c5/9136736c37022a6ad27fea38f3111eb8f02fe75d067f9a985cc358653102/rouge_score-0.1.2.tar.gz (17 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting rpds-py==0.20.1 (from -r requirements-test.txt (line 451))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c8/1b/f23015cb293927c93bdb4b94a48bfe77ad9d57359c75db51f0ff0cf482ff/rpds_py-0.20.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (364 kB)
+Collecting rsa==4.7.2 (from -r requirements-test.txt (line 455))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl (34 kB)
+Collecting s3transfer==0.10.3 (from -r requirements-test.txt (line 457))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e5/c0/b0fba8259b61c938c9733da9346b9f93e00881a9db22aafdd72f6ae0ec05/s3transfer-0.10.3-py3-none-any.whl (82 kB)
+Collecting sacrebleu==2.4.3 (from -r requirements-test.txt (line 461))
+  Downloading https://mirrors.aliyun.com/pypi/packages/15/d8/e51d35bc863caa19ddeae48dfb890581a19326973ad1c9fa5dcfc63310f7/sacrebleu-2.4.3-py3-none-any.whl (103 kB)
+Collecting safetensors==0.4.5 (from -r requirements-test.txt (line 463))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d9/40/a6f75ea449a9647423ec8b6f72c16998d35aa4b43cb38536ac060c5c7bf5/safetensors-0.4.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (434 kB)
+Collecting scikit-learn==1.5.2 (from -r requirements-test.txt (line 469))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c6/29/044048c5e911373827c0e1d3051321b9183b2a4f8d4e2f11c08fcff83f13/scikit_learn-1.5.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 18.7 MB/s  0:00:00
+Collecting scipy==1.13.1 (from -r requirements-test.txt (line 474))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/ab/6ecdc526d509d33814835447bbbeedbebdec7cca46ef495a61b00a35b4bf/scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.2/38.2 MB 17.1 MB/s  0:00:02
+Collecting sentence-transformers==3.2.1 (from -r requirements-test.txt (line 479))
+  Downloading https://mirrors.aliyun.com/pypi/packages/45/18/1ec591befcbdb2c97192a40fbe7c43a8b8a8b3c89b1fa101d3eeed4d79a4/sentence_transformers-3.2.1-py3-none-any.whl (255 kB)
+Collecting sentencepiece==0.2.0 (from -r requirements-test.txt (line 481))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4f/d2/18246f43ca730bb81918f87b7e886531eda32d835811ad9f4657c54eee35/sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 13.4 MB/s  0:00:00
+Requirement already satisfied: six==1.16.0 in /usr/lib/python3/dist-packages (from -r requirements-test.txt (line 483)) (1.16.0)
+Requirement already satisfied: sniffio==1.3.1 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 487)) (1.3.1)
+Collecting soundfile==0.12.1 (from -r requirements-test.txt (line 491))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c1/07/7591f4efd29e65071c3a61b53725036ea8f73366a4920a481ebddaf8d0ca/soundfile-0.12.1-py2.py3-none-manylinux_2_31_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 11.5 MB/s  0:00:00
+Collecting soxr==0.5.0.post1 (from -r requirements-test.txt (line 495))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e1/1a/569ea0420a0c4801c2c8dd40d8d544989522f6014d51def689125f3f2935/soxr-0.5.0.post1-cp312-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (248 kB)
+Collecting sqlitedict==2.1.0 (from -r requirements-test.txt (line 497))
+  Downloading https://mirrors.aliyun.com/pypi/packages/12/9a/7620d1e9dcb02839ed6d4b14064e609cdd7a8ae1e47289aa0456796dd9ca/sqlitedict-2.1.0.tar.gz (21 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting sympy==1.13.1 (from -r requirements-test.txt (line 499))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 17.5 MB/s  0:00:00
+Collecting tabledata==1.3.3 (from -r requirements-test.txt (line 501))
+  Downloading https://mirrors.aliyun.com/pypi/packages/06/e2/96b10ebc00d20b55967200e3d95c2137d91f58af1af672627683431c9d5c/tabledata-1.3.3-py3-none-any.whl (11 kB)
+Collecting tabulate==0.9.0 (from -r requirements-test.txt (line 503))
+  Downloading https://mirrors.aliyun.com/pypi/packages/40/44/4a5f08c96eb108af5cb50b41f76142f0afa346dfa99d5296fe7202a11854/tabulate-0.9.0-py3-none-any.whl (35 kB)
+Collecting tcolorpy==0.1.6 (from -r requirements-test.txt (line 505))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9e/0f/3571e551b524b3d3ddfa7fd3ec8065941faf4ae1278efefcef976d93587c/tcolorpy-0.1.6-py3-none-any.whl (8.1 kB)
+Collecting tenacity==9.0.0 (from -r requirements-test.txt (line 507))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b6/cb/b86984bed139586d01532a587464b5805f12e397594f19f931c4c2fbfa61/tenacity-9.0.0-py3-none-any.whl (28 kB)
+Collecting tensorizer==2.9.0 (from -r requirements-test.txt (line 509))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/2b/9debdecbf8c248f15c7c2ca17090b2d5a4bffbdd3eea4cd3eb7823feadea/tensorizer-2.9.0-py3-none-any.whl (95 kB)
+Collecting threadpoolctl==3.5.0 (from -r requirements-test.txt (line 511))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Collecting tiktoken==0.7.0 (from -r requirements-test.txt (line 513))
+  Downloading https://mirrors.aliyun.com/pypi/packages/50/81/1842a22f15586072280364c2ab1e40835adaf64e42fe80e52aff921ee021/tiktoken-0.7.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 11.3 MB/s  0:00:00
+Collecting timm==1.0.11 (from -r requirements-test.txt (line 517))
+  Downloading https://mirrors.aliyun.com/pypi/packages/77/f7/144d69d921fba82baa8498e279d782a12a13694f45ff74d1777bc3231ffe/timm-1.0.11-py3-none-any.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 16.7 MB/s  0:00:00
+Collecting tokenizers==0.20.3 (from -r requirements-test.txt (line 519))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9e/65/c83cb3545a65a9eaa2e13b22c93d5e00bd7624b354a44adbdc93d5d9bd91/tokenizers-0.20.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 16.9 MB/s  0:00:00
+Collecting toml==0.10.2 (from -r requirements-test.txt (line 521))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting tomli==2.0.2 (from -r requirements-test.txt (line 523))
+  Downloading https://mirrors.aliyun.com/pypi/packages/cf/db/ce8eda256fa131af12e0a76d481711abe4681b6923c27efb9a255c9e4594/tomli-2.0.2-py3-none-any.whl (13 kB)
+Collecting torch==2.5.1 (from -r requirements-test.txt (line 527))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8b/5c/36c114d120bfe10f9323ed35061bc5878cc74f3f594003854b0ea298942f/torch-2.5.1-cp312-cp312-manylinux1_x86_64.whl (906.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 906.4/906.4 MB 17.4 MB/s  0:00:47
+Collecting torchvision==0.20.1 (from -r requirements-test.txt (line 538))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d4/75/00a852275ade58d3dc474530f7a7b6bc999a817148f0eb59d4fde12eb955/torchvision-0.20.1-cp312-cp312-manylinux1_x86_64.whl (7.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 18.2 MB/s  0:00:00
+Collecting tqdm==4.66.6 (from -r requirements-test.txt (line 540))
+  Downloading https://mirrors.aliyun.com/pypi/packages/41/73/02342de9c2d20922115f787e101527b831c0cffd2105c946c4a4826bcfd4/tqdm-4.66.6-py3-none-any.whl (78 kB)
+Collecting tqdm-multiprocess==0.0.11 (from -r requirements-test.txt (line 551))
+  Downloading https://mirrors.aliyun.com/pypi/packages/25/7e/0d889fc6c84e3df6b69aaafe893fc77f69b3d968ac9ce574d1c62c688050/tqdm_multiprocess-0.0.11-py3-none-any.whl (9.8 kB)
+Collecting transformers==4.45.2 (from -r requirements-test.txt (line 553))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f9/9d/030cc1b3e88172967e22ee1d012e0d5e0384eb70d2a098d1669d549aea29/transformers-4.45.2-py3-none-any.whl (9.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 18.0 MB/s  0:00:00
+Collecting transformers-stream-generator==0.0.5 (from -r requirements-test.txt (line 559))
+  Downloading https://mirrors.aliyun.com/pypi/packages/42/c2/65f13aec253100e1916e9bd7965fe17bde796ebabeb1265f45191ab4ddc0/transformers-stream-generator-0.0.5.tar.gz (13 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting triton==3.1.0 (from -r requirements-test.txt (line 561))
+  Downloading https://mirrors.aliyun.com/pypi/packages/78/eb/65f5ba83c2a123f6498a3097746607e5b2f16add29e36765305e4ac7fdd8/triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (209.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 19.2 MB/s  0:00:10
+Collecting typepy==1.3.2 (from typepy[datetime]==1.3.2->-r requirements-test.txt (line 563))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f1/10/0d6dc654bb4e0eca017bbaf43a315b464c888576a68a2883cd4a74bd1b6b/typepy-1.3.2-py3-none-any.whl (31 kB)
+Collecting typing-extensions==4.12.2 (from -r requirements-test.txt (line 568))
+  Downloading https://mirrors.aliyun.com/pypi/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting tzdata==2024.2 (from -r requirements-test.txt (line 579))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a6/ab/7e5f53c3b9d14972843a647d8d7a853969a58aecc7559cb3267302c94774/tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+Collecting urllib3==1.26.20 (from -r requirements-test.txt (line 581))
+  Downloading https://mirrors.aliyun.com/pypi/packages/33/cf/8435d5a7159e2a9c83a95896ed596f68cf798005fe107cc655b5c5c14704/urllib3-1.26.20-py2.py3-none-any.whl (144 kB)
+Collecting word2number==1.1 (from -r requirements-test.txt (line 585))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4a/29/a31940c848521f0725f0df6b25dca8917f13a2025b0e8fcbe5d0457e45e6/word2number-1.1.zip (9.7 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting xxhash==3.5.0 (from -r requirements-test.txt (line 587))
+  Downloading https://mirrors.aliyun.com/pypi/packages/11/a7/81dba5010f7e733de88af9555725146fc133be97ce36533867f4c7e75066/xxhash-3.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+Collecting yarl==1.17.1 (from -r requirements-test.txt (line 591))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c3/c0/cd8e94618983c1b811af082e1a7ad7764edb3a6af2bc6b468e0e686238ba/yarl-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (336 kB)
+Collecting zipp==3.20.2 (from -r requirements-test.txt (line 593))
+  Downloading https://mirrors.aliyun.com/pypi/packages/62/8b/5ba542fa83c90e09eac972fc9baca7a88e7e7ca4b221a89251954019308b/zipp-3.20.2-py3-none-any.whl (9.2 kB)
+Collecting zstandard==0.23.0 (from -r requirements-test.txt (line 595))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fc/79/edeb217c57fe1bf16d890aa91a1c2c96b28c07b46afed54a5dcf310c3f6f/zstandard-0.23.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 17.9 MB/s  0:00:00
+Requirement already satisfied: setuptools>=38.3.0 in /usr/local/lib/python3.12/dist-packages (from pytablewriter==1.2.0->-r requirements-test.txt (line 384)) (82.0.0)
+Building wheels for collected packages: rouge-score, sqlitedict, transformers-stream-generator, word2number
+  Building wheel for rouge-score (pyproject.toml): started
+  Building wheel for rouge-score (pyproject.toml): finished with status 'done'
+  Created wheel for rouge-score: filename=rouge_score-0.1.2-py3-none-any.whl size=24987 sha256=8ba01ebc6c805cc8d38358f56582a1617bad5f402ba5674b365fad88876dcafa
+  Stored in directory: /root/.cache/pip/wheels/bf/39/1e/d0246edbd9dd35526c81e92f2eeb00d9b4d43c2ee1f2e80868
+  Building wheel for sqlitedict (pyproject.toml): started
+  Building wheel for sqlitedict (pyproject.toml): finished with status 'done'
+  Created wheel for sqlitedict: filename=sqlitedict-2.1.0-py3-none-any.whl size=16958 sha256=52eb056e5c4d9ac3490356c6298c12f02398b287bd00c75dd9ef485f1a6a54f2
+  Stored in directory: /root/.cache/pip/wheels/00/03/1b/488d85cbc58af8be173ee24c01b47c8c7dc3aad0377e5b526b
+  Building wheel for transformers-stream-generator (pyproject.toml): started
+  Building wheel for transformers-stream-generator (pyproject.toml): finished with status 'done'
+  Created wheel for transformers-stream-generator: filename=transformers_stream_generator-0.0.5-py3-none-any.whl size=12526 sha256=1bdf40944dd3d8a83caa8251602d054dde4e3798d162e0c6e3150b87dfdb3528
+  Stored in directory: /root/.cache/pip/wheels/af/f1/0f/10a7eb1779f54bbddf787d332e0687274a97ed0e3f82c9f81a
+  Building wheel for word2number (pyproject.toml): started
+  Building wheel for word2number (pyproject.toml): finished with status 'done'
+  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5659 sha256=1e4688f59b941dcdc95ab8fe494fdee7b701742848f97691457dd07eb506f892
+  Stored in directory: /root/.cache/pip/wheels/22/c4/90/8431670fe3b9f2c7163f2a137b7b1c15f0211229b787df4a71
+Successfully built rouge-score sqlitedict transformers-stream-generator word2number
+Installing collected packages: word2number, sqlitedict, sentencepiece, pytz, genson, fastrlock, zstandard, zipp, xxhash, urllib3, tzdata, typing-extensions, tqdm, tomli, toml, threadpoolctl, tenacity, tcolorpy, tabulate, sympy, soxr, scipy, safetensors, rpds-py, regex, redis, pyyaml, pyparsing, pycparser, pybind11, pyasn1, pyarrow, psutil, protobuf, propcache, portalocker, pluggy, platformdirs, pillow, pathvalidate, pathspec, packaging, opencv-python-headless, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numexpr, networkx, mypy-extensions, multidict, msgpack, more-itertools, markupsafe, lxml, llvmlite, libnacl, kiwisolver, joblib, jmespath, isort, iniconfig, inflect, importlib-resources, idna, hiredis, h11, fsspec, frozenlist, fonttools, filelock, exceptiongroup, einops, docutils, dnspython, dill, decord, decorator, cycler, cupy-cuda12x, contourpy, colorama, click, charset-normalizer, chardet, certifi, audioread, attrs, async-timeout, argcomplete, aiohappyeyeballs, absl-py, yarl, triton, tqdm-multiprocess, scikit-learn, sacrebleu, rsa, requests, referencing, pytest, pydantic-core, pandas, nvidia-cusparse-cu12, nvidia-cudnn-cu12, numba, nltk, multiprocess, mbstrdecoder, matplotlib, lazy-loader, jsonlines, jinja2, httpcore, email-validator, cffi, botocore, black, anyio, aiosignal, typepy, tiktoken, soundfile, s3transfer, rouge-score, pytest-shard, pytest-rerunfailures, pytest-asyncio, pydantic, pooch, nvidia-cusolver-cu12, jsonschema-specifications, huggingface-hub, httpx, buildkite-test-collector, aiohttp, torch, tokenizers, librosa, jsonschema, boto3, awscli, transformers, torchvision, tensorizer, ray, mistral-common, datasets, dataproperty, datamodel-code-generator, bitsandbytes, accelerate, transformers-stream-generator, timm, tabledata, sentence-transformers, peft, evaluate, pytablewriter, lm-eval
+  Attempting uninstall: sentencepiece
+    Found existing installation: sentencepiece 0.2.1
+    Uninstalling sentencepiece-0.2.1:
+      Successfully uninstalled sentencepiece-0.2.1
+  Attempting uninstall: zipp
+    Found existing installation: zipp 1.0.0
+    Uninstalling zipp-1.0.0:
+      Successfully uninstalled zipp-1.0.0
+  Attempting uninstall: xxhash
+    Found existing installation: xxhash 3.6.0
+    Uninstalling xxhash-3.6.0:
+      Successfully uninstalled xxhash-3.6.0
+  Attempting uninstall: urllib3
+    Found existing installation: urllib3 2.6.3
+    Uninstalling urllib3-2.6.3:
+      Successfully uninstalled urllib3-2.6.3
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.15.0
+    Uninstalling typing_extensions-4.15.0:
+      Successfully uninstalled typing_extensions-4.15.0
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.67.3
+    Uninstalling tqdm-4.67.3:
+      Successfully uninstalled tqdm-4.67.3
+  Attempting uninstall: sympy
+    Found existing installation: sympy 1.14.0
+    Uninstalling sympy-1.14.0:
+      Successfully uninstalled sympy-1.14.0
+  Attempting uninstall: safetensors
+    Found existing installation: safetensors 0.7.0
+    Uninstalling safetensors-0.7.0:
+      Successfully uninstalled safetensors-0.7.0
+  Attempting uninstall: rpds-py
+    Found existing installation: rpds-py 0.30.0
+    Uninstalling rpds-py-0.30.0:
+      Successfully uninstalled rpds-py-0.30.0
+  Attempting uninstall: regex
+    Found existing installation: regex 2026.2.19
+    Uninstalling regex-2026.2.19:
+      Successfully uninstalled regex-2026.2.19
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 6.0.3
+    Uninstalling PyYAML-6.0.3:
+      Successfully uninstalled PyYAML-6.0.3
+  Attempting uninstall: pyparsing
+    Found existing installation: pyparsing 2.4.7
+    Uninstalling pyparsing-2.4.7:
+      Successfully uninstalled pyparsing-2.4.7
+  Attempting uninstall: pyarrow
+    Found existing installation: pyarrow 23.0.1
+    Uninstalling pyarrow-23.0.1:
+      Successfully uninstalled pyarrow-23.0.1
+  Attempting uninstall: psutil
+    Found existing installation: psutil 7.2.2
+    Uninstalling psutil-7.2.2:
+      Successfully uninstalled psutil-7.2.2
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 6.33.5
+    Uninstalling protobuf-6.33.5:
+      Successfully uninstalled protobuf-6.33.5
+  Attempting uninstall: propcache
+    Found existing installation: propcache 0.4.1
+    Uninstalling propcache-0.4.1:
+      Successfully uninstalled propcache-0.4.1
+  Attempting uninstall: pluggy
+    Found existing installation: pluggy 1.6.0
+    Uninstalling pluggy-1.6.0:
+      Successfully uninstalled pluggy-1.6.0
+  Attempting uninstall: pillow
+    Found existing installation: pillow 12.1.1
+    Uninstalling pillow-12.1.1:
+      Successfully uninstalled pillow-12.1.1
+  Attempting uninstall: packaging
+    Found existing installation: packaging 26.0
+    Uninstalling packaging-26.0:
+      Successfully uninstalled packaging-26.0
+  Attempting uninstall: opencv-python-headless
+    Found existing installation: opencv-python-headless 4.11.0.86
+    Uninstalling opencv-python-headless-4.11.0.86:
+      Successfully uninstalled opencv-python-headless-4.11.0.86
+  Attempting uninstall: nvidia-nvtx-cu12
+    Found existing installation: nvidia-nvtx-cu12 12.8.90
+    Uninstalling nvidia-nvtx-cu12-12.8.90:
+      Successfully uninstalled nvidia-nvtx-cu12-12.8.90
+  Attempting uninstall: nvidia-nvjitlink-cu12
+    Found existing installation: nvidia-nvjitlink-cu12 12.8.93
+    Uninstalling nvidia-nvjitlink-cu12-12.8.93:
+      Successfully uninstalled nvidia-nvjitlink-cu12-12.8.93
+  Attempting uninstall: nvidia-nccl-cu12
+    Found existing installation: nvidia-nccl-cu12 2.27.5
+    Uninstalling nvidia-nccl-cu12-2.27.5:
+      Successfully uninstalled nvidia-nccl-cu12-2.27.5
+  Attempting uninstall: nvidia-curand-cu12
+    Found existing installation: nvidia-curand-cu12 10.3.9.90
+    Uninstalling nvidia-curand-cu12-10.3.9.90:
+      Successfully uninstalled nvidia-curand-cu12-10.3.9.90
+  Attempting uninstall: nvidia-cufft-cu12
+    Found existing installation: nvidia-cufft-cu12 11.3.3.83
+    Uninstalling nvidia-cufft-cu12-11.3.3.83:
+      Successfully uninstalled nvidia-cufft-cu12-11.3.3.83
+  Attempting uninstall: nvidia-cuda-runtime-cu12
+    Found existing installation: nvidia-cuda-runtime-cu12 12.8.90
+    Uninstalling nvidia-cuda-runtime-cu12-12.8.90:
+      Successfully uninstalled nvidia-cuda-runtime-cu12-12.8.90
+  Attempting uninstall: nvidia-cuda-nvrtc-cu12
+    Found existing installation: nvidia-cuda-nvrtc-cu12 12.8.93
+    Uninstalling nvidia-cuda-nvrtc-cu12-12.8.93:
+      Successfully uninstalled nvidia-cuda-nvrtc-cu12-12.8.93
+  Attempting uninstall: nvidia-cuda-cupti-cu12
+    Found existing installation: nvidia-cuda-cupti-cu12 12.8.90
+    Uninstalling nvidia-cuda-cupti-cu12-12.8.90:
+      Successfully uninstalled nvidia-cuda-cupti-cu12-12.8.90
+  Attempting uninstall: nvidia-cublas-cu12
+    Found existing installation: nvidia-cublas-cu12 12.8.4.1
+    Uninstalling nvidia-cublas-cu12-12.8.4.1:
+      Successfully uninstalled nvidia-cublas-cu12-12.8.4.1
+  Attempting uninstall: networkx
+    Found existing installation: networkx 3.6.1
+    Uninstalling networkx-3.6.1:
+      Successfully uninstalled networkx-3.6.1
+  Attempting uninstall: multidict
+    Found existing installation: multidict 6.7.1
+    Uninstalling multidict-6.7.1:
+      Successfully uninstalled multidict-6.7.1
+  Attempting uninstall: more-itertools
+    Found existing installation: more-itertools 8.10.0
+    Uninstalling more-itertools-8.10.0:
+      Successfully uninstalled more-itertools-8.10.0
+  Attempting uninstall: markupsafe
+    Found existing installation: MarkupSafe 3.0.3
+    Uninstalling MarkupSafe-3.0.3:
+      Successfully uninstalled MarkupSafe-3.0.3
+  Attempting uninstall: llvmlite
+    Found existing installation: llvmlite 0.46.0
+    Uninstalling llvmlite-0.46.0:
+      Successfully uninstalled llvmlite-0.46.0
+  Attempting uninstall: iniconfig
+    Found existing installation: iniconfig 2.3.0
+    Uninstalling iniconfig-2.3.0:
+      Successfully uninstalled iniconfig-2.3.0
+  Attempting uninstall: idna
+    Found existing installation: idna 3.11
+    Uninstalling idna-3.11:
+      Successfully uninstalled idna-3.11
+  Attempting uninstall: h11
+    Found existing installation: h11 0.16.0
+    Uninstalling h11-0.16.0:
+      Successfully uninstalled h11-0.16.0
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2026.2.0
+    Uninstalling fsspec-2026.2.0:
+      Successfully uninstalled fsspec-2026.2.0
+  Attempting uninstall: frozenlist
+    Found existing installation: frozenlist 1.8.0
+    Uninstalling frozenlist-1.8.0:
+      Successfully uninstalled frozenlist-1.8.0
+  Attempting uninstall: filelock
+    Found existing installation: filelock 3.24.3
+    Uninstalling filelock-3.24.3:
+      Successfully uninstalled filelock-3.24.3
+  Attempting uninstall: einops
+    Found existing installation: einops 0.8.2
+    Uninstalling einops-0.8.2:
+      Successfully uninstalled einops-0.8.2
+  Attempting uninstall: dill
+    Found existing installation: dill 0.4.0
+    Uninstalling dill-0.4.0:
+      Successfully uninstalled dill-0.4.0
+  Attempting uninstall: click
+    Found existing installation: click 8.3.1
+    Uninstalling click-8.3.1:
+      Successfully uninstalled click-8.3.1
+  Attempting uninstall: charset-normalizer
+    Found existing installation: charset-normalizer 3.4.4
+    Uninstalling charset-normalizer-3.4.4:
+      Successfully uninstalled charset-normalizer-3.4.4
+  Attempting uninstall: certifi
+    Found existing installation: certifi 2026.2.25
+    Uninstalling certifi-2026.2.25:
+      Successfully uninstalled certifi-2026.2.25
+  Attempting uninstall: attrs
+    Found existing installation: attrs 25.4.0
+    Uninstalling attrs-25.4.0:
+      Successfully uninstalled attrs-25.4.0
+  Attempting uninstall: aiohappyeyeballs
+    Found existing installation: aiohappyeyeballs 2.6.1
+    Uninstalling aiohappyeyeballs-2.6.1:
+      Successfully uninstalled aiohappyeyeballs-2.6.1
+  Attempting uninstall: yarl
+    Found existing installation: yarl 1.22.0
+    Uninstalling yarl-1.22.0:
+      Successfully uninstalled yarl-1.22.0
+  Attempting uninstall: triton
+    Found existing installation: triton 3.6.0
+    Uninstalling triton-3.6.0:
+      Successfully uninstalled triton-3.6.0
+  Attempting uninstall: requests
+    Found existing installation: requests 2.32.5
+    Uninstalling requests-2.32.5:
+      Successfully uninstalled requests-2.32.5
+  Attempting uninstall: referencing
+    Found existing installation: referencing 0.37.0
+    Uninstalling referencing-0.37.0:
+      Successfully uninstalled referencing-0.37.0
+  Attempting uninstall: pytest
+    Found existing installation: pytest 9.0.2
+    Uninstalling pytest-9.0.2:
+      Successfully uninstalled pytest-9.0.2
+  Attempting uninstall: pydantic-core
+    Found existing installation: pydantic_core 2.41.5
+    Uninstalling pydantic_core-2.41.5:
+      Successfully uninstalled pydantic_core-2.41.5
+  Attempting uninstall: pandas
+    Found existing installation: pandas 3.0.1
+    Uninstalling pandas-3.0.1:
+      Successfully uninstalled pandas-3.0.1
+  Attempting uninstall: nvidia-cusparse-cu12
+    Found existing installation: nvidia-cusparse-cu12 12.5.8.93
+    Uninstalling nvidia-cusparse-cu12-12.5.8.93:
+      Successfully uninstalled nvidia-cusparse-cu12-12.5.8.93
+  Attempting uninstall: nvidia-cudnn-cu12
+    Found existing installation: nvidia-cudnn-cu12 9.10.2.21
+    Uninstalling nvidia-cudnn-cu12-9.10.2.21:
+      Successfully uninstalled nvidia-cudnn-cu12-9.10.2.21
+  Attempting uninstall: numba
+    Found existing installation: numba 0.64.0
+    Uninstalling numba-0.64.0:
+      Successfully uninstalled numba-0.64.0
+  Attempting uninstall: multiprocess
+    Found existing installation: multiprocess 0.70.18
+    Uninstalling multiprocess-0.70.18:
+      Successfully uninstalled multiprocess-0.70.18
+  Attempting uninstall: jinja2
+    Found existing installation: Jinja2 3.1.6
+    Uninstalling Jinja2-3.1.6:
+      Successfully uninstalled Jinja2-3.1.6
+  Attempting uninstall: httpcore
+    Found existing installation: httpcore 1.0.9
+    Uninstalling httpcore-1.0.9:
+      Successfully uninstalled httpcore-1.0.9
+  Attempting uninstall: anyio
+    Found existing installation: anyio 4.12.1
+    Uninstalling anyio-4.12.1:
+      Successfully uninstalled anyio-4.12.1
+  Attempting uninstall: aiosignal
+    Found existing installation: aiosignal 1.4.0
+    Uninstalling aiosignal-1.4.0:
+      Successfully uninstalled aiosignal-1.4.0
+  Attempting uninstall: tiktoken
+    Found existing installation: tiktoken 0.12.0
+    Uninstalling tiktoken-0.12.0:
+      Successfully uninstalled tiktoken-0.12.0
+  Attempting uninstall: pytest-rerunfailures
+    Found existing installation: pytest-rerunfailures 16.1
+    Uninstalling pytest-rerunfailures-16.1:
+      Successfully uninstalled pytest-rerunfailures-16.1
+  Attempting uninstall: pytest-asyncio
+    Found existing installation: pytest-asyncio 1.3.0
+    Uninstalling pytest-asyncio-1.3.0:
+      Successfully uninstalled pytest-asyncio-1.3.0
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.12.5
+    Uninstalling pydantic-2.12.5:
+      Successfully uninstalled pydantic-2.12.5
+  Attempting uninstall: nvidia-cusolver-cu12
+    Found existing installation: nvidia-cusolver-cu12 11.7.3.90
+    Uninstalling nvidia-cusolver-cu12-11.7.3.90:
+      Successfully uninstalled nvidia-cusolver-cu12-11.7.3.90
+  Attempting uninstall: jsonschema-specifications
+    Found existing installation: jsonschema-specifications 2025.9.1
+    Uninstalling jsonschema-specifications-2025.9.1:
+      Successfully uninstalled jsonschema-specifications-2025.9.1
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.4.1
+    Uninstalling huggingface_hub-1.4.1:
+      Successfully uninstalled huggingface_hub-1.4.1
+  Attempting uninstall: httpx
+    Found existing installation: httpx 0.28.1
+    Uninstalling httpx-0.28.1:
+      Successfully uninstalled httpx-0.28.1
+  Attempting uninstall: aiohttp
+    Found existing installation: aiohttp 3.13.3
+    Uninstalling aiohttp-3.13.3:
+      Successfully uninstalled aiohttp-3.13.3
+  Attempting uninstall: torch
+    Found existing installation: torch 2.10.0
+    Uninstalling torch-2.10.0:
+      Successfully uninstalled torch-2.10.0
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.22.2
+    Uninstalling tokenizers-0.22.2:
+      Successfully uninstalled tokenizers-0.22.2
+  Attempting uninstall: jsonschema
+    Found existing installation: jsonschema 4.26.0
+    Uninstalling jsonschema-4.26.0:
+      Successfully uninstalled jsonschema-4.26.0
+  Attempting uninstall: transformers
+    Found existing installation: transformers 5.2.0
+    Uninstalling transformers-5.2.0:
+      Successfully uninstalled transformers-5.2.0
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.20.0+cu124
+    Uninstalling torchvision-0.20.0+cu124:
+      Successfully uninstalled torchvision-0.20.0+cu124
+  Attempting uninstall: mistral-common
+    Found existing installation: mistral_common 1.9.1
+    Uninstalling mistral_common-1.9.1:
+      Successfully uninstalled mistral_common-1.9.1
+  Attempting uninstall: datasets
+    Found existing installation: datasets 4.6.0
+    Uninstalling datasets-4.6.0:
+      Successfully uninstalled datasets-4.6.0
+
+Successfully installed absl-py-2.1.0 accelerate-1.0.1 aiohappyeyeballs-2.4.3 aiohttp-3.10.10 aiosignal-1.3.1 anyio-4.6.2.post1 argcomplete-3.5.1 async-timeout-4.0.3 attrs-24.2.0 audioread-3.0.1 awscli-1.35.23 bitsandbytes-0.44.1 black-24.10.0 boto3-1.35.57 botocore-1.35.57 buildkite-test-collector-0.1.9 certifi-2024.8.30 cffi-1.17.1 chardet-5.2.0 charset-normalizer-3.4.0 click-8.1.7 colorama-0.4.6 contourpy-1.3.0 cupy-cuda12x-13.3.0 cycler-0.12.1 datamodel-code-generator-0.26.3 dataproperty-1.0.1 datasets-3.0.2 decorator-5.1.1 decord-0.6.0 dill-0.3.8 dnspython-2.7.0 docutils-0.16 einops-0.8.0 email-validator-2.2.0 evaluate-0.4.3 exceptiongroup-1.2.2 fastrlock-0.8.2 filelock-3.16.1 fonttools-4.54.1 frozenlist-1.5.0 fsspec-2024.9.0 genson-1.3.0 h11-0.14.0 hiredis-3.0.0 httpcore-1.0.6 httpx-0.27.2 huggingface-hub-0.26.2 idna-3.10 importlib-resources-6.4.5 inflect-5.6.2 iniconfig-2.0.0 isort-5.13.2 jinja2-3.1.4 jmespath-1.0.1 joblib-1.4.2 jsonlines-4.0.0 jsonschema-4.23.0 jsonschema-specifications-2024.10.1 kiwisolver-1.4.7 lazy-loader-0.4 libnacl-2.1.0 librosa-0.10.2.post1 llvmlite-0.43.0 lm-eval-0.4.4 lxml-5.3.0 markupsafe-3.0.2 matplotlib-3.9.2 mbstrdecoder-1.1.3 mistral-common-1.4.4 more-itertools-10.5.0 msgpack-1.1.0 multidict-6.1.0 multiprocess-0.70.16 mypy-extensions-1.0.0 networkx-3.2.1 nltk-3.9.1 numba-0.60.0 numexpr-2.10.1 nvidia-cublas-cu12-12.4.5.8 nvidia-cuda-cupti-cu12-12.4.127 nvidia-cuda-nvrtc-cu12-12.4.127 nvidia-cuda-runtime-cu12-12.4.127 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.2.1.3 nvidia-curand-cu12-10.3.5.147 nvidia-cusolver-cu12-11.6.1.9 nvidia-cusparse-cu12-12.3.1.170 nvidia-nccl-cu12-2.21.5 nvidia-nvjitlink-cu12-12.4.127 nvidia-nvtx-cu12-12.4.127 opencv-python-headless-4.10.0.84 packaging-24.1 pandas-2.2.3 pathspec-0.12.1 pathvalidate-3.2.1 peft-0.13.2 pillow-10.4.0 platformdirs-4.3.6 pluggy-1.5.0 pooch-1.8.2 portalocker-2.10.1 propcache-0.2.0 protobuf-5.28.3 psutil-6.1.0 pyarrow-18.0.0 pyasn1-0.6.1 pybind11-2.13.6 pycparser-2.22 pydantic-2.9.2 pydantic-core-2.23.4 pyparsing-3.2.0 pytablewriter-1.2.0 pytest-8.3.3 pytest-asyncio-0.24.0 pytest-rerunfailures-14.0 pytest-shard-0.1.2 pytz-2024.2 pyyaml-6.0.2 ray-2.35.0 redis-5.2.0 referencing-0.35.1 regex-2024.9.11 requests-2.32.3 rouge-score-0.1.2 rpds-py-0.20.1 rsa-4.7.2 s3transfer-0.10.3 sacrebleu-2.4.3 safetensors-0.4.5 scikit-learn-1.5.2 scipy-1.13.1 sentence-transformers-3.2.1 sentencepiece-0.2.0 soundfile-0.12.1 soxr-0.5.0.post1 sqlitedict-2.1.0 sympy-1.13.1 tabledata-1.3.3 tabulate-0.9.0 tcolorpy-0.1.6 tenacity-9.0.0 tensorizer-2.9.0 threadpoolctl-3.5.0 tiktoken-0.7.0 timm-1.0.11 tokenizers-0.20.3 toml-0.10.2 tomli-2.0.2 torch-2.5.1 torchvision-0.20.1 tqdm-4.66.6 tqdm-multiprocess-0.0.11 transformers-4.45.2 transformers-stream-generator-0.0.5 triton-3.1.0 typepy-1.3.2 typing-extensions-4.12.2 tzdata-2024.2 urllib3-1.26.20 word2number-1.1 xxhash-3.5.0 yarl-1.17.1 zipp-3.20.2 zstandard-0.23.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting yapf==0.32.0 (from -r /workspace/requirements-lint.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/47/88/843c2e68f18a5879b4fbf37cb99fbabe1ffc4343b2e63191c8462235c008/yapf-0.32.0-py2.py3-none-any.whl (190 kB)
+Requirement already satisfied: toml==0.10.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-lint.txt (line 3)) (0.10.2)
+Requirement already satisfied: tomli==2.0.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-lint.txt (line 4)) (2.0.2)
+Collecting ruff==0.6.5 (from -r /workspace/requirements-lint.txt (line 5))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c4/e3/9d0ff218c7663ab9d53abe02911bec03d32b8ced7f78c1c49c2af84903a2/ruff-0.6.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 18.2 MB/s  0:00:00
+Collecting codespell==2.3.0 (from -r /workspace/requirements-lint.txt (line 6))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl (329 kB)
+Requirement already satisfied: isort==5.13.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-lint.txt (line 7)) (5.13.2)
+Collecting clang-format==18.1.5 (from -r /workspace/requirements-lint.txt (line 8))
+  Downloading https://mirrors.aliyun.com/pypi/packages/45/96/d960d9add3eb71f6c6039181054281aeb42f2cb4877a33f889516abc2cb4/clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 15.6 MB/s  0:00:00
+Collecting mypy==1.11.1 (from -r /workspace/requirements-lint.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1c/21/a6b46c91b4c9d1918ee59c305f46850cde7cbea748635a352e7c3c8ed204/mypy-1.11.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 18.6 MB/s  0:00:00
+Collecting types-PyYAML (from -r /workspace/requirements-lint.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
+Collecting types-requests (from -r /workspace/requirements-lint.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1c/12/709ea261f2bf91ef0a26a9eed20f2623227a8ed85610c1e54c5805692ecb/types_requests-2.32.4.20260107-py3-none-any.whl (20 kB)
+Collecting types-setuptools (from -r /workspace/requirements-lint.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3e/54/3489432b1d9bc713c9d8aa810296b8f5b0088403662959fb63a8acdbd4fc/types_setuptools-82.0.0.20260210-py3-none-any.whl (68 kB)
+Requirement already satisfied: absl-py==2.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 7)) (2.1.0)
+Requirement already satisfied: accelerate==1.0.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 9)) (1.0.1)
+Requirement already satisfied: aiohappyeyeballs==2.4.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 13)) (2.4.3)
+Requirement already satisfied: aiohttp==3.10.10 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 15)) (3.10.10)
+Requirement already satisfied: aiosignal==1.3.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 20)) (1.3.1)
+Requirement already satisfied: annotated-types==0.7.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 24)) (0.7.0)
+Requirement already satisfied: anyio==4.6.2.post1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 26)) (4.6.2.post1)
+Requirement already satisfied: argcomplete==3.5.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 28)) (3.5.1)
+Requirement already satisfied: async-timeout==4.0.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 30)) (4.0.3)
+Requirement already satisfied: attrs==24.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 34)) (24.2.0)
+Requirement already satisfied: audioread==3.0.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 40)) (3.0.1)
+Requirement already satisfied: awscli==1.35.23 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 42)) (1.35.23)
+Requirement already satisfied: bitsandbytes==0.44.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 44)) (0.44.1)
+Requirement already satisfied: black==24.10.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 46)) (24.10.0)
+Requirement already satisfied: boto3==1.35.57 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 48)) (1.35.57)
+Requirement already satisfied: botocore==1.35.57 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 50)) (1.35.57)
+Requirement already satisfied: buildkite-test-collector==0.1.9 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 55)) (0.1.9)
+Requirement already satisfied: certifi==2024.8.30 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 57)) (2024.8.30)
+Requirement already satisfied: cffi==1.17.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 62)) (1.17.1)
+Requirement already satisfied: chardet==5.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 64)) (5.2.0)
+Requirement already satisfied: charset-normalizer==3.4.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 66)) (3.4.0)
+Requirement already satisfied: click==8.1.7 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 68)) (8.1.7)
+Requirement already satisfied: colorama==0.4.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 73)) (0.4.6)
+Requirement already satisfied: contourpy==1.3.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 78)) (1.3.0)
+Requirement already satisfied: cupy-cuda12x==13.3.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 80)) (13.3.0)
+Requirement already satisfied: cycler==0.12.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 82)) (0.12.1)
+Requirement already satisfied: datamodel-code-generator==0.26.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 84)) (0.26.3)
+Requirement already satisfied: dataproperty==1.0.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 86)) (1.0.1)
+Requirement already satisfied: datasets==3.0.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 90)) (3.0.2)
+Requirement already satisfied: decorator==5.1.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 94)) (5.1.1)
+Requirement already satisfied: decord==0.6.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 96)) (0.6.0)
+Requirement already satisfied: dill==0.3.8 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 98)) (0.3.8)
+Requirement already satisfied: dnspython==2.7.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 104)) (2.7.0)
+Requirement already satisfied: docutils==0.16 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 106)) (0.16)
+Requirement already satisfied: einops==0.8.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 108)) (0.8.0)
+Requirement already satisfied: email-validator==2.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 110)) (2.2.0)
+Requirement already satisfied: evaluate==0.4.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 112)) (0.4.3)
+Requirement already satisfied: exceptiongroup==1.2.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 114)) (1.2.2)
+Requirement already satisfied: fastrlock==0.8.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 118)) (0.8.2)
+Requirement already satisfied: filelock==3.16.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 120)) (3.16.1)
+Requirement already satisfied: fonttools==4.54.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 128)) (4.54.1)
+Requirement already satisfied: frozenlist==1.5.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 130)) (1.5.0)
+Requirement already satisfied: fsspec==2024.9.0 in /usr/local/lib/python3.12/dist-packages (from fsspec[http]==2024.9.0->-r /workspace/requirements-test.txt (line 135)) (2024.9.0)
+Requirement already satisfied: genson==1.3.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 141)) (1.3.0)
+Requirement already satisfied: h11==0.14.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 143)) (0.14.0)
+Requirement already satisfied: hiredis==3.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 145)) (3.0.0)
+Requirement already satisfied: httpcore==1.0.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 147)) (1.0.6)
+Requirement already satisfied: httpx==0.27.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 149)) (0.27.2)
+Requirement already satisfied: huggingface-hub==0.26.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 151)) (0.26.2)
+Requirement already satisfied: idna==3.10 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 161)) (3.10)
+Requirement already satisfied: importlib-resources==6.4.5 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 168)) (6.4.5)
+Requirement already satisfied: inflect==5.6.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 170)) (5.6.2)
+Requirement already satisfied: iniconfig==2.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 172)) (2.0.0)
+Requirement already satisfied: jinja2==3.1.4 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 176)) (3.1.4)
+Requirement already satisfied: jmespath==1.0.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 180)) (1.0.1)
+Requirement already satisfied: joblib==1.4.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 184)) (1.4.2)
+Requirement already satisfied: jsonlines==4.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 189)) (4.0.0)
+Requirement already satisfied: jsonschema==4.23.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 191)) (4.23.0)
+Requirement already satisfied: jsonschema-specifications==2024.10.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 195)) (2024.10.1)
+Requirement already satisfied: kiwisolver==1.4.7 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 197)) (1.4.7)
+Requirement already satisfied: lazy-loader==0.4 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 199)) (0.4)
+Requirement already satisfied: libnacl==2.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 201)) (2.1.0)
+Requirement already satisfied: librosa==0.10.2.post1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 203)) (0.10.2.post1)
+Requirement already satisfied: llvmlite==0.43.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 205)) (0.43.0)
+Requirement already satisfied: lm-eval==0.4.4 in /usr/local/lib/python3.12/dist-packages (from lm-eval[api]==0.4.4->-r /workspace/requirements-test.txt (line 207)) (0.4.4)
+Requirement already satisfied: lxml==5.3.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 209)) (5.3.0)
+Requirement already satisfied: markupsafe==3.0.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 211)) (3.0.2)
+Requirement already satisfied: matplotlib==3.9.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 213)) (3.9.2)
+Requirement already satisfied: mbstrdecoder==1.1.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 215)) (1.1.3)
+Requirement already satisfied: mistral-common==1.4.4 in /usr/local/lib/python3.12/dist-packages (from mistral-common[opencv]==1.4.4->-r /workspace/requirements-test.txt (line 220)) (1.4.4)
+Requirement already satisfied: more-itertools==10.5.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 224)) (10.5.0)
+Requirement already satisfied: mpmath==1.3.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 226)) (1.3.0)
+Requirement already satisfied: msgpack==1.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 228)) (1.1.0)
+Requirement already satisfied: multidict==6.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 232)) (6.1.0)
+Requirement already satisfied: multiprocess==0.70.16 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 236)) (0.70.16)
+Requirement already satisfied: mypy-extensions==1.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 240)) (1.0.0)
+Requirement already satisfied: networkx==3.2.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 242)) (3.2.1)
+Requirement already satisfied: nltk==3.9.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 244)) (3.9.1)
+Requirement already satisfied: numba==0.60.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 246)) (0.60.0)
+Requirement already satisfied: numexpr==2.10.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 248)) (2.10.1)
+Requirement already satisfied: numpy==1.26.4 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 250)) (1.26.4)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 276)) (12.4.5.8)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 281)) (12.4.127)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 283)) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 285)) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 287)) (9.1.0.70)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 289)) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 291)) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 293)) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 295)) (12.3.1.170)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 299)) (2.21.5)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 301)) (12.4.127)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 306)) (12.4.127)
+Requirement already satisfied: opencv-python-headless==4.10.0.84 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 308)) (4.10.0.84)
+Requirement already satisfied: packaging==24.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 310)) (24.1)
+Requirement already satisfied: pandas==2.2.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 327)) (2.2.3)
+Requirement already satisfied: pathspec==0.12.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 331)) (0.12.1)
+Requirement already satisfied: pathvalidate==3.2.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 333)) (3.2.1)
+Requirement already satisfied: peft==0.13.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 335)) (0.13.2)
+Requirement already satisfied: pillow==10.4.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 339)) (10.4.0)
+Requirement already satisfied: platformdirs==4.3.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 345)) (4.3.6)
+Requirement already satisfied: pluggy==1.5.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 349)) (1.5.0)
+Requirement already satisfied: pooch==1.8.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 351)) (1.8.2)
+Requirement already satisfied: portalocker==2.10.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 353)) (2.10.1)
+Requirement already satisfied: propcache==0.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 355)) (0.2.0)
+Requirement already satisfied: protobuf==5.28.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 357)) (5.28.3)
+Requirement already satisfied: psutil==6.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 361)) (6.1.0)
+Requirement already satisfied: py==1.11.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 366)) (1.11.0)
+Requirement already satisfied: pyarrow==18.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 368)) (18.0.0)
+Requirement already satisfied: pyasn1==0.6.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 370)) (0.6.1)
+Requirement already satisfied: pybind11==2.13.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 372)) (2.13.6)
+Requirement already satisfied: pycparser==2.22 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 374)) (2.22)
+Requirement already satisfied: pydantic==2.9.2 in /usr/local/lib/python3.12/dist-packages (from pydantic[email]==2.9.2->-r /workspace/requirements-test.txt (line 376)) (2.9.2)
+Requirement already satisfied: pydantic-core==2.23.4 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 380)) (2.23.4)
+Requirement already satisfied: pyparsing==3.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 382)) (3.2.0)
+Requirement already satisfied: pytablewriter==1.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 384)) (1.2.0)
+Requirement already satisfied: pytest==8.3.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 386)) (8.3.3)
+Requirement already satisfied: pytest-asyncio==0.24.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 394)) (0.24.0)
+Requirement already satisfied: pytest-forked==1.6.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 396)) (1.6.0)
+Requirement already satisfied: pytest-rerunfailures==14.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 398)) (14.0)
+Requirement already satisfied: pytest-shard==0.1.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 400)) (0.1.2)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 402)) (2.9.0.post0)
+Requirement already satisfied: pytz==2024.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 408)) (2024.2)
+Requirement already satisfied: pyyaml==6.0.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 412)) (6.0.2)
+Requirement already satisfied: ray==2.35.0 in /usr/local/lib/python3.12/dist-packages (from ray[adag]==2.35.0->-r /workspace/requirements-test.txt (line 423)) (2.35.0)
+Requirement already satisfied: redis==5.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 425)) (5.2.0)
+Requirement already satisfied: referencing==0.35.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 427)) (0.35.1)
+Requirement already satisfied: regex==2024.9.11 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 431)) (2024.9.11)
+Requirement already satisfied: requests==2.32.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 437)) (2.32.3)
+Requirement already satisfied: rouge-score==0.1.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 449)) (0.1.2)
+Requirement already satisfied: rpds-py==0.20.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 451)) (0.20.1)
+Requirement already satisfied: rsa==4.7.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 455)) (4.7.2)
+Requirement already satisfied: s3transfer==0.10.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 457)) (0.10.3)
+Requirement already satisfied: sacrebleu==2.4.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 461)) (2.4.3)
+Requirement already satisfied: safetensors==0.4.5 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 463)) (0.4.5)
+Requirement already satisfied: scikit-learn==1.5.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 469)) (1.5.2)
+Requirement already satisfied: scipy==1.13.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 474)) (1.13.1)
+Requirement already satisfied: sentence-transformers==3.2.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 479)) (3.2.1)
+Requirement already satisfied: sentencepiece==0.2.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 481)) (0.2.0)
+Requirement already satisfied: six==1.16.0 in /usr/lib/python3/dist-packages (from -r /workspace/requirements-test.txt (line 483)) (1.16.0)
+Requirement already satisfied: sniffio==1.3.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 487)) (1.3.1)
+Requirement already satisfied: soundfile==0.12.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 491)) (0.12.1)
+Requirement already satisfied: soxr==0.5.0.post1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 495)) (0.5.0.post1)
+Requirement already satisfied: sqlitedict==2.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 497)) (2.1.0)
+Requirement already satisfied: sympy==1.13.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 499)) (1.13.1)
+Requirement already satisfied: tabledata==1.3.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 501)) (1.3.3)
+Requirement already satisfied: tabulate==0.9.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 503)) (0.9.0)
+Requirement already satisfied: tcolorpy==0.1.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 505)) (0.1.6)
+Requirement already satisfied: tenacity==9.0.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 507)) (9.0.0)
+Requirement already satisfied: tensorizer==2.9.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 509)) (2.9.0)
+Requirement already satisfied: threadpoolctl==3.5.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 511)) (3.5.0)
+Requirement already satisfied: tiktoken==0.7.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 513)) (0.7.0)
+Requirement already satisfied: timm==1.0.11 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 517)) (1.0.11)
+Requirement already satisfied: tokenizers==0.20.3 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 519)) (0.20.3)
+Requirement already satisfied: torch==2.5.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 527)) (2.5.1)
+Requirement already satisfied: torchvision==0.20.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 538)) (0.20.1)
+Requirement already satisfied: tqdm==4.66.6 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 540)) (4.66.6)
+Requirement already satisfied: tqdm-multiprocess==0.0.11 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 551)) (0.0.11)
+Requirement already satisfied: transformers==4.45.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 553)) (4.45.2)
+Requirement already satisfied: transformers-stream-generator==0.0.5 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 559)) (0.0.5)
+Requirement already satisfied: triton==3.1.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 561)) (3.1.0)
+Requirement already satisfied: typepy==1.3.2 in /usr/local/lib/python3.12/dist-packages (from typepy[datetime]==1.3.2->-r /workspace/requirements-test.txt (line 563)) (1.3.2)
+Requirement already satisfied: typing-extensions==4.12.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 568)) (4.12.2)
+Requirement already satisfied: tzdata==2024.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 579)) (2024.2)
+Requirement already satisfied: urllib3==1.26.20 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 581)) (1.26.20)
+Requirement already satisfied: word2number==1.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 585)) (1.1)
+Requirement already satisfied: xxhash==3.5.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 587)) (3.5.0)
+Requirement already satisfied: yarl==1.17.1 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 591)) (1.17.1)
+Requirement already satisfied: zipp==3.20.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 593)) (3.20.2)
+Requirement already satisfied: zstandard==0.23.0 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-test.txt (line 595)) (0.23.0)
+Requirement already satisfied: setuptools>=38.3.0 in /usr/local/lib/python3.12/dist-packages (from pytablewriter==1.2.0->-r /workspace/requirements-test.txt (line 384)) (82.0.0)
+INFO: pip is looking at multiple versions of types-requests to determine which version is compatible with other requirements. This could take a while.
+Collecting types-requests (from -r /workspace/requirements-lint.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2a/20/9a227ea57c1285986c4cf78400d0a91615d25b24e257fd9e2969606bdfae/types_requests-2.32.4.20250913-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/2b/6f/ec0012be842b1d888d46884ac5558fd62aeae1f0ec4f7a581433d890d4b5/types_requests-2.32.4.20250809-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/3d/ea/0be9258c5a4fa1ba2300111aa5a0767ee6d18eb3fd20e91616c12082284d/types_requests-2.32.4.20250611-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/da/18/9b782980e575c6581d5c0c1c99f4c6f89a1d7173dad072ee96b2756c02e6/types_requests-2.32.0.20250602-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/fe/0f/68a997c73a129287785f418c1ebb6004f81e46b53b3caba88c0e03fcd04a/types_requests-2.32.0.20250515-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/cc/15/3700282a9d4ea3b37044264d3e4d1b1f0095a4ebf860a99914fd544e3be3/types_requests-2.32.0.20250328-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/99/26/645d89f56004aa0ba3b96fec27793e3c7e62b40982ee069e52568922b6db/types_requests-2.32.0.20250306-py3-none-any.whl (20 kB)
+INFO: pip is still looking at multiple versions of types-requests to determine which version is compatible with other requirements. This could take a while.
+  Downloading https://mirrors.aliyun.com/pypi/packages/b9/c2/e44564e8995dbc1738c2acacb8009d59c8cb19327da95a1b5c5d9cb68364/types_requests-2.32.0.20250301-py3-none-any.whl (20 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/d7/01/485b3026ff90e5190b5e24f1711522e06c79f4a56c8f4b95848ac072e20f/types_requests-2.32.0.20241016-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/8f/55/ea44dad71b9d92f86198f7448f5ba46ac919355f4f69bb1c0fa1af02b1b4/types_requests-2.32.0.20240914-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/5f/6e/425219be1dfc954c3e129b3ea70407abc78c1bd6414d0c7180df9940ca1f/types_requests-2.32.0.20240907-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/f1/53/9d399872413354e8c3e27ac8da98459cb215b2dfdab29323fffd5ebf2ca4/types_requests-2.32.0.20240905-py3-none-any.whl (15 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading https://mirrors.aliyun.com/pypi/packages/30/4d/cbed87a6912fbd9259ce23a5d4aa1de9816edf75eec6ed9a757c00906c8e/types_requests-2.32.0.20240712-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/8f/d0/409f7b40f9c34896b153c911d442c6e8d0f78035ddbfa387183aec5aa8c5/types_requests-2.32.0.20240622-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/3b/b1/aad4376acab3bba3c155fdcfd8eccedf0d33b453fc6e67ca3960f3086909/types_requests-2.32.0.20240602-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/cf/12/41212fac764c538e9472c7abccf40db3d9d9a40658184388f9dbb78dc6e1/types_requests-2.32.0.20240523-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/ff/03/2baab14e06460495b7549188ff27051f9514551485349ea2aa9ca3ac6030/types_requests-2.32.0.20240521-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/8b/ea/91b718b8c0b88e4f61cdd61357cc4a1f8767b32be691fb388299003a3ae3/types_requests-2.31.0.20240406-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/6d/05/f9ccc1e7c1760367686834637ca41f2c13cb865c5c3e0505d18c9110cd9b/types_requests-2.31.0.20240403-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/01/ef/d6a1bb541debcea8141dd6d43935bad2e94e91cc68b993ad2130d6f3abf5/types_requests-2.31.0.20240402-py3-none-any.whl (15 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/05/22/21c7918c9bb842faa92fd26108e9f669c3dee9b6b239e8f45dd5f673e6cf/types_requests-2.31.0.20240311-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/7c/96/a651898995c25e8e1b5b8a87ed8b0bccc2895f0db051c534a75741387d40/types_requests-2.31.0.20240310-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/ce/ca/82c7f75616c524856488cece6b37e459de626cad49b2a24a0b571c20be06/types_requests-2.31.0.20240218-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/ae/29/3290a0d17865b9ec3d54fbb17faa265d9de7e856b6a3b52dfdf3507efd7c/types_requests-2.31.0.20240125-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/be/af3ec284a5dd21cffc84fa0088211adf896b6e5e862ce9b1ead212e51b0e/types_requests-2.31.0.20240106-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/1b/23/126ffd0c885926fbd95eac1148093a4d87e9698a1f938be16d109e63ca64/types_requests-2.31.0.20231231-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/1d/d6/1281c1d7b03a127562d6644ebff081e85045f0025b1fe26dcdd82811ad1a/types_requests-2.31.0.10-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/95/b1/805141aa0c0024c633828375918838841481c8b977de8636ae2b80fdcad9/types_requests-2.31.0.9-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/1e/50/fb7eed30eace72d2eb6cf71059f896e7b4a0c031b654b99f37146a68d60b/types_requests-2.31.0.8-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/38/89/12bdcc3709cbc95120c1a4234becb8a94c7271806c36ee90bcf792df1f30/types_requests-2.31.0.7-py3-none-any.whl (14 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/5c/a1/6f8dc74d9069e790d604ddae70cb46dcbac668f1bb08136e7b0f2f5cd3bf/types_requests-2.31.0.6-py3-none-any.whl (14 kB)
+Collecting types-urllib3 (from types-requests->-r /workspace/requirements-lint.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/11/7b/3fc711b2efea5e85a7a0bbfe269ea944aa767bbba5ec52f9ee45d362ccf3/types_urllib3-1.26.25.14-py3-none-any.whl (15 kB)
+Installing collected packages: yapf, types-urllib3, clang-format, types-setuptools, types-requests, types-PyYAML, ruff, mypy, codespell
+
+Successfully installed clang-format-18.1.5 codespell-2.3.0 mypy-1.11.1 ruff-0.6.5 types-PyYAML-6.0.12.20250915 types-requests-2.31.0.6 types-setuptools-82.0.0.20260210 types-urllib3-1.26.25.14 yapf-0.32.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'error'
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'error'
+============================= test session starts ==============================
+collecting ... collected 5 items
+Running 5 items in this shard: tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]
+
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string] FAILED [ 20%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai] FAILED [ 40%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string] FAILED [ 60%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai] FAILED [ 80%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai] FAILED [100%]
+
+=================================== FAILURES ===================================
+_ test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string] _
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2df2dd08c0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd08c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd08c0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: cc3c5b57-0db5-499b-975d-5674f157c097)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like microsoft/Phi-3.5-vision-instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+___ test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai] ___
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2df2dd2ab0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd2ab0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd2ab0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 13d54367-d441-4170-b538-45cba73489f6)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like Qwen/Qwen2-VL-2B-Instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+____ test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string] _____
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2df3bf8dd0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df3bf8dd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df3bf8dd0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: ca58a2f6-6eae-46f3-a222-f4226f68d0de)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like fixie-ai/ultravox-v0_3 is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+_ test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai] _
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2df2dd0b30>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd0b30>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df2dd0b30>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 1a7a6f4e-7958-45c2-bfb7-fe72ebbe67a7)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-3.2-11B-Vision-Instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+__ test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai] __
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f2df3bfbd70>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df3bfbd70>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2df3bfbd70>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: c9b52b99-3a43-4b9a-9ced-b606d6239153)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-Guard-3-1B is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+=============================== warnings summary ===============================
+vllm/connections.py:8
+  /workspace/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+  No module named 'vllm._version'
+    from vllm.version import __version__ as VLLM_VERSION
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------------ generated xml file: /workspace/phase2.xml -------------------
+=================== 5 failed, 1 warning in 103.03s (0:01:43) ===================
+
+--- STDERR ---
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+ERROR: Could not find a version that satisfies the requirement torch==2.5.1+cpu (from versions: 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.7.0, 2.7.1, 2.8.0, 2.9.0, 2.9.1, 2.10.0)
+ERROR: No matching distribution found for torch==2.5.1+cpu
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+typer 0.24.1 requires click>=8.2.1, but you have click 8.1.7 which is incompatible.
+xformers 0.0.35 requires torch>=2.10, but you have torch 2.5.1 which is incompatible.
+torchaudio 2.5.0+cu124 requires torch==2.5.0, but you have torch 2.5.1 which is incompatible.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+  error: subprocess-exited-with-error
+  
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [18 lines of output]
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 209, in prepare_metadata_for_build_editable
+          return hook(metadata_directory, config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 486, in prepare_metadata_for_build_editable
+          return self.prepare_metadata_for_build_wheel(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 380, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 15, in <module>
+      ModuleNotFoundError: No module named 'setuptools_scm'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> from file:///workspace
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+  error: subprocess-exited-with-error
+  
+  × Preparing editable metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [18 lines of output]
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 209, in prepare_metadata_for_build_editable
+          return hook(metadata_directory, config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 486, in prepare_metadata_for_build_editable
+          return self.prepare_metadata_for_build_wheel(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 380, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/usr/local/lib/python3.12/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 15, in <module>
+      ModuleNotFoundError: No module named 'setuptools_scm'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> from file:///workspace
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+/usr/local/lib/python3.12/dist-packages/pytest_asyncio/plugin.py:208: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))

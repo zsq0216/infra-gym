@@ -340,6 +340,38 @@ def ensure_bare_clone(workdir, repo_url=VLLM_REPO_URL):
     return bare_path
 
 
+def _force_remove_dir(path):
+    # type: (str) -> None
+    """Remove a directory tree, handling root-owned files left by Docker.
+
+    Docker containers run as root by default, so files created inside a
+    bind-mounted volume are owned by root and ``shutil.rmtree`` will fail
+    with PermissionError.  We first try a plain ``shutil.rmtree``; if that
+    fails we fall back to ``chmod -R`` + retry, and finally ``sudo rm -rf``.
+    """
+    if not os.path.isdir(path):
+        return
+    try:
+        shutil.rmtree(path)
+        return
+    except Exception:
+        pass
+    # Try fixing permissions then retrying
+    try:
+        subprocess.run(["chmod", "-R", "u+rwX", path], timeout=60,
+                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        shutil.rmtree(path)
+        return
+    except Exception:
+        pass
+    # Last resort: sudo
+    try:
+        subprocess.run(["sudo", "rm", "-rf", path], timeout=60,
+                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except Exception:
+        logger.warning("Could not remove directory %s", path)
+
+
 def setup_worktree(bare_path, worktree_path, commit_sha):
     # type: (str, str, str) -> None
     """Create a git worktree at worktree_path checked out at commit_sha.
@@ -363,8 +395,9 @@ def setup_worktree(bare_path, worktree_path, commit_sha):
                 timeout=60,
             )
         except Exception:
-            # Fallback: just delete the directory and prune
-            shutil.rmtree(worktree_path, ignore_errors=True)
+            # Fallback: force-delete the directory (may contain root-owned
+            # files left by Docker) and prune the worktree reference.
+            _force_remove_dir(worktree_path)
             try:
                 run_cmd(["git", "worktree", "prune"], cwd=bare_path, timeout=60)
             except Exception:
@@ -407,7 +440,7 @@ def cleanup_worktree(bare_path, worktree_path):
             timeout=60,
         )
     except Exception:
-        shutil.rmtree(worktree_path, ignore_errors=True)
+        _force_remove_dir(worktree_path)
     try:
         run_cmd(["git", "worktree", "prune"], cwd=bare_path, timeout=60)
     except Exception:

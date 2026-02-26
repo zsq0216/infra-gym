@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="4" time="72.612" timestamp="2026-02-26T16:29:25.039311+00:00" hostname="88a8195c0f6a"><testcase classname="tests.engine.test_stop_strings" name="test_stop_basic" time="71.195"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:276: in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:507: in cached_files
+    raise e
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:419: in cached_files
+    hf_hub_download(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+    response = http_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+    return next(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:901: in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+E   RuntimeError: Cannot send a request, as the client has been closed.
+
+During handling of the above exception, another exception occurred:
+tests/engine/test_stop_strings.py:13: in vllm_model
+    return vllm_runner(MODEL)
+tests/conftest.py:302: in __init__
+    self.model = LLM(
+vllm/entrypoints/llm.py:112: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:211: in from_engine_args
+    engine_config = engine_args.create_engine_config()
+vllm/engine/arg_utils.py:419: in create_engine_config
+    model_config = ModelConfig(
+vllm/config.py:128: in __init__
+    self.hf_config = get_config(self.model, trust_remote_code, revision,
+vllm/transformers_utils/config.py:22: in get_config
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.10/dist-packages/transformers/models/auto/configuration_auto.py:1403: in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:572: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:649: in _get_config_dict
+    raise OSError(
+E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file</error></testcase><testcase classname="tests.engine.test_stop_strings" name="test_stop_multi_tokens" time="0.001"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:276: in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:507: in cached_files
+    raise e
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:419: in cached_files
+    hf_hub_download(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+    response = http_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+    return next(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:901: in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+E   RuntimeError: Cannot send a request, as the client has been closed.
+
+During handling of the above exception, another exception occurred:
+tests/engine/test_stop_strings.py:13: in vllm_model
+    return vllm_runner(MODEL)
+tests/conftest.py:302: in __init__
+    self.model = LLM(
+vllm/entrypoints/llm.py:112: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:211: in from_engine_args
+    engine_config = engine_args.create_engine_config()
+vllm/engine/arg_utils.py:419: in create_engine_config
+    model_config = ModelConfig(
+vllm/config.py:128: in __init__
+    self.hf_config = get_config(self.model, trust_remote_code, revision,
+vllm/transformers_utils/config.py:22: in get_config
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.10/dist-packages/transformers/models/auto/configuration_auto.py:1403: in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:572: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:649: in _get_config_dict
+    raise OSError(
+E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file</error></testcase><testcase classname="tests.engine.test_stop_strings" name="test_stop_partial_token" time="0.001"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:276: in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:507: in cached_files
+    raise e
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:419: in cached_files
+    hf_hub_download(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+    response = http_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+    return next(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:901: in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+E   RuntimeError: Cannot send a request, as the client has been closed.
+
+During handling of the above exception, another exception occurred:
+tests/engine/test_stop_strings.py:13: in vllm_model
+    return vllm_runner(MODEL)
+tests/conftest.py:302: in __init__
+    self.model = LLM(
+vllm/entrypoints/llm.py:112: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:211: in from_engine_args
+    engine_config = engine_args.create_engine_config()
+vllm/engine/arg_utils.py:419: in create_engine_config
+    model_config = ModelConfig(
+vllm/config.py:128: in __init__
+    self.hf_config = get_config(self.model, trust_remote_code, revision,
+vllm/transformers_utils/config.py:22: in get_config
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.10/dist-packages/transformers/models/auto/configuration_auto.py:1403: in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:572: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:649: in _get_config_dict
+    raise OSError(
+E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file</error></testcase><testcase classname="tests.engine.test_stop_strings" name="test_stop_token_id" time="0.001"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:276: in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:507: in cached_files
+    raise e
+/usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:419: in cached_files
+    hf_hub_download(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+    response = http_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+    return next(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+/usr/local/lib/python3.10/dist-packages/httpx/_client.py:901: in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+E   RuntimeError: Cannot send a request, as the client has been closed.
+
+During handling of the above exception, another exception occurred:
+tests/engine/test_stop_strings.py:13: in vllm_model
+    return vllm_runner(MODEL)
+tests/conftest.py:302: in __init__
+    self.model = LLM(
+vllm/entrypoints/llm.py:112: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:211: in from_engine_args
+    engine_config = engine_args.create_engine_config()
+vllm/engine/arg_utils.py:419: in create_engine_config
+    model_config = ModelConfig(
+vllm/config.py:128: in __init__
+    self.hf_config = get_config(self.model, trust_remote_code, revision,
+vllm/transformers_utils/config.py:22: in get_config
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.10/dist-packages/transformers/models/auto/configuration_auto.py:1403: in from_pretrained
+    config_dict, unused_kwargs = PreTrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:572: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:649: in _get_config_dict
+    raise OSError(
+E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file</error></testcase></testsuite></testsuites>

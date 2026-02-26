@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.866" timestamp="2026-02-26T17:48:53.510860+00:00" hostname="ea0ede20f845"><testcase classname="tests.test_utils" name="test_no_model_tag" time="0.271"><failure message="FileNotFoundError: [Errno 2] No such file or directory: './data/test_config.yaml'">tests/test_utils.py:237: in test_no_model_tag
+    parser_with_config.parse_args(
+vllm/utils.py:1138: in parse_args
+    args = FlexibleArgumentParser._pull_args_from_config(args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vllm/utils.py:1201: in _pull_args_from_config
+    config_args = FlexibleArgumentParser._load_config_file(file_path)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vllm/utils.py:1245: in _load_config_file
+    raise ex
+vllm/utils.py:1239: in _load_config_file
+    with open(file_path, 'r') as config_file:
+         ^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: './data/test_config.yaml'</failure></testcase><testcase classname="tests.test_utils" name="test_missing_required_argument" time="0.269" /></testsuite></testsuites>

@@ -5,25 +5,33 @@
   "phase1": {
     "passed": [],
     "failed": [],
-    "errors": [],
+    "errors": [
+      "tests.test_logger"
+    ],
     "skipped": []
   },
   "phase2": {
-    "passed": [],
+    "passed": [
+      "tests/test_logger.py::test_trace_function_call"
+    ],
     "failed": [],
     "errors": [],
     "skipped": []
   },
   "FAIL_TO_PASS": [],
   "PASS_TO_PASS": [],
-  "status": "error",
-  "error_message": "Failed to setup worktree: Command '['git', 'worktree', 'add', '--detach', '/tmp/infra-gym-workdir/vllm-project__vllm-4019-4079/repo', '705578ae14b648782a8a321dd0903c163bd77375']' returned non-zero exit status 128.",
+  "status": "success",
+  "error_message": "",
   "timestamps": {
-    "start": 1772109508.0650468,
-    "phase1_start": 0.0,
-    "phase1_end": 0.0,
-    "phase2_start": 0.0,
-    "phase2_end": 0.0,
-    "end": 1772109509.7648075
-  }
+    "start": 1772124950.586351,
+    "phase1_start": 1772124952.637163,
+    "phase1_end": 1772125057.925867,
+    "phase2_start": 1772125057.9291809,
+    "phase2_end": 1772125145.6672883,
+    "end": 1772125145.6674511
+  },
+  "regressions": [],
+  "both_failed": [
+    "tests.test_logger"
+  ]
 }

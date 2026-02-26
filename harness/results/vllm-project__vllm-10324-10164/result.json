@@ -4,26 +4,46 @@
   "base_commit": "803f37eaaa11568f65acbf0bcd1044fb9b1610bf",
   "phase1": {
     "passed": [],
-    "failed": [],
+    "failed": [
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]"
+    ],
     "errors": [],
     "skipped": []
   },
   "phase2": {
     "passed": [],
-    "failed": [],
+    "failed": [
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]"
+    ],
     "errors": [],
     "skipped": []
   },
   "FAIL_TO_PASS": [],
   "PASS_TO_PASS": [],
-  "status": "error",
-  "error_message": "Failed to setup worktree: Command '['git', 'worktree', 'add', '--detach', '/tmp/infra-gym-workdir/vllm-project__vllm-10324-10164/repo', '803f37eaaa11568f65acbf0bcd1044fb9b1610bf']' returned non-zero exit status 128.",
+  "status": "success",
+  "error_message": "",
   "timestamps": {
-    "start": 1772109502.8255332,
-    "phase1_start": 0.0,
-    "phase1_end": 0.0,
-    "phase2_start": 0.0,
-    "phase2_end": 0.0,
-    "end": 1772109504.3942685
-  }
+    "start": 1772120731.3889647,
+    "phase1_start": 1772120733.1966789,
+    "phase1_end": 1772121314.3786228,
+    "phase2_start": 1772121314.3817518,
+    "phase2_end": 1772121843.2771037,
+    "end": 1772121843.277263
+  },
+  "regressions": [],
+  "both_failed": [
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]"
+  ]
 }

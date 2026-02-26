@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="103.336" timestamp="2026-02-26T15:53:25.999463+00:00" hostname="f93be9c3bc92"><testcase classname="tests.entrypoints.test_chat_utils" name="test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]" time="20.381"><failure message="OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like microsoft/Phi-3.5-vision-instruct is not the path to a directory containing a file named config.json.&#10;Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.">/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x737a277ce6c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277ce6c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277ce6c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: caded5fd-2028-4c68-b93d-c0f6942eccfd)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like microsoft/Phi-3.5-vision-instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.</failure></testcase><testcase classname="tests.entrypoints.test_chat_utils" name="test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]" time="20.398"><failure message="OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like Qwen/Qwen2-VL-2B-Instruct is not the path to a directory containing a file named config.json.&#10;Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.">/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x737a277ce9c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277ce9c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277ce9c0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: eab0a0b9-5817-4629-93c2-bb72df02ba71)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like Qwen/Qwen2-VL-2B-Instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.</failure></testcase><testcase classname="tests.entrypoints.test_chat_utils" name="test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]" time="20.418"><failure message="OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like fixie-ai/ultravox-v0_3 is not the path to a directory containing a file named config.json.&#10;Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.">/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x737a277cfd10&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277cfd10&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a277cfd10&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 4de93aed-3604-4008-b2a6-85e0cd81a199)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like fixie-ai/ultravox-v0_3 is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.</failure></testcase><testcase classname="tests.entrypoints.test_chat_utils" name="test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]" time="20.401"><failure message="OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-3.2-11B-Vision-Instruct is not the path to a directory containing a file named config.json.&#10;Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.">/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x737a2862ddc0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a2862ddc0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a2862ddc0&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: eaf6698b-15ce-4523-b624-0fe1065a3182)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-3.2-11B-Vision-Instruct is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.</failure></testcase><testcase classname="tests.entrypoints.test_chat_utils" name="test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]" time="20.395"><failure message="OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-Guard-3-1B is not the path to a directory containing a file named config.json.&#10;Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.">/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
+    conn = connection.create_connection(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
+    raise err
+/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
+    sock.connect(sa)
+E   OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
+    httplib_response = self._make_request(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
+    self._validate_conn(conn)
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
+    conn.connect()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
+    self.sock = conn = self._new_conn()
+/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
+    raise NewConnectionError(
+E   urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPSConnection object at 0x737a286ad790&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
+    resp = conn.urlopen(
+/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
+    retries = retries.increment(
+/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a286ad790&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
+    response = get_session().request(method=method, url=url, **params)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
+    resp = self.send(prep, **send_kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
+    r = adapter.send(request, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
+    return super().send(request, *args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
+    raise ConnectionError(e, request=request)
+E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('&lt;urllib3.connection.HTTPSConnection object at 0x737a286ad790&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: ce7f54e3-987d-4da6-a10e-ed64a8aaf7a8)')
+
+The above exception was the direct cause of the following exception:
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
+    resolved_file = hf_hub_download(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
+    tokenizer_group = TokenizerGroup(
+vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
+    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
+vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
+    config = AutoConfig.from_pretrained(
+/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
+    resolved_config_file = cached_file(
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+    raise EnvironmentError(
+E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-Guard-3-1B is not the path to a directory containing a file named config.json.
+E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.</failure></testcase></testsuite></testsuites>
