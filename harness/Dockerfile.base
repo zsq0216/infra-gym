@@ -92,7 +92,7 @@ RUN python -m pip install --no-cache-dir --retries 5 --timeout 60 \
         requests \
         aiohttp \
         httpx \
-        numpy \
+        "numpy<2" \
         pyyaml \
         filelock \
         tqdm

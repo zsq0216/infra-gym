@@ -63,7 +63,7 @@ RUN python -m pip install --no-cache-dir \
         msgspec \
         lm-format-enforcer \
         outlines>=0.0.27 \
-    || echo "WARNING: Some v0.3 dependencies failed to install"
+    || { echo "WARNING: Some v0.3 dependencies failed to install"; pip install transformers==4.38.2 sentencepiece tokenizers safetensors huggingface-hub pydantic || true; }
 
 # ---- Additional test-specific dependencies ----------------------------------
 # einops: tensor comparison utilities

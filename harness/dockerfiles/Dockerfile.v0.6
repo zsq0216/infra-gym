@@ -65,12 +65,12 @@ RUN python -m pip install --no-cache-dir \
 # FP8 support (nvidia-ml-py), miscellaneous utilities,
 # new in v0.6: partial-json-parser, mistral-common, importlib-metadata
 RUN python -m pip install --no-cache-dir \
-        transformers>=4.45.0 \
+        transformers>=4.46.0 \
         sentencepiece \
         tokenizers>=0.20.0 \
         safetensors \
         huggingface-hub>=0.25.0 \
-        triton>=3.0.0 \
+        triton>=3.0.0,<3.2.0 \
         numpy \
         pandas \
         uvicorn[standard] \

@@ -76,7 +76,7 @@ RUN python -m pip install --no-cache-dir \
         gguf \
         bitsandbytes>=0.42.0 \
         pillow \
-    || echo "WARNING: Some v0.4 dependencies failed to install"
+    || { echo "WARNING: Some v0.4 dependencies failed to install"; pip install transformers==4.41.2 sentencepiece tokenizers safetensors huggingface-hub pydantic || true; }
 
 # ---- Additional test-specific dependencies ----------------------------------
 # multinomial: sampling/logprob tests, sentence-transformers: embedding model tests,
