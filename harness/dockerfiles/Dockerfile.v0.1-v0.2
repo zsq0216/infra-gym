@@ -31,7 +31,7 @@ LABEL vllm.versions="0.1.4,0.1.7,0.2.4"
 RUN python -m pip install --no-cache-dir \
         torch==2.0.1 \
         torchvision==0.15.2 \
-        --index-url https://mirrors.aliyun.com/pytorch-wheels/cu118
+        --index-url https://download.pytorch.org/whl/cu118
 
 # ---- vLLM core dependencies for v0.1-v0.2 ----------------------------------
 # These versions had a relatively simple dependency set.
