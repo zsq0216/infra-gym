@@ -347,6 +347,12 @@ def setup_worktree(bare_path, worktree_path, commit_sha):
     If the worktree already exists, remove and recreate it to ensure a clean
     state.
     """
+    # Prune stale worktree references before attempting to create a new one
+    try:
+        run_cmd(["git", "worktree", "prune"], cwd=bare_path, timeout=60)
+    except Exception:
+        pass
+
     if os.path.isdir(worktree_path):
         logger.info("Removing stale worktree %s", worktree_path)
         # Try git worktree remove first
