@@ -237,6 +237,12 @@ def _make_node_id(classname, name):
     the last file-level segment.
     """
     if not classname:
+        # Collection errors may store a dotted module path in *name*,
+        # e.g. name="tests.test_logger".  Normalise it to a file path
+        # (e.g. "tests/test_logger.py") so that prefix matching with
+        # per-function node IDs works in the classification step.
+        if "." in name and "::" not in name and not name.endswith(".py"):
+            return "/".join(name.split(".")) + ".py"
         return name
 
     parts = classname.split(".")
@@ -620,7 +626,14 @@ def _build_docker_setup_commands(category):
     # PYTHONPATH fallback for old versions where editable install fails entirely
     pythonpath = 'export PYTHONPATH=/workspace:${PYTHONPATH:-}'
 
-    return [req_install, test_req_install, vllm_install, pythonpath]
+    # Some tests reference data files via relative paths like ./data/...
+    # which resolve against CWD (/workspace), but the actual files live
+    # under /workspace/tests/data/.  Create a symlink so both paths work.
+    link_test_data = (
+        '[ -d tests/data ] && [ ! -e data ] && ln -s tests/data data || true'
+    )
+
+    return [req_install, test_req_install, vllm_install, pythonpath, link_test_data]
 
 
 def run_pytest_docker(
@@ -914,6 +927,21 @@ def process_instance(
 
     # FAIL_TO_PASS: failed before fix, pass after fix
     fail_to_pass = sorted(phase1_failed_set & phase2_passed_set)
+
+    # Handle module-level collection errors: a Phase 1 error like
+    # "tests/test_logger.py" (no "::") should match any Phase 2 pass
+    # within that module, e.g. "tests/test_logger.py::test_func".
+    f2p_set = set(fail_to_pass)
+    module_errors_resolved = set()  # module-level errors that found matches
+    for err_id in phase1_results["errors"]:
+        if "::" not in err_id and err_id not in phase2_passed_set:
+            prefix = err_id + "::" if err_id.endswith(".py") else err_id + ".py::"
+            for p2 in phase2_passed_set:
+                if p2.startswith(prefix) and p2 not in f2p_set:
+                    f2p_set.add(p2)
+                    module_errors_resolved.add(err_id)
+    fail_to_pass = sorted(f2p_set)
+
     # PASS_TO_PASS: passed before fix, still pass after fix
     pass_to_pass = sorted(phase1_passed_set & phase2_passed_set)
 
@@ -926,7 +954,10 @@ def process_instance(
     logger.info("PASS_TO_PASS: %d tests", len(pass_to_pass))
 
     # Also log problematic tests (failed in both phases)
-    both_failed = sorted(phase1_failed_set - phase2_passed_set)
+    # Exclude module-level errors that were resolved by prefix matching above.
+    both_failed = sorted(
+        (phase1_failed_set - phase2_passed_set) - module_errors_resolved
+    )
     if both_failed:
         logger.warning("Tests that FAILED in both phases (%d): %s",
                         len(both_failed), both_failed[:5])
