@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.866" timestamp="2026-02-26T17:48:53.510860+00:00" hostname="ea0ede20f845"><testcase classname="tests.test_utils" name="test_no_model_tag" time="0.271"><failure message="FileNotFoundError: [Errno 2] No such file or directory: './data/test_config.yaml'">tests/test_utils.py:237: in test_no_model_tag
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.942" timestamp="2026-02-27T05:22:11.849129+00:00" hostname="cb37a19c7b10"><testcase classname="tests.test_utils" name="test_no_model_tag" time="0.276"><failure message="SystemExit: 2">/usr/lib/python3.12/argparse.py:1943: in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/argparse.py:2230: in _parse_known_args
+    raise ArgumentError(None, _('the following arguments are required: %s') %
+E   argparse.ArgumentError: the following arguments are required: model_tag
+
+During handling of the above exception, another exception occurred:
+tests/test_utils.py:237: in test_no_model_tag
     parser_with_config.parse_args(
-vllm/utils.py:1138: in parse_args
-    args = FlexibleArgumentParser._pull_args_from_config(args)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-vllm/utils.py:1201: in _pull_args_from_config
-    config_args = FlexibleArgumentParser._load_config_file(file_path)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-vllm/utils.py:1245: in _load_config_file
-    raise ex
-vllm/utils.py:1239: in _load_config_file
-    with open(file_path, 'r') as config_file:
-         ^^^^^^^^^^^^^^^^^^^^
-E   FileNotFoundError: [Errno 2] No such file or directory: './data/test_config.yaml'</failure></testcase><testcase classname="tests.test_utils" name="test_missing_required_argument" time="0.269" /></testsuite></testsuites>
+vllm/utils.py:1154: in parse_args
+    return super().parse_args(processed_args, namespace)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/argparse.py:1904: in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/argparse.py:1914: in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/argparse.py:1945: in _parse_known_args2
+    self.error(str(err))
+/usr/lib/python3.12/argparse.py:2650: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+/usr/lib/python3.12/argparse.py:2637: in exit
+    _sys.exit(status)
+E   SystemExit: 2</failure></testcase><testcase classname="tests.test_utils" name="test_missing_required_argument" time="0.276" /></testsuite></testsuites>

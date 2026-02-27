@@ -26,7 +26,7 @@ THIS IMAGE IS DEPRECATED and is scheduled for DELETION.
 Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
 Collecting cmake>=3.21 (from -r requirements-common.txt (line 1))
   Downloading https://mirrors.aliyun.com/pypi/packages/28/19/b54ff2e03946beeef785e6407d965a9493d26c50dd1aa09ffc7b53fbf9a5/cmake-4.2.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (28.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.9/28.9 MB 19.0 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.9/28.9 MB 13.7 MB/s  0:00:02
 Collecting ninja (from -r requirements-common.txt (line 2))
   Downloading https://mirrors.aliyun.com/pypi/packages/ed/de/0e6edf44d6a04dabd0318a519125ed0415ce437ad5a1ec9b9be03d9048cf/ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (180 kB)
 Collecting psutil (from -r requirements-common.txt (line 3))
@@ -44,7 +44,7 @@ Collecting prometheus_client>=0.18.0 (from -r requirements-common.txt (line 12))
   Downloading https://mirrors.aliyun.com/pypi/packages/74/c3/24a2f845e3917201628ecaba4f18bab4d18a337834c1df2a159ee9d22a42/prometheus_client-0.24.1-py3-none-any.whl (64 kB)
 Collecting tiktoken==0.6.0 (from -r requirements-common.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/16/05/5efbd91252ffb1301ea393d88ef736b33d41e75d4bcf0bd31d660050e400/tiktoken-0.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 12.1 MB/s  0:00:00
 Collecting lm-format-enforcer==0.9.3 (from -r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/f9/b9/98fa60b9a947fa14851897535822fd7745911eabd69ede61c07d8e00f0b0/lm_format_enforcer-0.9.3-py3-none-any.whl (40 kB)
 Collecting outlines==0.0.34 (from -r requirements-common.txt (line 15))
@@ -69,11 +69,11 @@ Collecting diskcache (from outlines==0.0.34->-r requirements-common.txt (line 15
   Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
 Collecting scipy (from outlines==0.0.34->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 17.2 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 14.0 MB/s  0:00:02
 Requirement already satisfied: torch>=2.1.0 in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->-r requirements-common.txt (line 15)) (2.3.0+cu121)
 Collecting numba (from outlines==0.0.34->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/4f/9f/9275a723d050b5f1a9b1c7fb7dbfce324fef301a8e50c5f88338569db06c/numba-0.64.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 17.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 13.0 MB/s  0:00:00
 Collecting joblib (from outlines==0.0.34->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
 Collecting referencing (from outlines==0.0.34->-r requirements-common.txt (line 15))
@@ -104,7 +104,7 @@ Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.t
   Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
 Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/b3/f6/21657bb3beb5f8c57ce8be3b83f653dd7933c2fd00545ed1b092d464799a/uvloop-0.22.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 17.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 14.1 MB/s  0:00:00
 Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/d5/dc/1a680b7458ffa3b14bb64878112aefc8f2e4f73c5af763cbf0bd43100658/watchfiles-1.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (455 kB)
 Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 10))
@@ -136,7 +136,7 @@ Collecting rpds-py>=0.25.0 (from jsonschema->outlines==0.0.34->-r requirements-c
   Downloading https://mirrors.aliyun.com/pypi/packages/61/b5/707f6cf0066a6412aacc11d17920ea2e19e5b2f04081c64526eb35b5c6e7/rpds_py-0.30.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
 Collecting llvmlite<0.47,>=0.46.0dev0 (from numba->outlines==0.0.34->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/c2/a5/a4d916f1015106e1da876028606a8e87fd5d5c840f98c87bc2d5153b6a2f/llvmlite-0.46.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 18.9 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 14.1 MB/s  0:00:03
 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 15)) (1.3.0)
 Installing collected packages: py-cpuinfo, websockets, uvloop, scipy, rpds-py, python-dotenv, psutil, prometheus_client, ninja, nest-asyncio, llvmlite, lark, joblib, interegular, httptools, diskcache, cmake, cloudpickle, click, annotated-doc, uvicorn, tiktoken, referencing, numba, watchfiles, starlette, lm-format-enforcer, jsonschema-specifications, jsonschema, fastapi, outlines
 
@@ -167,14 +167,14 @@ Collecting tomli==2.0.1 (from -r requirements-dev.txt (line 4))
   Downloading https://mirrors.aliyun.com/pypi/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting ruff==0.1.5 (from -r requirements-dev.txt (line 5))
   Downloading https://mirrors.aliyun.com/pypi/packages/ae/cf/95e9a2930c1a220fb2c5769d746901eea4576cc46f1200f0178a42a863ba/ruff-0.1.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 18.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 10.9 MB/s  0:00:00
 Collecting codespell==2.2.6 (from -r requirements-dev.txt (line 6))
   Downloading https://mirrors.aliyun.com/pypi/packages/46/e0/5437cc96b74467c4df6e13b7128cc482c48bb43146fb4c11cf2bcd604e1f/codespell-2.2.6-py3-none-any.whl (301 kB)
 Collecting isort==5.13.2 (from -r requirements-dev.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl (92 kB)
 Collecting mypy==1.9.0 (from -r requirements-dev.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/e1/87/b508b34309359daa00e0e76d9a0dbe43031866af49b279861f69c76e5d70/mypy-1.9.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 18.3 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 13.2 MB/s  0:00:00
 Collecting types-PyYAML (from -r requirements-dev.txt (line 11))
   Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
 Collecting types-requests (from -r requirements-dev.txt (line 12))
@@ -194,20 +194,20 @@ Collecting einops (from -r requirements-dev.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
 Collecting openai (from -r requirements-dev.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 14.3 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.9 MB/s  0:00:00
 Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 25)) (2.32.5)
 Collecting ray (from -r requirements-dev.txt (line 26))
   Downloading https://mirrors.aliyun.com/pypi/packages/b0/b1/8cc4e45a3ce87aabcb70696b448b20840bcbaa5c98bdb4807a2749541fda/ray-2.54.0-cp310-cp310-manylinux2014_x86_64.whl (72.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.8/72.8 MB 18.3 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.8/72.8 MB 13.2 MB/s  0:00:05
 Collecting peft (from -r requirements-dev.txt (line 27))
   Downloading https://mirrors.aliyun.com/pypi/packages/b3/14/b4e3f574acf349ae6f61f9c000a77f97a3b315b4bb6ad03791e79ae4a568/peft-0.18.1-py3-none-any.whl (556 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 10.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 8.0 MB/s  0:00:00
 Collecting awscli (from -r requirements-dev.txt (line 28))
-  Downloading https://mirrors.aliyun.com/pypi/packages/14/23/f1e09639fe2709bbdb4e5da80855131b40f1460e676c6edb88131cc5f7ed/awscli-1.44.47-py3-none-any.whl (4.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 17.8 MB/s  0:00:00
+  Downloading https://mirrors.aliyun.com/pypi/packages/52/4e/70b59ed8ad38a81561fb1fe64ae0be0dc16b11e81ffea81b469a5f082766/awscli-1.44.48-py3-none-any.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 12.8 MB/s  0:00:00
 Collecting ai2-olmo (from -r requirements-dev.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/79/24/b98322d82cab18e7eede00b2addd90c622f2eae24af463e178268f083a83/ai2_olmo-0.6.0-py3-none-any.whl (144.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.9/144.9 MB 19.3 MB/s  0:00:07
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.9/144.9 MB 13.6 MB/s  0:00:10
 Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 32)) (3.13.3)
 Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 35)) (12.1.1)
 Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.10/dist-packages (from mypy==1.9.0->-r requirements-dev.txt (line 10)) (4.15.0)
@@ -216,10 +216,10 @@ Collecting mypy-extensions>=1.0.0 (from mypy==1.9.0->-r requirements-dev.txt (li
 Requirement already satisfied: torch>=1.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17)) (2.3.0+cu121)
 Requirement already satisfied: numpy>=1.19.5 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17)) (1.26.4)
 Collecting protobuf>=3.19.5 (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17))
-  Downloading https://mirrors.aliyun.com/pypi/packages/9b/53/a9443aa3ca9ba8724fdfa02dd1887c1bcd8e89556b715cfbacca6b63dbec/protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/57/89727baef7578897af5ed166735ceb315819f1c184da8c3441271dbcfde7/protobuf-7.34.0-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
 Requirement already satisfied: psutil>=5.9.4 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17)) (7.2.2)
 Collecting boto3>=1.26.0 (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17))
-  Downloading https://mirrors.aliyun.com/pypi/packages/9e/21/854be1e1829a33450079c1a05f89ef03a2a44bdad590de3e10dc09d73cbd/boto3-1.42.57-py3-none-any.whl (140 kB)
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/47/3a5b53628311fef4a2cec5c04ff750376ecaac0e9eb7fbea1fa8a88ec198/boto3-1.42.58-py3-none-any.whl (140 kB)
 Collecting redis>=4.5.5 (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17))
   Downloading https://mirrors.aliyun.com/pypi/packages/ca/98/1dd1a5c060916cf21d15e67b7d6a7078e26e2605d5c37cbc9f4f5454c478/redis-7.2.1-py3-none-any.whl (396 kB)
 Collecting hiredis>=2.2.0 (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17))
@@ -261,23 +261,23 @@ Collecting accelerate>=0.21.0 (from peft->-r requirements-dev.txt (line 27))
   Downloading https://mirrors.aliyun.com/pypi/packages/9f/d2/c581486aa6c4fbd7394c23c47b83fa1a919d34194e16944241daf9e762dd/accelerate-1.12.0-py3-none-any.whl (380 kB)
 Requirement already satisfied: safetensors in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 27)) (0.7.0)
 Requirement already satisfied: huggingface_hub>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 27)) (0.36.2)
-Collecting botocore==1.42.57 (from awscli->-r requirements-dev.txt (line 28))
-  Downloading https://mirrors.aliyun.com/pypi/packages/cc/bd/89d0fdb65488d6ee40194268b07316433b41f3aa3f242676ed804c3200f5/botocore-1.42.57-py3-none-any.whl (14.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 18.8 MB/s  0:00:00
+Collecting botocore==1.42.58 (from awscli->-r requirements-dev.txt (line 28))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/e0/f957ed6434f922ceffddba6db308b23d1ec2206beacb166cb83a75c5af61/botocore-1.42.58-py3-none-any.whl (14.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 13.8 MB/s  0:00:01
 Collecting docutils<=0.19,>=0.18.1 (from awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl (570 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 11.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 8.2 MB/s  0:00:00
 Collecting s3transfer<0.17.0,>=0.16.0 (from awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/fc/51/727abb13f44c1fcf6d145979e1535a35794db0f6e450a0cb46aa24732fe2/s3transfer-0.16.0-py3-none-any.whl (86 kB)
 Collecting colorama<0.4.7,>=0.2.5 (from awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
 Collecting rsa<4.8,>=3.1.2 (from awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl (34 kB)
-Collecting jmespath<2.0.0,>=0.7.1 (from botocore==1.42.57->awscli->-r requirements-dev.txt (line 28))
+Collecting jmespath<2.0.0,>=0.7.1 (from botocore==1.42.58->awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl (20 kB)
-Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.42.57->awscli->-r requirements-dev.txt (line 28))
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.42.58->awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore==1.42.57->awscli->-r requirements-dev.txt (line 28)) (1.16.0)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore==1.42.58->awscli->-r requirements-dev.txt (line 28)) (1.16.0)
 Collecting pyasn1>=0.1.3 (from rsa<4.8,>=3.1.2->awscli->-r requirements-dev.txt (line 28))
   Downloading https://mirrors.aliyun.com/pypi/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl (83 kB)
 Collecting ai2-olmo-core==0.1.0 (from ai2-olmo->-r requirements-dev.txt (line 29))
@@ -315,13 +315,15 @@ Collecting google-crc32c<2.0.0,>=1.1.3 (from google-cloud-storage->ai2-olmo->-r 
   Downloading https://mirrors.aliyun.com/pypi/packages/3d/63/bec827e70b7a0d4094e7476f863c0dbd6b5f0f1f91d9c9b32b76dcdfeb4e/google_crc32c-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (33 kB)
 Collecting googleapis-common-protos<2.0.0,>=1.56.3 (from google-api-core<3.0.0,>=2.27.0->google-cloud-storage->ai2-olmo->-r requirements-dev.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/c4/ab/09169d5a4612a5f92490806649ac8d41e3ec9129c636754575b3553f4ea4/googleapis_common_protos-1.72.0-py3-none-any.whl (297 kB)
+Collecting protobuf>=3.19.5 (from tensorizer==2.9.0a0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9b/53/a9443aa3ca9ba8724fdfa02dd1887c1bcd8e89556b715cfbacca6b63dbec/protobuf-6.33.5-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
 Collecting proto-plus<2.0.0,>=1.22.3 (from google-api-core<3.0.0,>=2.27.0->google-cloud-storage->ai2-olmo->-r requirements-dev.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/5d/79/ac273cbbf744691821a9cca88957257f41afe271637794975ca090b9588b/proto_plus-1.27.1-py3-none-any.whl (50 kB)
 Collecting pyasn1-modules>=0.2.1 (from google-auth<3.0.0,>=2.26.1->google-cloud-storage->ai2-olmo->-r requirements-dev.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
 Collecting cryptography>=38.0.3 (from google-auth<3.0.0,>=2.26.1->google-cloud-storage->ai2-olmo->-r requirements-dev.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/99/0f/a3076874e9c88ecb2ecc31382f6e7c21b428ede6f55aafa1aa272613e3cd/cryptography-46.0.5-cp38-abi3-manylinux_2_34_x86_64.whl (4.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 17.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 10.6 MB/s  0:00:00
 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-dev.txt (line 27)) (2026.2.0)
 Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-dev.txt (line 27)) (1.3.1)
 Collecting markdown-it-py>=2.2.0 (from rich->ai2-olmo->-r requirements-dev.txt (line 29))
@@ -365,7 +367,7 @@ Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/di
 Building wheels for collected packages: antlr4-python3-runtime
   Building wheel for antlr4-python3-runtime (pyproject.toml): started
   Building wheel for antlr4-python3-runtime (pyproject.toml): finished with status 'done'
-  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144591 sha256=6e10f54f77fecec13f4ef6cd88d9ac03bf83e0367c4f3d10b289ab3fd6981fb0
+  Created wheel for antlr4-python3-runtime: filename=antlr4_python3_runtime-4.9.3-py3-none-any.whl size=144591 sha256=231d4e9b8c99c7333d7f820271e34c7f98b941a417f2f7110e130fb4acd38638
   Stored in directory: /root/.cache/pip/wheels/79/82/b1/b79d6e90f34257cd436860ed4f4a09f9e1ea8cd32da7046ea4
 Successfully built antlr4-python3-runtime
 Installing collected packages: yapf, antlr4-python3-runtime, types-setuptools, types-requests, types-PyYAML, tomli, toml, sniffio, ruff, redis, python-dateutil, pycparser, pyasn1, protobuf, omegaconf, mypy-extensions, msgpack, mdurl, libnacl, jmespath, jiter, isort, importlib_resources, hiredis, google-crc32c, einops, docutils, colorama, codespell, rsa, pyasn1-modules, proto-plus, mypy, markdown-it-py, googleapis-common-protos, google-resumable-media, cffi, botocore, s3transfer, rich, pytest-shard, cryptography, ray, openai, google-auth, boto3, awscli, accelerate, tensorizer, peft, google-api-core, google-cloud-core, google-cloud-storage, cached_path, ai2-olmo-core, ai2-olmo
@@ -378,7 +380,7 @@ Installing collected packages: yapf, antlr4-python3-runtime, types-setuptools, t
     Uninstalling cryptography-3.4.8:
       Successfully uninstalled cryptography-3.4.8
 
-Successfully installed accelerate-1.12.0 ai2-olmo-0.6.0 ai2-olmo-core-0.1.0 antlr4-python3-runtime-4.9.3 awscli-1.44.47 boto3-1.42.57 botocore-1.42.57 cached_path-1.8.9 cffi-2.0.0 codespell-2.2.6 colorama-0.4.6 cryptography-46.0.5 docutils-0.19 einops-0.8.2 google-api-core-2.30.0 google-auth-2.48.0 google-cloud-core-2.5.0 google-cloud-storage-3.9.0 google-crc32c-1.8.0 google-resumable-media-2.8.0 googleapis-common-protos-1.72.0 hiredis-3.3.0 importlib_resources-6.5.2 isort-5.13.2 jiter-0.13.0 jmespath-1.1.0 libnacl-2.1.0 markdown-it-py-4.0.0 mdurl-0.1.2 msgpack-1.1.2 mypy-1.9.0 mypy-extensions-1.1.0 omegaconf-2.3.0 openai-2.24.0 peft-0.18.1 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycparser-3.0 pytest-shard-0.1.2 python-dateutil-2.9.0.post0 ray-2.54.0 redis-7.2.1 rich-13.9.4 rsa-4.7.2 ruff-0.1.5 s3transfer-0.16.0 sniffio-1.3.1 tensorizer-2.9.0a0 toml-0.10.2 tomli-2.0.1 types-PyYAML-6.0.12.20250915 types-requests-2.32.4.20260107 types-setuptools-82.0.0.20260210 yapf-0.32.0
+Successfully installed accelerate-1.12.0 ai2-olmo-0.6.0 ai2-olmo-core-0.1.0 antlr4-python3-runtime-4.9.3 awscli-1.44.48 boto3-1.42.58 botocore-1.42.58 cached_path-1.8.9 cffi-2.0.0 codespell-2.2.6 colorama-0.4.6 cryptography-46.0.5 docutils-0.19 einops-0.8.2 google-api-core-2.30.0 google-auth-2.48.0 google-cloud-core-2.5.0 google-cloud-storage-3.9.0 google-crc32c-1.8.0 google-resumable-media-2.8.0 googleapis-common-protos-1.72.0 hiredis-3.3.0 importlib_resources-6.5.2 isort-5.13.2 jiter-0.13.0 jmespath-1.1.0 libnacl-2.1.0 markdown-it-py-4.0.0 mdurl-0.1.2 msgpack-1.1.2 mypy-1.9.0 mypy-extensions-1.1.0 omegaconf-2.3.0 openai-2.24.0 peft-0.18.1 proto-plus-1.27.1 protobuf-6.33.5 pyasn1-0.6.2 pyasn1-modules-0.4.2 pycparser-3.0 pytest-shard-0.1.2 python-dateutil-2.9.0.post0 ray-2.54.0 redis-7.2.1 rich-13.9.4 rsa-4.7.2 ruff-0.1.5 s3transfer-0.16.0 sniffio-1.3.1 tensorizer-2.9.0a0 toml-0.10.2 tomli-2.0.1 types-PyYAML-6.0.12.20250915 types-requests-2.32.4.20260107 types-setuptools-82.0.0.20260210 yapf-0.32.0
 Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
 Obtaining file:///workspace
   Checking if build backend supports build_editable: started
@@ -469,18 +471,18 @@ hint: See above for details.
       !!
         self._finalize_license_expression()
       running editable_wheel
-      creating /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info
-      writing /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/PKG-INFO
-      writing dependency_links to /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/dependency_links.txt
-      writing requirements to /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/requires.txt
-      writing top-level names to /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/top_level.txt
-      writing manifest file '/tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/SOURCES.txt'
-      reading manifest file '/tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/SOURCES.txt'
+      creating /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info
+      writing /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/SOURCES.txt'
+      reading manifest file '/tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/SOURCES.txt'
       reading manifest template 'MANIFEST.in'
       adding license file 'LICENSE'
-      writing manifest file '/tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm.egg-info/SOURCES.txt'
-      creating '/tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm-0.4.0.post1.dist-info'
-      creating /tmp/pip-ephem-wheel-cache-a_o62dbq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp5p_rwgeq/.tmp-4wjtrxo4/vllm-0.4.0.post1.dist-info/WHEEL
+      writing manifest file '/tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm-0.4.0.post1.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-pya5r0mq/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmplod74q22/.tmp-dgc78fkp/vllm-0.4.0.post1.dist-info/WHEEL
       running build_py
       running build_ext
       -- The CXX compiler identification is GNU 11.4.0
@@ -601,7 +603,7 @@ hint: See above for details.
         File "<string>", line 160, in configure
         File "/usr/lib/python3.10/subprocess.py", line 369, in check_call
           raise CalledProcessError(retcode, cmd)
-      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmp6yzc6kr9.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmp7efqatve.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
+      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmpz4sebbne.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmpbiwrj3zz.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
       [end of output]
   
   note: This error originates from a subprocess, and is likely not a problem with pip.

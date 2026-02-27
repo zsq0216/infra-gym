@@ -6,7 +6,7 @@
     "passed": [],
     "failed": [],
     "errors": [
-      "tests.test_logger"
+      "tests/test_logger.py"
     ],
     "skipped": []
   },
@@ -18,20 +18,20 @@
     "errors": [],
     "skipped": []
   },
-  "FAIL_TO_PASS": [],
+  "FAIL_TO_PASS": [
+    "tests/test_logger.py::test_trace_function_call"
+  ],
   "PASS_TO_PASS": [],
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772124950.586351,
-    "phase1_start": 1772124952.637163,
-    "phase1_end": 1772125057.925867,
-    "phase2_start": 1772125057.9291809,
-    "phase2_end": 1772125145.6672883,
-    "end": 1772125145.6674511
+    "start": 1772167161.4486187,
+    "phase1_start": 1772167164.470256,
+    "phase1_end": 1772167262.5047944,
+    "phase2_start": 1772167262.5079722,
+    "phase2_end": 1772167361.5446298,
+    "end": 1772167361.5448468
   },
   "regressions": [],
-  "both_failed": [
-    "tests.test_logger"
-  ]
+  "both_failed": []
 }

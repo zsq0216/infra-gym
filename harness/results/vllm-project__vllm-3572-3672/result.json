@@ -6,7 +6,10 @@
     "passed": [],
     "failed": [],
     "errors": [
-      "TIMEOUT"
+      "tests/engine/test_stop_strings.py::test_stop_basic",
+      "tests/engine/test_stop_strings.py::test_stop_multi_tokens",
+      "tests/engine/test_stop_strings.py::test_stop_partial_token",
+      "tests/engine/test_stop_strings.py::test_stop_token_id"
     ],
     "skipped": []
   },
@@ -26,15 +29,18 @@
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772121843.2835937,
-    "phase1_start": 1772121845.7464077,
-    "phase1_end": 1772122745.780032,
-    "phase2_start": 1772122745.783682,
-    "phase2_end": 1772123440.5133557,
-    "end": 1772123440.5135844
+    "start": 1772164320.2548282,
+    "phase1_start": 1772164322.92031,
+    "phase1_end": 1772164958.2633214,
+    "phase2_start": 1772164958.2669778,
+    "phase2_end": 1772165689.0494218,
+    "end": 1772165689.0496023
   },
   "regressions": [],
   "both_failed": [
-    "TIMEOUT"
+    "tests/engine/test_stop_strings.py::test_stop_basic",
+    "tests/engine/test_stop_strings.py::test_stop_multi_tokens",
+    "tests/engine/test_stop_strings.py::test_stop_partial_token",
+    "tests/engine/test_stop_strings.py::test_stop_token_id"
   ]
 }

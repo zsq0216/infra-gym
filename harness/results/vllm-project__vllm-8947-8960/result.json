@@ -14,30 +14,29 @@
   },
   "phase2": {
     "passed": [
+      "tests/test_utils.py::test_no_model_tag",
       "tests/test_utils.py::test_missing_required_argument"
     ],
-    "failed": [
-      "tests/test_utils.py::test_no_model_tag"
-    ],
+    "failed": [],
     "errors": [],
     "skipped": []
   },
-  "FAIL_TO_PASS": [],
+  "FAIL_TO_PASS": [
+    "tests/test_utils.py::test_no_model_tag"
+  ],
   "PASS_TO_PASS": [
     "tests/test_utils.py::test_missing_required_argument"
   ],
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772127729.518973,
-    "phase1_start": 1772127731.815072,
-    "phase1_end": 1772128140.7460508,
-    "phase2_start": 1772128140.7492673,
-    "phase2_end": 1772128568.9509382,
-    "end": 1772128568.95111
+    "start": 1772169275.45821,
+    "phase1_start": 1772169277.2736752,
+    "phase1_end": 1772169739.1485674,
+    "phase2_start": 1772169739.1517525,
+    "phase2_end": 1772170202.0453773,
+    "end": 1772170202.045608
   },
   "regressions": [],
-  "both_failed": [
-    "tests/test_utils.py::test_no_model_tag"
-  ]
+  "both_failed": []
 }

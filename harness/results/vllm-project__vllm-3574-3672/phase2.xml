@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="4" time="72.671" timestamp="2026-02-26T16:54:35.237761+00:00" hostname="bd3d5fa4852d"><testcase classname="tests.engine.test_stop_strings" name="test_stop_basic" time="71.198"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="4" time="72.663" timestamp="2026-02-27T04:38:06.122435+00:00" hostname="878e256d48c2"><testcase classname="tests.engine.test_stop_strings" name="test_stop_basic" time="71.207"><error message="failed on setup with &quot;OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure 'meta-llama/llama-2-7b-hf' is the correct path to a directory containing a config.json file&quot;">/usr/local/lib/python3.10/dist-packages/transformers/configuration_utils.py:627: in _get_config_dict
     resolved_config_file = cached_file(
 /usr/local/lib/python3.10/dist-packages/transformers/utils/hub.py:276: in cached_file
     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
@@ -8,21 +8,21 @@
     hf_hub_download(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:982: in hf_hub_download
     return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1115: in _hf_hub_download_to_cache_dir
     _get_metadata_or_catch_error(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1649: in _get_metadata_or_catch_error
     metadata = get_hf_file_metadata(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1572: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:644: in _httpx_follow_relative_redirects_with_backoff
     response = http_backoff(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:518: in http_backoff
     return next(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:426: in _http_backoff_base
     response = client.request(method=method, url=url, **kwargs)
 /usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
     return self.send(request, auth=auth, follow_redirects=follow_redirects)
@@ -61,21 +61,21 @@ E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you 
     hf_hub_download(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:982: in hf_hub_download
     return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1115: in _hf_hub_download_to_cache_dir
     _get_metadata_or_catch_error(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1649: in _get_metadata_or_catch_error
     metadata = get_hf_file_metadata(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1572: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:644: in _httpx_follow_relative_redirects_with_backoff
     response = http_backoff(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:518: in http_backoff
     return next(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:426: in _http_backoff_base
     response = client.request(method=method, url=url, **kwargs)
 /usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
     return self.send(request, auth=auth, follow_redirects=follow_redirects)
@@ -114,21 +114,21 @@ E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you 
     hf_hub_download(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:982: in hf_hub_download
     return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1115: in _hf_hub_download_to_cache_dir
     _get_metadata_or_catch_error(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1649: in _get_metadata_or_catch_error
     metadata = get_hf_file_metadata(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1572: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:644: in _httpx_follow_relative_redirects_with_backoff
     response = http_backoff(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:518: in http_backoff
     return next(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:426: in _http_backoff_base
     response = client.request(method=method, url=url, **kwargs)
 /usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
     return self.send(request, auth=auth, follow_redirects=follow_redirects)
@@ -167,21 +167,21 @@ E   OSError: Can't load the configuration of 'meta-llama/llama-2-7b-hf'. If you 
     hf_hub_download(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1032: in hf_hub_download
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:982: in hf_hub_download
     return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1165: in _hf_hub_download_to_cache_dir
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1115: in _hf_hub_download_to_cache_dir
     _get_metadata_or_catch_error(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1699: in _get_metadata_or_catch_error
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1649: in _get_metadata_or_catch_error
     metadata = get_hf_file_metadata(
 /usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_validators.py:89: in _inner_fn
     return fn(*args, **kwargs)
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1622: in get_hf_file_metadata
-    response = _httpx_follow_relative_redirects(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:302: in _httpx_follow_relative_redirects
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/file_download.py:1572: in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:644: in _httpx_follow_relative_redirects_with_backoff
     response = http_backoff(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:506: in http_backoff
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:518: in http_backoff
     return next(
-/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:414: in _http_backoff_base
+/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_http.py:426: in _http_backoff_base
     response = client.request(method=method, url=url, **kwargs)
 /usr/local/lib/python3.10/dist-packages/httpx/_client.py:825: in request
     return self.send(request, auth=auth, follow_redirects=follow_redirects)

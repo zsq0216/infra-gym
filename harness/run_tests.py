@@ -401,13 +401,15 @@ def setup_worktree(bare_path, worktree_path, commit_sha):
                 timeout=60,
             )
         except Exception:
-            # Fallback: force-delete the directory (may contain root-owned
-            # files left by Docker) and prune the worktree reference.
-            _force_remove_dir(worktree_path)
-            try:
-                run_cmd(["git", "worktree", "prune"], cwd=bare_path, timeout=60)
-            except Exception:
-                pass
+            pass
+        # git worktree remove may succeed at unlinking the worktree
+        # reference but leave root-owned files (created by Docker) on
+        # disk.  Force-delete whatever remains.
+        _force_remove_dir(worktree_path)
+        try:
+            run_cmd(["git", "worktree", "prune"], cwd=bare_path, timeout=60)
+        except Exception:
+            pass
 
     # Use a temporary detached branch name to avoid collisions
     branch_name = "harness-" + os.path.basename(worktree_path)
