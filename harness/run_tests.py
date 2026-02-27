@@ -601,6 +601,15 @@ def _build_docker_setup_commands(category):
     ``psutil``, ``huggingface_hub``, etc.) succeed even though the container
     image only has Python + pytest.
     """
+    commands = []  # type: List[str]
+
+    # Use HuggingFace mirror to avoid connectivity issues in China.
+    # Also forward HF_TOKEN from host if set (needed for gated models).
+    commands.append('export HF_ENDPOINT="${HF_ENDPOINT:-https://hf-mirror.com}"')
+    commands.append(
+        'if [ -n "${HF_TOKEN:-}" ]; then export HF_TOKEN="$HF_TOKEN"; fi'
+    )
+
     # Install project requirements (psutil, transformers, etc.)
     req_install = (
         'for f in requirements-common.txt requirements.txt requirements-cpu.txt; '
@@ -635,7 +644,7 @@ def _build_docker_setup_commands(category):
         '[ -d tests/data ] && [ ! -e data ] && ln -s tests/data data || true'
     )
 
-    return [req_install, test_req_install, vllm_install, pythonpath, link_test_data]
+    return commands + [req_install, test_req_install, vllm_install, pythonpath, link_test_data]
 
 
 def run_pytest_docker(
@@ -685,6 +694,13 @@ def run_pytest_docker(
         "-w", container_workspace,
         "--memory=16g",          # memory limit
     ]
+
+    # Forward HuggingFace env vars from host into the container so that
+    # the setup commands can use them (mirror endpoint, gated model token).
+    for env_key in ("HF_ENDPOINT", "HF_TOKEN", "HUGGING_FACE_HUB_TOKEN"):
+        val = os.environ.get(env_key)
+        if val:
+            docker_cmd += ["-e", "{}={}".format(env_key, val)]
 
     if not has_setup:
         docker_cmd.append("--network=none")
