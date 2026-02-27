@@ -3,11 +3,12 @@
   "version": "0.6.3.post1",
   "base_commit": "803f37eaaa11568f65acbf0bcd1044fb9b1610bf",
   "phase1": {
-    "passed": [],
-    "failed": [
+    "passed": [
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]",
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
-      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]"
+    ],
+    "failed": [
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]"
     ],
@@ -15,11 +16,12 @@
     "skipped": []
   },
   "phase2": {
-    "passed": [],
-    "failed": [
+    "passed": [
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]",
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
-      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+      "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]"
+    ],
+    "failed": [
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
       "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]"
     ],
@@ -27,23 +29,24 @@
     "skipped": []
   },
   "FAIL_TO_PASS": [],
-  "PASS_TO_PASS": [],
+  "PASS_TO_PASS": [
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]"
+  ],
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772163159.8889687,
-    "phase1_start": 1772163162.5285394,
-    "phase1_end": 1772163717.8458798,
-    "phase2_start": 1772163717.8489163,
-    "phase2_end": 1772164320.2485642,
-    "end": 1772164320.248731
+    "start": 1772187120.3683374,
+    "phase1_start": 1772187123.69844,
+    "phase1_end": 1772187601.2583945,
+    "phase2_start": 1772187601.261789,
+    "phase2_end": 1772188118.279517,
+    "end": 1772188118.2797453
   },
   "regressions": [],
   "both_failed": [
-    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai]",
-    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string]",
     "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai]",
-    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]",
-    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string]"
+    "tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]"
   ]
 }

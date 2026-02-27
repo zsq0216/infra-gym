@@ -23,7 +23,7 @@ Collecting psutil (from -r requirements-common.txt (line 1))
   Downloading https://mirrors.aliyun.com/pypi/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
 Collecting sentencepiece (from -r requirements-common.txt (line 2))
   Downloading https://mirrors.aliyun.com/pypi/packages/04/88/14f2f4a2b922d8b39be45bf63d79e6cd3a9b2f248b2fcb98a69b12af12f5/sentencepiece-0.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 2.5 MB/s  0:00:00
 Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 3)) (1.26.4)
 Requirement already satisfied: requests>=2.26.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 4)) (2.32.5)
 Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 5)) (4.67.3)
@@ -31,10 +31,10 @@ Collecting py-cpuinfo (from -r requirements-common.txt (line 6))
   Downloading https://mirrors.aliyun.com/pypi/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
 Collecting transformers>=4.45.0 (from -r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/4e/93/79754b0ca486e556c2b95d4f5afc66aaf4b260694f3d6e1b51da2d036691/transformers-5.2.0-py3-none-any.whl (10.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 12.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 2.6 MB/s  0:00:04
 Collecting tokenizers>=0.19.1 (from -r requirements-common.txt (line 8))
   Downloading https://mirrors.aliyun.com/pypi/packages/2e/76/932be4b50ef6ccedf9d3c6639b056a967a86258c6d9200643f01269211ca/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 11.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 2.4 MB/s  0:00:01
 Collecting protobuf (from -r requirements-common.txt (line 9))
   Downloading https://mirrors.aliyun.com/pypi/packages/b5/57/89727baef7578897af5ed166735ceb315819f1c184da8c3441271dbcfde7/protobuf-7.34.0-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
 Collecting fastapi!=0.113.*,!=0.114.0,>=0.107.0 (from -r requirements-common.txt (line 11))
@@ -42,7 +42,7 @@ Collecting fastapi!=0.113.*,!=0.114.0,>=0.107.0 (from -r requirements-common.txt
 Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 12)) (3.13.3)
 Collecting openai>=1.40.0 (from -r requirements-common.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 10.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 2.5 MB/s  0:00:00
 Collecting pydantic>=2.9 (from -r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl (463 kB)
 Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 16)) (12.1.1)
@@ -52,7 +52,7 @@ Collecting prometheus-fastapi-instrumentator>=7.0.0 (from -r requirements-common
   Downloading https://mirrors.aliyun.com/pypi/packages/27/72/0824c18f3bc75810f55dacc2dd933f6ec829771180245ae3cc976195dec0/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (19 kB)
 Collecting tiktoken>=0.6.0 (from -r requirements-common.txt (line 19))
   Downloading https://mirrors.aliyun.com/pypi/packages/f4/90/3dae6cc5436137ebd38944d396b5849e167896fc2073da643a49f372dc4f/tiktoken-0.12.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 10.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 2.5 MB/s  0:00:00
 Collecting lm-format-enforcer==0.10.6 (from -r requirements-common.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/4f/6e/d140b5eb41541afebea1c27013bc19b5a1cafd0cd330d9aa3458833ee44a/lm_format_enforcer-0.10.6-py3-none-any.whl (43 kB)
 Collecting outlines<0.1,>=0.0.43 (from -r requirements-common.txt (line 21))
@@ -63,7 +63,7 @@ Collecting partial-json-parser (from -r requirements-common.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/42/32/658973117bf0fd82a24abbfb94fe73a5e86216e49342985e10acce54775a/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
 Collecting pyzmq (from -r requirements-common.txt (line 25))
   Downloading https://mirrors.aliyun.com/pypi/packages/f8/9b/c108cdb55560eaf253f0cbdb61b29971e9fb34d9c3499b0e96e4e60ed8a5/pyzmq-27.1.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (840 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 841.0/841.0 kB 8.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 841.0/841.0 kB 2.3 MB/s  0:00:00
 Collecting msgspec (from -r requirements-common.txt (line 26))
   Downloading https://mirrors.aliyun.com/pypi/packages/5c/a2/488517a43ccf5a4b6b6eca6dd4ede0bd82b043d1539dd6bb908a19f8efd3/msgspec-0.20.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
 Collecting gguf==0.10.0 (from -r requirements-common.txt (line 27))
@@ -71,7 +71,7 @@ Collecting gguf==0.10.0 (from -r requirements-common.txt (line 27))
 Requirement already satisfied: importlib_metadata in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 28)) (4.6.4)
 Collecting mistral_common>=1.4.4 (from mistral_common[opencv]>=1.4.4->-r requirements-common.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/ac/72/a38bb1fd9fd4d4ef990341c9dd1a7c8061f1951e10efa6d50c0a3f04eced/mistral_common-1.9.1-py3-none-any.whl (6.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 2.7 MB/s  0:00:02
 Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 30)) (6.0.3)
 Requirement already satisfied: six>=1.16.0 in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 31)) (1.16.0)
 Requirement already satisfied: setuptools>=74.1.1 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 32)) (82.0.0)
@@ -93,7 +93,7 @@ Collecting diskcache (from outlines<0.1,>=0.0.43->-r requirements-common.txt (li
   Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
 Collecting numba (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/9b/89/1a74ea99b180b7a5587b0301ed1b183a2937c4b4b67f7994689b5d36fc34/numba-0.64.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 7.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 2.5 MB/s  0:00:01
 Collecting referencing (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
 Collecting jsonschema (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
@@ -102,7 +102,7 @@ Collecting datasets (from outlines<0.1,>=0.0.43->-r requirements-common.txt (lin
   Downloading https://mirrors.aliyun.com/pypi/packages/6f/0e/9caa51e659d7417374788800bdedc9dcb8db918dc3ad4759a0294bbc55ac/datasets-4.6.0-py3-none-any.whl (520 kB)
 Collecting pycountry (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/9c/42/7703bd45b62fecd44cd7d3495423097e2f7d28bc2e99e7c1af68892ab157/pycountry-26.2.16-py3-none-any.whl (8.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 2.6 MB/s  0:00:03
 Collecting pyairports (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2f/5e/2b9f07c89538e74e4c27bb303c6bdb6c0da73d0edf6f724ca51453d330b3/pyairports-0.0.1.tar.gz (3.1 kB)
   Installing build dependencies: started
@@ -117,10 +117,10 @@ Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/d
 Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (2026.2.25)
 Collecting huggingface-hub<2.0,>=1.3.0 (from transformers>=4.45.0->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/ec/74/2bc951622e2dbba1af9a460d93c51d15e458becd486e62c29cc0ccb08178/huggingface_hub-1.5.0-py3-none-any.whl (596 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 8.2 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 2.8 MB/s  0:00:00
 Collecting regex!=2019.12.17 (from transformers>=4.45.0->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/59/3c/ea5a4687adaba5e125b9bd6190153d0037325a0ba3757cc1537cc2c8dd90/regex-2026.2.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (803 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.7/803.7 kB 10.2 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.7/803.7 kB 2.8 MB/s  0:00:00
 Collecting typer-slim (from transformers>=4.45.0->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
 Collecting safetensors>=0.4.3 (from transformers>=4.45.0->-r requirements-common.txt (line 7))
@@ -128,7 +128,7 @@ Collecting safetensors>=0.4.3 (from transformers>=4.45.0->-r requirements-common
 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.0->-r requirements-common.txt (line 7)) (2026.2.0)
 Collecting hf-xet<2.0.0,>=1.2.0 (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.0->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/61/cd/acbbf9e51f17d8cef2630e61741228e12d4050716619353efc1ac119f902/hf_xet-1.3.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 11.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 2.8 MB/s  0:00:01
 Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.0->-r requirements-common.txt (line 7)) (0.28.1)
 Collecting typer (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.0->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl (56 kB)
@@ -157,7 +157,7 @@ Collecting annotated-types>=0.6.0 (from pydantic>=2.9->-r requirements-common.tx
   Downloading https://mirrors.aliyun.com/pypi/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
 Collecting pydantic-core==2.41.5 (from pydantic>=2.9->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/0d/76/941cc9f73529988688a665a5c0ecff1112b3d95ab48f81db5f7606f522d3/pydantic_core-2.41.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 11.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 2.7 MB/s  0:00:00
 Collecting click>=7.0 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl (108 kB)
 Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements-common.txt (line 14))
@@ -166,7 +166,7 @@ Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.t
   Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
 Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/5f/6f/e62b4dfc7ad6518e7eff2516f680d02a0f6eb62c0c212e152ca708a0085e/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 11.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 2.8 MB/s  0:00:01
 Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/cf/68/5707da262a119fb06fbe214d82dd1fe4a6f4af32d2d14de368d0349eb52a/watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
 Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 14))
@@ -179,22 +179,22 @@ Collecting rpds-py>=0.25.0 (from jsonschema->outlines<0.1,>=0.0.43->-r requireme
   Downloading https://mirrors.aliyun.com/pypi/packages/60/1b/6f8f29f3f995c7ffdde46a626ddccd7c63aefc0efae881dc13b6e5d5bb16/rpds_py-0.30.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (394 kB)
 Collecting opencv-python-headless>=4.0.0 (from mistral_common[opencv]>=1.4.4->-r requirements-common.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/4b/33/b5db29a6c00eb8f50708110d8d453747ca125c8b805bc437b289dbdcc057/opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (60.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 12.4 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 2.8 MB/s  0:00:21
 INFO: pip is looking at multiple versions of opencv-python-headless to determine which version is compatible with other requirements. This could take a while.
   Downloading https://mirrors.aliyun.com/pypi/packages/81/a1/facfe2801a861b424c4221d66e1281cf19735c00e07f063a337a208c11b5/opencv_python_headless-4.13.0.90-cp37-abi3-manylinux_2_28_x86_64.whl (62.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 MB 12.1 MB/s  0:00:05
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 MB 2.9 MB/s  0:00:21
   Downloading https://mirrors.aliyun.com/pypi/packages/89/53/e19c21e0c4eb1275c3e2c97b081103b6dfb3938172264d283a519bf728b9/opencv_python_headless-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (54.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 12.2 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 2.9 MB/s  0:00:18
   Downloading https://mirrors.aliyun.com/pypi/packages/dd/5c/c139a7876099916879609372bfa513b7f1257f7f1a908b0bdc1c2328241b/opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 11.1 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 2.9 MB/s  0:00:17
 Collecting pyarrow>=21.0.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/a5/da83046273d990f256cb79796a190bbf7ec999269705ddc609403f8c6b06/pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (47.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 12.3 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 3.1 MB/s  0:00:15
 Collecting dill<0.4.1,>=0.3.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl (119 kB)
 Collecting pandas (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/3d/fe/89d77e424365280b79d99b3e1e7d606f5165af2f2ecfaf0c6d24c799d607/pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 3.0 MB/s  0:00:03
 Collecting xxhash (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/11/4f/426f91b96701ec2f37bb2b8cec664eff4f658a11f3fa9d94f0a887ea6d2b/xxhash-3.6.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (193 kB)
 Collecting multiprocess<0.70.19 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
@@ -202,7 +202,7 @@ Collecting multiprocess<0.70.19 (from datasets->outlines<0.1,>=0.0.43->-r requir
 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21)) (3.0.3)
 Collecting llvmlite<0.47,>=0.46.0dev0 (from numba->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/aa/85/4890a7c14b4fa54400945cb52ac3cd88545bbdb973c440f98ca41591cdc5/llvmlite-0.46.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 12.3 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 3.1 MB/s  0:00:17
 Collecting python-dateutil>=2.8.2 (from pandas->datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Collecting shellingham>=1.3.0 (from typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.45.0->-r requirements-common.txt (line 7))
@@ -217,7 +217,7 @@ Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingf
 Building wheels for collected packages: pyairports
   Building wheel for pyairports (pyproject.toml): started
   Building wheel for pyairports (pyproject.toml): finished with status 'done'
-  Created wheel for pyairports: filename=pyairports-0.0.1-py3-none-any.whl size=3523 sha256=d1ecfd8c291ee9cb65e5e142cc64205a6d1da3642b0cc416cea86fb0ccfa601e
+  Created wheel for pyairports: filename=pyairports-0.0.1-py3-none-any.whl size=3523 sha256=e87f22927227ea844787393caaa8f1cf9bbfb40f46fd281e566565012c34a4ac
   Stored in directory: /root/.cache/pip/wheels/b0/e2/6c/f71786346898ccc5493bd355e84f32780626dda18eb189d892
 Successfully built pyairports
 Installing collected packages: pyairports, py-cpuinfo, xxhash, websockets, uvloop, typing-inspection, sniffio, shellingham, sentencepiece, safetensors, rpds-py, regex, pyzmq, python-dotenv, python-dateutil, pydantic-core, pycountry, pyarrow, psutil, protobuf, prometheus_client, partial-json-parser, opencv-python-headless, nest-asyncio, msgspec, mdurl, llvmlite, lark, jiter, interegular, httptools, hf-xet, gguf, einops, diskcache, dill, cloudpickle, click, annotated-types, annotated-doc, watchfiles, uvicorn, tiktoken, starlette, referencing, pydantic, pandas, numba, multiprocess, markdown-it-py, rich, pydantic-extra-types, prometheus-fastapi-instrumentator, openai, lm-format-enforcer, jsonschema-specifications, fastapi, typer, jsonschema, typer-slim, mistral_common, huggingface-hub, tokenizers, datasets, transformers, outlines
@@ -267,31 +267,31 @@ Collecting pytest-shard (from -r requirements-test.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/65/7a/dbeb4c54e9fc3b59622f410091365f354a69cda1af10c3b83ac0ca6e6f4f/pytest_shard-0.1.2-py3-none-any.whl (4.6 kB)
 Collecting awscli (from -r requirements-test.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/52/4e/70b59ed8ad38a81561fb1fe64ae0be0dc16b11e81ffea81b469a5f082766/awscli-1.44.48-py3-none-any.whl (4.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 11.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 3.7 MB/s  0:00:01
 Requirement already satisfied: einops in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 11)) (0.8.2)
 Requirement already satisfied: httpx in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 12)) (0.28.1)
 Collecting librosa (from -r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/b5/ba/c63c5786dfee4c3417094c4b00966e61e4a63efecee22cb7b4c0387dda83/librosa-0.11.0-py3-none-any.whl (260 kB)
 Collecting opencv-python (from -r requirements-test.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/fd/55/b3b49a1b97aabcfbbd6c7326df9cb0b6fa0c0aefa8e89d500939e04aa229/opencv_python-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (72.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.9/72.9 MB 13.6 MB/s  0:00:05
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.9/72.9 MB 4.0 MB/s  0:00:18
 Collecting peft (from -r requirements-test.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/b3/14/b4e3f574acf349ae6f61f9c000a77f97a3b315b4bb6ad03791e79ae4a568/peft-0.18.1-py3-none-any.whl (556 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 8.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 4.2 MB/s  0:00:00
 Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 16)) (2.32.5)
 Collecting ray==2.35 (from ray[adag]==2.35->-r requirements-test.txt (line 17))
   Downloading https://mirrors.aliyun.com/pypi/packages/35/e7/d9b4706308d584027df8e64b0517ca0cecf268b9f2f2051fb487fc555e55/ray-2.35.0-cp312-cp312-manylinux2014_x86_64.whl (65.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.2/65.2 MB 12.8 MB/s  0:00:05
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.2/65.2 MB 4.2 MB/s  0:00:15
 Collecting sentence-transformers (from -r requirements-test.txt (line 18))
   Downloading https://mirrors.aliyun.com/pypi/packages/46/9f/dba4b3e18ebbe1eaa29d9f1764fbc7da0cd91937b83f2b7928d15c5d2d36/sentence_transformers-5.2.3-py3-none-any.whl (494 kB)
 Collecting soundfile (from -r requirements-test.txt (line 19))
   Downloading https://mirrors.aliyun.com/pypi/packages/57/5e/70bdd9579b35003a489fc850b5047beeda26328053ebadc1fb60f320f7db/soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 12.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 4.3 MB/s  0:00:00
 Collecting compressed-tensors==0.4.0 (from -r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/fc/68/0e796b66a8fa23000c9b5957c94c69f2aa84e80cb0d6856df5630f7f9961/compressed_tensors-0.4.0-py3-none-any.whl (75 kB)
 Collecting timm (from -r requirements-test.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/ef/50/de09f69a74278a16f08f1d562047a2d6713783765ee3c6971881a2b21a3f/timm-1.0.25-py3-none-any.whl (2.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 12.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 4.0 MB/s  0:00:00
 Collecting transformers_stream_generator (from -r requirements-test.txt (line 22))
   Downloading https://mirrors.aliyun.com/pypi/packages/42/c2/65f13aec253100e1916e9bd7965fe17bde796ebabeb1265f45191ab4ddc0/transformers-stream-generator-0.0.5.tar.gz (13 kB)
   Installing build dependencies: started
@@ -302,13 +302,13 @@ Collecting transformers_stream_generator (from -r requirements-test.txt (line 22
   Preparing metadata (pyproject.toml): finished with status 'done'
 Collecting matplotlib (from -r requirements-test.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/3e/f3/c5195b1ae57ef85339fd7285dfb603b22c8b4e79114bae5f4f0fcf688677/matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 13.3 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 3.9 MB/s  0:00:02
 Collecting datamodel_code_generator (from -r requirements-test.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/2b/d9/fd646ea4ae48e374817b2750f5e678a5bf6e10d8924f09cf4cce86a81607/datamodel_code_generator-0.54.0-py3-none-any.whl (261 kB)
 Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 30)) (3.13.3)
 Collecting bitsandbytes>=0.44.0 (from -r requirements-test.txt (line 33))
   Downloading https://mirrors.aliyun.com/pypi/packages/19/57/3443d6f183436fbdaf5000aac332c4d5ddb056665d459244a5608e98ae92/bitsandbytes-0.49.2-py3-none-manylinux_2_24_x86_64.whl (60.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 13.9 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.7/60.7 MB 4.5 MB/s  0:00:13
 Collecting buildkite-test-collector==0.1.8 (from -r requirements-test.txt (line 34))
   Downloading https://mirrors.aliyun.com/pypi/packages/ca/24/554315efaeffbf409a769b979a6ffb418bea584ee0f614661ec00b9e7026/buildkite_test_collector-0.1.8-py3-none-any.whl (12 kB)
 Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.12/dist-packages (from ray==2.35->ray[adag]==2.35->-r requirements-test.txt (line 17)) (8.3.1)
@@ -326,7 +326,7 @@ Requirement already satisfied: transformers in /usr/local/lib/python3.12/dist-pa
 Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.12/dist-packages (from compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (2.12.5)
 Collecting cupy-cuda12x (from ray[adag]==2.35->-r requirements-test.txt (line 17))
   Downloading https://mirrors.aliyun.com/pypi/packages/5a/a6/944406223a190815d9df156a1d66f3b0352bd8827dc4a8c752196d616dbc/cupy_cuda12x-14.0.1-cp312-cp312-manylinux2014_x86_64.whl (134.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.6/134.6 MB 13.7 MB/s  0:00:09
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.6/134.6 MB 4.3 MB/s  0:00:30
 Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.12/dist-packages (from pytest->-r requirements-test.txt (line 2)) (2.3.0)
 Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.12/dist-packages (from pytest->-r requirements-test.txt (line 2)) (1.6.0)
 Requirement already satisfied: pygments>=2.7.2 in /usr/local/lib/python3.12/dist-packages (from pytest->-r requirements-test.txt (line 2)) (2.19.2)
@@ -344,10 +344,10 @@ Requirement already satisfied: py in /usr/local/lib/python3.12/dist-packages (fr
 Requirement already satisfied: typing-extensions>=4.12 in /usr/local/lib/python3.12/dist-packages (from pytest-asyncio->-r requirements-test.txt (line 5)) (4.15.0)
 Collecting botocore==1.42.58 (from awscli->-r requirements-test.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/4e/e0/f957ed6434f922ceffddba6db308b23d1ec2206beacb166cb83a75c5af61/botocore-1.42.58-py3-none-any.whl (14.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 12.8 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 4.8 MB/s  0:00:03
 Collecting docutils<=0.19,>=0.18.1 (from awscli->-r requirements-test.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl (570 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 8.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 3.7 MB/s  0:00:00
 Collecting s3transfer<0.17.0,>=0.16.0 (from awscli->-r requirements-test.txt (line 10))
   Downloading https://mirrors.aliyun.com/pypi/packages/fc/51/727abb13f44c1fcf6d145979e1535a35794db0f6e450a0cb46aa24732fe2/s3transfer-0.16.0-py3-none-any.whl (86 kB)
 Collecting colorama<0.4.7,>=0.2.5 (from awscli->-r requirements-test.txt (line 10))
@@ -371,10 +371,10 @@ Collecting audioread>=2.1.9 (from librosa->-r requirements-test.txt (line 13))
 Requirement already satisfied: numba>=0.51.0 in /usr/local/lib/python3.12/dist-packages (from librosa->-r requirements-test.txt (line 13)) (0.64.0)
 Collecting scipy>=1.6.0 (from librosa->-r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/01/8e/1e35281b8ab6d5d72ebe9911edcdffa3f36b04ed9d51dec6dd140396e220/scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 13.6 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 4.8 MB/s  0:00:07
 Collecting scikit-learn>=1.1.0 (from librosa->-r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/97/74/b7a304feb2b49df9fafa9382d4d09061a96ee9a9449a7cbea7988dda0828/scikit_learn-1.8.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (8.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 13.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 4.7 MB/s  0:00:01
 Collecting joblib>=1.0 (from librosa->-r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
 Collecting decorator>=4.3.0 (from librosa->-r requirements-test.txt (line 13))
@@ -387,7 +387,7 @@ Collecting lazy_loader>=0.1 (from librosa->-r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/83/60/d497a310bde3f01cb805196ac61b7ad6dc5dcf8dce66634dc34364b20b4f/lazy_loader-0.4-py3-none-any.whl (12 kB)
 Collecting numpy>=1.19.5 (from tensorizer>=2.9.0->-r requirements-test.txt (line 3))
   Downloading https://mirrors.aliyun.com/pypi/packages/f5/c6/a18e59f3f0b8071cc85cbc8d80cd02d68aa9710170b2553a117203d46936/numpy-2.4.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 13.6 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.6/16.6 MB 4.4 MB/s  0:00:03
 Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from peft->-r requirements-test.txt (line 15)) (4.67.3)
 Collecting accelerate>=0.21.0 (from peft->-r requirements-test.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/9f/d2/c581486aa6c4fbd7394c23c47b83fa1a919d34194e16944241daf9e762dd/accelerate-1.12.0-py3-none-any.whl (380 kB)
@@ -409,10 +409,10 @@ Collecting cycler>=0.10 (from matplotlib->-r requirements-test.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
 Collecting fonttools>=4.22.0 (from matplotlib->-r requirements-test.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/b7/37/82dbef0f6342eb01f54bca073ac1498433d6ce71e50c3c3282b655733b31/fonttools-4.61.1-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (5.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 13.2 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 4.3 MB/s  0:00:01
 Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements-test.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/70/90/6d240beb0f24b74371762873e9b7f499f1e02166a2d9c5801f4dbf8fa12e/kiwisolver-1.4.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 11.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 4.2 MB/s  0:00:00
 Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.12/dist-packages (from matplotlib->-r requirements-test.txt (line 23)) (12.1.1)
 Collecting pyparsing>=3 (from matplotlib->-r requirements-test.txt (line 23))
   Downloading https://mirrors.aliyun.com/pypi/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl (122 kB)
@@ -420,7 +420,7 @@ Collecting argcomplete<4,>=2.10.1 (from datamodel_code_generator->-r requirement
   Downloading https://mirrors.aliyun.com/pypi/packages/74/f5/9373290775639cb67a2fce7f629a1c240dce9f12fe927bc32b2736e16dfc/argcomplete-3.6.3-py3-none-any.whl (43 kB)
 Collecting black>=19.10b0 (from datamodel_code_generator->-r requirements-test.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/8c/04/c96f79d7b93e8f09d9298b333ca0d31cd9b2ee6c46c274fd0f531de9dc61/black-26.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 11.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 4.2 MB/s  0:00:00
 Collecting genson<2,>=1.2.1 (from datamodel_code_generator->-r requirements-test.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/f8/5c/e226de133afd8bb267ec27eead9ae3d784b95b39a287ed404caab39a5f50/genson-1.3.0-py3-none-any.whl (21 kB)
 Collecting inflect<8,>=4.1 (from datamodel_code_generator->-r requirements-test.txt (line 24))
@@ -480,48 +480,48 @@ Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.12/
 Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.12/dist-packages (from jsonschema->ray==2.35->ray[adag]==2.35->-r requirements-test.txt (line 17)) (0.30.0)
 Collecting torch>=1.7.0 (from compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/ac/72/d610029ef5cdde3f3aa216e8e75c233b1a91b34af0fc47392b3aa928563a/torch-2.5.0-cp312-cp312-manylinux1_x86_64.whl (906.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 906.4/906.4 MB 12.9 MB/s  0:01:05
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 906.4/906.4 MB 4.8 MB/s  0:03:05
 Collecting nvidia-cuda-nvrtc-cu12==12.4.127 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/14/91ae57cd4db3f9ef7aa99f4019cfa8d54cb4caa7e00975df6467e9725a9f/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (24.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 13.8 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 6.0 MB/s  0:00:04
 Collecting nvidia-cuda-runtime-cu12==12.4.127 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/ea/27/1795d86fe88ef397885f2e580ac37628ed058a92ed2c39dc8eac3adf0619/nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (883 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 11.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 7.4 MB/s  0:00:00
 Collecting nvidia-cuda-cupti-cu12==12.4.127 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/67/42/f4f60238e8194a3106d06a058d494b18e006c10bb2b915655bd9f6ea4cb1/nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (13.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 13.7 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 6.0 MB/s  0:00:02
 Collecting nvidia-cudnn-cu12==9.1.0.70 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/9f/fd/713452cd72343f682b1c7b9321e23829f00b842ceaedcda96e742ea0b0b3/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 13.3 MB/s  0:00:47
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 10.0 MB/s  0:01:19
 Collecting nvidia-cublas-cu12 (from nvidia-cudnn-cu12==9.10.2.21->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/ae/71/1c91302526c45ab494c23f61c7a84aa568b8c1f9d196efa5993957faf906/nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl (363.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 14.1 MB/s  0:00:25
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 11.2 MB/s  0:00:32
 Collecting nvidia-cufft-cu12==11.2.1.3 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/27/94/3266821f65b92b3138631e9c8e7fe1fb513804ac934485a8d05776e1dd43/nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl (211.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 14.0 MB/s  0:00:15
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 11.8 MB/s  0:00:17
 Collecting nvidia-curand-cu12==10.3.5.147 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/8a/6d/44ad094874c6f1b9c654f8ed939590bdc408349f137f9b98a3a23ccec411/nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl (56.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 14.2 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 11.3 MB/s  0:00:04
 Collecting nvidia-cusolver-cu12==11.6.1.9 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/3a/e1/5b9089a4b2a4790dfdea8b3a006052cfecff58139d5a4e34cb1a51df8d6f/nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl (127.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 14.2 MB/s  0:00:09
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 11.4 MB/s  0:00:11
 Collecting nvidia-cusparse-cu12 (from nvidia-cusolver-cu12==11.7.3.90->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/db/f7/97a9ea26ed4bbbfc2d470994b8b4f338ef663be97b8f677519ac195e113d/nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl (207.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 13.9 MB/s  0:00:14
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 11.5 MB/s  0:00:18
 Collecting nvidia-nccl-cu12==2.21.5 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/df/99/12cd266d6233f47d00daf3a72739872bdc10267d0383508b0b9c84a18bb6/nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl (188.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 14.3 MB/s  0:00:13
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 11.2 MB/s  0:00:16
 Collecting nvidia-nvtx-cu12==12.4.127 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/87/20/199b8713428322a2f22b722c62b8cc278cc53dffa9705d744484b5035ee9/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (99 kB)
 Collecting nvidia-nvjitlink-cu12 (from nvidia-cufft-cu12==11.3.3.83->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/ff/ff/847841bacfbefc97a00036e0fce5a0f086b640756dc38caea5e1bb002655/nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (21.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 14.0 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 11.0 MB/s  0:00:01
 Collecting triton==3.1.0 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/78/eb/65f5ba83c2a123f6498a3097746607e5b2f16add29e36765305e4ac7fdd8/triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (209.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 14.2 MB/s  0:00:14
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 11.3 MB/s  0:00:18
 Collecting sympy==1.13.1 (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl (6.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 13.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 10.8 MB/s  0:00:00
 Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.12/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 15)) (1.5.4)
 Requirement already satisfied: rich>=12.3.0 in /usr/local/lib/python3.12/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 15)) (14.3.3)
 Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.12/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 15)) (0.0.4)
@@ -530,7 +530,7 @@ Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-pack
 Building wheels for collected packages: transformers_stream_generator
   Building wheel for transformers_stream_generator (pyproject.toml): started
   Building wheel for transformers_stream_generator (pyproject.toml): finished with status 'done'
-  Created wheel for transformers_stream_generator: filename=transformers_stream_generator-0.0.5-py3-none-any.whl size=12526 sha256=f5386aee424da7e6d5df477038a6f251eaa2fda0b4d5c28d2ee00b3b9b6d46a9
+  Created wheel for transformers_stream_generator: filename=transformers_stream_generator-0.0.5-py3-none-any.whl size=12526 sha256=c79ad307a3fd4c10e4da736dd30e7aacb90ec457bf5649e3bf675ee4d4b73f2a
   Stored in directory: /root/.cache/pip/wheels/af/f1/0f/10a7eb1779f54bbddf787d332e0687274a97ed0e3f82c9f81a
 Successfully built transformers_stream_generator
 Installing collected packages: genson, typeguard, triton, threadpoolctl, sympy, redis, pytokens, pyparsing, pycparser, pyasn1, platformdirs, pathspec, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, mypy-extensions, msgpack, libnacl, lazy_loader, kiwisolver, joblib, jmespath, isort, hiredis, fonttools, docutils, decorator, cycler, colorama, audioread, argcomplete, soxr, scipy, rsa, pytest-shard, pooch, opencv-python, nvidia-cusparse-cu12, nvidia-cudnn-cu12, inflect, cupy-cuda12x, contourpy, cffi, buildkite-test-collector, botocore, black, soundfile, scikit-learn, s3transfer, nvidia-cusolver-cu12, matplotlib, datamodel_code_generator, torch, ray, librosa, boto3, awscli, tensorizer, bitsandbytes, accelerate, timm, transformers_stream_generator, sentence-transformers, peft, compressed-tensors
@@ -613,17 +613,17 @@ Collecting tomli==2.0.1 (from -r /workspace/requirements-lint.txt (line 4))
   Downloading https://mirrors.aliyun.com/pypi/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting ruff==0.6.5 (from -r /workspace/requirements-lint.txt (line 5))
   Downloading https://mirrors.aliyun.com/pypi/packages/c4/e3/9d0ff218c7663ab9d53abe02911bec03d32b8ced7f78c1c49c2af84903a2/ruff-0.6.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 13.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 12.9 MB/s  0:00:00
 Collecting codespell==2.3.0 (from -r /workspace/requirements-lint.txt (line 6))
   Downloading https://mirrors.aliyun.com/pypi/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl (329 kB)
 Collecting isort==5.13.2 (from -r /workspace/requirements-lint.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl (92 kB)
 Collecting clang-format==18.1.5 (from -r /workspace/requirements-lint.txt (line 8))
   Downloading https://mirrors.aliyun.com/pypi/packages/45/96/d960d9add3eb71f6c6039181054281aeb42f2cb4877a33f889516abc2cb4/clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 12.3 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 11.1 MB/s  0:00:00
 Collecting mypy==1.11.1 (from -r /workspace/requirements-lint.txt (line 11))
   Downloading https://mirrors.aliyun.com/pypi/packages/1c/21/a6b46c91b4c9d1918ee59c305f46850cde7cbea748635a352e7c3c8ed204/mypy-1.11.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 13.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 12.6 MB/s  0:00:00
 Collecting types-PyYAML (from -r /workspace/requirements-lint.txt (line 12))
   Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
 Collecting types-requests (from -r /workspace/requirements-lint.txt (line 13))
@@ -810,7 +810,7 @@ vllm/connections.py:8
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ------------------ generated xml file: /workspace/phase2.xml -------------------
-======================== 2 passed, 3 warnings in 0.77s =========================
+======================== 2 passed, 3 warnings in 0.81s =========================
 
 --- STDERR ---
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

@@ -5,9 +5,7 @@
   "phase1": {
     "passed": [],
     "failed": [],
-    "errors": [
-      "TIMEOUT"
-    ],
+    "errors": [],
     "skipped": []
   },
   "phase2": {
@@ -21,15 +19,13 @@
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772168102.3667734,
-    "phase1_start": 1772168103.9028196,
-    "phase1_end": 1772169003.9140794,
-    "phase2_start": 1772169003.917366,
-    "phase2_end": 1772169275.4497757,
-    "end": 1772169275.4498544
+    "start": 1772193813.4722712,
+    "phase1_start": 1772193815.320168,
+    "phase1_end": 1772194434.0496771,
+    "phase2_start": 1772194434.0530946,
+    "phase2_end": 1772195195.8946993,
+    "end": 1772195195.8947742
   },
   "regressions": [],
-  "both_failed": [
-    "TIMEOUT"
-  ]
+  "both_failed": []
 }

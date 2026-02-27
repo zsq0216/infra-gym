@@ -3,13 +3,11 @@
   "version": "0.6.2",
   "base_commit": "2ae25f79cf1e8d21f7bcba097e4c039463c22be4",
   "phase1": {
-    "passed": [
-      "tests/test_utils.py::test_missing_required_argument"
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "TIMEOUT"
     ],
-    "failed": [
-      "tests/test_utils.py::test_no_model_tag"
-    ],
-    "errors": [],
     "skipped": []
   },
   "phase2": {
@@ -21,22 +19,20 @@
     "errors": [],
     "skipped": []
   },
-  "FAIL_TO_PASS": [
-    "tests/test_utils.py::test_no_model_tag"
-  ],
-  "PASS_TO_PASS": [
-    "tests/test_utils.py::test_missing_required_argument"
-  ],
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772169275.45821,
-    "phase1_start": 1772169277.2736752,
-    "phase1_end": 1772169739.1485674,
-    "phase2_start": 1772169739.1517525,
-    "phase2_end": 1772170202.0453773,
-    "end": 1772170202.045608
+    "start": 1772195195.903832,
+    "phase1_start": 1772195199.717413,
+    "phase1_end": 1772196099.7467675,
+    "phase2_start": 1772196099.7501879,
+    "phase2_end": 1772196914.0127625,
+    "end": 1772196914.01295
   },
   "regressions": [],
-  "both_failed": []
+  "both_failed": [
+    "TIMEOUT"
+  ]
 }

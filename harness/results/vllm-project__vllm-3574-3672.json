@@ -29,12 +29,12 @@
   "status": "success",
   "error_message": "",
   "timestamps": {
-    "start": 1772165689.0551813,
-    "phase1_start": 1772165690.9388664,
-    "phase1_end": 1772166431.942916,
-    "phase2_start": 1772166431.9464316,
-    "phase2_end": 1772167161.443273,
-    "end": 1772167161.443441
+    "start": 1772189884.3001027,
+    "phase1_start": 1772189886.51803,
+    "phase1_end": 1772190584.248202,
+    "phase2_start": 1772190584.2520678,
+    "phase2_end": 1772191470.7534897,
+    "end": 1772191470.7536736
   },
   "regressions": [],
   "both_failed": [

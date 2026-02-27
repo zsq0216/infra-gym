@@ -23,7 +23,7 @@ Collecting psutil (from -r requirements-common.txt (line 1))
   Downloading https://mirrors.aliyun.com/pypi/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
 Collecting sentencepiece (from -r requirements-common.txt (line 2))
   Downloading https://mirrors.aliyun.com/pypi/packages/04/88/14f2f4a2b922d8b39be45bf63d79e6cd3a9b2f248b2fcb98a69b12af12f5/sentencepiece-0.2.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 10.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 11.9 MB/s  0:00:00
 Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 3)) (1.26.4)
 Requirement already satisfied: requests>=2.26.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 4)) (2.32.5)
 Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 5)) (4.67.3)
@@ -31,10 +31,10 @@ Collecting py-cpuinfo (from -r requirements-common.txt (line 6))
   Downloading https://mirrors.aliyun.com/pypi/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
 Collecting transformers>=4.45.2 (from -r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/4e/93/79754b0ca486e556c2b95d4f5afc66aaf4b260694f3d6e1b51da2d036691/transformers-5.2.0-py3-none-any.whl (10.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 11.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 14.6 MB/s  0:00:00
 Collecting tokenizers>=0.19.1 (from -r requirements-common.txt (line 8))
   Downloading https://mirrors.aliyun.com/pypi/packages/2e/76/932be4b50ef6ccedf9d3c6639b056a967a86258c6d9200643f01269211ca/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 11.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 13.7 MB/s  0:00:00
 Collecting protobuf (from -r requirements-common.txt (line 9))
   Downloading https://mirrors.aliyun.com/pypi/packages/b5/57/89727baef7578897af5ed166735ceb315819f1c184da8c3441271dbcfde7/protobuf-7.34.0-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
 Collecting fastapi!=0.113.*,!=0.114.0,>=0.107.0 (from -r requirements-common.txt (line 11))
@@ -42,7 +42,7 @@ Collecting fastapi!=0.113.*,!=0.114.0,>=0.107.0 (from -r requirements-common.txt
 Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 12)) (3.13.3)
 Collecting openai>=1.45.0 (from -r requirements-common.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 9.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 12.2 MB/s  0:00:00
 Collecting pydantic>=2.9 (from -r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl (463 kB)
 Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 16)) (12.1.1)
@@ -52,7 +52,7 @@ Collecting prometheus-fastapi-instrumentator>=7.0.0 (from -r requirements-common
   Downloading https://mirrors.aliyun.com/pypi/packages/27/72/0824c18f3bc75810f55dacc2dd933f6ec829771180245ae3cc976195dec0/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (19 kB)
 Collecting tiktoken>=0.6.0 (from -r requirements-common.txt (line 19))
   Downloading https://mirrors.aliyun.com/pypi/packages/f4/90/3dae6cc5436137ebd38944d396b5849e167896fc2073da643a49f372dc4f/tiktoken-0.12.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 8.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.4 MB/s  0:00:00
 Collecting lm-format-enforcer<0.11,>=0.10.9 (from -r requirements-common.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/57/1c/7bb80fe2dff9a9c38b180571ca867f518eb9110f79d4b670ea124e153680/lm_format_enforcer-0.10.12-py3-none-any.whl (44 kB)
 Collecting outlines<0.1,>=0.0.43 (from -r requirements-common.txt (line 21))
@@ -63,7 +63,7 @@ Collecting partial-json-parser (from -r requirements-common.txt (line 24))
   Downloading https://mirrors.aliyun.com/pypi/packages/42/32/658973117bf0fd82a24abbfb94fe73a5e86216e49342985e10acce54775a/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (10 kB)
 Collecting pyzmq (from -r requirements-common.txt (line 25))
   Downloading https://mirrors.aliyun.com/pypi/packages/f8/9b/c108cdb55560eaf253f0cbdb61b29971e9fb34d9c3499b0e96e4e60ed8a5/pyzmq-27.1.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (840 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 841.0/841.0 kB 9.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 841.0/841.0 kB 11.7 MB/s  0:00:00
 Collecting msgspec (from -r requirements-common.txt (line 26))
   Downloading https://mirrors.aliyun.com/pypi/packages/5c/a2/488517a43ccf5a4b6b6eca6dd4ede0bd82b043d1539dd6bb908a19f8efd3/msgspec-0.20.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
 Collecting gguf==0.10.0 (from -r requirements-common.txt (line 27))
@@ -71,7 +71,7 @@ Collecting gguf==0.10.0 (from -r requirements-common.txt (line 27))
 Requirement already satisfied: importlib_metadata in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 28)) (4.6.4)
 Collecting mistral_common>=1.5.0 (from mistral_common[opencv]>=1.5.0->-r requirements-common.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/ac/72/a38bb1fd9fd4d4ef990341c9dd1a7c8061f1951e10efa6d50c0a3f04eced/mistral_common-1.9.1-py3-none-any.whl (6.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 11.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.5/6.5 MB 14.3 MB/s  0:00:00
 Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 30)) (6.0.3)
 Requirement already satisfied: six>=1.16.0 in /usr/lib/python3/dist-packages (from -r requirements-common.txt (line 31)) (1.16.0)
 Requirement already satisfied: setuptools>=74.1.1 in /usr/local/lib/python3.12/dist-packages (from -r requirements-common.txt (line 32)) (82.0.0)
@@ -96,7 +96,7 @@ Collecting diskcache (from outlines<0.1,>=0.0.43->-r requirements-common.txt (li
   Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
 Collecting numba (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/9b/89/1a74ea99b180b7a5587b0301ed1b183a2937c4b4b67f7994689b5d36fc34/numba-0.64.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 3.4 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 14.0 MB/s  0:00:00
 Collecting referencing (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
 Collecting jsonschema (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
@@ -105,7 +105,7 @@ Collecting datasets (from outlines<0.1,>=0.0.43->-r requirements-common.txt (lin
   Downloading https://mirrors.aliyun.com/pypi/packages/6f/0e/9caa51e659d7417374788800bdedc9dcb8db918dc3ad4759a0294bbc55ac/datasets-4.6.0-py3-none-any.whl (520 kB)
 Collecting pycountry (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/9c/42/7703bd45b62fecd44cd7d3495423097e2f7d28bc2e99e7c1af68892ab157/pycountry-26.2.16-py3-none-any.whl (8.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 13.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 14.4 MB/s  0:00:00
 Collecting pyairports (from outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2f/5e/2b9f07c89538e74e4c27bb303c6bdb6c0da73d0edf6f724ca51453d330b3/pyairports-0.0.1.tar.gz (3.1 kB)
   Installing build dependencies: started
@@ -120,10 +120,10 @@ Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/d
 Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests>=2.26.0->-r requirements-common.txt (line 4)) (2026.2.25)
 Collecting huggingface-hub<2.0,>=1.3.0 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/ec/74/2bc951622e2dbba1af9a460d93c51d15e458becd486e62c29cc0ccb08178/huggingface_hub-1.5.0-py3-none-any.whl (596 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 8.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 10.3 MB/s  0:00:00
 Collecting regex!=2019.12.17 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/59/3c/ea5a4687adaba5e125b9bd6190153d0037325a0ba3757cc1537cc2c8dd90/regex-2026.2.19-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (803 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.7/803.7 kB 9.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 803.7/803.7 kB 11.4 MB/s  0:00:00
 Collecting typer-slim (from transformers>=4.45.2->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
 Collecting safetensors>=0.4.3 (from transformers>=4.45.2->-r requirements-common.txt (line 7))
@@ -131,7 +131,7 @@ Collecting safetensors>=0.4.3 (from transformers>=4.45.2->-r requirements-common
 Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (2026.2.0)
 Collecting hf-xet<2.0.0,>=1.2.0 (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/61/cd/acbbf9e51f17d8cef2630e61741228e12d4050716619353efc1ac119f902/hf_xet-1.3.1-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 9.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 13.9 MB/s  0:00:00
 Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.12/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7)) (0.28.1)
 Collecting typer (from huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7))
   Downloading https://mirrors.aliyun.com/pypi/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl (56 kB)
@@ -160,7 +160,7 @@ Collecting annotated-types>=0.6.0 (from pydantic>=2.9->-r requirements-common.tx
   Downloading https://mirrors.aliyun.com/pypi/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl (13 kB)
 Collecting pydantic-core==2.41.5 (from pydantic>=2.9->-r requirements-common.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/0d/76/941cc9f73529988688a665a5c0ecff1112b3d95ab48f81db5f7606f522d3/pydantic_core-2.41.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 12.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 12.3 MB/s  0:00:00
 Collecting click>=7.0 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl (108 kB)
 Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements-common.txt (line 14))
@@ -169,7 +169,7 @@ Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.t
   Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
 Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/5f/6f/e62b4dfc7ad6518e7eff2516f680d02a0f6eb62c0c212e152ca708a0085e/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 12.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.4/4.4 MB 14.0 MB/s  0:00:00
 Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 14))
   Downloading https://mirrors.aliyun.com/pypi/packages/cf/68/5707da262a119fb06fbe214d82dd1fe4a6f4af32d2d14de368d0349eb52a/watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
 Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 14))
@@ -182,14 +182,14 @@ Collecting rpds-py>=0.25.0 (from jsonschema->outlines<0.1,>=0.0.43->-r requireme
   Downloading https://mirrors.aliyun.com/pypi/packages/60/1b/6f8f29f3f995c7ffdde46a626ddccd7c63aefc0efae881dc13b6e5d5bb16/rpds_py-0.30.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (394 kB)
 Collecting opencv-python-headless>=4.0.0 (from mistral_common[opencv]>=1.5.0->-r requirements-common.txt (line 29))
   Downloading https://mirrors.aliyun.com/pypi/packages/4b/33/b5db29a6c00eb8f50708110d8d453747ca125c8b805bc437b289dbdcc057/opencv_python_headless-4.13.0.92-cp37-abi3-manylinux_2_28_x86_64.whl (60.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 13.9 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 14.7 MB/s  0:00:04
 INFO: pip is looking at multiple versions of opencv-python-headless to determine which version is compatible with other requirements. This could take a while.
   Downloading https://mirrors.aliyun.com/pypi/packages/81/a1/facfe2801a861b424c4221d66e1281cf19735c00e07f063a337a208c11b5/opencv_python_headless-4.13.0.90-cp37-abi3-manylinux_2_28_x86_64.whl (62.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 MB 13.8 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.5/62.5 MB 14.5 MB/s  0:00:04
   Downloading https://mirrors.aliyun.com/pypi/packages/89/53/e19c21e0c4eb1275c3e2c97b081103b6dfb3938172264d283a519bf728b9/opencv_python_headless-4.12.0.88-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (54.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 13.3 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 MB 14.9 MB/s  0:00:03
   Downloading https://mirrors.aliyun.com/pypi/packages/dd/5c/c139a7876099916879609372bfa513b7f1257f7f1a908b0bdc1c2328241b/opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 13.4 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 15.0 MB/s  0:00:03
 Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.14.0)
 Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (3.6.1)
 Requirement already satisfied: cuda-bindings==12.9.4 in /usr/local/lib/python3.12/dist-packages (from torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (12.9.4)
@@ -213,12 +213,12 @@ Requirement already satisfied: cuda-pathfinder~=1.1 in /usr/local/lib/python3.12
 Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch>=1.7.0->compressed-tensors==0.8.0->-r requirements-common.txt (line 34)) (1.3.0)
 Collecting pyarrow>=21.0.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/a5/da83046273d990f256cb79796a190bbf7ec999269705ddc609403f8c6b06/pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (47.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 13.5 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.6/47.6 MB 14.8 MB/s  0:00:03
 Collecting dill<0.4.1,>=0.3.0 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl (119 kB)
 Collecting pandas (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/3d/fe/89d77e424365280b79d99b3e1e7d606f5165af2f2ecfaf0c6d24c799d607/pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 13.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.9/10.9 MB 14.4 MB/s  0:00:00
 Collecting xxhash (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/11/4f/426f91b96701ec2f37bb2b8cec664eff4f658a11f3fa9d94f0a887ea6d2b/xxhash-3.6.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (193 kB)
 Collecting multiprocess<0.70.19 (from datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
@@ -226,7 +226,7 @@ Collecting multiprocess<0.70.19 (from datasets->outlines<0.1,>=0.0.43->-r requir
 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21)) (3.0.3)
 Collecting llvmlite<0.47,>=0.46.0dev0 (from numba->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/aa/85/4890a7c14b4fa54400945cb52ac3cd88545bbdb973c440f98ca41591cdc5/llvmlite-0.46.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 13.8 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 14.7 MB/s  0:00:03
 Collecting python-dateutil>=2.8.2 (from pandas->datasets->outlines<0.1,>=0.0.43->-r requirements-common.txt (line 21))
   Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Collecting shellingham>=1.3.0 (from typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.45.2->-r requirements-common.txt (line 7))
@@ -241,7 +241,7 @@ Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingf
 Building wheels for collected packages: pyairports
   Building wheel for pyairports (pyproject.toml): started
   Building wheel for pyairports (pyproject.toml): finished with status 'done'
-  Created wheel for pyairports: filename=pyairports-0.0.1-py3-none-any.whl size=3523 sha256=a89433e3f178f23f7ad8893a2170bce310ddd18ec953eb4b1c5933e339939d36
+  Created wheel for pyairports: filename=pyairports-0.0.1-py3-none-any.whl size=3523 sha256=061f7ff0955b5bad11c8f439bcd8b9356a9254cc387d6ed6b5c37b78b7b36061
   Stored in directory: /root/.cache/pip/wheels/b0/e2/6c/f71786346898ccc5493bd355e84f32780626dda18eb189d892
 Successfully built pyairports
 Installing collected packages: pyairports, py-cpuinfo, xxhash, websockets, uvloop, typing-inspection, sniffio, shellingham, sentencepiece, safetensors, rpds-py, regex, pyzmq, python-dotenv, python-dateutil, pydantic-core, pycountry, pyarrow, psutil, protobuf, prometheus_client, partial-json-parser, opencv-python-headless, nest-asyncio, msgspec, mdurl, llvmlite, lark, jiter, interegular, httptools, hf-xet, gguf, einops, diskcache, dill, cloudpickle, click, annotated-types, annotated-doc, watchfiles, uvicorn, tiktoken, starlette, referencing, pydantic, pandas, numba, multiprocess, markdown-it-py, rich, pydantic-extra-types, prometheus-fastapi-instrumentator, openai, lm-format-enforcer, jsonschema-specifications, fastapi, typer, jsonschema, typer-slim, mistral_common, huggingface-hub, tokenizers, datasets, transformers, outlines, compressed-tensors
@@ -290,7 +290,7 @@ Collecting aiohappyeyeballs==2.4.3 (from -r requirements-test.txt (line 13))
   Downloading https://mirrors.aliyun.com/pypi/packages/f7/d8/120cd0fe3e8530df0539e71ba9683eade12cae103dd7543e50d15f737917/aiohappyeyeballs-2.4.3-py3-none-any.whl (14 kB)
 Collecting aiohttp==3.10.10 (from -r requirements-test.txt (line 15))
   Downloading https://mirrors.aliyun.com/pypi/packages/bf/fe/1332409d845ca601893bbf2d76935e0b93d41686e5f333841c7d7a4a770d/aiohttp-3.10.10-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 7.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 8.2 MB/s  0:00:00
 Collecting aiosignal==1.3.1 (from -r requirements-test.txt (line 20))
   Downloading https://mirrors.aliyun.com/pypi/packages/76/ac/a7305707cb852b7e16ff80eaf5692309bde30e2b1100a1fcacdc8f731d97/aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
 Requirement already satisfied: annotated-types==0.7.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 24)) (0.7.0)
@@ -309,15 +309,15 @@ Collecting awscli==1.35.23 (from -r requirements-test.txt (line 42))
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 13.7 MB/s  0:00:00
 Collecting bitsandbytes==0.44.1 (from -r requirements-test.txt (line 44))
   Downloading https://mirrors.aliyun.com/pypi/packages/e4/e6/ccb84da7ffaf208a71c2c3c8e1120b34759df640db959660be9a98505eb4/bitsandbytes-0.44.1-py3-none-manylinux_2_24_x86_64.whl (122.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.4/122.4 MB 14.2 MB/s  0:00:08
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.4/122.4 MB 16.3 MB/s  0:00:07
 Collecting black==24.10.0 (from -r requirements-test.txt (line 46))
   Downloading https://mirrors.aliyun.com/pypi/packages/4e/3e/443ef8bc1fbda78e61f79157f303893f3fddf19ca3c8989b163eb3469a12/black-24.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 12.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 13.7 MB/s  0:00:00
 Collecting boto3==1.35.57 (from -r requirements-test.txt (line 48))
   Downloading https://mirrors.aliyun.com/pypi/packages/5a/b4/2aa8168bb1d80c238538ff523d8902a48b0946aafd3cbd6c72754209ae8a/boto3-1.35.57-py3-none-any.whl (139 kB)
 Collecting botocore==1.35.57 (from -r requirements-test.txt (line 50))
   Downloading https://mirrors.aliyun.com/pypi/packages/f6/29/6c3a0f688e7c19e2a3734ab0f50cbf85138c1d7a432db8ef4f51f7bae892/botocore-1.35.57-py3-none-any.whl (12.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 15.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 14.6 MB/s  0:00:00
 Collecting buildkite-test-collector==0.1.9 (from -r requirements-test.txt (line 55))
   Downloading https://mirrors.aliyun.com/pypi/packages/b3/96/ae66ed2ead9ae920292ee755366ff610985b4223af0a99a18418fb04224d/buildkite_test_collector-0.1.9-py3-none-any.whl (12 kB)
 Collecting certifi==2024.8.30 (from -r requirements-test.txt (line 57))
@@ -336,7 +336,7 @@ Collecting contourpy==1.3.0 (from -r requirements-test.txt (line 78))
   Downloading https://mirrors.aliyun.com/pypi/packages/6e/be/524e377567defac0e21a46e2a529652d165fed130a0d8a863219303cee18/contourpy-1.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (320 kB)
 Collecting cupy-cuda12x==13.3.0 (from -r requirements-test.txt (line 80))
   Downloading https://mirrors.aliyun.com/pypi/packages/90/dc/da09e5184d94146b8cbf240c2bef1c4851cbafd7e2d60cc71b1530c766ec/cupy_cuda12x-13.3.0-cp312-cp312-manylinux2014_x86_64.whl (91.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.0/91.0 MB 14.7 MB/s  0:00:06
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.0/91.0 MB 16.0 MB/s  0:00:05
 Collecting cycler==0.12.1 (from -r requirements-test.txt (line 82))
   Downloading https://mirrors.aliyun.com/pypi/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
 Collecting datamodel-code-generator==0.26.3 (from -r requirements-test.txt (line 84))
@@ -349,14 +349,14 @@ Collecting decorator==5.1.1 (from -r requirements-test.txt (line 94))
   Downloading https://mirrors.aliyun.com/pypi/packages/d5/50/83c593b07763e1161326b3b8c6686f0f4b0f24d5526546bee538c89837d6/decorator-5.1.1-py3-none-any.whl (9.1 kB)
 Collecting decord==0.6.0 (from -r requirements-test.txt (line 96))
   Downloading https://mirrors.aliyun.com/pypi/packages/11/79/936af42edf90a7bd4e41a6cac89c913d4b47fa48a26b042d5129a9242ee3/decord-0.6.0-py3-none-manylinux2010_x86_64.whl (13.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 15.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 16.1 MB/s  0:00:00
 Collecting dill==0.3.8 (from -r requirements-test.txt (line 98))
   Downloading https://mirrors.aliyun.com/pypi/packages/c9/7a/cef76fd8438a42f96db64ddaa85280485a9c395e7df3db8158cfec1eee34/dill-0.3.8-py3-none-any.whl (116 kB)
 Collecting dnspython==2.7.0 (from -r requirements-test.txt (line 104))
   Downloading https://mirrors.aliyun.com/pypi/packages/68/1b/e0a87d256e40e8c888847551b20a017a6b98139178505dc7ffb96f04e954/dnspython-2.7.0-py3-none-any.whl (313 kB)
 Collecting docutils==0.16 (from -r requirements-test.txt (line 106))
   Downloading https://mirrors.aliyun.com/pypi/packages/81/44/8a15e45ffa96e6cf82956dd8d7af9e666357e16b0d93b253903475ee947f/docutils-0.16-py2.py3-none-any.whl (548 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 548.2/548.2 kB 4.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 548.2/548.2 kB 8.7 MB/s  0:00:00
 Collecting einops==0.8.0 (from -r requirements-test.txt (line 108))
   Downloading https://mirrors.aliyun.com/pypi/packages/44/5a/f0b9ad6c0a9017e62d4735daaeb11ba3b6c009d69a26141b258cd37b5588/einops-0.8.0-py3-none-any.whl (43 kB)
 Collecting email-validator==2.2.0 (from -r requirements-test.txt (line 110))
@@ -371,7 +371,7 @@ Collecting filelock==3.16.1 (from -r requirements-test.txt (line 120))
   Downloading https://mirrors.aliyun.com/pypi/packages/b9/f8/feced7779d755758a52d1f6635d990b8d98dc0a29fa568bbe0625f18fdf3/filelock-3.16.1-py3-none-any.whl (16 kB)
 Collecting fonttools==4.54.1 (from -r requirements-test.txt (line 128))
   Downloading https://mirrors.aliyun.com/pypi/packages/08/07/aa85cc62abcc940b25d14b542cf585eebf4830032a7f6a1395d696bb3231/fonttools-4.54.1-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 13.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 15.5 MB/s  0:00:00
 Collecting frozenlist==1.5.0 (from -r requirements-test.txt (line 130))
   Downloading https://mirrors.aliyun.com/pypi/packages/af/f2/64b73a9bb86f5a89fb55450e97cd5c1f84a862d4ff90d9fd1a73ab0f64a5/frozenlist-1.5.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (283 kB)
 Collecting fsspec==2024.9.0 (from fsspec[http]==2024.9.0->-r requirements-test.txt (line 135))
@@ -412,7 +412,7 @@ Collecting jsonschema-specifications==2024.10.1 (from -r requirements-test.txt (
   Downloading https://mirrors.aliyun.com/pypi/packages/d1/0f/8910b19ac0670a0f80ce1008e5e751c4a57e14d2c4c13a482aa6079fa9d6/jsonschema_specifications-2024.10.1-py3-none-any.whl (18 kB)
 Collecting kiwisolver==1.4.7 (from -r requirements-test.txt (line 197))
   Downloading https://mirrors.aliyun.com/pypi/packages/21/e4/c0b6746fd2eb62fe702118b3ca0cb384ce95e1261cfada58ff693aeec08a/kiwisolver-1.4.7-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 12.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 13.3 MB/s  0:00:00
 Collecting lazy-loader==0.4 (from -r requirements-test.txt (line 199))
   Downloading https://mirrors.aliyun.com/pypi/packages/83/60/d497a310bde3f01cb805196ac61b7ad6dc5dcf8dce66634dc34364b20b4f/lazy_loader-0.4-py3-none-any.whl (12 kB)
 Collecting libnacl==2.1.0 (from -r requirements-test.txt (line 201))
@@ -421,23 +421,23 @@ Collecting librosa==0.10.2.post1 (from -r requirements-test.txt (line 203))
   Downloading https://mirrors.aliyun.com/pypi/packages/8c/8a/2d231b35456506b7c98b3ab9bbf07917b205fed8615d2e59e976ab497fff/librosa-0.10.2.post1-py3-none-any.whl (260 kB)
 Collecting llvmlite==0.43.0 (from -r requirements-test.txt (line 205))
   Downloading https://mirrors.aliyun.com/pypi/packages/00/5f/323c4d56e8401c50185fd0e875fcf06b71bf825a863699be1eb10aa2a9cb/llvmlite-0.43.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (43.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 14.9 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 MB 16.3 MB/s  0:00:02
 Collecting lm-eval==0.4.4 (from lm-eval[api]==0.4.4->-r requirements-test.txt (line 207))
   Downloading https://mirrors.aliyun.com/pypi/packages/ad/e1/ac8d7d26b4d6a9eea8859d438691b5d8209a37be2117b3e61f247de2d9e7/lm_eval-0.4.4-py3-none-any.whl (2.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 13.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 14.6 MB/s  0:00:00
 Collecting lxml==5.3.0 (from -r requirements-test.txt (line 209))
   Downloading https://mirrors.aliyun.com/pypi/packages/0a/6e/94537acfb5b8f18235d13186d247bca478fea5e87d224644e0fe907df976/lxml-5.3.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 14.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 10.7 MB/s  0:00:00
 Collecting markupsafe==3.0.2 (from -r requirements-test.txt (line 211))
   Downloading https://mirrors.aliyun.com/pypi/packages/f3/f0/89e7aadfb3749d0f52234a0c8c7867877876e0a20b60e2188e9850794c17/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
 Collecting matplotlib==3.9.2 (from -r requirements-test.txt (line 213))
   Downloading https://mirrors.aliyun.com/pypi/packages/27/75/de5b9cd67648051cae40039da0c8cbc497a0d99acb1a1f3d087cd66d27b7/matplotlib-3.9.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 14.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 15.5 MB/s  0:00:00
 Collecting mbstrdecoder==1.1.3 (from -r requirements-test.txt (line 215))
   Downloading https://mirrors.aliyun.com/pypi/packages/c2/0f/726229136022b154895138bb10ba35e8435c4143f614cb5ad4d4e3fc21ec/mbstrdecoder-1.1.3-py3-none-any.whl (7.8 kB)
 Collecting mistral-common==1.4.4 (from mistral-common[opencv]==1.4.4->-r requirements-test.txt (line 220))
   Downloading https://mirrors.aliyun.com/pypi/packages/d3/3e/510708bfc40ec43f7f94ebf24ceb2a9831a7b3fd740867c8eb4148aab51d/mistral_common-1.4.4-py3-none-any.whl (6.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 14.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.0/6.0 MB 15.3 MB/s  0:00:00
 Collecting more-itertools==10.5.0 (from -r requirements-test.txt (line 224))
   Downloading https://mirrors.aliyun.com/pypi/packages/48/7e/3a64597054a70f7c86eb0a7d4fc315b8c1ab932f64883a297bdffeb5f967/more_itertools-10.5.0-py3-none-any.whl (60 kB)
 Requirement already satisfied: mpmath==1.3.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 226)) (1.3.0)
@@ -451,59 +451,59 @@ Collecting mypy-extensions==1.0.0 (from -r requirements-test.txt (line 240))
   Downloading https://mirrors.aliyun.com/pypi/packages/2a/e2/5d3f6ada4297caebe1a2add3b126fe800c96f56dbe5d1988a2cbe0b267aa/mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
 Collecting networkx==3.2.1 (from -r requirements-test.txt (line 242))
   Downloading https://mirrors.aliyun.com/pypi/packages/d5/f0/8fbc882ca80cf077f1b246c0e3c3465f7f415439bdea6b899f6b19f61f70/networkx-3.2.1-py3-none-any.whl (1.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 13.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 14.5 MB/s  0:00:00
 Collecting nltk==3.9.1 (from -r requirements-test.txt (line 244))
   Downloading https://mirrors.aliyun.com/pypi/packages/4d/66/7d9e26593edda06e8cb531874633f7c2372279c3b0f46235539fe546df8b/nltk-3.9.1-py3-none-any.whl (1.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 11.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 14.2 MB/s  0:00:00
 Collecting numba==0.60.0 (from -r requirements-test.txt (line 246))
   Downloading https://mirrors.aliyun.com/pypi/packages/8b/41/ac11cf33524def12aa5bd698226ae196a1185831c05ed29dc0c56eaa308b/numba-0.60.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 14.1 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 15.5 MB/s  0:00:00
 Collecting numexpr==2.10.1 (from -r requirements-test.txt (line 248))
   Downloading https://mirrors.aliyun.com/pypi/packages/04/ad/5c9c9943323692e1027484b95f2fe5166c36eb71039d4133ebd29f2569d2/numexpr-2.10.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (408 kB)
 Requirement already satisfied: numpy==1.26.4 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 250)) (1.26.4)
 Collecting nvidia-cublas-cu12==12.4.5.8 (from -r requirements-test.txt (line 276))
   Downloading https://mirrors.aliyun.com/pypi/packages/ae/71/1c91302526c45ab494c23f61c7a84aa568b8c1f9d196efa5993957faf906/nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl (363.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 15.3 MB/s  0:00:23
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 16.1 MB/s  0:00:22
 Collecting nvidia-cuda-cupti-cu12==12.4.127 (from -r requirements-test.txt (line 281))
   Downloading https://mirrors.aliyun.com/pypi/packages/67/42/f4f60238e8194a3106d06a058d494b18e006c10bb2b915655bd9f6ea4cb1/nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (13.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 15.2 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 16.0 MB/s  0:00:00
 Collecting nvidia-cuda-nvrtc-cu12==12.4.127 (from -r requirements-test.txt (line 283))
   Downloading https://mirrors.aliyun.com/pypi/packages/2c/14/91ae57cd4db3f9ef7aa99f4019cfa8d54cb4caa7e00975df6467e9725a9f/nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (24.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 14.1 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 15.4 MB/s  0:00:01
 Collecting nvidia-cuda-runtime-cu12==12.4.127 (from -r requirements-test.txt (line 285))
   Downloading https://mirrors.aliyun.com/pypi/packages/ea/27/1795d86fe88ef397885f2e580ac37628ed058a92ed2c39dc8eac3adf0619/nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (883 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 12.8 MB/s  0:00:00
 Collecting nvidia-cudnn-cu12==9.1.0.70 (from -r requirements-test.txt (line 287))
   Downloading https://mirrors.aliyun.com/pypi/packages/9f/fd/713452cd72343f682b1c7b9321e23829f00b842ceaedcda96e742ea0b0b3/nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 14.7 MB/s  0:00:42
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 15.4 MB/s  0:00:40
 Collecting nvidia-cufft-cu12==11.2.1.3 (from -r requirements-test.txt (line 289))
   Downloading https://mirrors.aliyun.com/pypi/packages/27/94/3266821f65b92b3138631e9c8e7fe1fb513804ac934485a8d05776e1dd43/nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl (211.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 15.6 MB/s  0:00:13
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 16.5 MB/s  0:00:12
 Collecting nvidia-curand-cu12==10.3.5.147 (from -r requirements-test.txt (line 291))
   Downloading https://mirrors.aliyun.com/pypi/packages/8a/6d/44ad094874c6f1b9c654f8ed939590bdc408349f137f9b98a3a23ccec411/nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl (56.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 15.5 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 16.6 MB/s  0:00:03
 Collecting nvidia-cusolver-cu12==11.6.1.9 (from -r requirements-test.txt (line 293))
   Downloading https://mirrors.aliyun.com/pypi/packages/3a/e1/5b9089a4b2a4790dfdea8b3a006052cfecff58139d5a4e34cb1a51df8d6f/nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl (127.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 15.6 MB/s  0:00:08
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 16.6 MB/s  0:00:07
 Collecting nvidia-cusparse-cu12==12.3.1.170 (from -r requirements-test.txt (line 295))
   Downloading https://mirrors.aliyun.com/pypi/packages/db/f7/97a9ea26ed4bbbfc2d470994b8b4f338ef663be97b8f677519ac195e113d/nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl (207.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 15.6 MB/s  0:00:13
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 16.4 MB/s  0:00:12
 Collecting nvidia-nccl-cu12==2.21.5 (from -r requirements-test.txt (line 299))
   Downloading https://mirrors.aliyun.com/pypi/packages/df/99/12cd266d6233f47d00daf3a72739872bdc10267d0383508b0b9c84a18bb6/nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl (188.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 15.4 MB/s  0:00:12
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 16.7 MB/s  0:00:11
 Collecting nvidia-nvjitlink-cu12==12.4.127 (from -r requirements-test.txt (line 301))
   Downloading https://mirrors.aliyun.com/pypi/packages/ff/ff/847841bacfbefc97a00036e0fce5a0f086b640756dc38caea5e1bb002655/nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (21.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 15.4 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 16.4 MB/s  0:00:01
 Collecting nvidia-nvtx-cu12==12.4.127 (from -r requirements-test.txt (line 306))
   Downloading https://mirrors.aliyun.com/pypi/packages/87/20/199b8713428322a2f22b722c62b8cc278cc53dffa9705d744484b5035ee9/nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (99 kB)
 Collecting opencv-python-headless==4.10.0.84 (from -r requirements-test.txt (line 308))
   Downloading https://mirrors.aliyun.com/pypi/packages/d1/09/248f86a404567303cdf120e4a301f389b68e3b18e5c0cc428de327da609c/opencv_python_headless-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 MB 14.0 MB/s  0:00:03
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 MB 16.5 MB/s  0:00:03
 Collecting packaging==24.1 (from -r requirements-test.txt (line 310))
   Downloading https://mirrors.aliyun.com/pypi/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl (53 kB)
 Collecting pandas==2.2.3 (from -r requirements-test.txt (line 327))
   Downloading https://mirrors.aliyun.com/pypi/packages/38/f8/d8fddee9ed0d0c0f4a2132c1dfcf0e3e53265055da8df952a53e7eaf178c/pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 14.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 16.1 MB/s  0:00:00
 Collecting pathspec==0.12.1 (from -r requirements-test.txt (line 331))
   Downloading https://mirrors.aliyun.com/pypi/packages/cc/20/ff623b09d963f88bfde16306a54e12ee5ea43e9b597108672ff3a408aad6/pathspec-0.12.1-py3-none-any.whl (31 kB)
 Collecting pathvalidate==3.2.1 (from -r requirements-test.txt (line 333))
@@ -512,7 +512,7 @@ Collecting peft==0.13.2 (from -r requirements-test.txt (line 335))
   Downloading https://mirrors.aliyun.com/pypi/packages/78/9d/5f95bfb298c8d3b4e3a107701f9a4e7774a0d4d1f8eb0c9d5420b80f7c9d/peft-0.13.2-py3-none-any.whl (320 kB)
 Collecting pillow==10.4.0 (from -r requirements-test.txt (line 339))
   Downloading https://mirrors.aliyun.com/pypi/packages/55/77/40daddf677897a923d5d33329acd52a2144d54a9644f2a5422c028c6bf2d/pillow-10.4.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 14.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 15.5 MB/s  0:00:00
 Collecting platformdirs==4.3.6 (from -r requirements-test.txt (line 345))
   Downloading https://mirrors.aliyun.com/pypi/packages/3c/a6/bc1012356d8ece4d66dd75c4b9fc6c1f6650ddd5991e421177d9f8f671be/platformdirs-4.3.6-py3-none-any.whl (18 kB)
 Collecting pluggy==1.5.0 (from -r requirements-test.txt (line 349))
@@ -530,7 +530,7 @@ Collecting psutil==6.1.0 (from -r requirements-test.txt (line 361))
 Requirement already satisfied: py==1.11.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 366)) (1.11.0)
 Collecting pyarrow==18.0.0 (from -r requirements-test.txt (line 368))
   Downloading https://mirrors.aliyun.com/pypi/packages/8d/1f/9bb3b3a644892d631dbbe99053cdb5295092d2696b4bcd3d21f29624c689/pyarrow-18.0.0-cp312-cp312-manylinux_2_28_x86_64.whl (40.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.0/40.0 MB 14.7 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.0/40.0 MB 15.3 MB/s  0:00:02
 Collecting pyasn1==0.6.1 (from -r requirements-test.txt (line 370))
   Downloading https://mirrors.aliyun.com/pypi/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl (83 kB)
 Collecting pybind11==2.13.6 (from -r requirements-test.txt (line 372))
@@ -541,7 +541,7 @@ Collecting pydantic==2.9.2 (from pydantic[email]==2.9.2->-r requirements-test.tx
   Downloading https://mirrors.aliyun.com/pypi/packages/df/e4/ba44652d562cbf0bf320e0f3810206149c8a4e99cdbf66da82e97ab53a15/pydantic-2.9.2-py3-none-any.whl (434 kB)
 Collecting pydantic-core==2.23.4 (from -r requirements-test.txt (line 380))
   Downloading https://mirrors.aliyun.com/pypi/packages/06/c8/7d4b708f8d05a5cbfda3243aad468052c6e99de7d0937c9146c24d9f12e9/pydantic_core-2.23.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 11.3 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 14.4 MB/s  0:00:00
 Collecting pyparsing==3.2.0 (from -r requirements-test.txt (line 382))
   Downloading https://mirrors.aliyun.com/pypi/packages/be/ec/2eb3cd785efd67806c46c13a17339708ddc346cbb684eade7a6e6f79536a/pyparsing-3.2.0-py3-none-any.whl (106 kB)
 Collecting pytablewriter==1.2.0 (from -r requirements-test.txt (line 384))
@@ -560,17 +560,17 @@ Collecting pytz==2024.2 (from -r requirements-test.txt (line 408))
   Downloading https://mirrors.aliyun.com/pypi/packages/11/c3/005fcca25ce078d2cc29fd559379817424e94885510568bc1bc53d7d5846/pytz-2024.2-py2.py3-none-any.whl (508 kB)
 Collecting pyyaml==6.0.2 (from -r requirements-test.txt (line 412))
   Downloading https://mirrors.aliyun.com/pypi/packages/b9/2b/614b4752f2e127db5cc206abc23a8c19678e92b23c3db30fc86ab731d3bd/PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 10.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 12.3 MB/s  0:00:00
 Collecting ray==2.35.0 (from ray[adag]==2.35.0->-r requirements-test.txt (line 423))
   Downloading https://mirrors.aliyun.com/pypi/packages/35/e7/d9b4706308d584027df8e64b0517ca0cecf268b9f2f2051fb487fc555e55/ray-2.35.0-cp312-cp312-manylinux2014_x86_64.whl (65.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.2/65.2 MB 15.1 MB/s  0:00:04
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.2/65.2 MB 16.1 MB/s  0:00:04
 Collecting redis==5.2.0 (from -r requirements-test.txt (line 425))
   Downloading https://mirrors.aliyun.com/pypi/packages/12/f5/ffa560ecc4bafbf25f7961c3d6f50d627a90186352e27e7d0ba5b1f6d87d/redis-5.2.0-py3-none-any.whl (261 kB)
 Collecting referencing==0.35.1 (from -r requirements-test.txt (line 427))
   Downloading https://mirrors.aliyun.com/pypi/packages/b7/59/2056f61236782a2c86b33906c025d4f4a0b17be0161b63b70fd9e8775d36/referencing-0.35.1-py3-none-any.whl (26 kB)
 Collecting regex==2024.9.11 (from -r requirements-test.txt (line 431))
   Downloading https://mirrors.aliyun.com/pypi/packages/29/52/84662b6636061277cb857f658518aa7db6672bc6d1a3f503ccd5aefc581e/regex-2024.9.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (797 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 797.0/797.0 kB 10.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 797.0/797.0 kB 11.5 MB/s  0:00:00
 Collecting requests==2.32.3 (from -r requirements-test.txt (line 437))
   Downloading https://mirrors.aliyun.com/pypi/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl (64 kB)
 Collecting rouge-score==0.1.2 (from -r requirements-test.txt (line 449))
@@ -593,20 +593,20 @@ Collecting safetensors==0.4.5 (from -r requirements-test.txt (line 463))
   Downloading https://mirrors.aliyun.com/pypi/packages/d9/40/a6f75ea449a9647423ec8b6f72c16998d35aa4b43cb38536ac060c5c7bf5/safetensors-0.4.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (434 kB)
 Collecting scikit-learn==1.5.2 (from -r requirements-test.txt (line 469))
   Downloading https://mirrors.aliyun.com/pypi/packages/c6/29/044048c5e911373827c0e1d3051321b9183b2a4f8d4e2f11c08fcff83f13/scikit_learn-1.5.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 14.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 16.0 MB/s  0:00:00
 Collecting scipy==1.13.1 (from -r requirements-test.txt (line 474))
   Downloading https://mirrors.aliyun.com/pypi/packages/88/ab/6ecdc526d509d33814835447bbbeedbebdec7cca46ef495a61b00a35b4bf/scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.2/38.2 MB 15.3 MB/s  0:00:02
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.2/38.2 MB 16.6 MB/s  0:00:02
 Collecting sentence-transformers==3.2.1 (from -r requirements-test.txt (line 479))
   Downloading https://mirrors.aliyun.com/pypi/packages/45/18/1ec591befcbdb2c97192a40fbe7c43a8b8a8b3c89b1fa101d3eeed4d79a4/sentence_transformers-3.2.1-py3-none-any.whl (255 kB)
 Collecting sentencepiece==0.2.0 (from -r requirements-test.txt (line 481))
   Downloading https://mirrors.aliyun.com/pypi/packages/4f/d2/18246f43ca730bb81918f87b7e886531eda32d835811ad9f4657c54eee35/sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 13.5 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 13.7 MB/s  0:00:00
 Requirement already satisfied: six==1.16.0 in /usr/lib/python3/dist-packages (from -r requirements-test.txt (line 483)) (1.16.0)
 Requirement already satisfied: sniffio==1.3.1 in /usr/local/lib/python3.12/dist-packages (from -r requirements-test.txt (line 487)) (1.3.1)
 Collecting soundfile==0.12.1 (from -r requirements-test.txt (line 491))
   Downloading https://mirrors.aliyun.com/pypi/packages/c1/07/7591f4efd29e65071c3a61b53725036ea8f73366a4920a481ebddaf8d0ca/soundfile-0.12.1-py2.py3-none-manylinux_2_31_x86_64.whl (1.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 12.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 13.9 MB/s  0:00:00
 Collecting soxr==0.5.0.post1 (from -r requirements-test.txt (line 495))
   Downloading https://mirrors.aliyun.com/pypi/packages/e1/1a/569ea0420a0c4801c2c8dd40d8d544989522f6014d51def689125f3f2935/soxr-0.5.0.post1-cp312-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (248 kB)
 Collecting sqlitedict==2.1.0 (from -r requirements-test.txt (line 497))
@@ -619,7 +619,7 @@ Collecting sqlitedict==2.1.0 (from -r requirements-test.txt (line 497))
   Preparing metadata (pyproject.toml): finished with status 'done'
 Collecting sympy==1.13.1 (from -r requirements-test.txt (line 499))
   Downloading https://mirrors.aliyun.com/pypi/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl (6.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 14.9 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 15.7 MB/s  0:00:00
 Collecting tabledata==1.3.3 (from -r requirements-test.txt (line 501))
   Downloading https://mirrors.aliyun.com/pypi/packages/06/e2/96b10ebc00d20b55967200e3d95c2137d91f58af1af672627683431c9d5c/tabledata-1.3.3-py3-none-any.whl (11 kB)
 Collecting tabulate==0.9.0 (from -r requirements-test.txt (line 503))
@@ -634,30 +634,30 @@ Collecting threadpoolctl==3.5.0 (from -r requirements-test.txt (line 511))
   Downloading https://mirrors.aliyun.com/pypi/packages/4b/2c/ffbf7a134b9ab11a67b0cf0726453cedd9c5043a4fe7a35d1cefa9a1bcfb/threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
 Collecting tiktoken==0.7.0 (from -r requirements-test.txt (line 513))
   Downloading https://mirrors.aliyun.com/pypi/packages/50/81/1842a22f15586072280364c2ab1e40835adaf64e42fe80e52aff921ee021/tiktoken-0.7.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 6.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 13.3 MB/s  0:00:00
 Collecting timm==1.0.11 (from -r requirements-test.txt (line 517))
   Downloading https://mirrors.aliyun.com/pypi/packages/77/f7/144d69d921fba82baa8498e279d782a12a13694f45ff74d1777bc3231ffe/timm-1.0.11-py3-none-any.whl (2.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 13.6 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 14.7 MB/s  0:00:00
 Collecting tokenizers==0.20.3 (from -r requirements-test.txt (line 519))
   Downloading https://mirrors.aliyun.com/pypi/packages/9e/65/c83cb3545a65a9eaa2e13b22c93d5e00bd7624b354a44adbdc93d5d9bd91/tokenizers-0.20.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 13.8 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 14.9 MB/s  0:00:00
 Collecting toml==0.10.2 (from -r requirements-test.txt (line 521))
   Downloading https://mirrors.aliyun.com/pypi/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl (16 kB)
 Collecting tomli==2.0.2 (from -r requirements-test.txt (line 523))
   Downloading https://mirrors.aliyun.com/pypi/packages/cf/db/ce8eda256fa131af12e0a76d481711abe4681b6923c27efb9a255c9e4594/tomli-2.0.2-py3-none-any.whl (13 kB)
 Collecting torch==2.5.1 (from -r requirements-test.txt (line 527))
   Downloading https://mirrors.aliyun.com/pypi/packages/8b/5c/36c114d120bfe10f9323ed35061bc5878cc74f3f594003854b0ea298942f/torch-2.5.1-cp312-cp312-manylinux1_x86_64.whl (906.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 906.4/906.4 MB 14.3 MB/s  0:00:58
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 906.4/906.4 MB 15.3 MB/s  0:00:55
 Collecting torchvision==0.20.1 (from -r requirements-test.txt (line 538))
   Downloading https://mirrors.aliyun.com/pypi/packages/d4/75/00a852275ade58d3dc474530f7a7b6bc999a817148f0eb59d4fde12eb955/torchvision-0.20.1-cp312-cp312-manylinux1_x86_64.whl (7.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 15.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 15.5 MB/s  0:00:00
 Collecting tqdm==4.66.6 (from -r requirements-test.txt (line 540))
   Downloading https://mirrors.aliyun.com/pypi/packages/41/73/02342de9c2d20922115f787e101527b831c0cffd2105c946c4a4826bcfd4/tqdm-4.66.6-py3-none-any.whl (78 kB)
 Collecting tqdm-multiprocess==0.0.11 (from -r requirements-test.txt (line 551))
   Downloading https://mirrors.aliyun.com/pypi/packages/25/7e/0d889fc6c84e3df6b69aaafe893fc77f69b3d968ac9ce574d1c62c688050/tqdm_multiprocess-0.0.11-py3-none-any.whl (9.8 kB)
 Collecting transformers==4.45.2 (from -r requirements-test.txt (line 553))
   Downloading https://mirrors.aliyun.com/pypi/packages/f9/9d/030cc1b3e88172967e22ee1d012e0d5e0384eb70d2a098d1669d549aea29/transformers-4.45.2-py3-none-any.whl (9.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 14.4 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 15.9 MB/s  0:00:00
 Collecting transformers-stream-generator==0.0.5 (from -r requirements-test.txt (line 559))
   Downloading https://mirrors.aliyun.com/pypi/packages/42/c2/65f13aec253100e1916e9bd7965fe17bde796ebabeb1265f45191ab4ddc0/transformers-stream-generator-0.0.5.tar.gz (13 kB)
   Installing build dependencies: started
@@ -668,7 +668,7 @@ Collecting transformers-stream-generator==0.0.5 (from -r requirements-test.txt (
   Preparing metadata (pyproject.toml): finished with status 'done'
 Collecting triton==3.1.0 (from -r requirements-test.txt (line 561))
   Downloading https://mirrors.aliyun.com/pypi/packages/78/eb/65f5ba83c2a123f6498a3097746607e5b2f16add29e36765305e4ac7fdd8/triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (209.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 13.9 MB/s  0:00:15
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.6/209.6 MB 16.1 MB/s  0:00:12
 Collecting typepy==1.3.2 (from typepy[datetime]==1.3.2->-r requirements-test.txt (line 563))
   Downloading https://mirrors.aliyun.com/pypi/packages/f1/10/0d6dc654bb4e0eca017bbaf43a315b464c888576a68a2883cd4a74bd1b6b/typepy-1.3.2-py3-none-any.whl (31 kB)
 Collecting typing-extensions==4.12.2 (from -r requirements-test.txt (line 568))
@@ -693,24 +693,24 @@ Collecting zipp==3.20.2 (from -r requirements-test.txt (line 593))
   Downloading https://mirrors.aliyun.com/pypi/packages/62/8b/5ba542fa83c90e09eac972fc9baca7a88e7e7ca4b221a89251954019308b/zipp-3.20.2-py3-none-any.whl (9.2 kB)
 Collecting zstandard==0.23.0 (from -r requirements-test.txt (line 595))
   Downloading https://mirrors.aliyun.com/pypi/packages/fc/79/edeb217c57fe1bf16d890aa91a1c2c96b28c07b46afed54a5dcf310c3f6f/zstandard-0.23.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 14.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 15.7 MB/s  0:00:00
 Requirement already satisfied: setuptools>=38.3.0 in /usr/local/lib/python3.12/dist-packages (from pytablewriter==1.2.0->-r requirements-test.txt (line 384)) (82.0.0)
 Building wheels for collected packages: rouge-score, sqlitedict, transformers-stream-generator, word2number
   Building wheel for rouge-score (pyproject.toml): started
   Building wheel for rouge-score (pyproject.toml): finished with status 'done'
-  Created wheel for rouge-score: filename=rouge_score-0.1.2-py3-none-any.whl size=24987 sha256=6c0ccd37c1d587e43a1e811557e0c1ed6727ee480f79b40eeb33ae1fcf37de34
+  Created wheel for rouge-score: filename=rouge_score-0.1.2-py3-none-any.whl size=24987 sha256=7ccbb0e274c093f40c03b6461b45e0b68cadba340834463f3244c0e638f0e603
   Stored in directory: /root/.cache/pip/wheels/bf/39/1e/d0246edbd9dd35526c81e92f2eeb00d9b4d43c2ee1f2e80868
   Building wheel for sqlitedict (pyproject.toml): started
   Building wheel for sqlitedict (pyproject.toml): finished with status 'done'
-  Created wheel for sqlitedict: filename=sqlitedict-2.1.0-py3-none-any.whl size=16958 sha256=73aec66c2e4e5acb6510c6555ccb92076df0e5b974c4f6dd72c6b1802c065d54
+  Created wheel for sqlitedict: filename=sqlitedict-2.1.0-py3-none-any.whl size=16958 sha256=466528ab976e2580784ef5883bfb3d3b5aafb4e880ccc58e3407ae189aa8b1c6
   Stored in directory: /root/.cache/pip/wheels/00/03/1b/488d85cbc58af8be173ee24c01b47c8c7dc3aad0377e5b526b
   Building wheel for transformers-stream-generator (pyproject.toml): started
   Building wheel for transformers-stream-generator (pyproject.toml): finished with status 'done'
-  Created wheel for transformers-stream-generator: filename=transformers_stream_generator-0.0.5-py3-none-any.whl size=12526 sha256=e9c1ba910ea78b33b541be43146189122c118c0d50395939ec5f87ce37f7b74a
+  Created wheel for transformers-stream-generator: filename=transformers_stream_generator-0.0.5-py3-none-any.whl size=12526 sha256=dee1ec3b361e744c20bcd339d6df2b64b95ec871862b72ca193bb8426b1a8083
   Stored in directory: /root/.cache/pip/wheels/af/f1/0f/10a7eb1779f54bbddf787d332e0687274a97ed0e3f82c9f81a
   Building wheel for word2number (pyproject.toml): started
   Building wheel for word2number (pyproject.toml): finished with status 'done'
-  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5659 sha256=39c304ff2fb7c62d1c4efe3ed075fc8149ab9e63e63c5c3cd2629817c9683ffe
+  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5659 sha256=f2d59e5a93edf7bd3cee0063ef34f5402377dae48856ab694667358d9be00137
   Stored in directory: /root/.cache/pip/wheels/22/c4/90/8431670fe3b9f2c7163f2a137b7b1c15f0211229b787df4a71
 Successfully built rouge-score sqlitedict transformers-stream-generator word2number
 Installing collected packages: word2number, sqlitedict, sentencepiece, pytz, genson, fastrlock, zstandard, zipp, xxhash, urllib3, tzdata, typing-extensions, tqdm, tomli, toml, threadpoolctl, tenacity, tcolorpy, tabulate, sympy, soxr, scipy, safetensors, rpds-py, regex, redis, pyyaml, pyparsing, pycparser, pybind11, pyasn1, pyarrow, psutil, protobuf, propcache, portalocker, pluggy, platformdirs, pillow, pathvalidate, pathspec, packaging, opencv-python-headless, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numexpr, networkx, mypy-extensions, multidict, msgpack, more-itertools, markupsafe, lxml, llvmlite, libnacl, kiwisolver, joblib, jmespath, isort, iniconfig, inflect, importlib-resources, idna, hiredis, h11, fsspec, frozenlist, fonttools, filelock, exceptiongroup, einops, docutils, dnspython, dill, decord, decorator, cycler, cupy-cuda12x, contourpy, colorama, click, charset-normalizer, chardet, certifi, audioread, attrs, async-timeout, argcomplete, aiohappyeyeballs, absl-py, yarl, triton, tqdm-multiprocess, scikit-learn, sacrebleu, rsa, requests, referencing, pytest, pydantic-core, pandas, nvidia-cusparse-cu12, nvidia-cudnn-cu12, numba, nltk, multiprocess, mbstrdecoder, matplotlib, lazy-loader, jsonlines, jinja2, httpcore, email-validator, cffi, botocore, black, anyio, aiosignal, typepy, tiktoken, soundfile, s3transfer, rouge-score, pytest-shard, pytest-rerunfailures, pytest-asyncio, pydantic, pooch, nvidia-cusolver-cu12, jsonschema-specifications, huggingface-hub, httpx, buildkite-test-collector, aiohttp, torch, tokenizers, librosa, jsonschema, boto3, awscli, transformers, torchvision, tensorizer, ray, mistral-common, datasets, dataproperty, datamodel-code-generator, bitsandbytes, accelerate, transformers-stream-generator, timm, tabledata, sentence-transformers, peft, evaluate, pytablewriter, lm-eval
@@ -1035,16 +1035,16 @@ Requirement already satisfied: toml==0.10.2 in /usr/local/lib/python3.12/dist-pa
 Requirement already satisfied: tomli==2.0.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-lint.txt (line 4)) (2.0.2)
 Collecting ruff==0.6.5 (from -r /workspace/requirements-lint.txt (line 5))
   Downloading https://mirrors.aliyun.com/pypi/packages/c4/e3/9d0ff218c7663ab9d53abe02911bec03d32b8ced7f78c1c49c2af84903a2/ruff-0.6.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 12.0 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 15.8 MB/s  0:00:00
 Collecting codespell==2.3.0 (from -r /workspace/requirements-lint.txt (line 6))
   Downloading https://mirrors.aliyun.com/pypi/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl (329 kB)
 Requirement already satisfied: isort==5.13.2 in /usr/local/lib/python3.12/dist-packages (from -r /workspace/requirements-lint.txt (line 7)) (5.13.2)
 Collecting clang-format==18.1.5 (from -r /workspace/requirements-lint.txt (line 8))
   Downloading https://mirrors.aliyun.com/pypi/packages/45/96/d960d9add3eb71f6c6039181054281aeb42f2cb4877a33f889516abc2cb4/clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 11.7 MB/s  0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 14.2 MB/s  0:00:00
 Collecting mypy==1.11.1 (from -r /workspace/requirements-lint.txt (line 11))
   Downloading https://mirrors.aliyun.com/pypi/packages/1c/21/a6b46c91b4c9d1918ee59c305f46850cde7cbea748635a352e7c3c8ed204/mypy-1.11.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 11.6 MB/s  0:00:01
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 14.1 MB/s  0:00:00
 Collecting types-PyYAML (from -r /workspace/requirements-lint.txt (line 12))
   Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
 Collecting types-requests (from -r /workspace/requirements-lint.txt (line 13))
@@ -1278,316 +1278,19 @@ Obtaining file:///workspace
 collecting ... collected 5 items
 Running 5 items in this shard: tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai], tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai]
 
-tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string] FAILED [ 20%]
-tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai] FAILED [ 40%]
-tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string] FAILED [ 60%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string] PASSED [ 20%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai] PASSED [ 40%]
+tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string] PASSED [ 60%]
 tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai] FAILED [ 80%]
 tests/entrypoints/test_chat_utils.py::test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai] FAILED [100%]
 
 =================================== FAILURES ===================================
-_ test_resolve_content_format_hf_defined[microsoft/Phi-3.5-vision-instruct-string] _
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
-    conn = connection.create_connection(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
-    raise err
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
-    sock.connect(sa)
-E   OSError: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
-    httplib_response = self._make_request(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
-    self._validate_conn(conn)
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
-    conn.connect()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
-    self.sock = conn = self._new_conn()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
-    raise NewConnectionError(
-E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x71faa01dd310>: Failed to establish a new connection: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
-    resp = conn.urlopen(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
-    retries = retries.increment(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dd310>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
-    r = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
-    response = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
-    response = get_session().request(method=method, url=url, **params)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
-    resp = self.send(prep, **send_kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
-    r = adapter.send(request, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
-    return super().send(request, *args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
-    raise ConnectionError(e, request=request)
-E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /microsoft/Phi-3.5-vision-instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dd310>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: ee56b7c0-2e39-4ff5-b73e-517ed9ee5837)')
-
-The above exception was the direct cause of the following exception:
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
-    resolved_file = hf_hub_download(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
-    raise LocalEntryNotFoundError(
-E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
-
-The above exception was the direct cause of the following exception:
-tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
-    tokenizer_group = TokenizerGroup(
-vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
-    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
-vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
-    config = AutoConfig.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
-    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
-    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
-    resolved_config_file = cached_file(
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
-    raise EnvironmentError(
-E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like microsoft/Phi-3.5-vision-instruct is not the path to a directory containing a file named config.json.
-E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
-___ test_resolve_content_format_hf_defined[Qwen/Qwen2-VL-2B-Instruct-openai] ___
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
-    conn = connection.create_connection(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
-    raise err
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
-    sock.connect(sa)
-E   OSError: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
-    httplib_response = self._make_request(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
-    self._validate_conn(conn)
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
-    conn.connect()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
-    self.sock = conn = self._new_conn()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
-    raise NewConnectionError(
-E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x71faa01dfb30>: Failed to establish a new connection: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
-    resp = conn.urlopen(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
-    retries = retries.increment(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dfb30>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
-    r = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
-    response = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
-    response = get_session().request(method=method, url=url, **params)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
-    resp = self.send(prep, **send_kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
-    r = adapter.send(request, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
-    return super().send(request, *args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
-    raise ConnectionError(e, request=request)
-E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /Qwen/Qwen2-VL-2B-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dfb30>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 1738340d-dd3a-4ccb-862b-3f60f2f3dfbf)')
-
-The above exception was the direct cause of the following exception:
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
-    resolved_file = hf_hub_download(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
-    raise LocalEntryNotFoundError(
-E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
-
-The above exception was the direct cause of the following exception:
-tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
-    tokenizer_group = TokenizerGroup(
-vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
-    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
-vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
-    config = AutoConfig.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
-    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
-    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
-    resolved_config_file = cached_file(
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
-    raise EnvironmentError(
-E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like Qwen/Qwen2-VL-2B-Instruct is not the path to a directory containing a file named config.json.
-E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
-____ test_resolve_content_format_hf_defined[fixie-ai/ultravox-v0_3-string] _____
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
-    conn = connection.create_connection(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
-    raise err
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
-    sock.connect(sa)
-E   OSError: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
-    httplib_response = self._make_request(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
-    self._validate_conn(conn)
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
-    conn.connect()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
-    self.sock = conn = self._new_conn()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
-    raise NewConnectionError(
-E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x71faa1002d20>: Failed to establish a new connection: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
-    resp = conn.urlopen(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
-    retries = retries.increment(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa1002d20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
-    r = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
-    response = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
-    response = get_session().request(method=method, url=url, **params)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
-    resp = self.send(prep, **send_kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
-    r = adapter.send(request, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
-    return super().send(request, *args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
-    raise ConnectionError(e, request=request)
-E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /fixie-ai/ultravox-v0_3/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa1002d20>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 77623bc5-6281-414e-a49e-4d7aa6013682)')
-
-The above exception was the direct cause of the following exception:
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
-    resolved_file = hf_hub_download(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:862: in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
-    raise LocalEntryNotFoundError(
-E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
-
-The above exception was the direct cause of the following exception:
-tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
-    tokenizer_group = TokenizerGroup(
-vllm/transformers_utils/tokenizer_group/tokenizer_group.py:23: in __init__
-    self.tokenizer = get_tokenizer(self.tokenizer_id, **tokenizer_config)
-vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py:864: in from_pretrained
-    config = AutoConfig.from_pretrained(
-/usr/local/lib/python3.12/dist-packages/transformers/models/auto/configuration_auto.py:1006: in from_pretrained
-    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:570: in get_config_dict
-    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
-/usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
-    resolved_config_file = cached_file(
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
-    raise EnvironmentError(
-E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like fixie-ai/ultravox-v0_3 is not the path to a directory containing a file named config.json.
-E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
 _ test_resolve_content_format_hf_defined[meta-llama/Llama-3.2-11B-Vision-Instruct-openai] _
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
-    conn = connection.create_connection(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
-    raise err
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
-    sock.connect(sa)
-E   OSError: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
-    httplib_response = self._make_request(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
-    self._validate_conn(conn)
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
-    conn.connect()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
-    self.sock = conn = self._new_conn()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
-    raise NewConnectionError(
-E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x71faa01dc710>: Failed to establish a new connection: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
-    resp = conn.urlopen(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
-    retries = retries.increment(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dc710>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
-    r = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
-    response = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
-    response = get_session().request(method=method, url=url, **params)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
-    resp = self.send(prep, **send_kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
-    r = adapter.send(request, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
-    return super().send(request, *args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
-    raise ConnectionError(e, request=request)
-E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa01dc710>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 7befe6a4-9d7b-4894-9cd8-6bfd0ec8bcfa)')
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:406: in hf_raise_for_status
+    response.raise_for_status()
+/usr/local/lib/python3.12/dist-packages/requests/models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://hf-mirror.com/meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json
 
 The above exception was the direct cause of the following exception:
 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
@@ -1598,9 +1301,24 @@ The above exception was the direct cause of the following exception:
     return _hf_hub_download_to_cache_dir(
 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
-    raise LocalEntryNotFoundError(
-E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1484: in _raise_on_head_call_error
+    raise head_call_error
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:301: in _request_wrapper
+    hf_raise_for_status(response)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:423: in hf_raise_for_status
+    raise _format(GatedRepoError, message, response) from e
+E   huggingface_hub.errors.GatedRepoError: 403 Client Error. (Request ID: Root=1-69a171cf-0e148a9c56b0bb9537d73c83;2cdf788e-018f-4e53-a767-b1c6b0f928fe)
+E   
+E   Cannot access gated repo for url https://hf-mirror.com/meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json.
+E   Access to model meta-llama/Llama-3.2-11B-Vision-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct to ask for access.
 
 The above exception was the direct cause of the following exception:
 tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
@@ -1617,61 +1335,20 @@ vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
     resolved_config_file = cached_file(
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:421: in cached_file
     raise EnvironmentError(
-E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-3.2-11B-Vision-Instruct is not the path to a directory containing a file named config.json.
-E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+E   OSError: You are trying to access a gated repo.
+E   Make sure to have access to it at https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct.
+E   403 Client Error. (Request ID: Root=1-69a171cf-0e148a9c56b0bb9537d73c83;2cdf788e-018f-4e53-a767-b1c6b0f928fe)
+E   
+E   Cannot access gated repo for url https://hf-mirror.com/meta-llama/Llama-3.2-11B-Vision-Instruct/resolve/main/config.json.
+E   Access to model meta-llama/Llama-3.2-11B-Vision-Instruct is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-3.2-11B-Vision-Instruct to ask for access.
 __ test_resolve_content_format_hf_defined[meta-llama/Llama-Guard-3-1B-openai] __
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:174: in _new_conn
-    conn = connection.create_connection(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:95: in create_connection
-    raise err
-/usr/local/lib/python3.12/dist-packages/urllib3/util/connection.py:85: in create_connection
-    sock.connect(sa)
-E   OSError: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:716: in urlopen
-    httplib_response = self._make_request(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:404: in _make_request
-    self._validate_conn(conn)
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:1061: in _validate_conn
-    conn.connect()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:363: in connect
-    self.sock = conn = self._new_conn()
-/usr/local/lib/python3.12/dist-packages/urllib3/connection.py:186: in _new_conn
-    raise NewConnectionError(
-E   urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x71faa10018e0>: Failed to establish a new connection: [Errno 101] Network is unreachable
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:667: in send
-    resp = conn.urlopen(
-/usr/local/lib/python3.12/dist-packages/urllib3/connectionpool.py:802: in urlopen
-    retries = retries.increment(
-/usr/local/lib/python3.12/dist-packages/urllib3/util/retry.py:594: in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-E   urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa10018e0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
-
-During handling of the above exception, another exception occurred:
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
-    return fn(*args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
-    r = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
-    response = _request_wrapper(
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:300: in _request_wrapper
-    response = get_session().request(method=method, url=url, **params)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:589: in request
-    resp = self.send(prep, **send_kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/sessions.py:703: in send
-    r = adapter.send(request, **kwargs)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:93: in send
-    return super().send(request, *args, **kwargs)
-/usr/local/lib/python3.12/dist-packages/requests/adapters.py:700: in send
-    raise ConnectionError(e, request=request)
-E   requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /meta-llama/Llama-Guard-3-1B/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x71faa10018e0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: e72b8bf6-11c7-4e4c-8d5d-81416bdec51c)')
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:406: in hf_raise_for_status
+    response.raise_for_status()
+/usr/local/lib/python3.12/dist-packages/requests/models.py:1024: in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+E   requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://hf-mirror.com/meta-llama/Llama-Guard-3-1B/resolve/main/config.json
 
 The above exception was the direct cause of the following exception:
 /usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:403: in cached_file
@@ -1682,9 +1359,24 @@ The above exception was the direct cause of the following exception:
     return _hf_hub_download_to_cache_dir(
 /usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:969: in _hf_hub_download_to_cache_dir
     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1487: in _raise_on_head_call_error
-    raise LocalEntryNotFoundError(
-E   huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1484: in _raise_on_head_call_error
+    raise head_call_error
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1376: in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:114: in _inner_fn
+    return fn(*args, **kwargs)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:1296: in get_hf_file_metadata
+    r = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:277: in _request_wrapper
+    response = _request_wrapper(
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/file_download.py:301: in _request_wrapper
+    hf_raise_for_status(response)
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_http.py:423: in hf_raise_for_status
+    raise _format(GatedRepoError, message, response) from e
+E   huggingface_hub.errors.GatedRepoError: 403 Client Error. (Request ID: Root=1-69a171d1-45ab0c021941e6236d11e594;33a89661-69cc-408f-8d3b-3ea7de01dd4a)
+E   
+E   Cannot access gated repo for url https://hf-mirror.com/meta-llama/Llama-Guard-3-1B/resolve/main/config.json.
+E   Access to model meta-llama/Llama-Guard-3-1B is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-Guard-3-1B to ask for access.
 
 The above exception was the direct cause of the following exception:
 tests/entrypoints/test_chat_utils.py:727: in test_resolve_content_format_hf_defined
@@ -1701,10 +1393,14 @@ vllm/transformers_utils/tokenizer.py:144: in get_tokenizer
     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
 /usr/local/lib/python3.12/dist-packages/transformers/configuration_utils.py:629: in _get_config_dict
     resolved_config_file = cached_file(
-/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:446: in cached_file
+/usr/local/lib/python3.12/dist-packages/transformers/utils/hub.py:421: in cached_file
     raise EnvironmentError(
-E   OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like meta-llama/Llama-Guard-3-1B is not the path to a directory containing a file named config.json.
-E   Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+E   OSError: You are trying to access a gated repo.
+E   Make sure to have access to it at https://huggingface.co/meta-llama/Llama-Guard-3-1B.
+E   403 Client Error. (Request ID: Root=1-69a171d1-45ab0c021941e6236d11e594;33a89661-69cc-408f-8d3b-3ea7de01dd4a)
+E   
+E   Cannot access gated repo for url https://hf-mirror.com/meta-llama/Llama-Guard-3-1B/resolve/main/config.json.
+E   Access to model meta-llama/Llama-Guard-3-1B is restricted and you are not in the authorized list. Visit https://huggingface.co/meta-llama/Llama-Guard-3-1B to ask for access.
 =============================== warnings summary ===============================
 vllm/connections.py:8
   /workspace/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
@@ -1713,7 +1409,7 @@ vllm/connections.py:8
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ------------------ generated xml file: /workspace/phase2.xml -------------------
-=================== 5 failed, 1 warning in 108.19s (0:01:48) ===================
+=================== 2 failed, 3 passed, 1 warning in 24.25s ====================
 
 --- STDERR ---
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
