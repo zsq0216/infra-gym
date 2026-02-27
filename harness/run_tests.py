@@ -593,8 +593,8 @@ def run_pytest_local(
     return results
 
 
-def _build_docker_setup_commands(category):
-    # type: (str) -> List[str]
+def _build_docker_setup_commands(category, setup_timeout=300):
+    # type: (str, int) -> List[str]
     """Return shell commands to install vLLM and its dependencies inside Docker.
 
     These run before pytest so that ``import vllm`` (and transitive deps like
@@ -613,27 +613,27 @@ def _build_docker_setup_commands(category):
     # Install project requirements (psutil, transformers, etc.)
     req_install = (
         'for f in requirements-common.txt requirements.txt requirements-cpu.txt; '
-        'do [ -f "$f" ] && pip install -r "$f"; done || true'
-    )
+        'do [ -f "$f" ] && timeout {t} pip install -r "$f"; done || true'
+    ).format(t=setup_timeout)
     # Install test-specific requirements
     test_req_install = (
         'for f in requirements-test.txt requirements-dev.txt; '
-        'do [ -f "$f" ] && pip install -r "$f"; done || true'
-    )
+        'do [ -f "$f" ] && timeout {t} pip install -r "$f"; done || true'
+    ).format(t=setup_timeout)
     # Install vLLM itself in editable mode.
     # For unit_cpu we set VLLM_TARGET_DEVICE=empty to skip CUDA extension builds.
     # If the full install fails (old setup.py with hard CUDA deps), fall back to
     # --no-deps so at least the package is importable.
     if "cpu" in category:
         vllm_install = (
-            'VLLM_TARGET_DEVICE=empty pip install --no-build-isolation -e "." '
-            '|| pip install --no-build-isolation --no-deps -e "." || true'
-        )
+            'timeout {t} bash -c \'VLLM_TARGET_DEVICE=empty pip install --no-build-isolation -e "."\' '
+            '|| timeout {t} bash -c \'pip install --no-build-isolation --no-deps -e "."\' || true'
+        ).format(t=setup_timeout)
     else:
         vllm_install = (
-            'pip install --no-build-isolation -e "." '
-            '|| pip install --no-build-isolation --no-deps -e "." || true'
-        )
+            'timeout {t} pip install --no-build-isolation -e "." '
+            '|| timeout {t} pip install --no-build-isolation --no-deps -e "." || true'
+        ).format(t=setup_timeout)
     # PYTHONPATH fallback for old versions where editable install fails entirely
     pythonpath = 'export PYTHONPATH=/workspace:${PYTHONPATH:-}'
 
@@ -653,8 +653,9 @@ def run_pytest_docker(
     junit_xml_path,     # type: str
     log_path,           # type: str
     image_name,         # type: str
-    timeout=300,        # type: int
+    timeout=120,        # type: int
     setup_commands=None, # type: Optional[List[str]]
+    setup_timeout=300,  # type: int
 ):
     # type: (...) -> Dict[str, List[str]]
     """Run pytest inside a Docker container and return parsed results.
@@ -685,7 +686,7 @@ def run_pytest_docker(
     ] + test_targets
 
     has_setup = setup_commands and len(setup_commands) > 0
-    timeout_buffer = 600 if has_setup else 120
+    timeout_buffer = setup_timeout if has_setup else 120
 
     docker_cmd = [
         "docker", "run",
@@ -765,6 +766,7 @@ def process_instance(
     use_docker,        # type: bool
     image_prefix,      # type: str
     keep_worktrees=False,  # type: bool
+    setup_timeout=300, # type: int
 ):
     # type: (...) -> Dict[str, Any]
     """Run the full FAIL_TO_PASS / PASS_TO_PASS pipeline for one instance.
@@ -870,12 +872,13 @@ def process_instance(
     setup_commands = None  # type: Optional[List[str]]
     if use_docker:
         category = instance.get("environment", {}).get("category", "")
-        setup_commands = _build_docker_setup_commands(category)
+        setup_commands = _build_docker_setup_commands(category, setup_timeout=setup_timeout)
 
     if use_docker:
         phase1_results = run_pytest_docker(
             worktree_path, test_targets, phase1_junit, phase1_log,
             image_name, timeout=timeout, setup_commands=setup_commands,
+            setup_timeout=setup_timeout,
         )
     else:
         phase1_results = run_pytest_local(
@@ -918,6 +921,7 @@ def process_instance(
         phase2_results = run_pytest_docker(
             worktree_path, test_targets, phase2_junit, phase2_log,
             image_name, timeout=timeout, setup_commands=setup_commands,
+            setup_timeout=setup_timeout,
         )
     else:
         phase2_results = run_pytest_local(
@@ -1180,8 +1184,16 @@ Examples:
     parser.add_argument(
         "--timeout",
         type=int,
+        default=120,
+        help="Per-test timeout in seconds. (default: 120)",
+    )
+    parser.add_argument(
+        "--setup-timeout",
+        type=int,
         default=300,
-        help="Per-test timeout in seconds. (default: 300)",
+        help="Timeout in seconds for Docker setup (pip install) steps. "
+             "Also used as the buffer for overall Docker subprocess timeout. "
+             "(default: 300)",
     )
     parser.add_argument(
         "--docker",
@@ -1227,7 +1239,7 @@ def main():
     logger.info("Dataset:    %s", dataset_path)
     logger.info("Workdir:    %s", workdir)
     logger.info("Output dir: %s", output_dir)
-    logger.info("Timeout:    %ds", args.timeout)
+    logger.info("Timeout:    %ds (setup: %ds)", args.timeout, args.setup_timeout)
     logger.info("Docker:     %s", args.docker)
 
     # Load dataset
@@ -1264,6 +1276,7 @@ def main():
                 use_docker=args.docker,
                 image_prefix=args.image_prefix,
                 keep_worktrees=args.keep_worktrees,
+                setup_timeout=args.setup_timeout,
             )
         except subprocess.TimeoutExpired:
             result = {
