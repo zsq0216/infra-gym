@@ -691,6 +691,7 @@ def run_pytest_docker(
     docker_cmd = [
         "docker", "run",
         "--rm",
+        "--gpus", "all",
         "-v", "{}:{}".format(os.path.abspath(repo_path), container_workspace),
         "-w", container_workspace,
         "--memory=16g",          # memory limit
@@ -1265,13 +1266,16 @@ def main():
 
     for idx, instance in enumerate(instances, 1):
         iid = instance["instance_id"]
-        logger.info("[%d/%d] Starting instance: %s", idx, len(instances), iid)
+        category = instance.get("environment", {}).get("category", "unknown")
+        cat_output_dir = os.path.join(output_dir, category)
+        os.makedirs(cat_output_dir, exist_ok=True)
+        logger.info("[%d/%d] Starting instance: %s (category: %s)", idx, len(instances), iid, category)
 
         try:
             result = process_instance(
                 instance=instance,
                 workdir=workdir,
-                output_dir=output_dir,
+                output_dir=cat_output_dir,
                 timeout=args.timeout,
                 use_docker=args.docker,
                 image_prefix=args.image_prefix,
@@ -1304,7 +1308,7 @@ def main():
                 "error_message": str(exc),
             }
 
-        save_result(result, output_dir)
+        save_result(result, cat_output_dir)
         all_results.append(result)
 
     # Print summary
