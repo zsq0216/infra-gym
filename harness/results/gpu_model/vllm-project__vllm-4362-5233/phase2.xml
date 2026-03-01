@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="16.647" timestamp="2026-02-27T18:10:31.158105+00:00" hostname="64a6e35d2135"><testcase classname="tests.test_regression" name="test_model_from_modelscope" time="10.683"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/test_regression.py:61: in test_model_from_modelscope
+    llm = LLM(model=MODELSCOPE_MODEL_NAME)
+vllm/entrypoints/llm.py:143: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:359: in from_engine_args
+    engine = cls(
+vllm/engine/llm_engine.py:222: in __init__
+    self.model_executor = executor_class(
+vllm/executor/executor_base.py:41: in __init__
+    self._init_executor()
+vllm/executor/gpu_executor.py:22: in _init_executor
+    self.driver_worker = self._create_worker()
+vllm/executor/gpu_executor.py:67: in _create_worker
+    wrapper.init_worker(**self._get_worker_kwargs(local_rank, rank,
+vllm/worker/worker_base.py:134: in init_worker
+    self.worker = worker_class(*args, **kwargs)
+vllm/worker/worker.py:74: in __init__
+    self.model_runner = ModelRunnerClass(
+vllm/worker/model_runner.py:116: in __init__
+    self.attn_backend = get_attn_backend(
+vllm/attention/selector.py:43: in get_attn_backend
+    backend = which_attn_to_use(num_heads, head_size, num_kv_heads,
+vllm/attention/selector.py:118: in which_attn_to_use
+    if torch.cuda.get_device_capability()[0] &lt; 8:
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:430: in get_device_capability
+    prop = get_device_properties(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:444: in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.test_regression" name="test_gc" time="5.705"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/test_regression.py:43: in test_gc
+    llm = LLM("facebook/opt-125m", enforce_eager=True)
+vllm/entrypoints/llm.py:143: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:359: in from_engine_args
+    engine = cls(
+vllm/engine/llm_engine.py:222: in __init__
+    self.model_executor = executor_class(
+vllm/executor/executor_base.py:41: in __init__
+    self._init_executor()
+vllm/executor/gpu_executor.py:22: in _init_executor
+    self.driver_worker = self._create_worker()
+vllm/executor/gpu_executor.py:67: in _create_worker
+    wrapper.init_worker(**self._get_worker_kwargs(local_rank, rank,
+vllm/worker/worker_base.py:134: in init_worker
+    self.worker = worker_class(*args, **kwargs)
+vllm/worker/worker.py:74: in __init__
+    self.model_runner = ModelRunnerClass(
+vllm/worker/model_runner.py:116: in __init__
+    self.attn_backend = get_attn_backend(
+vllm/attention/selector.py:43: in get_attn_backend
+    backend = which_attn_to_use(num_heads, head_size, num_kv_heads,
+vllm/attention/selector.py:118: in which_attn_to_use
+    if torch.cuda.get_device_capability()[0] &lt; 8:
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:430: in get_device_capability
+    prop = get_device_properties(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:444: in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase></testsuite></testsuites>

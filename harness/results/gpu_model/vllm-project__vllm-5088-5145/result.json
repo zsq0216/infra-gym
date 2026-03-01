@@ -1,0 +1,69 @@
+{
+  "instance_id": "vllm-project__vllm-5088-5145",
+  "version": "0.4.2",
+  "base_commit": "856c990041bf6cf4b2397401d4b18531382ecb50",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": [
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model0]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model1]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model2]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model3]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model4]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model5]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model6]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model7]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model8]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model0]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model1]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model2]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model3]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model4]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model5]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model6]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model7]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model8]"
+    ]
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": [
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model0]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model1]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model2]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model3]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model4]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model5]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model6]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model7]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-half-model8]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model0]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model1]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model2]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model3]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model4]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model5]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model6]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model7]",
+      "tests/models/test_gptq_marlin.py::test_models[5-32-bfloat16-model8]"
+    ]
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772219312.3587155,
+    "phase1_start": 1772219313.9356716,
+    "phase1_end": 1772219429.2731674,
+    "phase2_start": 1772219429.2733557,
+    "phase2_end": 1772219571.659016,
+    "end": 1772219571.6591513
+  },
+  "regressions": [],
+  "both_failed": []
+}

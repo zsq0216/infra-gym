@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.222" timestamp="2026-02-27T18:57:37.199248+00:00" hostname="a4ba01c7de1c"><testcase classname="" name="tests.models.test_gptq_marlin" time="0.000"><error message="collection failure">tests/models/test_gptq_marlin.py:25: in &lt;module&gt;
+    capability = torch.cuda.get_device_capability()
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:430: in get_device_capability
+    prop = get_device_properties(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:444: in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</error></testcase></testsuite></testsuites>

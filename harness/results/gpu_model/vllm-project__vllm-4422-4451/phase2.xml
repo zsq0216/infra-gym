@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.285" timestamp="2026-02-27T18:22:14.363364+00:00" hostname="d42a1a7489ac"><testcase classname="" name="tests.basic_correctness.test_preemption" time="0.000"><error message="collection failure">tests/basic_correctness/test_preemption.py:17: in &lt;module&gt;
+    assert ENABLE_ARTIFICIAL_PREEMPT is True, (
+E   AssertionError: Use an env var VLLM_TEST_ENABLE_ARTIFICIAL_PREEMPT=1. `VLLM_TEST_ENABLE_ARTIFICIAL_PREEMPT=1 pytest tests/basic_correctness/test_preemption.py`
+E   assert False is True</error></testcase></testsuite></testsuites>

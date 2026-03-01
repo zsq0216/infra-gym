@@ -1,0 +1,45 @@
+{
+  "instance_id": "vllm-project__vllm-4054-4197",
+  "version": "0.4.0.post1",
+  "base_commit": "dfbe60dc62409f03aa9eebc70ab2582ae64f0e1f",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "TIMEOUT"
+    ],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [
+      "tests/tokenization/test_image_processor.py::test_image_processor_revision[llava-hf/llava-1.5-7b-hf]",
+      "tests/tokenization/test_image_processor.py::test_image_processor_revision[llava-hf/llava-v1.6-34b-hf]"
+    ],
+    "failed": [],
+    "errors": [
+      "tests/multimodal/test_processor.py::test_clip_image_processor[half]",
+      "tests/multimodal/test_processor.py::test_clip_image_processor[bfloat16]",
+      "tests/multimodal/test_processor.py::test_clip_image_processor[float]",
+      "tests/multimodal/test_processor.py::test_image_pixel_types[float]",
+      "tests/models/test_llava.py::test_models[128-half-model_and_config0-False]",
+      "tests/models/test_llava.py::test_models[128-half-model_and_config1-False]"
+    ],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772213152.9584444,
+    "phase1_start": 1772213155.5582087,
+    "phase1_end": 1772213575.58721,
+    "phase2_start": 1772213575.593726,
+    "phase2_end": 1772213846.362051,
+    "end": 1772213846.3622398
+  },
+  "regressions": [],
+  "both_failed": [
+    "TIMEOUT"
+  ]
+}

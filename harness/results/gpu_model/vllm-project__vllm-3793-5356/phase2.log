@@ -1,0 +1,1151 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+*************************
+** DEPRECATION NOTICE! **
+*************************
+THIS IMAGE IS DEPRECATED and is scheduled for DELETION.
+    https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/support-policy.md
+
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting cmake>=3.21 (from -r requirements-common.txt (line 1))
+  Downloading https://mirrors.aliyun.com/pypi/packages/28/19/b54ff2e03946beeef785e6407d965a9493d26c50dd1aa09ffc7b53fbf9a5/cmake-4.2.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (28.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.9/28.9 MB 19.0 MB/s  0:00:01
+Collecting ninja (from -r requirements-common.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ed/de/0e6edf44d6a04dabd0318a519125ed0415ce437ad5a1ec9b9be03d9048cf/ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (180 kB)
+Collecting psutil (from -r requirements-common.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 4)) (0.2.1)
+Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 5)) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 6)) (2.32.5)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 7)) (4.67.3)
+Collecting py-cpuinfo (from -r requirements-common.txt (line 8))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Collecting transformers>=4.42.0 (from -r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/93/79754b0ca486e556c2b95d4f5afc66aaf4b260694f3d6e1b51da2d036691/transformers-5.2.0-py3-none-any.whl (10.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 18.6 MB/s  0:00:00
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 10)) (0.19.1)
+Collecting fastapi (from -r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d2/c9/a175a7779f3599dfa4adfc97a6ce0e157237b3d7941538604aadaf97bfb6/fastapi-0.133.1-py3-none-any.whl (109 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 12)) (3.13.3)
+Collecting openai (from -r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 12.3 MB/s  0:00:00
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 15)) (2.12.5)
+Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 16)) (12.1.1)
+Collecting prometheus_client>=0.18.0 (from -r requirements-common.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/74/c3/24a2f845e3917201628ecaba4f18bab4d18a337834c1df2a159ee9d22a42/prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+Collecting prometheus-fastapi-instrumentator>=7.0.0 (from -r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/72/0824c18f3bc75810f55dacc2dd933f6ec829771180245ae3cc976195dec0/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (19 kB)
+Collecting tiktoken>=0.6.0 (from -r requirements-common.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b2/94/443fab3d4e5ebecac895712abd3849b8da93b7b7dec61c7db5c9c7ebe40c/tiktoken-0.12.0-cp310-cp310-manylinux_2_28_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 13.7 MB/s  0:00:00
+Collecting lm-format-enforcer==0.10.1 (from -r requirements-common.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2d/fd/e21d1f0608da7696746c5d4cdf2f944d714daf63a97def416e0f3c154f98/lm_format_enforcer-0.10.1-py3-none-any.whl (42 kB)
+Collecting outlines>=0.0.43 (from -r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/61/23/77e131c2ba36689a366321f49a1271e19ad297b2a1f9f1cd44a9ea991c0e/outlines-1.2.11-py3-none-any.whl (102 kB)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 22)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 23)) (3.24.3)
+Collecting uvicorn[standard] (from -r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/83/e4/d04a086285c20886c0daad0e026f250869201013d18f81d9ff5eada73a88/uvicorn-0.41.0-py3-none-any.whl (68 kB)
+Collecting interegular>=0.3.2 (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c4/01/72d6472f80651673716d1deda2a5bbb633e563ecf94f4479da5519d69d25/interegular-0.3.3-py37-none-any.whl (23 kB)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 20)) (26.0)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 20)) (6.0.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (2026.2.25)
+Collecting huggingface-hub<2.0,>=1.3.0 (from transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ec/74/2bc951622e2dbba1af9a460d93c51d15e458becd486e62c29cc0ccb08178/huggingface_hub-1.5.0-py3-none-any.whl (596 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 7.3 MB/s  0:00:00
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.42.0->-r requirements-common.txt (line 9)) (2026.2.19)
+Collecting tokenizers>=0.19.1 (from -r requirements-common.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2e/76/932be4b50ef6ccedf9d3c6639b056a967a86258c6d9200643f01269211ca/tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 16.7 MB/s  0:00:00
+Collecting typer-slim (from transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a7/24/5480c20380dfd18cf33d14784096dca45a24eae6102e91d49a718d3b6855/typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
+Requirement already satisfied: safetensors>=0.4.3 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.42.0->-r requirements-common.txt (line 9)) (0.7.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (1.3.1)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (0.28.1)
+Collecting typer (from huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl (56 kB)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (4.12.1)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (0.16.0)
+Collecting starlette>=0.40.0 (from fastapi->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl (74 kB)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.10/dist-packages (from fastapi->-r requirements-common.txt (line 11)) (0.4.2)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-common.txt (line 12)) (1.22.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/lib/python3/dist-packages (from openai->-r requirements-common.txt (line 13)) (1.7.0)
+Collecting jiter<1,>=0.10.0 (from openai->-r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fe/c9/b0489a01329ab07a83812d9ebcffe7820a38163c6d9e7da644f926ff877c/jiter-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (362 kB)
+Collecting sniffio (from openai->-r requirements-common.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->-r requirements-common.txt (line 15)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->-r requirements-common.txt (line 15)) (2.41.5)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio->httpx<1,>=0.23.0->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (1.3.1)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl (108 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f5/71/b0a9193641d9e2471ac541d3b1b869538a5fb6419d52fd2669fa9c79e4b8/httptools-0.7.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (440 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/f6/21657bb3beb5f8c57ce8be3b83f653dd7933c2fd00545ed1b092d464799a/uvloop-0.22.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 16.9 MB/s  0:00:00
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d5/dc/1a680b7458ffa3b14bb64878112aefc8f2e4f73c5af763cbf0bd43100658/watchfiles-1.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (455 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9d/2f/4b3ca7e106bc608744b1cdae041e005e446124bebb037b18799c2d356864/websockets-16.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (183 kB)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->-r requirements-common.txt (line 21)) (3.1.6)
+Collecting cloudpickle (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting diskcache (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
+Collecting jsonschema (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Collecting outlines_core==0.2.14 (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/19/cc/6f5d1b92e79b30c2ac187b23ab66b0365e06007a9405b35709d02e94615b/outlines_core-0.2.14-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 16.4 MB/s  0:00:00
+Collecting genson (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f8/5c/e226de133afd8bb267ec27eead9ae3d784b95b39a287ed404caab39a5f50/genson-1.3.0-py3-none-any.whl (21 kB)
+Collecting jsonpath_ng (from outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/32/58/250751940d75c8019659e15482d548a4aa3b6ce122c515102a4bfdac50e3/jsonpath_ng-1.8.0.tar.gz (74 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->outlines>=0.0.43->-r requirements-common.txt (line 21)) (3.0.3)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting referencing>=0.28.4 (from jsonschema->outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema->outlines>=0.0.43->-r requirements-common.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/61/b5/707f6cf0066a6412aacc11d17920ea2e19e5b2f04081c64526eb35b5c6e7/rpds_py-0.30.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+Collecting shellingham>=1.3.0 (from typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting rich>=12.3.0 (from typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/25/b208c5683343959b670dc001595f2f3737e051da617f66c31f7c4fa93abc/rich-14.3.3-py3-none-any.whl (310 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=12.3.0->typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.10/dist-packages (from rich>=12.3.0->typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9)) (2.19.2)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface-hub<2.0,>=1.3.0->transformers>=4.42.0->-r requirements-common.txt (line 9))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Building wheels for collected packages: jsonpath_ng
+  Building wheel for jsonpath_ng (pyproject.toml): started
+  Building wheel for jsonpath_ng (pyproject.toml): finished with status 'done'
+  Created wheel for jsonpath_ng: filename=jsonpath_ng-1.8.0-py3-none-any.whl size=67844 sha256=1270b06fbfb369017470e7ba3e360cd484f3a0e64dacb8f47e131763ee3deb26
+  Stored in directory: /root/.cache/pip/wheels/5d/28/fb/387cf965638cf91741d042d20a97cec2eddb1750083c9563aa
+Successfully built jsonpath_ng
+Installing collected packages: py-cpuinfo, jsonpath_ng, genson, websockets, uvloop, sniffio, shellingham, rpds-py, python-dotenv, psutil, prometheus_client, outlines_core, ninja, mdurl, jiter, interegular, httptools, diskcache, cmake, cloudpickle, click, annotated-doc, uvicorn, tiktoken, referencing, markdown-it-py, watchfiles, starlette, rich, lm-format-enforcer, jsonschema-specifications, typer, prometheus-fastapi-instrumentator, openai, jsonschema, fastapi, typer-slim, outlines, huggingface-hub, tokenizers, transformers
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 0.36.2
+    Uninstalling huggingface_hub-0.36.2:
+      Successfully uninstalled huggingface_hub-0.36.2
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.19.1
+    Uninstalling tokenizers-0.19.1:
+      Successfully uninstalled tokenizers-0.19.1
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.41.2
+    Uninstalling transformers-4.41.2:
+      Successfully uninstalled transformers-4.41.2
+
+Successfully installed annotated-doc-0.0.4 click-8.3.1 cloudpickle-3.1.2 cmake-4.2.1 diskcache-5.6.3 fastapi-0.133.1 genson-1.3.0 httptools-0.7.1 huggingface-hub-1.5.0 interegular-0.3.3 jiter-0.13.0 jsonpath_ng-1.8.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lm-format-enforcer-0.10.1 markdown-it-py-4.0.0 mdurl-0.1.2 ninja-1.13.0 openai-2.24.0 outlines-1.2.11 outlines_core-0.2.14 prometheus-fastapi-instrumentator-7.1.0 prometheus_client-0.24.1 psutil-7.2.2 py-cpuinfo-9.0.0 python-dotenv-1.2.1 referencing-0.37.0 rich-14.3.3 rpds-py-0.30.0 shellingham-1.5.4 sniffio-1.3.1 starlette-0.52.1 tiktoken-0.12.0 tokenizers-0.22.2 transformers-5.2.0 typer-0.24.1 typer-slim-0.24.0 uvicorn-0.41.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: cmake>=3.21 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 1)) (4.2.1)
+Requirement already satisfied: ninja in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 2)) (1.13.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 3)) (7.2.2)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 4)) (0.2.1)
+Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 5)) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 6)) (2.32.5)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 7)) (4.67.3)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 8)) (9.0.0)
+Requirement already satisfied: transformers>=4.42.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 9)) (5.2.0)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 10)) (0.22.2)
+Requirement already satisfied: fastapi in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 11)) (0.133.1)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 12)) (3.13.3)
+Requirement already satisfied: openai in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 13)) (2.24.0)
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 15)) (2.12.5)
+Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 16)) (12.1.1)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 17)) (0.24.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 18)) (7.1.0)
+Requirement already satisfied: tiktoken>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 19)) (0.12.0)
+Requirement already satisfied: lm-format-enforcer==0.10.1 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 20)) (0.10.1)
+Requirement already satisfied: outlines>=0.0.43 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 21)) (1.2.11)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 22)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 23)) (3.24.3)
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: pytest in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 2)) (9.0.2)
+Collecting tensorizer>=2.9.0 (from -r requirements-test.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/09/16/977bdb731cebc42f1375a404fe160cb2b2edc90547a3a1a3c8b2fd8fbd4a/tensorizer-2.12.0-py3-none-any.whl (108 kB)
+Requirement already satisfied: pytest-forked in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 4)) (1.6.0)
+Requirement already satisfied: pytest-asyncio in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 5)) (1.3.0)
+Requirement already satisfied: pytest-rerunfailures in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 6)) (16.1)
+Collecting pytest-shard (from -r requirements-test.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/65/7a/dbeb4c54e9fc3b59622f410091365f354a69cda1af10c3b83ac0ca6e6f4f/pytest_shard-0.1.2-py3-none-any.whl (4.6 kB)
+Collecting awscli (from -r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/52/4e/70b59ed8ad38a81561fb1fe64ae0be0dc16b11e81ffea81b469a5f082766/awscli-1.44.48-py3-none-any.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 17.4 MB/s  0:00:00
+Collecting einops (from -r requirements-test.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+Requirement already satisfied: httpx in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 12)) (0.28.1)
+Collecting peft (from -r requirements-test.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/14/b4e3f574acf349ae6f61f9c000a77f97a3b315b4bb6ad03791e79ae4a568/peft-0.18.1-py3-none-any.whl (556 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 11.4 MB/s  0:00:00
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 14)) (2.32.5)
+Collecting ray (from -r requirements-test.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b0/b1/8cc4e45a3ce87aabcb70696b448b20840bcbaa5c98bdb4807a2749541fda/ray-2.54.0-cp310-cp310-manylinux2014_x86_64.whl (72.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.8/72.8 MB 18.6 MB/s  0:00:03
+Collecting sentence-transformers (from -r requirements-test.txt (line 16))
+  Downloading https://mirrors.aliyun.com/pypi/packages/46/9f/dba4b3e18ebbe1eaa29d9f1764fbc7da0cd91937b83f2b7928d15c5d2d36/sentence_transformers-5.2.3-py3-none-any.whl (494 kB)
+Collecting pandas (from -r requirements-test.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/40/a8/4dac1f8f8235e5d25b9955d02ff6f29396191d4e665d71122c3722ca83c5/pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 18.6 MB/s  0:00:00
+Collecting matplotlib (from -r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/cb/aa/7ab67f2b729ae6a91bcf9dcac0affb95fb8c56f7fd2b2af894ae0b0cf6fa/matplotlib-3.10.8-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 18.2 MB/s  0:00:00
+Collecting sparseml==1.8.0 (from -r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/42/09addce424fa526a82095796256e896fb4a42298f32676e14e7ef4882d58/sparseml-1.8.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 15.4 MB/s  0:00:00
+Collecting compressed-tensors==0.4.0 (from -r requirements-test.txt (line 20))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fc/68/0e796b66a8fa23000c9b5957c94c69f2aa84e80cb0d6856df5630f7f9961/compressed_tensors-0.4.0-py3-none-any.whl (75 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r requirements-test.txt (line 23)) (3.13.3)
+Collecting bitsandbytes==0.42.0 (from -r requirements-test.txt (line 26))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9b/63/489ef9cd7a33c1f08f1b2be51d1b511883c5e34591aaa9873b30021cd679/bitsandbytes-0.42.0-py3-none-any.whl (105.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 105.0/105.0 MB 19.2 MB/s  0:00:05
+Collecting sparsezoo>=1.7.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a9/d6/f2f3535a0bd68e914fdb67354cd4bb65cfae74af80736aea2fb216a81b3f/sparsezoo-1.9.0.tar.gz (8.0 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: pyyaml>=5.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (6.0.3)
+Requirement already satisfied: numpy<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (1.26.4)
+Collecting merge-args>=0.1.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/84/dd/8b9bf1b36927707ae04ec6f8e63f36cdce8c32cea2ed3ecffb04565264d0/merge_args-0.1.5-py2.py3-none-any.whl (6.0 kB)
+Collecting onnx<1.15.0,>=1.5.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/47/d4/f2d212558245e252b936247666c3f5981e6dba62ec470ff8be3df3389364/onnx-1.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 18.7 MB/s  0:00:00
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (26.0)
+Requirement already satisfied: psutil>=5.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (7.2.2)
+Collecting pydantic<2.8.0,>=2.0.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/17/ba/1b65c9cbc49e0c7cd1be086c63209e9ad883c2a409be4746c21db4263f41/pydantic-2.7.4-py3-none-any.whl (409 kB)
+Collecting scikit-learn>=0.24.2 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/58/0e/8c2a03d518fb6bd0b6b0d4b114c63d5f1db01ff0f9925d8eb10960d01c01/scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 18.5 MB/s  0:00:00
+Requirement already satisfied: tqdm>=4.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (4.67.3)
+Collecting toposort>=1.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f6/17/57b444fd314d5e1593350b9a31d000e7411ba8e17ce12dc7ad54ca76b810/toposort-1.10-py3-none-any.whl (8.5 kB)
+Collecting GPUtil>=1.4.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ed/0e/5c61eedde9f6c87713e89d794f01e378cfd9565847d4576fa627d758c554/GPUtil-1.4.0.tar.gz (5.5 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting protobuf<=3.20.3,>=3.12.2 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/31/be/80a9c6f16dfa4d41be3edbe655349778ae30882407fa8275eb46b4d34854/protobuf-3.20.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 14.6 MB/s  0:00:00
+Requirement already satisfied: click!=8.0.0,>=7.1.2 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r requirements-test.txt (line 19)) (8.3.1)
+Collecting scipy>=1.0.0 (from sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 19.0 MB/s  0:00:01
+Requirement already satisfied: torch>=1.7.0 in /usr/local/lib/python3.10/dist-packages (from compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (2.3.0+cu121)
+Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (from compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (5.2.0)
+Requirement already satisfied: typing-extensions>=3.6.2.1 in /usr/local/lib/python3.10/dist-packages (from onnx<1.15.0,>=1.5.0->sparseml==1.8.0->-r requirements-test.txt (line 19)) (4.15.0)
+Requirement already satisfied: annotated-types>=0.4.0 in /usr/local/lib/python3.10/dist-packages (from pydantic<2.8.0,>=2.0.0->sparseml==1.8.0->-r requirements-test.txt (line 19)) (0.7.0)
+Collecting pydantic-core==2.18.4 (from pydantic<2.8.0,>=2.0.0->sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/be/44/18eec2ac121e195662ac0f48c9c2a7bc9e2175edf408004b42adfadfc095/pydantic_core-2.18.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 16.6 MB/s  0:00:00
+Requirement already satisfied: exceptiongroup>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-test.txt (line 2)) (1.3.1)
+Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-test.txt (line 2)) (2.3.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-test.txt (line 2)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-test.txt (line 2)) (2.19.2)
+Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-test.txt (line 2)) (2.4.0)
+Collecting boto3>=1.26.0 (from tensorizer>=2.9.0->-r requirements-test.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/47/3a5b53628311fef4a2cec5c04ff750376ecaac0e9eb7fbea1fa8a88ec198/boto3-1.42.58-py3-none-any.whl (140 kB)
+Collecting redis>=4.5.5 (from tensorizer>=2.9.0->-r requirements-test.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ca/98/1dd1a5c060916cf21d15e67b7d6a7078e26e2605d5c37cbc9f4f5454c478/redis-7.2.1-py3-none-any.whl (396 kB)
+Collecting hiredis>=2.2.0 (from tensorizer>=2.9.0->-r requirements-test.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4f/03/772b7b0f2464fb16fecb849127f34bace2983bb490eb59e89468b245033b/hiredis-3.3.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (168 kB)
+Collecting libnacl>=2.1.0 (from tensorizer>=2.9.0->-r requirements-test.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ad/ce/85fa0276de7303b44fef63e07c14d618b8630bbe41c7dd7e34db246eab8d/libnacl-2.1.0-py3-none-any.whl (21 kB)
+Requirement already satisfied: py in /usr/local/lib/python3.10/dist-packages (from pytest-forked->-r requirements-test.txt (line 4)) (1.11.0)
+Requirement already satisfied: backports-asyncio-runner<2,>=1.1 in /usr/local/lib/python3.10/dist-packages (from pytest-asyncio->-r requirements-test.txt (line 5)) (1.2.0)
+Collecting botocore==1.42.58 (from awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/e0/f957ed6434f922ceffddba6db308b23d1ec2206beacb166cb83a75c5af61/botocore-1.42.58-py3-none-any.whl (14.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 18.3 MB/s  0:00:00
+Collecting docutils<=0.19,>=0.18.1 (from awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl (570 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 11.6 MB/s  0:00:00
+Collecting s3transfer<0.17.0,>=0.16.0 (from awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fc/51/727abb13f44c1fcf6d145979e1535a35794db0f6e450a0cb46aa24732fe2/s3transfer-0.16.0-py3-none-any.whl (86 kB)
+Collecting colorama<0.4.7,>=0.2.5 (from awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting rsa<4.8,>=3.1.2 (from awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl (34 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from botocore==1.42.58->awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.42.58->awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.10/dist-packages (from botocore==1.42.58->awscli->-r requirements-test.txt (line 10)) (2.6.3)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore==1.42.58->awscli->-r requirements-test.txt (line 10)) (1.16.0)
+Collecting pyasn1>=0.1.3 (from rsa<4.8,>=3.1.2->awscli->-r requirements-test.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-test.txt (line 12)) (4.12.1)
+Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-test.txt (line 12)) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-test.txt (line 12)) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-test.txt (line 12)) (3.11)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx->-r requirements-test.txt (line 12)) (0.16.0)
+Collecting accelerate>=0.21.0 (from peft->-r requirements-test.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9f/d2/c581486aa6c4fbd7394c23c47b83fa1a919d34194e16944241daf9e762dd/accelerate-1.12.0-py3-none-any.whl (380 kB)
+Requirement already satisfied: safetensors in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-test.txt (line 13)) (0.7.0)
+Requirement already satisfied: huggingface_hub>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-test.txt (line 13)) (1.5.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-test.txt (line 14)) (3.4.4)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-test.txt (line 15)) (3.24.3)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-test.txt (line 15)) (4.26.0)
+Collecting msgpack<2.0.0,>=1.0.0 (from ray->-r requirements-test.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b7/09/2a06956383c0fdebaef5aa9246e2356776f12ea6f2a44bd1368abf0e46c4/msgpack-1.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (406 kB)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (2026.2.19)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (0.22.2)
+Requirement already satisfied: typer-slim in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (0.24.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (1.3.1)
+Requirement already satisfied: typer in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (0.24.1)
+Collecting pytz>=2020.1 (from pandas->-r requirements-test.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/c4/34e93fe5f5429d7570ec1fa436f1986fb1f00c3e0f43a589fe2bbcd22c3f/pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Collecting tzdata>=2022.7 (from pandas->-r requirements-test.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c7/b0/003792df09decd6849a5e39c28b513c06e84436a54440380862b5aeff25d/tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/32/5c/1ee32d1c7956923202f00cf8d2a14a62ed7517bdc0ee1e55301227fc273c/contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->-r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/69/4ca02ee367d2c98edcaeb83fc278d20972502ee071214ad9d8ca85e06080/fonttools-4.61.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 17.6 MB/s  0:00:00
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d4/42/0f333164e6307a0687d1eb9ad256215aae2f4bd5d28f4653d6cd319a3ba3/kiwisolver-1.4.9-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 16.1 MB/s  0:00:00
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib->-r requirements-test.txt (line 18)) (12.1.1)
+Collecting pyparsing>=3 (from matplotlib->-r requirements-test.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-test.txt (line 23)) (1.22.0)
+Collecting joblib>=1.2.0 (from scikit-learn>=0.24.2->sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn>=0.24.2->sparseml==1.8.0->-r requirements-test.txt (line 19))
+  Downloading https://mirrors.aliyun.com/pypi/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (12.9.86)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (3.0.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-test.txt (line 15)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-test.txt (line 15)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-test.txt (line 15)) (0.30.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=1.7.0->compressed-tensors==0.4.0->-r requirements-test.txt (line 20)) (1.3.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (14.3.3)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich>=12.3.0->typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (4.0.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface_hub>=0.25.0->peft->-r requirements-test.txt (line 13)) (0.1.2)
+Building wheels for collected packages: GPUtil, sparsezoo
+  Building wheel for GPUtil (pyproject.toml): started
+  Building wheel for GPUtil (pyproject.toml): finished with status 'done'
+  Created wheel for GPUtil: filename=gputil-1.4.0-py3-none-any.whl size=7434 sha256=cfe4f5fd1f595056a8891a4feb2babfe9e2df29b2a6c2023eb9ad7a0fb02a069
+  Stored in directory: /root/.cache/pip/wheels/c2/65/c3/16c2acf8b7086e39c57e90f02beb6d3ef95a5c714eaa713bf2
+  Building wheel for sparsezoo (pyproject.toml): started
+  Building wheel for sparsezoo (pyproject.toml): finished with status 'error'
+Successfully built GPUtil
+Failed to build sparsezoo
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting yapf==0.32.0 (from -r /workspace/requirements-lint.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/47/88/843c2e68f18a5879b4fbf37cb99fbabe1ffc4343b2e63191c8462235c008/yapf-0.32.0-py2.py3-none-any.whl (190 kB)
+Collecting toml==0.10.2 (from -r /workspace/requirements-lint.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting tomli==2.0.1 (from -r /workspace/requirements-lint.txt (line 4))
+  Downloading https://mirrors.aliyun.com/pypi/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
+Collecting ruff==0.1.5 (from -r /workspace/requirements-lint.txt (line 5))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ae/cf/95e9a2930c1a220fb2c5769d746901eea4576cc46f1200f0178a42a863ba/ruff-0.1.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 17.5 MB/s  0:00:00
+Collecting codespell==2.3.0 (from -r /workspace/requirements-lint.txt (line 6))
+  Downloading https://mirrors.aliyun.com/pypi/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl (329 kB)
+Collecting isort==5.13.2 (from -r /workspace/requirements-lint.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl (92 kB)
+Collecting clang-format==18.1.5 (from -r /workspace/requirements-lint.txt (line 8))
+  Downloading https://mirrors.aliyun.com/pypi/packages/45/96/d960d9add3eb71f6c6039181054281aeb42f2cb4877a33f889516abc2cb4/clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 16.2 MB/s  0:00:00
+Collecting mypy==1.9.0 (from -r /workspace/requirements-lint.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e1/87/b508b34309359daa00e0e76d9a0dbe43031866af49b279861f69c76e5d70/mypy-1.9.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 18.7 MB/s  0:00:00
+Collecting types-PyYAML (from -r /workspace/requirements-lint.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
+Collecting types-requests (from -r /workspace/requirements-lint.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1c/12/709ea261f2bf91ef0a26a9eed20f2623227a8ed85610c1e54c5805692ecb/types_requests-2.32.4.20260107-py3-none-any.whl (20 kB)
+Collecting types-setuptools (from -r /workspace/requirements-lint.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3e/54/3489432b1d9bc713c9d8aa810296b8f5b0088403662959fb63a8acdbd4fc/types_setuptools-82.0.0.20260210-py3-none-any.whl (68 kB)
+Requirement already satisfied: pytest in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 2)) (9.0.2)
+Collecting tensorizer>=2.9.0 (from -r /workspace/requirements-test.txt (line 3))
+  Using cached https://mirrors.aliyun.com/pypi/packages/09/16/977bdb731cebc42f1375a404fe160cb2b2edc90547a3a1a3c8b2fd8fbd4a/tensorizer-2.12.0-py3-none-any.whl (108 kB)
+Requirement already satisfied: pytest-forked in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 4)) (1.6.0)
+Requirement already satisfied: pytest-asyncio in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 5)) (1.3.0)
+Requirement already satisfied: pytest-rerunfailures in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 6)) (16.1)
+Collecting pytest-shard (from -r /workspace/requirements-test.txt (line 7))
+  Using cached https://mirrors.aliyun.com/pypi/packages/65/7a/dbeb4c54e9fc3b59622f410091365f354a69cda1af10c3b83ac0ca6e6f4f/pytest_shard-0.1.2-py3-none-any.whl (4.6 kB)
+Collecting awscli (from -r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/52/4e/70b59ed8ad38a81561fb1fe64ae0be0dc16b11e81ffea81b469a5f082766/awscli-1.44.48-py3-none-any.whl (4.6 MB)
+Collecting einops (from -r /workspace/requirements-test.txt (line 11))
+  Using cached https://mirrors.aliyun.com/pypi/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+Requirement already satisfied: httpx in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 12)) (0.28.1)
+Collecting peft (from -r /workspace/requirements-test.txt (line 13))
+  Using cached https://mirrors.aliyun.com/pypi/packages/b3/14/b4e3f574acf349ae6f61f9c000a77f97a3b315b4bb6ad03791e79ae4a568/peft-0.18.1-py3-none-any.whl (556 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 14)) (2.32.5)
+Collecting ray (from -r /workspace/requirements-test.txt (line 15))
+  Using cached https://mirrors.aliyun.com/pypi/packages/b0/b1/8cc4e45a3ce87aabcb70696b448b20840bcbaa5c98bdb4807a2749541fda/ray-2.54.0-cp310-cp310-manylinux2014_x86_64.whl (72.8 MB)
+Collecting sentence-transformers (from -r /workspace/requirements-test.txt (line 16))
+  Using cached https://mirrors.aliyun.com/pypi/packages/46/9f/dba4b3e18ebbe1eaa29d9f1764fbc7da0cd91937b83f2b7928d15c5d2d36/sentence_transformers-5.2.3-py3-none-any.whl (494 kB)
+Collecting pandas (from -r /workspace/requirements-test.txt (line 17))
+  Using cached https://mirrors.aliyun.com/pypi/packages/40/a8/4dac1f8f8235e5d25b9955d02ff6f29396191d4e665d71122c3722ca83c5/pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
+Collecting matplotlib (from -r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/cb/aa/7ab67f2b729ae6a91bcf9dcac0affb95fb8c56f7fd2b2af894ae0b0cf6fa/matplotlib-3.10.8-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+Collecting sparseml==1.8.0 (from -r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/27/42/09addce424fa526a82095796256e896fb4a42298f32676e14e7ef4882d58/sparseml-1.8.0-py3-none-any.whl (1.3 MB)
+Collecting compressed-tensors==0.4.0 (from -r /workspace/requirements-test.txt (line 20))
+  Using cached https://mirrors.aliyun.com/pypi/packages/fc/68/0e796b66a8fa23000c9b5957c94c69f2aa84e80cb0d6856df5630f7f9961/compressed_tensors-0.4.0-py3-none-any.whl (75 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-test.txt (line 23)) (3.13.3)
+Collecting bitsandbytes==0.42.0 (from -r /workspace/requirements-test.txt (line 26))
+  Using cached https://mirrors.aliyun.com/pypi/packages/9b/63/489ef9cd7a33c1f08f1b2be51d1b511883c5e34591aaa9873b30021cd679/bitsandbytes-0.42.0-py3-none-any.whl (105.0 MB)
+Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.10/dist-packages (from mypy==1.9.0->-r /workspace/requirements-lint.txt (line 11)) (4.15.0)
+Collecting mypy-extensions>=1.0.0 (from mypy==1.9.0->-r /workspace/requirements-lint.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Collecting sparsezoo>=1.7.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/a9/d6/f2f3535a0bd68e914fdb67354cd4bb65cfae74af80736aea2fb216a81b3f/sparsezoo-1.9.0.tar.gz (8.0 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: pyyaml>=5.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (6.0.3)
+Requirement already satisfied: numpy<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (1.26.4)
+Collecting merge-args>=0.1.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/84/dd/8b9bf1b36927707ae04ec6f8e63f36cdce8c32cea2ed3ecffb04565264d0/merge_args-0.1.5-py2.py3-none-any.whl (6.0 kB)
+Collecting onnx<1.15.0,>=1.5.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/47/d4/f2d212558245e252b936247666c3f5981e6dba62ec470ff8be3df3389364/onnx-1.14.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.6 MB)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (26.0)
+Requirement already satisfied: psutil>=5.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (7.2.2)
+Collecting pydantic<2.8.0,>=2.0.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/17/ba/1b65c9cbc49e0c7cd1be086c63209e9ad883c2a409be4746c21db4263f41/pydantic-2.7.4-py3-none-any.whl (409 kB)
+Collecting scikit-learn>=0.24.2 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/58/0e/8c2a03d518fb6bd0b6b0d4b114c63d5f1db01ff0f9925d8eb10960d01c01/scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)
+Requirement already satisfied: tqdm>=4.0.0 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (4.67.3)
+Collecting toposort>=1.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/f6/17/57b444fd314d5e1593350b9a31d000e7411ba8e17ce12dc7ad54ca76b810/toposort-1.10-py3-none-any.whl (8.5 kB)
+Collecting GPUtil>=1.4.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached gputil-1.4.0-py3-none-any.whl
+Collecting protobuf<=3.20.3,>=3.12.2 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/31/be/80a9c6f16dfa4d41be3edbe655349778ae30882407fa8275eb46b4d34854/protobuf-3.20.3-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.1 MB)
+Requirement already satisfied: click!=8.0.0,>=7.1.2 in /usr/local/lib/python3.10/dist-packages (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (8.3.1)
+Collecting scipy>=1.0.0 (from sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+Requirement already satisfied: torch>=1.7.0 in /usr/local/lib/python3.10/dist-packages (from compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (2.3.0+cu121)
+Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (from compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (5.2.0)
+Requirement already satisfied: annotated-types>=0.4.0 in /usr/local/lib/python3.10/dist-packages (from pydantic<2.8.0,>=2.0.0->sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19)) (0.7.0)
+Collecting pydantic-core==2.18.4 (from pydantic<2.8.0,>=2.0.0->sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/be/44/18eec2ac121e195662ac0f48c9c2a7bc9e2175edf408004b42adfadfc095/pydantic_core-2.18.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Requirement already satisfied: urllib3>=2 in /usr/local/lib/python3.10/dist-packages (from types-requests->-r /workspace/requirements-lint.txt (line 13)) (2.6.3)
+Requirement already satisfied: exceptiongroup>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r /workspace/requirements-test.txt (line 2)) (1.3.1)
+Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r /workspace/requirements-test.txt (line 2)) (2.3.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.10/dist-packages (from pytest->-r /workspace/requirements-test.txt (line 2)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /usr/local/lib/python3.10/dist-packages (from pytest->-r /workspace/requirements-test.txt (line 2)) (2.19.2)
+Collecting boto3>=1.26.0 (from tensorizer>=2.9.0->-r /workspace/requirements-test.txt (line 3))
+  Using cached https://mirrors.aliyun.com/pypi/packages/13/47/3a5b53628311fef4a2cec5c04ff750376ecaac0e9eb7fbea1fa8a88ec198/boto3-1.42.58-py3-none-any.whl (140 kB)
+Collecting redis>=4.5.5 (from tensorizer>=2.9.0->-r /workspace/requirements-test.txt (line 3))
+  Using cached https://mirrors.aliyun.com/pypi/packages/ca/98/1dd1a5c060916cf21d15e67b7d6a7078e26e2605d5c37cbc9f4f5454c478/redis-7.2.1-py3-none-any.whl (396 kB)
+Collecting hiredis>=2.2.0 (from tensorizer>=2.9.0->-r /workspace/requirements-test.txt (line 3))
+  Using cached https://mirrors.aliyun.com/pypi/packages/4f/03/772b7b0f2464fb16fecb849127f34bace2983bb490eb59e89468b245033b/hiredis-3.3.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (168 kB)
+Collecting libnacl>=2.1.0 (from tensorizer>=2.9.0->-r /workspace/requirements-test.txt (line 3))
+  Using cached https://mirrors.aliyun.com/pypi/packages/ad/ce/85fa0276de7303b44fef63e07c14d618b8630bbe41c7dd7e34db246eab8d/libnacl-2.1.0-py3-none-any.whl (21 kB)
+Requirement already satisfied: py in /usr/local/lib/python3.10/dist-packages (from pytest-forked->-r /workspace/requirements-test.txt (line 4)) (1.11.0)
+Requirement already satisfied: backports-asyncio-runner<2,>=1.1 in /usr/local/lib/python3.10/dist-packages (from pytest-asyncio->-r /workspace/requirements-test.txt (line 5)) (1.2.0)
+Collecting botocore==1.42.58 (from awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/4e/e0/f957ed6434f922ceffddba6db308b23d1ec2206beacb166cb83a75c5af61/botocore-1.42.58-py3-none-any.whl (14.6 MB)
+Collecting docutils<=0.19,>=0.18.1 (from awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl (570 kB)
+Collecting s3transfer<0.17.0,>=0.16.0 (from awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/fc/51/727abb13f44c1fcf6d145979e1535a35794db0f6e450a0cb46aa24732fe2/s3transfer-0.16.0-py3-none-any.whl (86 kB)
+Collecting colorama<0.4.7,>=0.2.5 (from awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting rsa<4.8,>=3.1.2 (from awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl (34 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from botocore==1.42.58->awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.42.58->awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore==1.42.58->awscli->-r /workspace/requirements-test.txt (line 10)) (1.16.0)
+Collecting pyasn1>=0.1.3 (from rsa<4.8,>=3.1.2->awscli->-r /workspace/requirements-test.txt (line 10))
+  Using cached https://mirrors.aliyun.com/pypi/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from httpx->-r /workspace/requirements-test.txt (line 12)) (4.12.1)
+Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx->-r /workspace/requirements-test.txt (line 12)) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx->-r /workspace/requirements-test.txt (line 12)) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.10/dist-packages (from httpx->-r /workspace/requirements-test.txt (line 12)) (3.11)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx->-r /workspace/requirements-test.txt (line 12)) (0.16.0)
+Collecting accelerate>=0.21.0 (from peft->-r /workspace/requirements-test.txt (line 13))
+  Using cached https://mirrors.aliyun.com/pypi/packages/9f/d2/c581486aa6c4fbd7394c23c47b83fa1a919d34194e16944241daf9e762dd/accelerate-1.12.0-py3-none-any.whl (380 kB)
+Requirement already satisfied: safetensors in /usr/local/lib/python3.10/dist-packages (from peft->-r /workspace/requirements-test.txt (line 13)) (0.7.0)
+Requirement already satisfied: huggingface_hub>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from peft->-r /workspace/requirements-test.txt (line 13)) (1.5.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->-r /workspace/requirements-test.txt (line 14)) (3.4.4)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from ray->-r /workspace/requirements-test.txt (line 15)) (3.24.3)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from ray->-r /workspace/requirements-test.txt (line 15)) (4.26.0)
+Collecting msgpack<2.0.0,>=1.0.0 (from ray->-r /workspace/requirements-test.txt (line 15))
+  Using cached https://mirrors.aliyun.com/pypi/packages/b7/09/2a06956383c0fdebaef5aa9246e2356776f12ea6f2a44bd1368abf0e46c4/msgpack-1.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (406 kB)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (2026.2.19)
+Requirement already satisfied: tokenizers<=0.23.0,>=0.22.0 in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (0.22.2)
+Requirement already satisfied: typer-slim in /usr/local/lib/python3.10/dist-packages (from transformers->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (0.24.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (1.3.1)
+Requirement already satisfied: typer in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (0.24.1)
+Collecting pytz>=2020.1 (from pandas->-r /workspace/requirements-test.txt (line 17))
+  Using cached https://mirrors.aliyun.com/pypi/packages/81/c4/34e93fe5f5429d7570ec1fa436f1986fb1f00c3e0f43a589fe2bbcd22c3f/pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Collecting tzdata>=2022.7 (from pandas->-r /workspace/requirements-test.txt (line 17))
+  Using cached https://mirrors.aliyun.com/pypi/packages/c7/b0/003792df09decd6849a5e39c28b513c06e84436a54440380862b5aeff25d/tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/32/5c/1ee32d1c7956923202f00cf8d2a14a62ed7517bdc0ee1e55301227fc273c/contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
+Collecting cycler>=0.10 (from matplotlib->-r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->-r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/69/69/4ca02ee367d2c98edcaeb83fc278d20972502ee071214ad9d8ca85e06080/fonttools-4.61.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.9 MB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/d4/42/0f333164e6307a0687d1eb9ad256215aae2f4bd5d28f4653d6cd319a3ba3/kiwisolver-1.4.9-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib->-r /workspace/requirements-test.txt (line 18)) (12.1.1)
+Collecting pyparsing>=3 (from matplotlib->-r /workspace/requirements-test.txt (line 18))
+  Using cached https://mirrors.aliyun.com/pypi/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r /workspace/requirements-test.txt (line 23)) (1.22.0)
+Collecting joblib>=1.2.0 (from scikit-learn>=0.24.2->sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn>=0.24.2->sparseml==1.8.0->-r /workspace/requirements-test.txt (line 19))
+  Using cached https://mirrors.aliyun.com/pypi/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (12.9.86)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (3.0.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r /workspace/requirements-test.txt (line 15)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r /workspace/requirements-test.txt (line 15)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r /workspace/requirements-test.txt (line 15)) (0.30.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=1.7.0->compressed-tensors==0.4.0->-r /workspace/requirements-test.txt (line 20)) (1.3.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (14.3.3)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (0.0.4)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich>=12.3.0->typer->huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (4.0.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface_hub>=0.25.0->peft->-r /workspace/requirements-test.txt (line 13)) (0.1.2)
+Building wheels for collected packages: sparsezoo
+  Building wheel for sparsezoo (pyproject.toml): started
+  Building wheel for sparsezoo (pyproject.toml): finished with status 'error'
+Failed to build sparsezoo
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: cmake>=3.21 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (4.2.1)
+Requirement already satisfied: ninja in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (1.13.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (7.2.2)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.2.1)
+Requirement already satisfied: numpy<2.0.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (2.32.5)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (4.67.3)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (9.0.0)
+Requirement already satisfied: transformers>=4.42.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (5.2.0)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.22.2)
+Requirement already satisfied: fastapi in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.133.1)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (3.13.3)
+Requirement already satisfied: openai in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (2.24.0)
+Requirement already satisfied: uvicorn[standard] in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.41.0)
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (2.12.5)
+Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (12.1.1)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.24.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (7.1.0)
+Requirement already satisfied: tiktoken>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.12.0)
+Requirement already satisfied: lm-format-enforcer==0.10.1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.10.1)
+Requirement already satisfied: outlines>=0.0.43 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (1.2.11)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (3.24.3)
+Collecting ray>=2.9 (from vllm==0.5.1)
+  Using cached https://mirrors.aliyun.com/pypi/packages/b0/b1/8cc4e45a3ce87aabcb70696b448b20840bcbaa5c98bdb4807a2749541fda/ray-2.54.0-cp310-cp310-manylinux2014_x86_64.whl (72.8 MB)
+Collecting nvidia-ml-py (from vllm==0.5.1)
+  Downloading https://mirrors.aliyun.com/pypi/packages/fd/72/fb2af0d259a651affdce65fd6a495f0e07a685a0136baf585c5065204ee7/nvidia_ml_py-13.590.48-py3-none-any.whl (50 kB)
+Requirement already satisfied: torch==2.3.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (2.3.0+cu121)
+Requirement already satisfied: torchvision==0.18.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.18.0+cu121)
+Requirement already satisfied: xformers==0.0.26.post1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.5.1) (0.0.26.post1)
+Collecting vllm-flash-attn==2.5.9 (from vllm==0.5.1)
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/35/b00f367f3655bfed85a0df3c32fe6af34c0fd38b28ec7f0f9363991615f1/vllm_flash_attn-2.5.9-cp310-cp310-manylinux1_x86_64.whl (37.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.1/37.1 MB 19.1 MB/s  0:00:01
+Requirement already satisfied: interegular>=0.3.2 in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.5.1) (0.3.3)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.5.1) (26.0)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.5.1) (6.0.3)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (3.1.6)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (2026.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.5.1) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch==2.3.0->vllm==0.5.1) (12.9.86)
+Requirement already satisfied: cloudpickle in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (3.1.2)
+Requirement already satisfied: diskcache in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (5.6.3)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (4.26.0)
+Requirement already satisfied: outlines_core==0.2.14 in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (0.2.14)
+Requirement already satisfied: genson in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (1.3.0)
+Requirement already satisfied: jsonpath_ng in /usr/local/lib/python3.10/dist-packages (from outlines>=0.0.43->vllm==0.5.1) (1.8.0)
+Requirement already satisfied: starlette<1.0.0,>=0.30.0 in /usr/local/lib/python3.10/dist-packages (from prometheus-fastapi-instrumentator>=7.0.0->vllm==0.5.1) (0.52.1)
+Requirement already satisfied: anyio<5,>=3.6.2 in /usr/local/lib/python3.10/dist-packages (from starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.5.1) (4.12.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.5.1) (1.3.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.5.1) (3.11)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.5.1) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.5.1) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.5.1) (0.4.2)
+Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.10/dist-packages (from ray>=2.9->vllm==0.5.1) (8.3.1)
+Collecting msgpack<2.0.0,>=1.0.0 (from ray>=2.9->vllm==0.5.1)
+  Using cached https://mirrors.aliyun.com/pypi/packages/b7/09/2a06956383c0fdebaef5aa9246e2356776f12ea6f2a44bd1368abf0e46c4/msgpack-1.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (406 kB)
+Collecting protobuf>=3.20.3 (from ray>=2.9->vllm==0.5.1)
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/57/89727baef7578897af5ed166735ceb315819f1c184da8c3441271dbcfde7/protobuf-7.34.0-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
+Requirement already satisfied: regex>=2022.1.18 in /usr/local/lib/python3.10/dist-packages (from tiktoken>=0.6.0->vllm==0.5.1) (2026.2.19)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.5.1) (3.4.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.5.1) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.5.1) (2026.2.25)
+Requirement already satisfied: huggingface-hub<2.0,>=0.16.4 in /usr/local/lib/python3.10/dist-packages (from tokenizers>=0.19.1->vllm==0.5.1) (1.5.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.2.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (1.3.1)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (0.28.1)
+Requirement already satisfied: typer in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (0.24.1)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx<1,>=0.23.0->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (0.16.0)
+Requirement already satisfied: typer-slim in /usr/local/lib/python3.10/dist-packages (from transformers>=4.42.0->vllm==0.5.1) (0.24.0)
+Requirement already satisfied: safetensors>=0.4.3 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.42.0->vllm==0.5.1) (0.7.0)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->vllm==0.5.1) (1.22.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.10/dist-packages (from fastapi->vllm==0.5.1) (0.0.4)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch==2.3.0->vllm==0.5.1) (3.0.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines>=0.0.43->vllm==0.5.1) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines>=0.0.43->vllm==0.5.1) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines>=0.0.43->vllm==0.5.1) (0.30.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/lib/python3/dist-packages (from openai->vllm==0.5.1) (1.7.0)
+Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.10/dist-packages (from openai->vllm==0.5.1) (0.13.0)
+Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from openai->vllm==0.5.1) (1.3.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch==2.3.0->vllm==0.5.1) (1.3.0)
+Requirement already satisfied: shellingham>=1.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (1.5.4)
+Requirement already satisfied: rich>=12.3.0 in /usr/local/lib/python3.10/dist-packages (from typer->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (14.3.3)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.10/dist-packages (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (2.19.2)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface-hub<2.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.5.1) (0.1.2)
+Requirement already satisfied: httptools>=0.6.3 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.5.1) (0.7.1)
+Requirement already satisfied: python-dotenv>=0.13 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.5.1) (1.2.1)
+Requirement already satisfied: uvloop>=0.15.1 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.5.1) (0.22.1)
+Requirement already satisfied: watchfiles>=0.20 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.5.1) (1.1.1)
+Requirement already satisfied: websockets>=10.4 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.5.1) (16.0)
+Building wheels for collected packages: vllm
+  Building editable for vllm (pyproject.toml): started
+  Building editable for vllm (pyproject.toml): finished with status 'error'
+Failed to build vllm
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: vllm
+  Building editable for vllm (pyproject.toml): started
+  Building editable for vllm (pyproject.toml): finished with status 'error'
+Failed to build vllm
+
+--- STDERR ---
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+ERROR: Could not find a version that satisfies the requirement torch==2.3.1+cpu (from versions: 1.11.0, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.1.2, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.7.0, 2.7.1, 2.8.0, 2.9.0, 2.9.1, 2.10.0)
+ERROR: No matching distribution found for torch==2.3.1+cpu
+  error: subprocess-exited-with-error
+  
+  × Building wheel for sparsezoo (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [10 lines of output]
+      running bdist_wheel
+      running build
+      installing to build/bdist.linux-x86_64/wheel
+      running install
+      
+      ============================================================================================
+      'sparsezoo' has reached end-of-life and is no longer supported as of June 2025.
+      See the README for more details: https://github.com/neuralmagic/sparsezoo/blob/main/README.md
+      ============================================================================================
+      
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for sparsezoo
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> sparsezoo
+  error: subprocess-exited-with-error
+  
+  × Building wheel for sparsezoo (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [10 lines of output]
+      running bdist_wheel
+      running build
+      installing to build/bdist.linux-x86_64/wheel
+      running install
+      
+      ============================================================================================
+      'sparsezoo' has reached end-of-life and is no longer supported as of June 2025.
+      See the README for more details: https://github.com/neuralmagic/sparsezoo/blob/main/README.md
+      ============================================================================================
+      
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for sparsezoo
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> sparsezoo
+  error: subprocess-exited-with-error
+  
+  × Building editable for vllm (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [161 lines of output]
+      No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+      /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: Apache Software License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running editable_wheel
+      creating /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info
+      writing /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/SOURCES.txt'
+      reading manifest file '/tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      adding license file 'LICENSE'
+      writing manifest file '/tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm-0.5.1.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-o01q765v/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmpm57ptdwd/.tmp-m4aq3kka/vllm-0.5.1.dist-info/WHEEL
+      running build_py
+      running build_ext
+      -- The CXX compiler identification is GNU 11.4.0
+      -- Detecting CXX compiler ABI info
+      -- Detecting CXX compiler ABI info - done
+      -- Check for working CXX compiler: /usr/bin/c++ - skipped
+      -- Detecting CXX compile features
+      -- Detecting CXX compile features - done
+      -- Build type: RelWithDebInfo
+      -- Target device: cuda
+      -- Found Python: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development.Module Development.SABIModule
+      -- Found python matching: /usr/bin/python3.10.
+      -- Found CUDA: /usr/local/cuda (found version "12.1")
+      -- The CUDA compiler identification is NVIDIA 12.1.105 with host compiler GNU 11.4.0
+      -- Detecting CUDA compiler ABI info
+      -- Detecting CUDA compiler ABI info - done
+      -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+      -- Detecting CUDA compile features
+      -- Detecting CUDA compile features - done
+      -- Found CUDAToolkit: /usr/local/cuda/include (found version "12.1.105")
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+      -- Found Threads: TRUE
+      -- Caffe2: CUDA detected: 12.1
+      -- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+      -- Caffe2: CUDA toolkit directory: /usr/local/cuda
+      -- Caffe2: Header version is: 12.1
+      -- /usr/local/cuda/lib64/libnvrtc.so shorthash is b51b459d
+      -- USE_CUDNN is set to 0. Compiling without cuDNN support
+      -- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+      -- Automatic GPU detection failed. Building for common architectures.
+      -- Autodetected CUDA architecture(s): 5.0;8.0;8.6;8.9;9.0;9.0a
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:227 (message):
+        Unknown CUDA Architecture Name 9.0a in CUDA_SELECT_NVCC_ARCH_FLAGS
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:231 (message):
+        arch_bin wasn't set for some reason
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Added CUDA NVCC flags for: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_89,code=sm_89;-gencode;arch=compute_90,code=sm_90
+      CMake Warning at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+        static library kineto_LIBRARY-NOTFOUND not found.
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Found Torch: /usr/local/lib/python3.10/dist-packages/torch/lib/libtorch.so
+      -- CUDA supported arches: 7.0;7.5;8.0;8.6;8.9;9.0
+      -- discarding unsupported CUDA arch 3.10.
+      -- CUDA target arches: 80-real;86-real;89-real;90-real
+      -- CMake Version: 4.2.1
+      -- CUTLASS 3.5.0
+      -- CUDART: /usr/local/cuda/lib64/libcudart.so
+      -- CUDA Driver: /usr/local/cuda/lib64/stubs/libcuda.so
+      -- NVRTC: /usr/local/cuda/lib64/libnvrtc.so
+      -- Default Install Location: install
+      -- Found Python3: /usr/bin/python3.10 (found suitable version "3.10.12", minimum required is "3.5") found components: Interpreter
+      -- CUDA Compilation Architectures: 70;72;75;80;86;87;89;90;90a
+      -- Enable caching of reference results in conv unit tests
+      -- Enable rigorous conv problem sizes in conv unit tests
+      -- Using NVCC flags: --expt-relaxed-constexpr;-DCUTLASS_TEST_LEVEL=0;-DCUTLASS_TEST_ENABLE_CACHED_RESULTS=1;-DCUTLASS_CONV_UNIT_TEST_RIGOROUS_SIZE_ENABLED=1;-DCUTLASS_DEBUG_TRACE_LEVEL=0;-Xcompiler=-Wconversion;-Xcompiler=-fno-strict-aliasing;-lineinfo
+      fatal: not a git repository (or any of the parent directories): .git
+      -- CUTLASS Revision: Unable to detect, Git returned code 128.
+      -- Configuring cublas ...
+      -- cuBLAS Disabled.
+      -- Configuring cuBLAS ... done.
+      -- Completed generation of library instances. See /tmp/tmpggzhw48h.build-temp/_deps/cutlass-build/tools/library/library_instance_generation.log for more information.
+      -- Punica target arches: 80-real;86-real;89-real;90-real
+      -- Enabling C extension.
+      -- Enabling moe extension.
+      -- Configuring incomplete, errors occurred!
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 303, in build_editable
+          return hook(wheel_directory, config_settings, metadata_directory)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 474, in build_editable
+          return self._build_with_temp_dir(
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 410, in _build_with_temp_dir
+          self.run_setup()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 430, in <module>
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1000, in run_commands
+          self.run_command(cmd)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 300, in _run_build_subcommands
+          self.run_command(name)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 341, in run_command
+          self.distribution.run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/build_ext.py", line 97, in run
+          _build_ext.run(self)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/build_ext.py", line 367, in run
+          self.build_extensions()
+        File "<string>", line 193, in build_extensions
+        File "<string>", line 175, in configure
+        File "/usr/lib/python3.10/subprocess.py", line 369, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmpxl2ly2ci.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmpggzhw48h.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for vllm
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> vllm
+  error: subprocess-exited-with-error
+  
+  × Building editable for vllm (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [161 lines of output]
+      No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+      /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: Apache Software License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running editable_wheel
+      creating /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info
+      writing /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/SOURCES.txt'
+      reading manifest file '/tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      adding license file 'LICENSE'
+      writing manifest file '/tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm-0.5.1.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-p1voyp45/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp2qua02qh/.tmp-ya950df2/vllm-0.5.1.dist-info/WHEEL
+      running build_py
+      running build_ext
+      -- The CXX compiler identification is GNU 11.4.0
+      -- Detecting CXX compiler ABI info
+      -- Detecting CXX compiler ABI info - done
+      -- Check for working CXX compiler: /usr/bin/c++ - skipped
+      -- Detecting CXX compile features
+      -- Detecting CXX compile features - done
+      -- Build type: RelWithDebInfo
+      -- Target device: cuda
+      -- Found Python: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development.Module Development.SABIModule
+      -- Found python matching: /usr/bin/python3.10.
+      -- Found CUDA: /usr/local/cuda (found version "12.1")
+      -- The CUDA compiler identification is NVIDIA 12.1.105 with host compiler GNU 11.4.0
+      -- Detecting CUDA compiler ABI info
+      -- Detecting CUDA compiler ABI info - done
+      -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+      -- Detecting CUDA compile features
+      -- Detecting CUDA compile features - done
+      -- Found CUDAToolkit: /usr/local/cuda/include (found version "12.1.105")
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+      -- Found Threads: TRUE
+      -- Caffe2: CUDA detected: 12.1
+      -- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+      -- Caffe2: CUDA toolkit directory: /usr/local/cuda
+      -- Caffe2: Header version is: 12.1
+      -- /usr/local/cuda/lib64/libnvrtc.so shorthash is b51b459d
+      -- USE_CUDNN is set to 0. Compiling without cuDNN support
+      -- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+      -- Automatic GPU detection failed. Building for common architectures.
+      -- Autodetected CUDA architecture(s): 5.0;8.0;8.6;8.9;9.0;9.0a
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:227 (message):
+        Unknown CUDA Architecture Name 9.0a in CUDA_SELECT_NVCC_ARCH_FLAGS
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:231 (message):
+        arch_bin wasn't set for some reason
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Added CUDA NVCC flags for: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_89,code=sm_89;-gencode;arch=compute_90,code=sm_90
+      CMake Warning at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+        static library kineto_LIBRARY-NOTFOUND not found.
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Found Torch: /usr/local/lib/python3.10/dist-packages/torch/lib/libtorch.so
+      -- CUDA supported arches: 7.0;7.5;8.0;8.6;8.9;9.0
+      -- discarding unsupported CUDA arch 3.10.
+      -- CUDA target arches: 80-real;86-real;89-real;90-real
+      -- CMake Version: 4.2.1
+      -- CUTLASS 3.5.0
+      -- CUDART: /usr/local/cuda/lib64/libcudart.so
+      -- CUDA Driver: /usr/local/cuda/lib64/stubs/libcuda.so
+      -- NVRTC: /usr/local/cuda/lib64/libnvrtc.so
+      -- Default Install Location: install
+      -- Found Python3: /usr/bin/python3.10 (found suitable version "3.10.12", minimum required is "3.5") found components: Interpreter
+      -- CUDA Compilation Architectures: 70;72;75;80;86;87;89;90;90a
+      -- Enable caching of reference results in conv unit tests
+      -- Enable rigorous conv problem sizes in conv unit tests
+      -- Using NVCC flags: --expt-relaxed-constexpr;-DCUTLASS_TEST_LEVEL=0;-DCUTLASS_TEST_ENABLE_CACHED_RESULTS=1;-DCUTLASS_CONV_UNIT_TEST_RIGOROUS_SIZE_ENABLED=1;-DCUTLASS_DEBUG_TRACE_LEVEL=0;-Xcompiler=-Wconversion;-Xcompiler=-fno-strict-aliasing;-lineinfo
+      fatal: not a git repository (or any of the parent directories): .git
+      -- CUTLASS Revision: Unable to detect, Git returned code 128.
+      -- Configuring cublas ...
+      -- cuBLAS Disabled.
+      -- Configuring cuBLAS ... done.
+      -- Completed generation of library instances. See /tmp/tmpfi7xpkih.build-temp/_deps/cutlass-build/tools/library/library_instance_generation.log for more information.
+      -- Punica target arches: 80-real;86-real;89-real;90-real
+      -- Enabling C extension.
+      -- Enabling moe extension.
+      -- Configuring incomplete, errors occurred!
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 303, in build_editable
+          return hook(wheel_directory, config_settings, metadata_directory)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 474, in build_editable
+          return self._build_with_temp_dir(
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 410, in _build_with_temp_dir
+          self.run_setup()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 430, in <module>
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1000, in run_commands
+          self.run_command(cmd)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 300, in _run_build_subcommands
+          self.run_command(name)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 341, in run_command
+          self.distribution.run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/build_ext.py", line 97, in run
+          _build_ext.run(self)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/build_ext.py", line 367, in run
+          self.build_extensions()
+        File "<string>", line 193, in build_extensions
+        File "<string>", line 175, in configure
+        File "/usr/lib/python3.10/subprocess.py", line 369, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmpc6iogj3l.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmpfi7xpkih.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for vllm
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> vllm
+Disabling PyTorch because PyTorch >= 2.4 is required but found 2.3.0+cu121
+PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+ImportError while loading conftest '/workspace/tests/conftest.py'.
+tests/conftest.py:17: in <module>
+    from transformers import (AutoModelForCausalLM, AutoModelForVision2Seq,
+E   ImportError: cannot import name 'AutoModelForVision2Seq' from 'transformers' (/usr/local/lib/python3.10/dist-packages/transformers/__init__.py)
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

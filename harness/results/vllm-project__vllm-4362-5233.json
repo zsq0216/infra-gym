@@ -1,0 +1,39 @@
+{
+  "instance_id": "vllm-project__vllm-4362-5233",
+  "version": "0.4.3",
+  "base_commit": "f775a07e30fdeafc14f53fe502b262b00540dd71",
+  "phase1": {
+    "passed": [],
+    "failed": [
+      "tests/test_regression.py::test_model_from_modelscope",
+      "tests/test_regression.py::test_gc"
+    ],
+    "errors": [],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "TIMEOUT"
+    ],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772253340.1180298,
+    "phase1_start": 1772253342.7657824,
+    "phase1_end": 1772254010.8904212,
+    "phase2_start": 1772254010.8940783,
+    "phase2_end": 1772255030.945784,
+    "end": 1772255030.945905
+  },
+  "regressions": [],
+  "both_failed": [
+    "tests/test_regression.py::test_gc",
+    "tests/test_regression.py::test_model_from_modelscope"
+  ]
+}

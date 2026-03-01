@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="2" time="20.296" timestamp="2026-02-28T04:46:26.800168+00:00" hostname="97f667d64f27"><testcase classname="tests.test_regression" name="test_model_from_modelscope" time="13.189"><failure message="ModuleNotFoundError: No module named 'modelscope'">tests/test_regression.py:61: in test_model_from_modelscope
+    llm = LLM(model=MODELSCOPE_MODEL_NAME)
+vllm/entrypoints/llm.py:143: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:359: in from_engine_args
+    engine = cls(
+vllm/engine/llm_engine.py:222: in __init__
+    self.model_executor = executor_class(
+vllm/executor/executor_base.py:41: in __init__
+    self._init_executor()
+vllm/executor/gpu_executor.py:24: in _init_executor
+    self.driver_worker.load_model()
+vllm/worker/worker.py:121: in load_model
+    self.model_runner.load_model()
+vllm/worker/model_runner.py:145: in load_model
+    self.model = get_model(
+vllm/model_executor/model_loader/__init__.py:21: in get_model
+    return loader.load_model(model_config=model_config,
+vllm/model_executor/model_loader/loader.py:250: in load_model
+    self._get_weights_iterator(model_config.model,
+vllm/model_executor/model_loader/loader.py:225: in _get_weights_iterator
+    hf_folder, hf_weights_files, use_safetensors = self._prepare_weights(
+vllm/model_executor/model_loader/loader.py:161: in _prepare_weights
+    model_name_or_path = self._maybe_download_from_modelscope(
+vllm/model_executor/model_loader/loader.py:141: in _maybe_download_from_modelscope
+    from modelscope.hub.snapshot_download import snapshot_download
+E   ModuleNotFoundError: No module named 'modelscope'</failure></testcase><testcase classname="tests.test_regression" name="test_gc" time="6.937"><failure message="ModuleNotFoundError: No module named 'modelscope'">tests/test_regression.py:43: in test_gc
+    llm = LLM("facebook/opt-125m", enforce_eager=True)
+vllm/entrypoints/llm.py:143: in __init__
+    self.llm_engine = LLMEngine.from_engine_args(
+vllm/engine/llm_engine.py:359: in from_engine_args
+    engine = cls(
+vllm/engine/llm_engine.py:222: in __init__
+    self.model_executor = executor_class(
+vllm/executor/executor_base.py:41: in __init__
+    self._init_executor()
+vllm/executor/gpu_executor.py:24: in _init_executor
+    self.driver_worker.load_model()
+vllm/worker/worker.py:121: in load_model
+    self.model_runner.load_model()
+vllm/worker/model_runner.py:145: in load_model
+    self.model = get_model(
+vllm/model_executor/model_loader/__init__.py:21: in get_model
+    return loader.load_model(model_config=model_config,
+vllm/model_executor/model_loader/loader.py:250: in load_model
+    self._get_weights_iterator(model_config.model,
+vllm/model_executor/model_loader/loader.py:225: in _get_weights_iterator
+    hf_folder, hf_weights_files, use_safetensors = self._prepare_weights(
+vllm/model_executor/model_loader/loader.py:161: in _prepare_weights
+    model_name_or_path = self._maybe_download_from_modelscope(
+vllm/model_executor/model_loader/loader.py:141: in _maybe_download_from_modelscope
+    from modelscope.hub.snapshot_download import snapshot_download
+E   ModuleNotFoundError: No module named 'modelscope'</failure></testcase></testsuite></testsuites>

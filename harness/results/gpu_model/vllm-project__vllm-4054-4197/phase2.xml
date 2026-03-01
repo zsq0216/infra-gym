@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="6" failures="0" skipped="0" tests="8" time="5.242" timestamp="2026-02-27T17:37:18.303713+00:00" hostname="3c674f496acd"><testcase classname="tests.multimodal.test_processor" name="test_clip_image_processor[half]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">/usr/local/lib/python3.10/dist-packages/pytest_asyncio/plugin.py:728: in pytest_fixture_setup
+    return (yield)
+tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase><testcase classname="tests.multimodal.test_processor" name="test_clip_image_processor[bfloat16]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase><testcase classname="tests.multimodal.test_processor" name="test_clip_image_processor[float]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase><testcase classname="tests.multimodal.test_processor" name="test_image_pixel_types[float]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase><testcase classname="tests.tokenization.test_image_processor" name="test_image_processor_revision[llava-hf/llava-1.5-7b-hf]" time="3.192" /><testcase classname="tests.tokenization.test_image_processor" name="test_image_processor_revision[llava-hf/llava-v1.6-34b-hf]" time="1.376" /><testcase classname="tests.models.test_llava" name="test_models[128-half-model_and_config0-False]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase><testcase classname="tests.models.test_llava" name="test_models[128-half-model_and_config1-False]" time="0.001"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'&quot;">tests/conftest.py:91: in hf_images
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+tests/conftest.py:91: in &lt;listcomp&gt;
+    return [Image.open(filename) for filename in _IMAGE_FILES]
+/usr/local/lib/python3.10/dist-packages/PIL/Image.py:3512: in open
+    fp = builtins.open(filename, "rb")
+E   FileNotFoundError: [Errno 2] No such file or directory: '/workspace/tests/images/stop_sign.jpg'</error></testcase></testsuite></testsuites>

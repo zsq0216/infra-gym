@@ -1,0 +1,37 @@
+{
+  "instance_id": "vllm-project__vllm-5088-5122",
+  "version": "0.4.2",
+  "base_commit": "5bf185a1c48fdca524dd76aec4a1424b3a09c9a1",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "tests/models/test_gptq_marlin.py"
+    ],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "tests/models/test_gptq_marlin.py"
+    ],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772219080.357363,
+    "phase1_start": 1772219081.9953783,
+    "phase1_end": 1772219201.9123135,
+    "phase2_start": 1772219201.912906,
+    "phase2_end": 1772219312.3533852,
+    "end": 1772219312.3535547
+  },
+  "regressions": [],
+  "both_failed": [
+    "tests/models/test_gptq_marlin.py"
+  ]
+}

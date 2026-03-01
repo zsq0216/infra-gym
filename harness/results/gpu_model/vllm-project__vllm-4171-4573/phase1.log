@@ -1,0 +1,2075 @@
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.1.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+WARNING: The NVIDIA Driver was not detected.  GPU functionality will not be available.
+   Use the NVIDIA Container Toolkit to start this container with GPU support; see
+   https://docs.nvidia.com/datacenter/cloud-native/ .
+
+*************************
+** DEPRECATION NOTICE! **
+*************************
+THIS IMAGE IS DEPRECATED and is scheduled for DELETION.
+    https://gitlab.com/nvidia/container-images/cuda/blob/master/doc/support-policy.md
+
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting cmake>=3.21 (from -r requirements-common.txt (line 1))
+  Downloading https://mirrors.aliyun.com/pypi/packages/28/19/b54ff2e03946beeef785e6407d965a9493d26c50dd1aa09ffc7b53fbf9a5/cmake-4.2.1-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (28.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 28.9/28.9 MB 18.8 MB/s  0:00:01
+Collecting ninja (from -r requirements-common.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ed/de/0e6edf44d6a04dabd0318a519125ed0415ce437ad5a1ec9b9be03d9048cf/ninja-1.13.0-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (180 kB)
+Collecting psutil (from -r requirements-common.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 4)) (0.2.1)
+Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 5)) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 6)) (2.32.5)
+Collecting py-cpuinfo (from -r requirements-common.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e0/a9/023730ba63db1e494a271cb018dcd361bd2c917ba7004c3e49d5daf795a2/py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: transformers>=4.40.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 8)) (4.41.2)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 9)) (0.19.1)
+Collecting fastapi (from -r requirements-common.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d2/c9/a175a7779f3599dfa4adfc97a6ce0e157237b3d7941538604aadaf97bfb6/fastapi-0.133.1-py3-none-any.whl (109 kB)
+Collecting openai (from -r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c9/30/844dc675ee6902579b8eef01ed23917cc9319a1c9c0c14ec6e39340c96d0/openai-2.24.0-py3-none-any.whl (1.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 14.5 MB/s  0:00:00
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 13)) (2.12.5)
+Collecting prometheus_client>=0.18.0 (from -r requirements-common.txt (line 14))
+  Downloading https://mirrors.aliyun.com/pypi/packages/74/c3/24a2f845e3917201628ecaba4f18bab4d18a337834c1df2a159ee9d22a42/prometheus_client-0.24.1-py3-none-any.whl (64 kB)
+Collecting prometheus-fastapi-instrumentator>=7.0.0 (from -r requirements-common.txt (line 15))
+  Downloading https://mirrors.aliyun.com/pypi/packages/27/72/0824c18f3bc75810f55dacc2dd933f6ec829771180245ae3cc976195dec0/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (19 kB)
+Collecting tiktoken==0.6.0 (from -r requirements-common.txt (line 16))
+  Downloading https://mirrors.aliyun.com/pypi/packages/16/05/5efbd91252ffb1301ea393d88ef736b33d41e75d4bcf0bd31d660050e400/tiktoken-0.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 16.0 MB/s  0:00:00
+Collecting lm-format-enforcer==0.10.1 (from -r requirements-common.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2d/fd/e21d1f0608da7696746c5d4cdf2f944d714daf63a97def416e0f3c154f98/lm_format_enforcer-0.10.1-py3-none-any.whl (42 kB)
+Collecting outlines==0.0.34 (from -r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/58/fb/639f67a1a0288736dcdbc5a4fb1c822fcbc02c9fa79d1bca02056c653e76/outlines-0.0.34-py3-none-any.whl (76 kB)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 19)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from -r requirements-common.txt (line 20)) (3.24.3)
+Collecting uvicorn[standard] (from -r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/83/e4/d04a086285c20886c0daad0e026f250869201013d18f81d9ff5eada73a88/uvicorn-0.41.0-py3-none-any.whl (68 kB)
+Requirement already satisfied: regex>=2022.1.18 in /usr/local/lib/python3.10/dist-packages (from tiktoken==0.6.0->-r requirements-common.txt (line 16)) (2026.2.19)
+Collecting interegular>=0.3.2 (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c4/01/72d6472f80651673716d1deda2a5bbb633e563ecf94f4479da5519d69d25/interegular-0.3.3-py37-none-any.whl (23 kB)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 17)) (26.0)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->-r requirements-common.txt (line 17)) (6.0.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->-r requirements-common.txt (line 18)) (3.1.6)
+Collecting lark (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/82/3d/14ce75ef66813643812f3093ab17e46d3a206942ce7376d31ec2d36229e7/lark-1.3.1-py3-none-any.whl (113 kB)
+Collecting nest-asyncio (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl (5.2 kB)
+Collecting cloudpickle (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting diskcache (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3f/27/4570e78fc0bf5ea0ca45eb1de3818a23787af9b390c0b0a0033a1b8236f9/diskcache-5.6.3-py3-none-any.whl (45 kB)
+Collecting scipy (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/8e/6d/41991e503e51fc1134502694c5fa7a1671501a17ffa12716a4a9151af3df/scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 17.8 MB/s  0:00:02
+Requirement already satisfied: torch>=2.1.0 in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->-r requirements-common.txt (line 18)) (2.3.0+cu121)
+Collecting numba (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4f/9f/9275a723d050b5f1a9b1c7fb7dbfce324fef301a8e50c5f88338569db06c/numba-0.64.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 17.7 MB/s  0:00:00
+Collecting joblib (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl (309 kB)
+Collecting referencing (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting jsonschema (from outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-common.txt (line 6)) (2026.2.25)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r requirements-common.txt (line 8)) (0.36.2)
+Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r requirements-common.txt (line 8)) (0.7.0)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->-r requirements-common.txt (line 8)) (4.67.3)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.23.0->transformers>=4.40.0->-r requirements-common.txt (line 8)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.23.0->transformers>=4.40.0->-r requirements-common.txt (line 8)) (1.3.1)
+Collecting starlette>=0.40.0 (from fastapi->-r requirements-common.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/81/0d/13d1d239a25cbfb19e740db83143e95c772a1fe10202dda4b76792b114dd/starlette-0.52.1-py3-none-any.whl (74 kB)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.10/dist-packages (from fastapi->-r requirements-common.txt (line 10)) (0.4.2)
+Collecting annotated-doc>=0.0.2 (from fastapi->-r requirements-common.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Requirement already satisfied: anyio<5,>=3.5.0 in /usr/local/lib/python3.10/dist-packages (from openai->-r requirements-common.txt (line 11)) (4.12.1)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/lib/python3/dist-packages (from openai->-r requirements-common.txt (line 11)) (1.7.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from openai->-r requirements-common.txt (line 11)) (0.28.1)
+Collecting jiter<1,>=0.10.0 (from openai->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fe/c9/b0489a01329ab07a83812d9ebcffe7820a38163c6d9e7da644f926ff877c/jiter-0.13.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (362 kB)
+Collecting sniffio (from openai->-r requirements-common.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl (10 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->-r requirements-common.txt (line 13)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->-r requirements-common.txt (line 13)) (2.41.5)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.5.0->openai->-r requirements-common.txt (line 11)) (1.3.1)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx<1,>=0.23.0->openai->-r requirements-common.txt (line 11)) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai->-r requirements-common.txt (line 11)) (0.16.0)
+Collecting click>=7.0 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl (108 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/f5/71/b0a9193641d9e2471ac541d3b1b869538a5fb6419d52fd2669fa9c79e4b8/httptools-0.7.1-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (440 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/f6/21657bb3beb5f8c57ce8be3b83f653dd7933c2fd00545ed1b092d464799a/uvloop-0.22.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 16.9 MB/s  0:00:00
+Collecting watchfiles>=0.20 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d5/dc/1a680b7458ffa3b14bb64878112aefc8f2e4f73c5af763cbf0bd43100658/watchfiles-1.1.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (455 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]->-r requirements-common.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9d/2f/4b3ca7e106bc608744b1cdae041e005e446124bebb037b18799c2d356864/websockets-16.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (183 kB)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (3.4.2)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (12.9.86)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->outlines==0.0.34->-r requirements-common.txt (line 18)) (3.0.3)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines==0.0.34->-r requirements-common.txt (line 18)) (25.4.0)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema->outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema->outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/61/b5/707f6cf0066a6412aacc11d17920ea2e19e5b2f04081c64526eb35b5c6e7/rpds_py-0.30.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+Collecting llvmlite<0.47,>=0.46.0dev0 (from numba->outlines==0.0.34->-r requirements-common.txt (line 18))
+  Downloading https://mirrors.aliyun.com/pypi/packages/c2/a5/a4d916f1015106e1da876028606a8e87fd5d5c840f98c87bc2d5153b6a2f/llvmlite-0.46.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 18.6 MB/s  0:00:03
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=2.1.0->outlines==0.0.34->-r requirements-common.txt (line 18)) (1.3.0)
+Installing collected packages: py-cpuinfo, websockets, uvloop, sniffio, scipy, rpds-py, python-dotenv, psutil, prometheus_client, ninja, nest-asyncio, llvmlite, lark, joblib, jiter, interegular, httptools, diskcache, cmake, cloudpickle, click, annotated-doc, uvicorn, tiktoken, referencing, numba, watchfiles, starlette, lm-format-enforcer, jsonschema-specifications, prometheus-fastapi-instrumentator, openai, jsonschema, fastapi, outlines
+
+Successfully installed annotated-doc-0.0.4 click-8.3.1 cloudpickle-3.1.2 cmake-4.2.1 diskcache-5.6.3 fastapi-0.133.1 httptools-0.7.1 interegular-0.3.3 jiter-0.13.0 joblib-1.5.3 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 lark-1.3.1 llvmlite-0.46.0 lm-format-enforcer-0.10.1 nest-asyncio-1.6.0 ninja-1.13.0 numba-0.64.0 openai-2.24.0 outlines-0.0.34 prometheus-fastapi-instrumentator-7.1.0 prometheus_client-0.24.1 psutil-7.2.2 py-cpuinfo-9.0.0 python-dotenv-1.2.1 referencing-0.37.0 rpds-py-0.30.0 scipy-1.15.3 sniffio-1.3.1 starlette-0.52.1 tiktoken-0.6.0 uvicorn-0.41.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Requirement already satisfied: cmake>=3.21 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 1)) (4.2.1)
+Requirement already satisfied: ninja in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 2)) (1.13.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 3)) (7.2.2)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 4)) (0.2.1)
+Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 5)) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 6)) (2.32.5)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 7)) (9.0.0)
+Requirement already satisfied: transformers>=4.40.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 8)) (4.41.2)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 9)) (0.19.1)
+Requirement already satisfied: fastapi in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 10)) (0.133.1)
+Requirement already satisfied: openai in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 11)) (2.24.0)
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 13)) (2.12.5)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 14)) (0.24.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 15)) (7.1.0)
+Requirement already satisfied: tiktoken==0.6.0 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 16)) (0.6.0)
+Requirement already satisfied: lm-format-enforcer==0.10.1 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 17)) (0.10.1)
+Requirement already satisfied: outlines==0.0.34 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 18)) (0.0.34)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 19)) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from -r /workspace/requirements-common.txt (line 20)) (3.24.3)
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting yapf==0.32.0 (from -r requirements-dev.txt (line 2))
+  Downloading https://mirrors.aliyun.com/pypi/packages/47/88/843c2e68f18a5879b4fbf37cb99fbabe1ffc4343b2e63191c8462235c008/yapf-0.32.0-py2.py3-none-any.whl (190 kB)
+Collecting toml==0.10.2 (from -r requirements-dev.txt (line 3))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl (16 kB)
+Collecting tomli==2.0.1 (from -r requirements-dev.txt (line 4))
+  Downloading https://mirrors.aliyun.com/pypi/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
+Collecting ruff==0.1.5 (from -r requirements-dev.txt (line 5))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ae/cf/95e9a2930c1a220fb2c5769d746901eea4576cc46f1200f0178a42a863ba/ruff-0.1.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (6.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 18.1 MB/s  0:00:00
+Collecting codespell==2.2.6 (from -r requirements-dev.txt (line 6))
+  Downloading https://mirrors.aliyun.com/pypi/packages/46/e0/5437cc96b74467c4df6e13b7128cc482c48bb43146fb4c11cf2bcd604e1f/codespell-2.2.6-py3-none-any.whl (301 kB)
+Collecting isort==5.13.2 (from -r requirements-dev.txt (line 7))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl (92 kB)
+Collecting mypy==1.9.0 (from -r requirements-dev.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e1/87/b508b34309359daa00e0e76d9a0dbe43031866af49b279861f69c76e5d70/mypy-1.9.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 16.5 MB/s  0:00:00
+Collecting types-PyYAML (from -r requirements-dev.txt (line 11))
+  Downloading https://mirrors.aliyun.com/pypi/packages/bd/e0/1eed384f02555dde685fff1a1ac805c1c7dcb6dd019c916fe659b1c1f9ec/types_pyyaml-6.0.12.20250915-py3-none-any.whl (20 kB)
+Collecting types-requests (from -r requirements-dev.txt (line 12))
+  Downloading https://mirrors.aliyun.com/pypi/packages/1c/12/709ea261f2bf91ef0a26a9eed20f2623227a8ed85610c1e54c5805692ecb/types_requests-2.32.4.20260107-py3-none-any.whl (20 kB)
+Collecting types-setuptools (from -r requirements-dev.txt (line 13))
+  Downloading https://mirrors.aliyun.com/pypi/packages/3e/54/3489432b1d9bc713c9d8aa810296b8f5b0088403662959fb63a8acdbd4fc/types_setuptools-82.0.0.20260210-py3-none-any.whl (68 kB)
+Requirement already satisfied: pytest in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 16)) (9.0.2)
+Collecting tensorizer==2.9.0 (from -r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/88/2b/9debdecbf8c248f15c7c2ca17090b2d5a4bffbdd3eea4cd3eb7823feadea/tensorizer-2.9.0-py3-none-any.whl (95 kB)
+Requirement already satisfied: pytest-forked in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 18)) (1.6.0)
+Requirement already satisfied: pytest-asyncio in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 19)) (1.3.0)
+Requirement already satisfied: pytest-rerunfailures in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 20)) (16.1)
+Collecting pytest-shard (from -r requirements-dev.txt (line 21))
+  Downloading https://mirrors.aliyun.com/pypi/packages/65/7a/dbeb4c54e9fc3b59622f410091365f354a69cda1af10c3b83ac0ca6e6f4f/pytest_shard-0.1.2-py3-none-any.whl (4.6 kB)
+Requirement already satisfied: httpx in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 22)) (0.28.1)
+Collecting einops (from -r requirements-dev.txt (line 23))
+  Downloading https://mirrors.aliyun.com/pypi/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl (65 kB)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 24)) (2.32.5)
+Collecting ray (from -r requirements-dev.txt (line 25))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b0/b1/8cc4e45a3ce87aabcb70696b448b20840bcbaa5c98bdb4807a2749541fda/ray-2.54.0-cp310-cp310-manylinux2014_x86_64.whl (72.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.8/72.8 MB 19.2 MB/s  0:00:03
+Collecting peft (from -r requirements-dev.txt (line 26))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b3/14/b4e3f574acf349ae6f61f9c000a77f97a3b315b4bb6ad03791e79ae4a568/peft-0.18.1-py3-none-any.whl (556 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 557.0/557.0 kB 9.7 MB/s  0:00:00
+Collecting awscli (from -r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/52/4e/70b59ed8ad38a81561fb1fe64ae0be0dc16b11e81ffea81b469a5f082766/awscli-1.44.48-py3-none-any.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 15.8 MB/s  0:00:00
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 30)) (3.13.3)
+Requirement already satisfied: pillow in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 33)) (12.1.1)
+Requirement already satisfied: typing-extensions>=4.1.0 in /usr/local/lib/python3.10/dist-packages (from mypy==1.9.0->-r requirements-dev.txt (line 10)) (4.15.0)
+Collecting mypy-extensions>=1.0.0 (from mypy==1.9.0->-r requirements-dev.txt (line 10))
+  Downloading https://mirrors.aliyun.com/pypi/packages/79/7b/2c79738432f5c924bef5071f933bcc9efd0473bac3b4aa584a6f7c1c8df8/mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
+Requirement already satisfied: torch>=1.9.0 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (2.3.0+cu121)
+Requirement already satisfied: numpy>=1.19.5 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (1.26.4)
+Collecting protobuf>=3.19.5 (from tensorizer==2.9.0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b5/57/89727baef7578897af5ed166735ceb315819f1c184da8c3441271dbcfde7/protobuf-7.34.0-cp310-abi3-manylinux2014_x86_64.whl (324 kB)
+Requirement already satisfied: psutil>=5.9.4 in /usr/local/lib/python3.10/dist-packages (from tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (7.2.2)
+Collecting boto3>=1.26.0 (from tensorizer==2.9.0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/13/47/3a5b53628311fef4a2cec5c04ff750376ecaac0e9eb7fbea1fa8a88ec198/boto3-1.42.58-py3-none-any.whl (140 kB)
+Collecting redis>=4.5.5 (from tensorizer==2.9.0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ca/98/1dd1a5c060916cf21d15e67b7d6a7078e26e2605d5c37cbc9f4f5454c478/redis-7.2.1-py3-none-any.whl (396 kB)
+Collecting hiredis>=2.2.0 (from tensorizer==2.9.0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4f/03/772b7b0f2464fb16fecb849127f34bace2983bb490eb59e89468b245033b/hiredis-3.3.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (168 kB)
+Collecting libnacl>=2.1.0 (from tensorizer==2.9.0->-r requirements-dev.txt (line 17))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ad/ce/85fa0276de7303b44fef63e07c14d618b8630bbe41c7dd7e34db246eab8d/libnacl-2.1.0-py3-none-any.whl (21 kB)
+Requirement already satisfied: urllib3>=2 in /usr/local/lib/python3.10/dist-packages (from types-requests->-r requirements-dev.txt (line 12)) (2.6.3)
+Requirement already satisfied: exceptiongroup>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-dev.txt (line 16)) (1.3.1)
+Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-dev.txt (line 16)) (2.3.0)
+Requirement already satisfied: packaging>=22 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-dev.txt (line 16)) (26.0)
+Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-dev.txt (line 16)) (1.6.0)
+Requirement already satisfied: pygments>=2.7.2 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements-dev.txt (line 16)) (2.19.2)
+Requirement already satisfied: py in /usr/local/lib/python3.10/dist-packages (from pytest-forked->-r requirements-dev.txt (line 18)) (1.11.0)
+Requirement already satisfied: backports-asyncio-runner<2,>=1.1 in /usr/local/lib/python3.10/dist-packages (from pytest-asyncio->-r requirements-dev.txt (line 19)) (1.2.0)
+Requirement already satisfied: anyio in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-dev.txt (line 22)) (4.12.1)
+Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-dev.txt (line 22)) (2026.2.25)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-dev.txt (line 22)) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.10/dist-packages (from httpx->-r requirements-dev.txt (line 22)) (3.11)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx->-r requirements-dev.txt (line 22)) (0.16.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->-r requirements-dev.txt (line 24)) (3.4.4)
+Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-dev.txt (line 25)) (8.3.1)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-dev.txt (line 25)) (3.24.3)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-dev.txt (line 25)) (4.26.0)
+Collecting msgpack<2.0.0,>=1.0.0 (from ray->-r requirements-dev.txt (line 25))
+  Downloading https://mirrors.aliyun.com/pypi/packages/b7/09/2a06956383c0fdebaef5aa9246e2356776f12ea6f2a44bd1368abf0e46c4/msgpack-1.1.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (406 kB)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from ray->-r requirements-dev.txt (line 25)) (6.0.3)
+Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 26)) (4.41.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 26)) (4.67.3)
+Collecting accelerate>=0.21.0 (from peft->-r requirements-dev.txt (line 26))
+  Downloading https://mirrors.aliyun.com/pypi/packages/9f/d2/c581486aa6c4fbd7394c23c47b83fa1a919d34194e16944241daf9e762dd/accelerate-1.12.0-py3-none-any.whl (380 kB)
+Requirement already satisfied: safetensors in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 26)) (0.7.0)
+Requirement already satisfied: huggingface_hub>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from peft->-r requirements-dev.txt (line 26)) (0.36.2)
+Collecting botocore==1.42.58 (from awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/4e/e0/f957ed6434f922ceffddba6db308b23d1ec2206beacb166cb83a75c5af61/botocore-1.42.58-py3-none-any.whl (14.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.6/14.6 MB 17.4 MB/s  0:00:00
+Collecting docutils<=0.19,>=0.18.1 (from awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl (570 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 570.5/570.5 kB 9.6 MB/s  0:00:00
+Collecting s3transfer<0.17.0,>=0.16.0 (from awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/fc/51/727abb13f44c1fcf6d145979e1535a35794db0f6e450a0cb46aa24732fe2/s3transfer-0.16.0-py3-none-any.whl (86 kB)
+Collecting colorama<0.4.7,>=0.2.5 (from awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting rsa<4.8,>=3.1.2 (from awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/e9/93/0c0f002031f18b53af7a6166103c02b9c0667be528944137cc954ec921b3/rsa-4.7.2-py3-none-any.whl (34 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from botocore==1.42.58->awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore==1.42.58->awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Requirement already satisfied: six>=1.5 in /usr/lib/python3/dist-packages (from python-dateutil<3.0.0,>=2.1->botocore==1.42.58->awscli->-r requirements-dev.txt (line 27)) (1.16.0)
+Collecting pyasn1>=0.1.3 (from rsa<4.8,>=3.1.2->awscli->-r requirements-dev.txt (line 27))
+  Downloading https://mirrors.aliyun.com/pypi/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl (83 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (1.4.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (5.0.1)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (6.7.1)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->-r requirements-dev.txt (line 30)) (1.22.0)
+Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-dev.txt (line 26)) (2026.2.0)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface_hub>=0.25.0->peft->-r requirements-dev.txt (line 26)) (1.3.1)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (12.9.86)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (3.0.3)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-dev.txt (line 25)) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-dev.txt (line 25)) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->ray->-r requirements-dev.txt (line 25)) (0.30.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch>=1.9.0->tensorizer==2.9.0->-r requirements-dev.txt (line 17)) (1.3.0)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers->peft->-r requirements-dev.txt (line 26)) (2026.2.19)
+Requirement already satisfied: tokenizers<0.20,>=0.19 in /usr/local/lib/python3.10/dist-packages (from transformers->peft->-r requirements-dev.txt (line 26)) (0.19.1)
+Installing collected packages: yapf, types-setuptools, types-requests, types-PyYAML, tomli, toml, ruff, redis, python-dateutil, pyasn1, protobuf, mypy-extensions, msgpack, libnacl, jmespath, isort, hiredis, einops, docutils, colorama, codespell, rsa, mypy, botocore, s3transfer, pytest-shard, ray, boto3, awscli, accelerate, tensorizer, peft
+  Attempting uninstall: tomli
+    Found existing installation: tomli 2.4.0
+    Uninstalling tomli-2.4.0:
+      Successfully uninstalled tomli-2.4.0
+
+Successfully installed accelerate-1.12.0 awscli-1.44.48 boto3-1.42.58 botocore-1.42.58 codespell-2.2.6 colorama-0.4.6 docutils-0.19 einops-0.8.2 hiredis-3.3.0 isort-5.13.2 jmespath-1.1.0 libnacl-2.1.0 msgpack-1.1.2 mypy-1.9.0 mypy-extensions-1.1.0 peft-0.18.1 protobuf-7.34.0 pyasn1-0.6.2 pytest-shard-0.1.2 python-dateutil-2.9.0.post0 ray-2.54.0 redis-7.2.1 rsa-4.7.2 ruff-0.1.5 s3transfer-0.16.0 tensorizer-2.9.0 toml-0.10.2 tomli-2.0.1 types-PyYAML-6.0.12.20250915 types-requests-2.32.4.20260107 types-setuptools-82.0.0.20260210 yapf-0.32.0
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: cmake>=3.21 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (4.2.1)
+Requirement already satisfied: ninja in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (1.13.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (7.2.2)
+Requirement already satisfied: sentencepiece in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.2.1)
+Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (1.26.4)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (2.32.5)
+Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (9.0.0)
+Requirement already satisfied: transformers>=4.40.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (4.41.2)
+Requirement already satisfied: tokenizers>=0.19.1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.19.1)
+Requirement already satisfied: fastapi in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.133.1)
+Requirement already satisfied: openai in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (2.24.0)
+Requirement already satisfied: uvicorn[standard] in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.41.0)
+Requirement already satisfied: pydantic>=2.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (2.12.5)
+Requirement already satisfied: prometheus_client>=0.18.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.24.1)
+Requirement already satisfied: prometheus-fastapi-instrumentator>=7.0.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (7.1.0)
+Requirement already satisfied: tiktoken==0.6.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.6.0)
+Requirement already satisfied: lm-format-enforcer==0.10.1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.10.1)
+Requirement already satisfied: outlines==0.0.34 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.0.34)
+Requirement already satisfied: typing_extensions in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (4.15.0)
+Requirement already satisfied: filelock>=3.10.4 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (3.24.3)
+Requirement already satisfied: ray>=2.9 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (2.54.0)
+Collecting nvidia-ml-py (from vllm==0.4.2)
+  Downloading https://mirrors.aliyun.com/pypi/packages/fd/72/fb2af0d259a651affdce65fd6a495f0e07a685a0136baf585c5065204ee7/nvidia_ml_py-13.590.48-py3-none-any.whl (50 kB)
+Collecting vllm-nccl-cu12<2.19,>=2.18 (from vllm==0.4.2)
+  Downloading https://mirrors.aliyun.com/pypi/packages/41/07/c1be8f4ffdc257646dda26470b803487150c732aa5c9f532dd789f186a54/vllm_nccl_cu12-2.18.1.0.4.0.tar.gz (6.2 kB)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch==2.3.0 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (2.3.0+cu121)
+Requirement already satisfied: xformers==0.0.26.post1 in /usr/local/lib/python3.10/dist-packages (from vllm==0.4.2) (0.0.26.post1)
+Requirement already satisfied: interegular>=0.3.2 in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.4.2) (0.3.3)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.4.2) (26.0)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from lm-format-enforcer==0.10.1->vllm==0.4.2) (6.0.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (3.1.6)
+Requirement already satisfied: lark in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (1.3.1)
+Requirement already satisfied: nest-asyncio in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (1.6.0)
+Requirement already satisfied: cloudpickle in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (3.1.2)
+Requirement already satisfied: diskcache in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (5.6.3)
+Requirement already satisfied: scipy in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (1.15.3)
+Requirement already satisfied: numba in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (0.64.0)
+Requirement already satisfied: joblib in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (1.5.3)
+Requirement already satisfied: referencing in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (0.37.0)
+Requirement already satisfied: jsonschema in /usr/local/lib/python3.10/dist-packages (from outlines==0.0.34->vllm==0.4.2) (4.26.0)
+Requirement already satisfied: regex>=2022.1.18 in /usr/local/lib/python3.10/dist-packages (from tiktoken==0.6.0->vllm==0.4.2) (2026.2.19)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (3.4.2)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (2026.2.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.105)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.105)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.105)
+Requirement already satisfied: nvidia-cudnn-cu12==8.9.2.26 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (8.9.2.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.1.3.1 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.3.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.0.2.54 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (11.0.2.54)
+Requirement already satisfied: nvidia-curand-cu12==10.3.2.106 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (10.3.2.106)
+Requirement already satisfied: nvidia-cusolver-cu12==11.4.5.107 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (11.4.5.107)
+Requirement already satisfied: nvidia-cusparse-cu12==12.1.0.106 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.0.106)
+Requirement already satisfied: nvidia-nccl-cu12==2.20.5 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (2.20.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.1.105 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (12.1.105)
+Requirement already satisfied: triton==2.3.0 in /usr/local/lib/python3.10/dist-packages (from torch==2.3.0->vllm==0.4.2) (2.3.0)
+Requirement already satisfied: nvidia-nvjitlink-cu12 in /usr/local/lib/python3.10/dist-packages (from nvidia-cusolver-cu12==11.4.5.107->torch==2.3.0->vllm==0.4.2) (12.9.86)
+Requirement already satisfied: starlette<1.0.0,>=0.30.0 in /usr/local/lib/python3.10/dist-packages (from prometheus-fastapi-instrumentator>=7.0.0->vllm==0.4.2) (0.52.1)
+Requirement already satisfied: anyio<5,>=3.6.2 in /usr/local/lib/python3.10/dist-packages (from starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.4.2) (4.12.1)
+Requirement already satisfied: exceptiongroup>=1.0.2 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.4.2) (1.3.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.10/dist-packages (from anyio<5,>=3.6.2->starlette<1.0.0,>=0.30.0->prometheus-fastapi-instrumentator>=7.0.0->vllm==0.4.2) (3.11)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.4.2) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.4.2) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0->vllm==0.4.2) (0.4.2)
+Requirement already satisfied: click>=7.0 in /usr/local/lib/python3.10/dist-packages (from ray>=2.9->vllm==0.4.2) (8.3.1)
+Requirement already satisfied: msgpack<2.0.0,>=1.0.0 in /usr/local/lib/python3.10/dist-packages (from ray>=2.9->vllm==0.4.2) (1.1.2)
+Requirement already satisfied: protobuf>=3.20.3 in /usr/local/lib/python3.10/dist-packages (from ray>=2.9->vllm==0.4.2) (7.34.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.4.2) (3.4.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.4.2) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->vllm==0.4.2) (2026.2.25)
+Requirement already satisfied: huggingface-hub<1.0,>=0.16.4 in /usr/local/lib/python3.10/dist-packages (from tokenizers>=0.19.1->vllm==0.4.2) (0.36.2)
+Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.4.2) (1.3.1)
+Requirement already satisfied: tqdm>=4.42.1 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.16.4->tokenizers>=0.19.1->vllm==0.4.2) (4.67.3)
+Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.10/dist-packages (from transformers>=4.40.0->vllm==0.4.2) (0.7.0)
+Requirement already satisfied: annotated-doc>=0.0.2 in /usr/local/lib/python3.10/dist-packages (from fastapi->vllm==0.4.2) (0.0.4)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->outlines==0.0.34->vllm==0.4.2) (3.0.3)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines==0.0.34->vllm==0.4.2) (25.4.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines==0.0.34->vllm==0.4.2) (2025.9.1)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema->outlines==0.0.34->vllm==0.4.2) (0.30.0)
+Requirement already satisfied: llvmlite<0.47,>=0.46.0dev0 in /usr/local/lib/python3.10/dist-packages (from numba->outlines==0.0.34->vllm==0.4.2) (0.46.0)
+Requirement already satisfied: distro<2,>=1.7.0 in /usr/lib/python3/dist-packages (from openai->vllm==0.4.2) (1.7.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in /usr/local/lib/python3.10/dist-packages (from openai->vllm==0.4.2) (0.28.1)
+Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.10/dist-packages (from openai->vllm==0.4.2) (0.13.0)
+Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from openai->vllm==0.4.2) (1.3.1)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx<1,>=0.23.0->openai->vllm==0.4.2) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai->vllm==0.4.2) (0.16.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from sympy->torch==2.3.0->vllm==0.4.2) (1.3.0)
+Requirement already satisfied: httptools>=0.6.3 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.4.2) (0.7.1)
+Requirement already satisfied: python-dotenv>=0.13 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.4.2) (1.2.1)
+Requirement already satisfied: uvloop>=0.15.1 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.4.2) (0.22.1)
+Requirement already satisfied: watchfiles>=0.20 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.4.2) (1.1.1)
+Requirement already satisfied: websockets>=10.4 in /usr/local/lib/python3.10/dist-packages (from uvicorn[standard]->vllm==0.4.2) (16.0)
+Building wheels for collected packages: vllm, vllm-nccl-cu12
+  Building editable for vllm (pyproject.toml): started
+  Building editable for vllm (pyproject.toml): finished with status 'error'
+  Building wheel for vllm-nccl-cu12 (pyproject.toml): started
+  Building wheel for vllm-nccl-cu12 (pyproject.toml): finished with status 'done'
+  Created wheel for vllm-nccl-cu12: filename=vllm_nccl_cu12-2.18.1.0.4.0-py3-none-any.whl size=5462 sha256=733ebb941ec79df017b41620e06c9a0798cbd41cb2fe93154846c54eced5c987
+  Stored in directory: /root/.cache/pip/wheels/e2/c6/70/5ae095c24300b1a598fa006b34305f820dd0c6268bde32c234
+Successfully built vllm-nccl-cu12
+Failed to build vllm
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Obtaining file:///workspace
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: vllm
+  Building editable for vllm (pyproject.toml): started
+  Building editable for vllm (pyproject.toml): finished with status 'error'
+Failed to build vllm
+============================= test session starts ==============================
+collecting ... collected 144 items
+Running 144 items in this shard: tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-64-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-1-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-8-64], tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-64-64]
+
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-1-64] FAILED [  0%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-8-64] FAILED [  1%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-128-64-64] FAILED [  2%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-1-64] FAILED [  2%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-8-64] FAILED [  3%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-96-64-64] FAILED [  4%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-1-64] FAILED [  4%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-8-64] FAILED [  5%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:0-dtype0-24-64-64] FAILED [  6%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-1-64] FAILED [  6%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-8-64] FAILED [  7%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-128-64-64] FAILED [  8%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-1-64] FAILED [  9%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-8-64] FAILED [  9%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-96-64-64] FAILED [ 10%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-1-64] FAILED [ 11%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-8-64] FAILED [ 11%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention_alibi[cuda:1-dtype0-24-64-64] FAILED [ 12%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-1-64] FAILED [ 13%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-8-64] FAILED [ 13%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-128-64-64] FAILED [ 14%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-1-64] FAILED [ 15%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-8-64] FAILED [ 15%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-96-64-64] FAILED [ 16%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-1-64] FAILED [ 17%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-8-64] FAILED [ 18%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:0-dtype0-24-64-64] FAILED [ 18%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-1-64] FAILED [ 19%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-8-64] FAILED [ 20%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-128-64-64] FAILED [ 20%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-1-64] FAILED [ 21%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-8-64] FAILED [ 22%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-96-64-64] FAILED [ 22%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-1-64] FAILED [ 23%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-8-64] FAILED [ 24%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[0-cuda:1-dtype0-24-64-64] FAILED [ 25%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-1-64] FAILED [ 25%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-8-64] FAILED [ 26%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-128-64-64] FAILED [ 27%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-1-64] FAILED [ 27%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-8-64] FAILED [ 28%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-96-64-64] FAILED [ 29%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-1-64] FAILED [ 29%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-8-64] FAILED [ 30%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:0-dtype0-24-64-64] FAILED [ 31%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-1-64] FAILED [ 31%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-8-64] FAILED [ 32%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-128-64-64] FAILED [ 33%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-1-64] FAILED [ 34%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-8-64] FAILED [ 34%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-96-64-64] FAILED [ 35%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-1-64] FAILED [ 36%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-8-64] FAILED [ 36%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[16-cuda:1-dtype0-24-64-64] FAILED [ 37%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-1-64] FAILED [ 38%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-8-64] FAILED [ 38%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-128-64-64] FAILED [ 39%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-1-64] FAILED [ 40%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-8-64] FAILED [ 40%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-96-64-64] FAILED [ 41%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-1-64] FAILED [ 42%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-8-64] FAILED [ 43%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:0-dtype0-24-64-64] FAILED [ 43%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-1-64] FAILED [ 44%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-8-64] FAILED [ 45%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-128-64-64] FAILED [ 45%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-1-64] FAILED [ 46%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-8-64] FAILED [ 47%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-96-64-64] FAILED [ 47%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-1-64] FAILED [ 48%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-8-64] FAILED [ 49%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[64-cuda:1-dtype0-24-64-64] FAILED [ 50%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-1-64] FAILED [ 50%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-8-64] FAILED [ 51%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-128-64-64] FAILED [ 52%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-1-64] FAILED [ 52%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-8-64] FAILED [ 53%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-96-64-64] FAILED [ 54%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-1-64] FAILED [ 54%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-8-64] FAILED [ 55%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:0-dtype0-24-64-64] FAILED [ 56%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-1-64] FAILED [ 56%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-8-64] FAILED [ 57%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-128-64-64] FAILED [ 58%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-1-64] FAILED [ 59%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-8-64] FAILED [ 59%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-96-64-64] FAILED [ 60%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-1-64] FAILED [ 61%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-8-64] FAILED [ 61%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[128-cuda:1-dtype0-24-64-64] FAILED [ 62%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-1-64] FAILED [ 63%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-8-64] FAILED [ 63%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-128-64-64] FAILED [ 64%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-1-64] FAILED [ 65%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-8-64] FAILED [ 65%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-96-64-64] FAILED [ 66%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-1-64] FAILED [ 67%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-8-64] FAILED [ 68%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:0-dtype0-24-64-64] FAILED [ 68%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-1-64] FAILED [ 69%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-8-64] FAILED [ 70%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-128-64-64] FAILED [ 70%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-1-64] FAILED [ 71%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-8-64] FAILED [ 72%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-96-64-64] FAILED [ 72%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-1-64] FAILED [ 73%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-8-64] FAILED [ 74%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[256-cuda:1-dtype0-24-64-64] FAILED [ 75%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-1-64] FAILED [ 75%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-8-64] FAILED [ 76%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-128-64-64] FAILED [ 77%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-1-64] FAILED [ 77%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-8-64] FAILED [ 78%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-96-64-64] FAILED [ 79%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-1-64] FAILED [ 79%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-8-64] FAILED [ 80%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:0-dtype0-24-64-64] FAILED [ 81%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-1-64] FAILED [ 81%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-8-64] FAILED [ 82%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-128-64-64] FAILED [ 83%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-1-64] FAILED [ 84%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-8-64] FAILED [ 84%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-96-64-64] FAILED [ 85%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-1-64] FAILED [ 86%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-8-64] FAILED [ 86%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[512-cuda:1-dtype0-24-64-64] FAILED [ 87%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-1-64] FAILED [ 88%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-8-64] FAILED [ 88%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-128-64-64] FAILED [ 89%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-1-64] FAILED [ 90%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-8-64] FAILED [ 90%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-96-64-64] FAILED [ 91%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-1-64] FAILED [ 92%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-8-64] FAILED [ 93%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:0-dtype0-24-64-64] FAILED [ 93%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-1-64] FAILED [ 94%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-8-64] FAILED [ 95%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-128-64-64] FAILED [ 95%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-1-64] FAILED [ 96%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-8-64] FAILED [ 97%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-96-64-64] FAILED [ 97%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-1-64] FAILED [ 98%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-8-64] FAILED [ 99%]
+tests/kernels/test_prefix_prefill.py::test_contexted_kv_attention[2048-cuda:1-dtype0-24-64-64] FAILED [100%]
+
+=================================== FAILURES ===================================
+__________ test_contexted_kv_attention_alibi[cuda:0-dtype0-128-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+--------------------------- Captured stdout teardown ---------------------------
+INFO 02-27 18:02:11 utils.py:638] Found nccl from library /root/.config/vllm/nccl/cu12/libnccl.so.2.18.1
+__________ test_contexted_kv_attention_alibi[cuda:0-dtype0-128-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:0-dtype0-128-64-64] __________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:0-dtype0-96-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:0-dtype0-96-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:0-dtype0-96-64-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:0-dtype0-24-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:0-dtype0-24-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:0-dtype0-24-64-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:1-dtype0-128-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:1-dtype0-128-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:1-dtype0-128-64-64] __________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:1-dtype0-96-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:1-dtype0-96-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:1-dtype0-96-64-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:1-dtype0-24-1-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention_alibi[cuda:1-dtype0-24-8-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention_alibi[cuda:1-dtype0-24-64-64] ___________
+tests/kernels/test_prefix_prefill.py:237: in test_contexted_kv_attention_alibi
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:0-dtype0-128-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:0-dtype0-128-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:0-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:0-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:0-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:0-dtype0-96-64-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:0-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:0-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:0-dtype0-24-64-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:1-dtype0-128-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:1-dtype0-128-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:1-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:1-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:1-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:1-dtype0-96-64-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:1-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+_____________ test_contexted_kv_attention[0-cuda:1-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[0-cuda:1-dtype0-24-64-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[16-cuda:0-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:0-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[16-cuda:1-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[16-cuda:1-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[64-cuda:0-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:0-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[64-cuda:1-dtype0-128-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-96-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-96-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-24-1-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-24-8-64] _____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[64-cuda:1-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:0-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:0-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:0-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:0-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:0-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:0-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:0-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:0-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:0-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:1-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:1-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:1-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:1-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:1-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:1-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:1-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[128-cuda:1-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[128-cuda:1-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:0-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:0-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:0-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:0-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:0-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:0-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:0-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:0-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:0-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:1-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:1-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:1-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:1-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:1-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:1-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:1-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[256-cuda:1-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[256-cuda:1-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:0-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:0-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:0-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:0-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:0-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:0-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:0-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:0-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:0-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:1-dtype0-128-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:1-dtype0-128-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:1-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:1-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:1-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:1-dtype0-96-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:1-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+____________ test_contexted_kv_attention[512-cuda:1-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[512-cuda:1-dtype0-24-64-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-128-1-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-128-8-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention[2048-cuda:0-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-96-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:0-dtype0-24-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-128-1-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-128-8-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+__________ test_contexted_kv_attention[2048-cuda:1-dtype0-128-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-96-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-96-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-96-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-24-1-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-24-8-64] ____________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+___________ test_contexted_kv_attention[2048-cuda:1-dtype0-24-64-64] ___________
+tests/kernels/test_prefix_prefill.py:48: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------------ generated xml file: /workspace/phase1.xml -------------------
+======================= 144 failed, 2 warnings in 31.10s =======================
+
+--- STDERR ---
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+ERROR: Could not find a version that satisfies the requirement torch==2.3.0+cpu (from versions: 1.11.0, 1.12.0, 1.12.1, 1.13.0, 1.13.1, 2.0.0, 2.0.1, 2.1.0, 2.1.1, 2.1.2, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.3.1, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.7.0, 2.7.1, 2.8.0, 2.9.0, 2.9.1, 2.10.0)
+ERROR: No matching distribution found for torch==2.3.0+cpu
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+  error: subprocess-exited-with-error
+  
+  × Building editable for vllm (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [144 lines of output]
+      No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+      /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: Apache Software License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running editable_wheel
+      creating /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info
+      writing /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/SOURCES.txt'
+      reading manifest file '/tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      adding license file 'LICENSE'
+      writing manifest file '/tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm-0.4.2.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-g_t6pawp/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp9f0gpgzl/.tmp-9hmb5hmw/vllm-0.4.2.dist-info/WHEEL
+      running build_py
+      running build_ext
+      -- The CXX compiler identification is GNU 11.4.0
+      -- Detecting CXX compiler ABI info
+      -- Detecting CXX compiler ABI info - done
+      -- Check for working CXX compiler: /usr/bin/c++ - skipped
+      -- Detecting CXX compile features
+      -- Detecting CXX compile features - done
+      -- Build type: RelWithDebInfo
+      -- Target device: cuda
+      -- Found Python: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development.Module
+      -- Found python matching: /usr/bin/python3.10.
+      -- Found CUDA: /usr/local/cuda (found version "12.1")
+      -- The CUDA compiler identification is NVIDIA 12.1.105 with host compiler GNU 11.4.0
+      -- Detecting CUDA compiler ABI info
+      -- Detecting CUDA compiler ABI info - done
+      -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+      -- Detecting CUDA compile features
+      -- Detecting CUDA compile features - done
+      -- Found CUDAToolkit: /usr/local/cuda/include (found version "12.1.105")
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+      -- Found Threads: TRUE
+      -- Caffe2: CUDA detected: 12.1
+      -- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+      -- Caffe2: CUDA toolkit directory: /usr/local/cuda
+      -- Caffe2: Header version is: 12.1
+      -- /usr/local/cuda/lib64/libnvrtc.so shorthash is b51b459d
+      -- USE_CUDNN is set to 0. Compiling without cuDNN support
+      -- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+      -- Automatic GPU detection failed. Building for common architectures.
+      -- Autodetected CUDA architecture(s): 5.0;8.0;8.6;8.9;9.0;9.0a
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:227 (message):
+        Unknown CUDA Architecture Name 9.0a in CUDA_SELECT_NVCC_ARCH_FLAGS
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:231 (message):
+        arch_bin wasn't set for some reason
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Added CUDA NVCC flags for: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_89,code=sm_89;-gencode;arch=compute_90,code=sm_90
+      CMake Warning at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+        static library kineto_LIBRARY-NOTFOUND not found.
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Found Torch: /usr/local/lib/python3.10/dist-packages/torch/lib/libtorch.so
+      -- CUDA supported arches: 7.0;7.5;8.0;8.6;8.9;9.0
+      -- discarding unsupported CUDA arch 3.10.
+      -- CUDA target arches: 80-real;86-real;89-real;90-real
+      -- Punica target arches: 80-real;86-real;89-real;90-real
+      -- Enabling C extension.
+      -- Enabling moe extension.
+      -- Configuring incomplete, errors occurred!
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 303, in build_editable
+          return hook(wheel_directory, config_settings, metadata_directory)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 474, in build_editable
+          return self._build_with_temp_dir(
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 410, in _build_with_temp_dir
+          self.run_setup()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 397, in <module>
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1000, in run_commands
+          self.run_command(cmd)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 300, in _run_build_subcommands
+          self.run_command(name)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 341, in run_command
+          self.distribution.run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/build_ext.py", line 97, in run
+          _build_ext.run(self)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/build_ext.py", line 367, in run
+          self.build_extensions()
+        File "<string>", line 192, in build_extensions
+        File "<string>", line 175, in configure
+        File "/usr/lib/python3.10/subprocess.py", line 369, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmp88dgbxnp.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmp8lhdmhra.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for vllm
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> vllm
+  error: subprocess-exited-with-error
+  
+  × Building editable for vllm (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [144 lines of output]
+      No CUDA runtime is found, using CUDA_HOME='/usr/local/cuda'
+      /usr/local/lib/python3.10/dist-packages/setuptools/dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: Apache Software License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      running editable_wheel
+      creating /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info
+      writing /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/requires.txt
+      writing top-level names to /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/SOURCES.txt'
+      reading manifest file '/tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      adding license file 'LICENSE'
+      writing manifest file '/tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm.egg-info/SOURCES.txt'
+      creating '/tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm-0.4.2.dist-info'
+      creating /tmp/pip-ephem-wheel-cache-ejnf2a_t/wheels/80/75/f6/d63789e3414f7f88206102fa596a8ddafc889f48984e8712b3/tmp3m9d8v5v/.tmp-3yiwrlga/vllm-0.4.2.dist-info/WHEEL
+      running build_py
+      running build_ext
+      -- The CXX compiler identification is GNU 11.4.0
+      -- Detecting CXX compiler ABI info
+      -- Detecting CXX compiler ABI info - done
+      -- Check for working CXX compiler: /usr/bin/c++ - skipped
+      -- Detecting CXX compile features
+      -- Detecting CXX compile features - done
+      -- Build type: RelWithDebInfo
+      -- Target device: cuda
+      -- Found Python: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter Development.Module
+      -- Found python matching: /usr/bin/python3.10.
+      -- Found CUDA: /usr/local/cuda (found version "12.1")
+      -- The CUDA compiler identification is NVIDIA 12.1.105 with host compiler GNU 11.4.0
+      -- Detecting CUDA compiler ABI info
+      -- Detecting CUDA compiler ABI info - done
+      -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+      -- Detecting CUDA compile features
+      -- Detecting CUDA compile features - done
+      -- Found CUDAToolkit: /usr/local/cuda/include (found version "12.1.105")
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+      -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+      -- Found Threads: TRUE
+      -- Caffe2: CUDA detected: 12.1
+      -- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+      -- Caffe2: CUDA toolkit directory: /usr/local/cuda
+      -- Caffe2: Header version is: 12.1
+      -- /usr/local/cuda/lib64/libnvrtc.so shorthash is b51b459d
+      -- USE_CUDNN is set to 0. Compiling without cuDNN support
+      -- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+      -- Automatic GPU detection failed. Building for common architectures.
+      -- Autodetected CUDA architecture(s): 5.0;8.0;8.6;8.9;9.0;9.0a
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:227 (message):
+        Unknown CUDA Architecture Name 9.0a in CUDA_SELECT_NVCC_ARCH_FLAGS
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      CMake Error at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake:231 (message):
+        arch_bin wasn't set for some reason
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/utils.cmake:401 (cuda_select_nvcc_arch_flags)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/public/cuda.cmake:342 (torch_cuda_get_nvcc_gencode_flag)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:87 (include)
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:68 (find_package)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Added CUDA NVCC flags for: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_89,code=sm_89;-gencode;arch=compute_90,code=sm_90
+      CMake Warning at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+        static library kineto_LIBRARY-NOTFOUND not found.
+      Call Stack (most recent call first):
+        /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+        CMakeLists.txt:67 (find_package)
+      
+      
+      -- Found Torch: /usr/local/lib/python3.10/dist-packages/torch/lib/libtorch.so
+      -- CUDA supported arches: 7.0;7.5;8.0;8.6;8.9;9.0
+      -- discarding unsupported CUDA arch 3.10.
+      -- CUDA target arches: 80-real;86-real;89-real;90-real
+      -- Punica target arches: 80-real;86-real;89-real;90-real
+      -- Enabling C extension.
+      -- Enabling moe extension.
+      -- Configuring incomplete, errors occurred!
+      Traceback (most recent call last):
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+        File "/usr/local/lib/python3.10/dist-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 303, in build_editable
+          return hook(wheel_directory, config_settings, metadata_directory)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 474, in build_editable
+          return self._build_with_temp_dir(
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 410, in _build_with_temp_dir
+          self.run_setup()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 397, in <module>
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1000, in run_commands
+          self.run_command(cmd)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 140, in run
+          self._create_wheel_file(bdist_wheel)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 350, in _create_wheel_file
+          files, mapping = self._run_build_commands(dist_name, unpacked, lib, tmp)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 273, in _run_build_commands
+          self._run_build_subcommands()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/editable_wheel.py", line 300, in _run_build_subcommands
+          self.run_command(name)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/cmd.py", line 341, in run_command
+          self.distribution.run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/dist.py", line 1107, in run_command
+          super().run_command(command)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/dist.py", line 1019, in run_command
+          cmd_obj.run()
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/command/build_ext.py", line 97, in run
+          _build_ext.run(self)
+        File "/usr/local/lib/python3.10/dist-packages/setuptools/_distutils/command/build_ext.py", line 367, in run
+          self.build_extensions()
+        File "<string>", line 192, in build_extensions
+        File "<string>", line 175, in configure
+        File "/usr/lib/python3.10/subprocess.py", line 369, in check_call
+          raise CalledProcessError(retcode, cmd)
+      subprocess.CalledProcessError: Command '['cmake', '/workspace', '-G', 'Ninja', '-DCMAKE_BUILD_TYPE=RelWithDebInfo', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/tmp9xpsb408.build-lib/vllm', '-DCMAKE_ARCHIVE_OUTPUT_DIRECTORY=/tmp/tmpzc9vuy_9.build-temp', '-DVLLM_TARGET_DEVICE=cuda', '-DVLLM_PYTHON_EXECUTABLE=/usr/bin/python3.10', '-DNVCC_THREADS=1', '-DCMAKE_JOB_POOL_COMPILE:STRING=compile', '-DCMAKE_JOB_POOLS:STRING=compile=12']' returned non-zero exit status 1.
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building editable for vllm
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> vllm

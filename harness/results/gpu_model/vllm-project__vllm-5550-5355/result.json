@@ -1,0 +1,29 @@
+{
+  "instance_id": "vllm-project__vllm-5550-5355",
+  "version": "0.4.3",
+  "base_commit": "519e8e4182af8e25d78b062ba5e613df661e6e5d",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "error",
+  "error_message": "Failed to apply test_patch",
+  "timestamps": {
+    "start": 1772220355.7260606,
+    "phase1_start": 0.0,
+    "phase1_end": 0.0,
+    "phase2_start": 0.0,
+    "phase2_end": 0.0,
+    "end": 1772220357.3675148
+  }
+}

@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="256" skipped="0" tests="256" time="49.219" timestamp="2026-02-27T18:13:34.446705+00:00" hostname="60ff2d3b82e5"><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-0]" time="0.182"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-1]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-2]" time="0.162"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-3]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-4]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-5]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-6]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-7]" time="0.160"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-8]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-9]" time="0.182"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-10]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-11]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-12]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-13]" time="0.192"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-14]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-15]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-16]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-17]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-18]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-19]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-20]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-21]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-22]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-23]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-24]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-25]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-26]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-27]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-28]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-29]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-30]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-31]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-32]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-33]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-34]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-35]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-36]" time="0.190"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-37]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-38]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-39]" time="0.162"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-40]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-41]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-42]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-43]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-44]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-45]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-46]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-47]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-48]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-49]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-50]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-51]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-52]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-53]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-54]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-55]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-56]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-57]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-58]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-59]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-60]" time="0.199"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-61]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-62]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-63]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-64]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-65]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-66]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-67]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-68]" time="0.188"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-69]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-70]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-71]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-72]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-73]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-74]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-75]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-76]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-77]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-78]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-79]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-80]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-81]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-82]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-83]" time="0.200"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-84]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-85]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-86]" time="0.186"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-87]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-88]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-89]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-90]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-91]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-92]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-93]" time="0.187"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-94]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-95]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-96]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-97]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-98]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-99]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-100]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-101]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-102]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-103]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-104]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-105]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-106]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-107]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-108]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-109]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-110]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-111]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-112]" time="0.188"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-113]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-114]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-115]" time="0.164"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-116]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-117]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-118]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-119]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-120]" time="0.160"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-121]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-122]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-123]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-124]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-125]" time="0.164"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-126]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:0-127]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-0]" time="0.163"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-1]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-2]" time="0.160"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-3]" time="0.154"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-4]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-5]" time="0.158"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-6]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-7]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-8]" time="0.165"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-9]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-10]" time="0.161"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-11]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-12]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-13]" time="0.160"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-14]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-15]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-16]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-17]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-18]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-19]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-20]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-21]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-22]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-23]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-24]" time="0.201"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-25]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-26]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-27]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-28]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-29]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-30]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-31]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-32]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-33]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-34]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-35]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-36]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-37]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-38]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-39]" time="0.158"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-40]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-41]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-42]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-43]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-44]" time="0.169"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-45]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-46]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-47]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-48]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-49]" time="0.163"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-50]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-51]" time="0.168"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-52]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-53]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-54]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-55]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-56]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-57]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-58]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-59]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-60]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-61]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-62]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-63]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-64]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-65]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-66]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-67]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-68]" time="0.166"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-69]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-70]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-71]" time="0.171"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-72]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-73]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-74]" time="0.167"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-75]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-76]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-77]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-78]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-79]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-80]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-81]" time="0.181"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-82]" time="0.170"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-83]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-84]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-85]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-86]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-87]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-88]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-89]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-90]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-91]" time="0.181"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-92]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-93]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-94]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-95]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-96]" time="0.181"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-97]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-98]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-99]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-100]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-101]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-102]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-103]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-104]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-105]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-106]" time="0.181"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-107]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-108]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-109]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-110]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-111]" time="0.182"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-112]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-113]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-114]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-115]" time="0.174"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-116]" time="0.179"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-117]" time="0.173"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-118]" time="0.177"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-119]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-120]" time="0.172"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-121]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-122]" time="0.175"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-123]" time="0.180"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-124]" time="0.176"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-125]" time="0.192"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-126]" time="0.198"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase><testcase classname="tests.samplers.test_sampler" name="test_sampler_min_tokens_penalty[cuda:1-127]" time="0.178"><failure message="AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?">tests/samplers/test_sampler.py:290: in test_sampler_min_tokens_penalty
+    sampling_params=create_sampling_params(0),
+tests/samplers/test_sampler.py:219: in create_sampling_params
+    sampling_params.all_stop_token_ids.add(eos_token_id)
+E   AttributeError: 'SamplingParams' object has no attribute 'all_stop_token_ids'. Did you mean: 'stop_token_ids'?</failure></testcase></testsuite></testsuites>

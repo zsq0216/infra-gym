@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="12" skipped="0" tests="12" time="3.459" timestamp="2026-02-27T17:59:56.431556+00:00" hostname="1b4526db0b7d"><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-128-1-64]" time="0.179"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-128-8-64]" time="0.188"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-128-64-64]" time="0.209"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-96-1-64]" time="0.200"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-96-8-64]" time="0.183"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:0-dtype0-96-64-64]" time="0.193"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-128-1-64]" time="0.195"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-128-8-64]" time="0.186"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-128-64-64]" time="0.182"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-96-1-64]" time="0.183"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-96-8-64]" time="0.194"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase><testcase classname="tests.kernels.test_prefix_prefill" name="test_contexted_kv_attention[cuda:1-dtype0-96-64-64]" time="0.181"><failure message="RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx">tests/kernels/test_prefix_prefill.py:43: in test_contexted_kv_attention
+    torch.cuda.set_device(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:399: in set_device
+    torch._C._cuda_setDevice(device)
+/usr/local/lib/python3.10/dist-packages/torch/cuda/__init__.py:293: in _lazy_init
+    torch._C._cuda_init()
+E   RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx</failure></testcase></testsuite></testsuites>

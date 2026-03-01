@@ -1,0 +1,37 @@
+{
+  "instance_id": "vllm-project__vllm-5152-8975",
+  "version": "0.6.2",
+  "base_commit": "1cabfcefb64a489c8ff9dcb289b4dd47cf8f89cf",
+  "phase1": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "tests/spec_decode/test_multi_step_worker.py"
+    ],
+    "skipped": []
+  },
+  "phase2": {
+    "passed": [],
+    "failed": [],
+    "errors": [
+      "tests/spec_decode/test_multi_step_worker.py"
+    ],
+    "skipped": []
+  },
+  "FAIL_TO_PASS": [],
+  "PASS_TO_PASS": [],
+  "status": "success",
+  "error_message": "",
+  "timestamps": {
+    "start": 1772219571.664312,
+    "phase1_start": 1772219573.2119431,
+    "phase1_end": 1772219979.6273952,
+    "phase2_start": 1772219979.6304076,
+    "phase2_end": 1772220354.039248,
+    "end": 1772220354.0394247
+  },
+  "regressions": [],
+  "both_failed": [
+    "tests/spec_decode/test_multi_step_worker.py"
+  ]
+}
